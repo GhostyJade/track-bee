@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import IntlMessages from '../../../@crema/utility/IntlMessages';
 import Header from './Header';
 import ItemList from './ItemList';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import { Fonts } from '../../../shared/constants/AppEnums';
 import AppTableContainer from '../../../@crema/core/AppTableContainer';
 import AppAnimate from '../../../@crema/core/AppAnimate';
 import TableBody from '@mui/material/TableBody';
@@ -23,17 +23,17 @@ const Invoice2 = () => {
           alignItems: 'center',
         }}
       >
-        <Box sx={{flex: 1, maxWidth: 900, width: '100%'}}>
+        <Box sx={{ flex: 1, maxWidth: 900, width: '100%' }}>
           <Card
             sx={{
-              p: {xs: 6, xl: 8},
+              p: { xs: 6, xl: 8 },
               minHeight: 1000,
               display: 'flex',
               flexDirection: 'column',
             }}
           >
             <Header />
-            <Box sx={{mb: 5}}>
+            <Box sx={{ mb: 5 }}>
               <AppTableContainer>
                 <ItemList />
               </AppTableContainer>
@@ -43,8 +43,8 @@ const Invoice2 = () => {
               sx={{
                 mt: 'auto',
                 display: 'flex',
-                flexDirection: {xs: 'column', sm: 'row'},
-                justifyContent: {sm: 'space-between'},
+                flexDirection: { xs: 'column', sm: 'row' },
+                justifyContent: { sm: 'space-between' },
                 borderTop: (theme) => `solid 1px ${theme.palette.divider}`,
                 pt: 4,
               }}
@@ -53,7 +53,7 @@ const Invoice2 = () => {
                 <Box
                   component='h4'
                   sx={{
-                    mb: {xs: 3, lg: 4},
+                    mb: { xs: 3, lg: 4 },
                     color: 'text.secondary',
                     textAlign: 'center',
                     fontSize: 16,
@@ -72,7 +72,7 @@ const Invoice2 = () => {
               >
                 <AppTableContainer
                   sxStyle={{
-                    width: {xs: 'auto', sm: '100%'},
+                    width: { xs: 'auto', sm: '100%' },
                   }}
                 >
                   <TableBody>
@@ -81,7 +81,7 @@ const Invoice2 = () => {
                         colSpan='3'
                         component='th'
                         scope='row'
-                        sx={{border: '0 none', p: 1.5}}
+                        sx={{ border: '0 none', p: 1.5 }}
                       >
                         <Box
                           sx={{
@@ -95,7 +95,7 @@ const Invoice2 = () => {
                           <IntlMessages id='invoice.subTotal' />
                         </Box>
                       </TableCell>
-                      <TableCell sx={{border: '0 none', p: 1.5}}>
+                      <TableCell sx={{ border: '0 none', p: 1.5 }}>
                         <Box
                           sx={{
                             color: 'text.primary',
@@ -114,7 +114,7 @@ const Invoice2 = () => {
                         colSpan='3'
                         component='th'
                         scope='row'
-                        sx={{border: '0 none', p: 1.5}}
+                        sx={{ border: '0 none', p: 1.5 }}
                       >
                         <Box
                           sx={{
@@ -128,7 +128,7 @@ const Invoice2 = () => {
                           <IntlMessages id='invoice.rebate' />
                         </Box>
                       </TableCell>
-                      <TableCell sx={{border: '0 none', p: 1.5}}>
+                      <TableCell sx={{ border: '0 none', p: 1.5 }}>
                         <Box
                           sx={{
                             color: 'text.primary',
@@ -147,7 +147,7 @@ const Invoice2 = () => {
                         colSpan='3'
                         component='th'
                         scope='row'
-                        sx={{border: '0 none', p: 1.5}}
+                        sx={{ border: '0 none', p: 1.5 }}
                       >
                         <Box
                           sx={{
@@ -161,7 +161,7 @@ const Invoice2 = () => {
                           <IntlMessages id='invoice.grandTotal' />
                         </Box>
                       </TableCell>
-                      <TableCell sx={{border: '0 none', p: 1.5}}>
+                      <TableCell sx={{ border: '0 none', p: 1.5 }}>
                         <Box
                           sx={{
                             color: 'text.primary',

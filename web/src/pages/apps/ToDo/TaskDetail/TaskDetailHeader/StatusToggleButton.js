@@ -1,20 +1,20 @@
 import React from 'react';
 import DoneIcon from '@mui/icons-material/Done';
 import IntlMessages from '@crema/utility/IntlMessages';
-import {onUpdateSelectedTask} from '../../../../../redux/actions';
-import {useDispatch} from 'react-redux';
+import { onUpdateSelectedTask } from '../../../../../redux/actions';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
-const StatusButton = styled(Button)(({theme}) => ({
+const StatusButton = styled(Button)(({ theme }) => ({
   fontSize: 12,
   [theme.breakpoints.up('lg')]: {
     fontSize: 14,
   },
 }));
 
-const StyledDoneIcon = styled(DoneIcon)(({theme}) => ({
+const StyledDoneIcon = styled(DoneIcon)(({ theme }) => ({
   marginRight: 4,
   fontSize: 18,
   verticalAlign: 'middle',
@@ -23,7 +23,7 @@ const StyledDoneIcon = styled(DoneIcon)(({theme}) => ({
   },
 }));
 
-const StatusToggleButton = ({selectedTask}) => {
+const StatusToggleButton = ({ selectedTask }) => {
   const dispatch = useDispatch();
 
   const onChangeTaskStatus = (status) => {

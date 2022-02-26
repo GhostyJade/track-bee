@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import UploadModern from '../components/UploadModern';
-import {AppGrid} from '../../../../@crema';
-import {useDropzone} from 'react-dropzone';
+import { AppGrid } from '../../../../@crema';
+import { useDropzone } from 'react-dropzone';
 import PreviewThumb from '../components/PreviewThumb';
 
 const Previews = () => {
@@ -28,7 +28,7 @@ const Previews = () => {
   };
 
   return (
-    <section className='container' style={{cursor: 'pointer'}}>
+    <section className='container' style={{ cursor: 'pointer' }}>
       <UploadModern
         uploadText='Drag n drop some files here, or click to select files'
         setUploadedFiles={setUploadedFiles}

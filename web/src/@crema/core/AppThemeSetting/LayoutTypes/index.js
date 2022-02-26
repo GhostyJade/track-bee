@@ -1,8 +1,8 @@
 import React from 'react';
-import {CustomizerItemWrapper} from '../index.style';
+import { CustomizerItemWrapper } from '../index.style';
 import Box from '@mui/material/Box';
 import IntlMessages from '../../../utility/IntlMessages';
-import {layoutTypes} from '../../../services/db/navigationStyle';
+import { layoutTypes } from '../../../services/db/navigationStyle';
 import {
   useLayoutActionsContext,
   useLayoutContext,
@@ -10,15 +10,15 @@ import {
 import AppSelectedIcon from '../../AppSelectedIcon';
 
 const LayoutTypes = () => {
-  const {updateLayoutType} = useLayoutActionsContext();
-  const {layoutType} = useLayoutContext();
+  const { updateLayoutType } = useLayoutActionsContext();
+  const { layoutType } = useLayoutContext();
 
   const onLayoutChange = (layoutType) => {
     updateLayoutType(layoutType);
   };
   return (
     <CustomizerItemWrapper pb={1}>
-      <Box component='h4' sx={{mb: 3}}>
+      <Box component='h4' sx={{ mb: 3 }}>
         <IntlMessages id='customizer.layoutTypes' />
       </Box>
       <Box

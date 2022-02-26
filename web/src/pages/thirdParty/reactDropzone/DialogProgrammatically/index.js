@@ -1,15 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import UploadClassic from '../components/UploadClassic';
 import Box from '@mui/material/Box';
-import {AppList} from '../../../../@crema';
-import {useDropzone} from 'react-dropzone';
+import { AppList } from '../../../../@crema';
+import { useDropzone } from 'react-dropzone';
 import FileRow from '../components/FileRow';
 
 const DialogProgrammatically = () => {
   const dropzone = useDropzone({
     accept: 'image/jpeg, image/png',
   });
-  const {fileRejections, acceptedFiles} = dropzone;
+  const { fileRejections, acceptedFiles } = dropzone;
   const [uploadedFiles, setUploadedFiles] = useState([]);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const DialogProgrammatically = () => {
             />
           )}
         />
-        <h4 style={{marginTop: 10}}>Rejected files</h4>
+        <h4 style={{ marginTop: 10 }}>Rejected files</h4>
         <AppList
           data={fileRejections}
           renderRow={(file, index) => (

@@ -11,11 +11,11 @@ import {
   ThemeMode,
 } from '../../../../shared/constants/AppEnums';
 import clsx from 'clsx';
-import {useLayoutContext} from '../../../utility/AppContextProvider/LayoutContextProvider';
+import { useLayoutContext } from '../../../utility/AppContextProvider/LayoutContextProvider';
 import AppSelectedIcon from '../../AppSelectedIcon';
-import {useThemeContext} from '../../../utility/AppContextProvider/ThemeContextProvider';
+import { useThemeContext } from '../../../utility/AppContextProvider/ThemeContextProvider';
 
-const MenuColorCell = ({sidebarColors}) => {
+const MenuColorCell = ({ sidebarColors }) => {
   const {
     sidebarBgColor,
     sidebarTextColor,
@@ -23,9 +23,9 @@ const MenuColorCell = ({sidebarColors}) => {
     sidebarMenuSelectedTextColor,
     menuStyle,
   } = useSidebarContext();
-  const {updateSidebarColorSet} = useSidebarActionsContext();
-  const {navStyle} = useLayoutContext();
-  const {theme} = useThemeContext();
+  const { updateSidebarColorSet } = useSidebarActionsContext();
+  const { navStyle } = useLayoutContext();
+  const { theme } = useThemeContext();
 
   return (
     <Box
@@ -86,7 +86,7 @@ const MenuColorCell = ({sidebarColors}) => {
             py: 2.5,
             px: 4.5,
             color: sidebarColors.sidebarTextColor,
-            fontSize: {xs: 12, md: 14},
+            fontSize: { xs: 12, md: 14 },
             whiteSpace: 'nowrap',
           }}
         >
@@ -99,7 +99,7 @@ const MenuColorCell = ({sidebarColors}) => {
             py: 2.5,
             px: 4.5,
             color: sidebarColors.sidebarTextColor,
-            fontSize: {xs: 12, md: 14},
+            fontSize: { xs: 12, md: 14 },
             whiteSpace: 'nowrap',
           }}
         >
@@ -122,7 +122,7 @@ const MenuColorCell = ({sidebarColors}) => {
             color: sidebarColors.sidebarMenuSelectedTextColor,
             position: 'relative',
             transition: 'all 0.4s ease',
-            fontSize: {xs: 12, md: 14},
+            fontSize: { xs: 12, md: 14 },
             whiteSpace: 'nowrap',
             '&.rounded-menu': {
               mr: 2,
@@ -199,4 +199,4 @@ const MenuColorCell = ({sidebarColors}) => {
 };
 
 export default MenuColorCell;
-MenuColorCell.propTypes = {sidebarColors: PropTypes.object};
+MenuColorCell.propTypes = { sidebarColors: PropTypes.object };

@@ -1,10 +1,10 @@
 import React from 'react';
-import {AppLoader} from '../index';
+import { AppLoader } from '../index';
 import PropTypes from 'prop-types';
-import {useAuthUser} from './AuthHooks';
+import { useAuthUser } from './AuthHooks';
 
-const AuthRoutes = ({children}) => {
-  const {isLoading} = useAuthUser();
+const AuthRoutes = ({ children }) => {
+  const { isLoading } = useAuthUser();
   return isLoading ? <AppLoader /> : <>{children}</>;
 };
 

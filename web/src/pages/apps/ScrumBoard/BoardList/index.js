@@ -1,26 +1,26 @@
-import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   onAddNewBoard,
   onEditBoardDetail,
   onGetBoardList,
 } from '../../../../redux/actions';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import AddNewBoard from './AddNewBoard';
 import IntlMessages from '@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import BoardItem from './BoardItem';
 import AddBoardButton from './AddBoardButton';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import AppInfoView from '@crema/core/AppInfoView';
-import {Zoom} from '@mui/material';
+import { Zoom } from '@mui/material';
 
 const BoardList = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const boardList = useSelector(({scrumboardApp}) => scrumboardApp.boardList);
+  const boardList = useSelector(({ scrumboardApp }) => scrumboardApp.boardList);
 
   const [isAddBoardOpen, setAddBoardOpen] = useState(false);
 
@@ -46,10 +46,10 @@ const BoardList = () => {
 
   const onAddBoard = (name) => {
     if (selectedBoard) {
-      const board = {...selectedBoard, name};
+      const board = { ...selectedBoard, name };
       dispatch(onEditBoardDetail(board));
     } else {
-      dispatch(onAddNewBoard({name}));
+      dispatch(onAddNewBoard({ name }));
     }
   };
 
@@ -71,7 +71,7 @@ const BoardList = () => {
           <Box
             component='h2'
             sx={{
-              my: {xs: 5, sm: 5, xl: 8},
+              my: { xs: 5, sm: 5, xl: 8 },
               color: 'text.primary',
               fontWeight: Fonts.BOLD,
               textAlign: 'center',

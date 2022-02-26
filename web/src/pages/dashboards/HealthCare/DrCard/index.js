@@ -1,11 +1,11 @@
 import React from 'react';
 import AppCard from '@crema/core/AppCard';
-import {Box, Typography} from '@mui/material';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Box, Typography } from '@mui/material';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 
-const DrCard = ({data}) => {
-  const {bgColor, icon, time, category, name} = data;
+const DrCard = ({ data }) => {
+  const { bgColor, icon, time, category, name } = data;
   return (
     <AppCard
       sxStyle={{

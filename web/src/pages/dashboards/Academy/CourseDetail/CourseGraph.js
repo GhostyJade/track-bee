@@ -1,11 +1,11 @@
 import React from 'react';
-import {Area, AreaChart, ResponsiveContainer} from 'recharts';
+import { Area, AreaChart, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
 
-const CourseGraph = ({data}) => {
+const CourseGraph = ({ data }) => {
   return (
     <ResponsiveContainer width={50} height={112}>
-      <AreaChart data={data} margin={{top: 0, right: 0, left: 0, bottom: 0}}>
+      <AreaChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
         <defs>
           <linearGradient id='color10' x1='0' y1='0' x2='0' y2='1'>
             <stop offset='5%' stopColor='#19A6D2' stopOpacity={1} />

@@ -1,11 +1,11 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
 import Box from '@mui/material/Box';
-import {alpha} from '@mui/material';
-import {ThemeMode} from '../../../../../shared/constants/AppEnums';
-import {useSidebarContext} from '../../../../utility/AppContextProvider/SidebarContextProvider';
+import { alpha } from '@mui/material';
+import { ThemeMode } from '../../../../../shared/constants/AppEnums';
+import { useSidebarContext } from '../../../../utility/AppContextProvider/SidebarContextProvider';
 
-const SidebarBgWrapper = ({children}) => {
+const SidebarBgWrapper = ({ children }) => {
   const {
     sidebarBgColor,
     sidebarTextColor,

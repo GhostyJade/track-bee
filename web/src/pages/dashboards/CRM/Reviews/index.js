@@ -3,13 +3,13 @@ import ReviewsGraph from './ReviewsGraph';
 import IntlMessages from '../../../../@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
-import {green, teal} from '@mui/material/colors';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { green, teal } from '@mui/material/colors';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import AppCard from '../../../../@crema/core/AppCard';
 
-const Reviews = ({reviewGraphData}) => {
+const Reviews = ({ reviewGraphData }) => {
   return (
-    <AppCard sxStyle={{backgroundColor: teal[600], color: 'white'}}>
+    <AppCard sxStyle={{ backgroundColor: teal[600], color: 'white' }}>
       <Box
         sx={{
           display: 'flex',
@@ -31,7 +31,7 @@ const Reviews = ({reviewGraphData}) => {
             sx={{
               mb: 2,
               fontWeight: Fonts.MEDIUM,
-              fontSize: {xs: 18, xl: 20},
+              fontSize: { xs: 18, xl: 20 },
               color: green[300],
             }}
           >

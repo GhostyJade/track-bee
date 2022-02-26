@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {IntlProvider} from 'react-intl';
-import {IntlGlobalProvider} from '../helper/Utils';
+import { IntlProvider } from 'react-intl';
+import { IntlGlobalProvider } from '../helper/Utils';
 import AppLocale from 'shared/localization';
-import {useLocaleContext} from '../AppContextProvider/LocaleContextProvide';
+import { useLocaleContext } from '../AppContextProvider/LocaleContextProvide';
 
 const AppLocaleProvider = (props) => {
-  const {locale} = useLocaleContext();
+  const { locale } = useLocaleContext();
   const currentAppLocale = AppLocale[locale.locale];
 
   return (

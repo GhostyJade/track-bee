@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetWidgetsData} from '../../../redux/actions';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { onGetWidgetsData } from '../../../redux/actions';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import Grid from '@mui/material/Grid';
 import WallPaper from './WallPaper';
@@ -23,16 +23,16 @@ import Reviews from './Reviews';
 import CremaCard from './CremaCard';
 import Formats from './Formats';
 import Price from './Price';
-import {FiFacebook, FiTwitter} from 'react-icons/fi';
+import { FiFacebook, FiTwitter } from 'react-icons/fi';
 import AppInfoView from '@crema/core/AppInfoView';
 import IntlMessages from '@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
 import CityInfo from './CityInfo';
-import {blue, indigo} from '@mui/material/colors';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import { blue, indigo } from '@mui/material/colors';
+import { Fonts } from '../../../shared/constants/AppEnums';
 import DateSelector from './DatePicker';
 import AppAnimate from '@crema/core/AppAnimate';
-import {AppLoader} from '../../../@crema';
+import { AppLoader } from '../../../@crema';
 
 const Widgets = () => {
   const dispatch = useDispatch();
@@ -41,7 +41,7 @@ const Widgets = () => {
     dispatch(onGetWidgetsData());
   }, [dispatch]);
 
-  const widgetsData = useSelector(({dashboard}) => dashboard.widgetsData);
+  const widgetsData = useSelector(({ dashboard }) => dashboard.widgetsData);
 
   return (
     <>
@@ -52,7 +52,7 @@ const Widgets = () => {
               component='h3'
               sx={{
                 color: 'text.primary',
-                mb: {xs: 4, sm: 4, xl: 6},
+                mb: { xs: 4, sm: 4, xl: 6 },
                 fontSize: 16,
                 fontWeight: Fonts.BOLD,
               }}

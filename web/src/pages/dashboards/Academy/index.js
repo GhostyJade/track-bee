@@ -1,10 +1,10 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetAcademyData} from '../../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { onGetAcademyData } from '../../../redux/actions';
 import AppAnimate from '@crema/core/AppAnimate';
 import AppGridContainer from '@crema/core/AppGridContainer';
-import {Grid} from '@mui/material';
+import { Grid } from '@mui/material';
 import GeneralStats from './GeneralStats';
 import CourseCategories from './CourseCategories';
 import MyProfile from './MyProfile';
@@ -27,7 +27,7 @@ const Academy = () => {
     dispatch(onGetAcademyData());
   }, [dispatch]);
 
-  const {academyData} = useSelector(({dashboard}) => dashboard);
+  const { academyData } = useSelector(({ dashboard }) => dashboard);
 
   return (
     <>
@@ -36,7 +36,7 @@ const Academy = () => {
           <Box>
             <Box
               sx={{
-                pb: {xs: 5, md: 8},
+                pb: { xs: 5, md: 8 },
               }}
             >
               <AppGridContainer>
@@ -56,7 +56,7 @@ const Academy = () => {
 
             <Box
               sx={{
-                pb: {xs: 5, md: 8},
+                pb: { xs: 5, md: 8 },
               }}
             >
               <AppGridContainer>
@@ -70,7 +70,7 @@ const Academy = () => {
                   sm={6}
                   lg={3}
                   sx={{
-                    order: {lg: 2},
+                    order: { lg: 2 },
                   }}
                 >
                   <Notifications notifications={academyData.notifications} />
@@ -82,7 +82,7 @@ const Academy = () => {
                   sm={12}
                   lg={6}
                   sx={{
-                    order: {lg: 1},
+                    order: { lg: 1 },
                   }}
                 >
                   <MyCourses courses={academyData.courses} />

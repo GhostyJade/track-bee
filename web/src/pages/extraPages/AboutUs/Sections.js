@@ -1,13 +1,13 @@
 import React from 'react';
-import {Card} from '@mui/material';
+import { Card } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import IntlMessages from '../../../@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import { Fonts } from '../../../shared/constants/AppEnums';
 
-const Sections = ({data}) => {
+const Sections = ({ data }) => {
   return (
     <Card
       sx={{
@@ -15,11 +15,11 @@ const Sections = ({data}) => {
         textAlign: 'center',
       }}
     >
-      <Box sx={{mb: 4}}>
+      <Box sx={{ mb: 4 }}>
         <Avatar
           sx={{
-            height: {xs: 60, xl: 80},
-            width: {xs: 60, xl: 80},
+            height: { xs: 60, xl: 80 },
+            width: { xs: 60, xl: 80 },
             backgroundColor: data.avatarColor,
             display: 'inline-flex',
           }}
@@ -39,7 +39,7 @@ const Sections = ({data}) => {
         {data.title}
       </Box>
 
-      <Box component='p' sx={{mb: 5}}>
+      <Box component='p' sx={{ mb: 5 }}>
         {data.content}
       </Box>
 

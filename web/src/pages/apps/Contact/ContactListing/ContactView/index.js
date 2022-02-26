@@ -2,14 +2,14 @@ import ContactListItem from './ContactListItem';
 import Box from '@mui/material/Box';
 import ContactGridItem from './ContactGridItem';
 import React from 'react';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import AppList from '@crema/core/AppList';
 import AppGrid from '@crema/core/AppGrid';
 import ListEmptyResult from '@crema/core/AppList/ListEmptyResult';
 import IntlMessages from '@crema/utility/IntlMessages';
 import ContactListSkeleton from '@crema/core/AppSkeleton/ContactListSkeleton';
-import {Hidden} from '@mui/material';
+import { Hidden } from '@mui/material';
 import ContactListItemMobile from './ContactListItem/ContactListItemMobile';
 
 const ContactView = (props) => {
@@ -25,7 +25,7 @@ const ContactView = (props) => {
     onOpenEditContact,
     onViewContactDetail,
   } = props;
-  const labelList = useSelector(({contactApp}) => contactApp.labelList);
+  const labelList = useSelector(({ contactApp }) => contactApp.labelList);
 
   return (
     <>

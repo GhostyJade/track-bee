@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {alpha} from '@mui/material';
+import { alpha } from '@mui/material';
 import Card from '@mui/material/Card';
-import {lighten} from '@mui/system';
+import { lighten } from '@mui/system';
 
-const CardWrapper = ({children, ...rest}) => {
+const CardWrapper = ({ children, ...rest }) => {
   return (
     <Card
       sx={{

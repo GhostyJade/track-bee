@@ -1,6 +1,6 @@
 import React from 'react';
-import {AppGridContainer} from '../../../@crema';
-import {Grid} from '@mui/material';
+import { AppGridContainer } from '../../../@crema';
+import { Grid } from '@mui/material';
 import PackageOne from './PackageOne';
 import pricingData from '../../../@crema/services/db/extraPages/pricing';
 import PackageFour from './PackageFour';

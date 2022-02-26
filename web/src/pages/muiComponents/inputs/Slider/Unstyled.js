@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {styled, alpha, Box} from '@mui/system';
+import { styled, alpha, Box } from '@mui/system';
 import SliderUnstyled from '@mui/base/SliderUnstyled';
 
 const StyledSlider = styled(SliderUnstyled)(
-  ({theme}) => `
+  ({ theme }) => `
   color: ${theme.palette.mode === 'light' ? '#1976d2' : '#90caf9'};
   height: 4px;
   width: 100%;
@@ -68,7 +68,7 @@ const StyledSlider = styled(SliderUnstyled)(
 
 export default function UnstyledSlider() {
   return (
-    <Box sx={{width: 300}}>
+    <Box sx={{ width: 300 }}>
       <StyledSlider defaultValue={10} />
     </Box>
   );

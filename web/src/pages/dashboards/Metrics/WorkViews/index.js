@@ -3,14 +3,14 @@ import WorkViewsGraph from './WorkViewsGraph';
 import IntlMessages from '@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import AppCard from '@crema/core/AppCard';
 
-const WorkViews = ({data}) => {
+const WorkViews = ({ data }) => {
   return (
     <AppCard
-      sxStyle={{height: 1}}
-      contentStyle={{display: 'flex', flexDirection: 'column'}}
+      sxStyle={{ height: 1 }}
+      contentStyle={{ display: 'flex', flexDirection: 'column' }}
     >
       <Box
         component='h3'

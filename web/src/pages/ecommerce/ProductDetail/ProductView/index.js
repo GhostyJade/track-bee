@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Divider from '@mui/material/Divider';
 import ProductSpecification from './ProductSpecification';
@@ -9,7 +9,7 @@ import Reviews from './Reviews';
 import AvailableOffers from './AvailableOffers';
 import PropTypes from 'prop-types';
 
-const ProductView = ({product}) => {
+const ProductView = ({ product }) => {
   return (
     <Grid item sm={12} md={8}>
       <Box
@@ -54,14 +54,14 @@ const ProductView = ({product}) => {
         letters, as opposed to using Content here, making it look like readable
         English. Many desktop publishing packages and web page editors now use..
       </Box>
-      <Divider style={{marginTop: 15, marginBottom: 15}} />
+      <Divider style={{ marginTop: 15, marginBottom: 15 }} />
       <AvailableOffers />
       <DeliveryInfo />
-      <Divider style={{marginTop: 15, marginBottom: 15}} />
+      <Divider style={{ marginTop: 15, marginBottom: 15 }} />
       <ProductSpecification />
-      <Divider style={{marginTop: 15, marginBottom: 15}} />
+      <Divider style={{ marginTop: 15, marginBottom: 15 }} />
       <ProductInfo />
-      <Divider style={{marginTop: 15, marginBottom: 15}} />
+      <Divider style={{ marginTop: 15, marginBottom: 15 }} />
       <Reviews />
     </Grid>
   );

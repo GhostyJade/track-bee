@@ -1,9 +1,9 @@
 import React from 'react';
-import {Line, LineChart, ResponsiveContainer, Tooltip} from 'recharts';
+import { Line, LineChart, ResponsiveContainer, Tooltip } from 'recharts';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
 
-const VisitsGraph = ({data}) => {
+const VisitsGraph = ({ data }) => {
   return (
     <ResponsiveContainer width='100%' height={220}>
       <LineChart data={data}>
@@ -12,10 +12,10 @@ const VisitsGraph = ({data}) => {
           dataKey='value'
           stroke='#4299E1'
           strokeWidth={3}
-          dot={{r: 5}}
+          dot={{ r: 5 }}
         />
         <Tooltip
-          labelStyle={{color: 'black'}}
+          labelStyle={{ color: 'black' }}
           cursor={false}
           content={(data) => {
             return data.payload[0] ? (

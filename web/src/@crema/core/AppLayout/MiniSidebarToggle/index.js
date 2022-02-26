@@ -1,19 +1,19 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import AppSidebar from './AppSidebar';
-import {AppContentView} from '../../../index';
+import { AppContentView } from '../../../index';
 import AppThemeSetting from '../../AppThemeSetting';
 import AppHeader from './AppHeader';
 import clsx from 'clsx';
 import Box from '@mui/material/Box';
 import MiniSidebarToggleWrapper from './MiniSidebarToggleWrapper';
 import AppFixedFooter from './AppFixedFooter';
-import {useLayoutContext} from '../../../utility/AppContextProvider/LayoutContextProvider';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
+import { useLayoutContext } from '../../../utility/AppContextProvider/LayoutContextProvider';
+import { LayoutType } from '../../../../shared/constants/AppEnums';
 import MiniSidebarToggleContainer from './MiniSidebarToggleContainer';
 
 const MiniSidebarToggle = () => {
   const [isCollapsed, setCollapsed] = useState(false);
-  const {footer, layoutType, headerType, footerType} = useLayoutContext();
+  const { footer, layoutType, headerType, footerType } = useLayoutContext();
 
   return (
     <MiniSidebarToggleContainer

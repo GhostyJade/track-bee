@@ -1,24 +1,24 @@
-import React, {useState} from 'react';
-import {Formik} from 'formik';
+import React, { useState } from 'react';
+import { Formik } from 'formik';
 import * as yup from 'yup';
-import {onCreateTask} from '../../../../redux/actions';
-import {useDispatch} from 'react-redux';
+import { onCreateTask } from '../../../../redux/actions';
+import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import IntlMessages from '@crema/utility/IntlMessages';
 import AddTaskForm from './AddTaskForm';
 import PropTypes from 'prop-types';
 import AppDialog from '@crema/core/AppDialog';
-import {useAuthUser} from '@crema/utility/AuthHooks';
+import { useAuthUser } from '@crema/utility/AuthHooks';
 
 const validationSchema = yup.object({
   title: yup.string().required(<IntlMessages id='validation.titleRequired' />),
 });
 
-const AddNewTask = ({isAddTaskOpen, onCloseAddTask, selectedDate}) => {
+const AddNewTask = ({ isAddTaskOpen, onCloseAddTask, selectedDate }) => {
   console.log('selectedDate: ', selectedDate);
   const dispatch = useDispatch();
 
-  const {user} = useAuthUser();
+  const { user } = useAuthUser();
 
   const [taskLabels, setTaskLabels] = useState([]);
 
@@ -43,7 +43,7 @@ const AddNewTask = ({isAddTaskOpen, onCloseAddTask, selectedDate}) => {
           content: '',
         }}
         validationSchema={validationSchema}
-        onSubmit={(data, {setSubmitting, resetForm}) => {
+        onSubmit={(data, { setSubmitting, resetForm }) => {
           setSubmitting(true);
           const newTask = {
             id: Math.floor(Math.random() * 1000000),
@@ -70,7 +70,7 @@ const AddNewTask = ({isAddTaskOpen, onCloseAddTask, selectedDate}) => {
           setSubmitting(false);
         }}
       >
-        {({isSubmitting, values, setFieldValue}) => (
+        {({ isSubmitting, values, setFieldValue }) => (
           <AddTaskForm
             isSubmitting={isSubmitting}
             values={values}

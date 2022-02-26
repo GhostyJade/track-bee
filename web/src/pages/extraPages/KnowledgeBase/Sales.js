@@ -4,15 +4,15 @@ import IntlMessages from '../../../@crema/utility/IntlMessages';
 import KBItem from './KBItem';
 import AppGridContainer from '../../../@crema/core/AppGridContainer';
 import PropTypes from 'prop-types';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import { Fonts } from '../../../shared/constants/AppEnums';
 
-const Sales = ({saleQueries}) => {
+const Sales = ({ saleQueries }) => {
   return (
-    <Box mb={{xs: 6, lg: 10}}>
+    <Box mb={{ xs: 6, lg: 10 }}>
       <Box
         component='h3'
         color='text.primary'
-        mb={{xs: 4, lg: 6}}
+        mb={{ xs: 4, lg: 6 }}
         fontSize={16}
         fontWeight={Fonts.BOLD}
       >

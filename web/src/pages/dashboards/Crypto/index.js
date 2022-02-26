@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import TotalBalance from './TotalBalance';
 import Coins from './Coins';
@@ -8,8 +8,8 @@ import BtcVolumeCurrency from './BtcVolumeCurrency';
 import PopularCoins from './PopularCoins';
 import LatestNews from './LatestNews';
 import CryptoMarketActivity from './CryptoMarketActivity';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetCryptoData} from '../../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { onGetCryptoData } from '../../../redux/actions';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import AppInfoView from '@crema/core/AppInfoView';
 import AppAnimate from '../../../@crema/core/AppAnimate';
@@ -21,7 +21,7 @@ const Crypto = () => {
     dispatch(onGetCryptoData());
   }, [dispatch]);
 
-  const cryptoData = useSelector(({dashboard}) => dashboard.cryptoData);
+  const cryptoData = useSelector(({ dashboard }) => dashboard.cryptoData);
 
   return (
     <>

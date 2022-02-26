@@ -1,5 +1,5 @@
 import React from 'react';
-import {CustomizerItemWrapper} from '../index.style';
+import { CustomizerItemWrapper } from '../index.style';
 import Box from '@mui/material/Box';
 import IntlMessages from '../../../utility/IntlMessages';
 import themeColorSets from '../../../../shared/constants/ColorSets';
@@ -11,9 +11,9 @@ import {
 import AppGrid from '../../AppGrid';
 
 const ThemeColors = () => {
-  const {theme} = useThemeContext();
+  const { theme } = useThemeContext();
 
-  const {updateTheme} = useThemeActionsContext();
+  const { updateTheme } = useThemeActionsContext();
 
   const updateThemeColors = (colorSet) => {
     theme.palette.primary.main = colorSet.primary.main;
@@ -21,11 +21,11 @@ const ThemeColors = () => {
     theme.palette.background = colorSet.background;
     theme.palette.mode = colorSet.mode;
     theme.palette.text = colorSet.text;
-    updateTheme({...theme});
+    updateTheme({ ...theme });
   };
   return (
     <CustomizerItemWrapper>
-      <Box component='h4' sx={{mb: 2}}>
+      <Box component='h4' sx={{ mb: 2 }}>
         <IntlMessages id='customizer.themeColors' />
       </Box>
       <Box mt={4}>

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import { Fonts } from '../../../shared/constants/AppEnums';
 
-function AppBadge({count, color}) {
+function AppBadge({ count, color }) {
   if (color === 'primary') {
     color = 'primary.main';
   } else if (color === 'v') {

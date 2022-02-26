@@ -1,16 +1,19 @@
 import React from 'react';
 import AppCard from '@crema/core/AppCard';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import CustomerItem from './CustomerItem';
 import AppList from '@crema/core/AppList';
 import AppScrollbar from '@crema/core/AppScrollbar';
 import PropTypes from 'prop-types';
 
 const NewCustomers = (props) => {
-  const {messages} = useIntl();
+  const { messages } = useIntl();
   return (
-    <AppCard title={messages['eCommerce.newCustomers']} contentStyle={{px: 0}}>
-      <AppScrollbar sx={{maxHeight: 280}}>
+    <AppCard
+      title={messages['eCommerce.newCustomers']}
+      contentStyle={{ px: 0 }}
+    >
+      <AppScrollbar sx={{ maxHeight: 280 }}>
         <AppList
           data={props.newCustomers}
           renderRow={(item) => (

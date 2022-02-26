@@ -1,14 +1,14 @@
 import React from 'react';
-import {AppNavLink} from '@crema';
+import { AppNavLink } from '@crema';
 import ListItemText from '@mui/material/ListItemText';
 import ListItem from '@mui/material/ListItem';
 import PropTypes from 'prop-types';
 import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
 
-import {alpha, styled} from '@mui/material/styles';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { alpha, styled } from '@mui/material/styles';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 
-const LabelItemWrapper = styled(ListItem)(({theme}) => {
+const LabelItemWrapper = styled(ListItem)(({ theme }) => {
   return {
     paddingTop: 5,
     paddingBottom: 5,
@@ -47,7 +47,7 @@ const LabelItemWrapper = styled(ListItem)(({theme}) => {
   };
 });
 
-const LabelItem = ({label}) => {
+const LabelItem = ({ label }) => {
   return (
     <LabelItemWrapper
       key={label.id}
@@ -56,7 +56,7 @@ const LabelItem = ({label}) => {
       component={AppNavLink}
       activeClassName='active'
     >
-      <LabelOutlinedIcon style={{color: `${label.color}`}} />
+      <LabelOutlinedIcon style={{ color: `${label.color}` }} />
       <ListItemText
         sx={{
           '& .MuiTypography-body1': {

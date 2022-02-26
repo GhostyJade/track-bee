@@ -1,10 +1,10 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import NoUserScreen from './NoUserScreen';
 import ChatViewContainer from './ChatViewContainer';
 
-import {styled} from '@mui/material/styles';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { styled } from '@mui/material/styles';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 
 const MessagesScreen = styled('div')(() => {
   return {
@@ -13,7 +13,7 @@ const MessagesScreen = styled('div')(() => {
     flexDirection: 'column',
   };
 });
-const ScrollChatNoUser = styled('div')(({theme}) => {
+const ScrollChatNoUser = styled('div')(({ theme }) => {
   return {
     fontSize: 18,
     padding: 16,
@@ -37,7 +37,7 @@ const ScrollChatNoUser = styled('div')(({theme}) => {
 });
 
 const ChatContent = () => {
-  const selectedUser = useSelector(({chatApp}) => chatApp.selectedUser);
+  const selectedUser = useSelector(({ chatApp }) => chatApp.selectedUser);
 
   return (
     <>

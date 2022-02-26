@@ -1,15 +1,15 @@
-import React, {useEffect, useMemo, useState} from 'react';
-import {Collapse, Icon, IconButton, ListItemText} from '@mui/material';
-import {useLocation} from 'react-router-dom';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Collapse, Icon, IconButton, ListItemText } from '@mui/material';
+import { useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import VerticalItem from '../VerticalItem';
 import Box from '@mui/material/Box';
 import IntlMessages from '../../../../../utility/IntlMessages';
-import {checkPermission} from '../../../../../utility/helper/RouteHelper';
-import {useAuthUser} from '../../../../../utility/AuthHooks';
-import {useThemeContext} from '../../../../../utility/AppContextProvider/ThemeContextProvider';
-import {useSidebarContext} from '../../../../../utility/AppContextProvider/SidebarContextProvider';
+import { checkPermission } from '../../../../../utility/helper/RouteHelper';
+import { useAuthUser } from '../../../../../utility/AuthHooks';
+import { useThemeContext } from '../../../../../utility/AppContextProvider/ThemeContextProvider';
+import { useSidebarContext } from '../../../../../utility/AppContextProvider/SidebarContextProvider';
 import VerticalCollapseItem from './VerticalCollapseItem';
 
 const needsToBeOpened = (pathname, item) => {
@@ -39,10 +39,10 @@ const isUrlInChildren = (parent, url) => {
   return false;
 };
 
-const VerticalCollapse = ({item, level}) => {
-  const {theme} = useThemeContext();
-  const {sidebarTextColor} = useSidebarContext();
-  const {pathname} = useLocation();
+const VerticalCollapse = ({ item, level }) => {
+  const { theme } = useThemeContext();
+  const { sidebarTextColor } = useSidebarContext();
+  const { pathname } = useLocation();
   const [open, setOpen] = useState(() => needsToBeOpened(pathname, item));
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const VerticalCollapse = ({item, level}) => {
     setOpen(!open);
   };
 
-  const {user} = useAuthUser();
+  const { user } = useAuthUser();
   const hasPermission = useMemo(
     () => checkPermission(item.permittedRole, user.role),
     [item.permittedRole, user.role],
@@ -77,7 +77,11 @@ const VerticalCollapse = ({item, level}) => {
       >
         {item.icon && (
           <Box component='span'>
-            <Icon sx={{mr: 4}} color='action' className={clsx('nav-item-icon')}>
+            <Icon
+              sx={{ mr: 4 }}
+              color='action'
+              className={clsx('nav-item-icon')}
+            >
               {item.icon}
             </Icon>
           </Box>
@@ -90,12 +94,12 @@ const VerticalCollapse = ({item, level}) => {
             fontSize: 14,
           }}
           className='nav-item-content'
-          classes={{primary: clsx('nav-item-text')}}
+          classes={{ primary: clsx('nav-item-text') }}
           primary={<IntlMessages id={item.messageId} />}
         />
         <IconButton
           className='nav-item-icon-arrow-btn'
-          sx={{p: 0, mr: 0.75}}
+          sx={{ p: 0, mr: 0.75 }}
           disableRipple
           size='large'
         >

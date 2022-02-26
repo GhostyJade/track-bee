@@ -8,20 +8,20 @@ import {
   onDeleteSelectedTasks,
   onUpdateTaskLabels,
 } from '../../../../../redux/actions';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import AppsDeleteIcon from '@crema/core/AppsDeleteIcon';
 import PropTypes from 'prop-types';
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import AppTooltip from '@crema/core/AppTooltip';
-import {StyledBox} from './index.style';
+import { StyledBox } from './index.style';
 
-const CheckedTasksActions = ({checkedTasks, setCheckedTasks, page}) => {
-  const {folder, label} = useParams();
+const CheckedTasksActions = ({ checkedTasks, setCheckedTasks, page }) => {
+  const { folder, label } = useParams();
   const dispatch = useDispatch();
   const [isLabelOpen, onOpenLabel] = React.useState(null);
 
-  const labelList = useSelector(({todoApp}) => todoApp.labelList);
+  const labelList = useSelector(({ todoApp }) => todoApp.labelList);
 
   const onLabelOpen = (event) => {
     onOpenLabel(event.currentTarget);
@@ -91,7 +91,7 @@ const CheckedTasksActions = ({checkedTasks, setCheckedTasks, page}) => {
           return (
             <MenuItem
               key={label.id}
-              sx={{p: '8px !important'}}
+              sx={{ p: '8px !important' }}
               value={label.id}
               onClick={onSelectLabel}
             >

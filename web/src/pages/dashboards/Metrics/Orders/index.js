@@ -1,16 +1,16 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import OrdersGraph from './OrdersGraph';
 import IntlMessages from '@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import AppCard from '@crema/core/AppCard';
 import AppSelect from '@crema/core/AppSelect';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 
-const Orders = ({data}) => {
+const Orders = ({ data }) => {
   const [graphData, setGraphData] = useState(data.graphData.dataTwo);
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   const handleWeekChange = (value) => {
     switch (value) {
@@ -42,7 +42,7 @@ const Orders = ({data}) => {
         },
       }}
       title={messages['common.orders']}
-      titleStyle={{color: '#FFFFFF'}}
+      titleStyle={{ color: '#FFFFFF' }}
       action={
         <AppSelect
           menus={[

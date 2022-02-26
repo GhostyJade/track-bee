@@ -2,12 +2,12 @@ import React from 'react';
 import AppCard from '@crema/core/AppCard';
 import AppList from '@crema/core/AppList';
 import Box from '@mui/material/Box';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 //import {timeFromNow} from '@crema/utility/utils';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 
-const NotificationItem = ({notification}) => {
+const NotificationItem = ({ notification }) => {
   return (
     <Box
       sx={{
@@ -74,13 +74,13 @@ NotificationItem.propTypes = {
   notification: PropTypes.object,
 };
 
-const Notifications = ({notifications}) => {
-  const {messages} = useIntl();
+const Notifications = ({ notifications }) => {
+  const { messages } = useIntl();
   return (
     <AppCard
-      sxStyle={{height: 1}}
+      sxStyle={{ height: 1 }}
       title={messages['academy.notifications']}
-      contentStyle={{px: 0}}
+      contentStyle={{ px: 0 }}
     >
       <AppList
         animation='transition.slideRightBigIn'

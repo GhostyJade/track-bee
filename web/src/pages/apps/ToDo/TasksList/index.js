@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   onGetTaskList,
   onUpdateSelectedTask,
@@ -7,9 +7,9 @@ import {
 } from '../../../../redux/actions';
 import TaskContentHeader from './TaskContentHeader';
 import TaskListItem from './TaskListItem';
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import AddNewTask from '../AddNewTask';
-import {Hidden} from '@mui/material';
+import { Hidden } from '@mui/material';
 import AppsPagination from '@crema/core/AppsPagination';
 import AppsHeader from '@crema/core/AppsContainer/AppsHeader';
 import AppsContent from '@crema/core/AppsContainer/AppsContent';
@@ -27,15 +27,15 @@ export const ViewMode = {
 const TasksList = () => {
   const dispatch = useDispatch();
 
-  const {folder, label} = useParams();
+  const { folder, label } = useParams();
 
-  const taskList = useSelector(({todoApp}) => todoApp.taskList);
+  const taskList = useSelector(({ todoApp }) => todoApp.taskList);
 
-  const totalTasks = useSelector(({todoApp}) => todoApp.totalTasks);
+  const totalTasks = useSelector(({ todoApp }) => todoApp.totalTasks);
 
-  const labelList = useSelector(({todoApp}) => todoApp.labelList);
+  const labelList = useSelector(({ todoApp }) => todoApp.labelList);
 
-  const loading = useSelector(({common}) => common.loading);
+  const loading = useSelector(({ common }) => common.loading);
 
   const [filterText, onSetFilterText] = useState('');
   const [viewMode, setViewMode] = useState(ViewMode.List);

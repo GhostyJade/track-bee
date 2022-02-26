@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import React, {memo} from 'react';
-import {VelocityTransitionGroup} from 'velocity-react';
+import React, { memo } from 'react';
+import { VelocityTransitionGroup } from 'velocity-react';
 import 'velocity-animate/velocity.ui';
 
 const enterAnimationDefaults = {
@@ -21,12 +21,12 @@ const leaveAnimationDefaults = {
   delay: 0,
 };
 
-function AppAnimateGroup({...props}) {
+function AppAnimateGroup({ ...props }) {
   return (
     <VelocityTransitionGroup
       {...props}
-      enter={{...enterAnimationDefaults, ...props.enter}}
-      leave={{...leaveAnimationDefaults, ...props.leave}}
+      enter={{ ...enterAnimationDefaults, ...props.enter }}
+      leave={{ ...leaveAnimationDefaults, ...props.leave }}
     />
   );
 }

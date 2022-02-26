@@ -1,8 +1,8 @@
 import React from 'react';
 import Checkbox from '@mui/material/Checkbox/index';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import Box from '@mui/material/Box';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import AppSearchBar from '@crema/core/AppSearchBar';
 import PropTypes from 'prop-types';
 import SelectTasksDropdown from './SelectTasksDropdown';
@@ -23,9 +23,9 @@ const TaskContentHeader = (props) => {
     page,
   } = props;
 
-  const taskList = useSelector(({todoApp}) => todoApp.taskList);
+  const taskList = useSelector(({ todoApp }) => todoApp.taskList);
 
-  const totalTasks = useSelector(({todoApp}) => todoApp.totalTasks);
+  const totalTasks = useSelector(({ todoApp }) => todoApp.totalTasks);
 
   const onHandleMasterCheckbox = (event) => {
     if (event.target.checked) {
@@ -62,7 +62,7 @@ const TaskContentHeader = (props) => {
     }
   };
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
     <>
@@ -88,7 +88,7 @@ const TaskContentHeader = (props) => {
             onChange={onHandleMasterCheckbox}
           />
         </span>
-        <Box sx={{mr: 3}}>
+        <Box sx={{ mr: 3 }}>
           <AppSearchBar
             iconPosition='right'
             overlap={false}
@@ -105,7 +105,7 @@ const TaskContentHeader = (props) => {
           <Box
             component='span'
             sx={{
-              mr: {sm: 4},
+              mr: { sm: 4 },
               display: 'flex',
             }}
           >
@@ -120,7 +120,7 @@ const TaskContentHeader = (props) => {
 
       <Box
         sx={{
-          mr: {xs: 3, xl: 4},
+          mr: { xs: 3, xl: 4 },
         }}
       >
         <ViewSelectButtons

@@ -1,14 +1,14 @@
 import React from 'react';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import AppCard from '@crema/core/AppCard';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
 import VisitsGraph from './VisitsGraph';
 import AppMenu from '@crema/core/AppMenu';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 
-const CancelVisits = ({data}) => {
-  const {messages} = useIntl();
+const CancelVisits = ({ data }) => {
+  const { messages } = useIntl();
 
   return (
     <AppCard

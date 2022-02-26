@@ -16,7 +16,7 @@ export default function CustomDateRangeInputs() {
         renderInput={(startProps, endProps) => (
           <React.Fragment>
             <input ref={startProps.inputRef} {...startProps.inputProps} />
-            <Box sx={{mx: 1}}> to </Box>
+            <Box sx={{ mx: 1 }}> to </Box>
             <input ref={endProps.inputRef} {...endProps.inputProps} />
           </React.Fragment>
         )}

@@ -1,22 +1,22 @@
-import React, {useEffect} from 'react';
-import {Box, Grid} from '@mui/material';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { useEffect } from 'react';
+import { Box, Grid } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
 import Button from '@mui/material/Button';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-import {AppGridContainer} from '../../../@crema';
+import { AppGridContainer } from '../../../@crema';
 import CartTable from './CartTable';
 import AppCard from '../../../@crema/core/AppCard';
 import IntlMessages from '../../../@crema/utility/IntlMessages';
-import {Fonts} from '../../../shared/constants/AppEnums';
-import {getCartItems} from '../../../redux/actions';
+import { Fonts } from '../../../shared/constants/AppEnums';
+import { getCartItems } from '../../../redux/actions';
 import OrderSummary from '../OrderSummary';
 import AppAnimate from '../../../@crema/core/AppAnimate';
 
 const Carts = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const cartItems = useSelector(({ecommerce}) => ecommerce.cartItems);
+  const cartItems = useSelector(({ ecommerce }) => ecommerce.cartItems);
 
   useEffect(() => {
     dispatch(getCartItems());
@@ -39,7 +39,7 @@ const Carts = () => {
         <AppGridContainer>
           <Grid item xs={12} md={8}>
             <AppCard
-              contentStyle={{px: 0}}
+              contentStyle={{ px: 0 }}
               footer={
                 <Box
                   sx={{

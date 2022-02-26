@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import PropsTypes from 'prop-types';
 
-const AuthWrapper = ({children}) => {
+const AuthWrapper = ({ children }) => {
   return (
     <Box
       sx={{

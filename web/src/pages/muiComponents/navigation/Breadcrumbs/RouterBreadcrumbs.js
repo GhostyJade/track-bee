@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
-import {Link as RouterLink, Route, MemoryRouter} from 'react-router-dom';
+import { Link as RouterLink, Route, MemoryRouter } from 'react-router-dom';
 
 const breadcrumbNameMap = {
   '/inbox': 'Inbox',
@@ -21,7 +21,7 @@ const breadcrumbNameMap = {
 };
 
 function ListItemLink(props) {
-  const {to, open, ...other} = props;
+  const { to, open, ...other } = props;
   const primary = breadcrumbNameMap[to];
 
   let icon = null;
@@ -55,9 +55,9 @@ export default function RouterBreadcrumbs() {
 
   return (
     <MemoryRouter initialEntries={['/inbox']} initialIndex={0}>
-      <Box sx={{display: 'flex', flexDirection: 'column', width: 360}}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', width: 360 }}>
         <Route>
-          {({location}) => {
+          {({ location }) => {
             const pathnames = location.pathname.split('/').filter((x) => x);
 
             return (
@@ -100,7 +100,7 @@ export default function RouterBreadcrumbs() {
             <ListItemLink to='/inbox' open={open} onClick={handleClick} />
             <Collapse component='li' in={open} timeout='auto' unmountOnExit>
               <List disablePadding>
-                <ListItemLink sx={{pl: 4}} to='/inbox/important' />
+                <ListItemLink sx={{ pl: 4 }} to='/inbox/important' />
               </List>
             </Collapse>
             <ListItemLink to='/trash' />

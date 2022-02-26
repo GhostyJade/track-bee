@@ -2,12 +2,12 @@ import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
-import {green, red} from '@mui/material/colors';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { green, red } from '@mui/material/colors';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import AppCard from '../../../../@crema/core/AppCard';
 
 const CoinStats = (props) => {
-  const {icon, bgColor, data, heading} = props;
+  const { icon, bgColor, data, heading } = props;
 
   return (
     <AppCard
@@ -26,9 +26,9 @@ const CoinStats = (props) => {
         <Avatar
           sx={{
             p: 3,
-            fontSize: {xs: 30, md: 48},
-            height: {xs: 46, md: 50, xl: 60},
-            width: {xs: 46, md: 50, xl: 60},
+            fontSize: { xs: 30, md: 48 },
+            height: { xs: 46, md: 50, xl: 60 },
+            width: { xs: 46, md: 50, xl: 60 },
             backgroundColor: bgColor,
           }}
         >

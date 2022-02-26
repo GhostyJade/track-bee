@@ -3,13 +3,13 @@ import AppCard from '@crema/core/AppCard';
 import Box from '@mui/material/Box';
 
 import Avatar from '@mui/material/Avatar';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 
-import {BiBasket} from 'react-icons/bi';
-import {FcGraduationCap} from 'react-icons/fc';
-import {GiBookshelf} from 'react-icons/gi';
-import {FcReading} from 'react-icons/fc';
+import { BiBasket } from 'react-icons/bi';
+import { FcGraduationCap } from 'react-icons/fc';
+import { GiBookshelf } from 'react-icons/gi';
+import { FcReading } from 'react-icons/fc';
 
 const getIcon = (iconType) => {
   switch (iconType) {
@@ -24,9 +24,9 @@ const getIcon = (iconType) => {
   }
 };
 
-const GeneralStats = ({stats}) => {
+const GeneralStats = ({ stats }) => {
   return (
-    <AppCard sxStyle={{height: 1}} className='card-hover'>
+    <AppCard sxStyle={{ height: 1 }} className='card-hover'>
       <Box
         sx={{
           display: 'flex',
@@ -40,8 +40,8 @@ const GeneralStats = ({stats}) => {
         >
           <Avatar
             sx={{
-              width: {xs: 46, lg: 54, xl: 60},
-              height: {xs: 46, lg: 54, xl: 60},
+              width: { xs: 46, lg: 54, xl: 60 },
+              height: { xs: 46, lg: 54, xl: 60 },
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -64,7 +64,7 @@ const GeneralStats = ({stats}) => {
             },
           }}
         >
-          <Box sx={{overflow: 'hidden'}}>
+          <Box sx={{ overflow: 'hidden' }}>
             <Box component='h3'>{stats.count}</Box>
             <Box
               component='p'

@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
-import {useDispatch} from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import ChatSideBar from './ChatSideBar';
 import ChatContent from './ChatContent';
-import {getConnectionList} from '../../../redux/actions';
-import {useIntl} from 'react-intl';
+import { getConnectionList } from '../../../redux/actions';
+import { useIntl } from 'react-intl';
 import AppsContainer from '@crema/core/AppsContainer';
 
 const Chat = () => {
@@ -13,7 +13,7 @@ const Chat = () => {
     dispatch(getConnectionList());
   }, [dispatch]);
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
   return (
     <AppsContainer
       title={messages['chatApp.chat'].toString()}

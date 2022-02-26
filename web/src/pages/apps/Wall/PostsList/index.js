@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetPostsList} from '../../../../redux/actions/Wall';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { onGetPostsList } from '../../../../redux/actions/Wall';
 import AppList from '@crema/core/AppList';
 import PostItem from './PostItem';
 
@@ -11,8 +11,8 @@ const PostsList = () => {
     dispatch(onGetPostsList());
   }, [dispatch]);
 
-  const postList = useSelector(({wall}) => wall.postList);
-  const wallData = useSelector(({wall}) => wall.wallData);
+  const postList = useSelector(({ wall }) => wall.postList);
+  const wallData = useSelector(({ wall }) => wall.wallData);
 
   return (
     <AppList

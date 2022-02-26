@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {Formik} from 'formik';
+import React, { useEffect, useState } from 'react';
+import { Formik } from 'formik';
 import * as yup from 'yup';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
   onCreateContact,
   onUpdateSelectedContact,
@@ -23,8 +23,12 @@ const validationSchema = yup.object({
 });
 
 const CreateContact = (props) => {
-  const {isAddContact, handleAddContactClose, selectContact, onUpdateContact} =
-    props;
+  const {
+    isAddContact,
+    handleAddContactClose,
+    selectContact,
+    onUpdateContact,
+  } = props;
   const dispatch = useDispatch();
 
   const [userImage, setUserImage] = useState(
@@ -76,7 +80,7 @@ const CreateContact = (props) => {
             selectContact && selectContact.label ? selectContact.label : '',
         }}
         validationSchema={validationSchema}
-        onSubmit={(data, {setSubmitting, resetForm}) => {
+        onSubmit={(data, { setSubmitting, resetForm }) => {
           setSubmitting(true);
           if (selectContact) {
             const newContact = {
@@ -103,7 +107,7 @@ const CreateContact = (props) => {
           setSubmitting(false);
         }}
       >
-        {({values, setFieldValue}) => (
+        {({ values, setFieldValue }) => (
           <AddContactForm
             setUserImage={setUserImage}
             userImage={userImage}

@@ -3,12 +3,12 @@ import Box from '@mui/material/Box';
 import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
-import {useDispatch} from 'react-redux';
-import {onUpdatePostStatus} from '../../../../../redux/actions/Wall';
+import { useDispatch } from 'react-redux';
+import { onUpdatePostStatus } from '../../../../../redux/actions/Wall';
 import PropTypes from 'prop-types';
-import {Fonts} from 'shared/constants/AppEnums';
+import { Fonts } from 'shared/constants/AppEnums';
 
-const PostStats = ({post}) => {
+const PostStats = ({ post }) => {
   const dispatch = useDispatch();
 
   const toggleLikeStatus = () => {
@@ -17,7 +17,7 @@ const PostStats = ({post}) => {
 
   return (
     <Box
-      mb={{xs: 4, xl: 6}}
+      mb={{ xs: 4, xl: 6 }}
       fontWeight={Fonts.MEDIUM}
       color='text.secondary'
       display='flex'
@@ -36,7 +36,7 @@ const PostStats = ({post}) => {
             fontSize: 18,
           }}
         />
-        <Box fontSize={{xs: 12, md: 14}} component='span' ml={1.5}>
+        <Box fontSize={{ xs: 12, md: 14 }} component='span' ml={1.5}>
           {post.likes} likes
         </Box>
       </Box>
@@ -47,7 +47,7 @@ const PostStats = ({post}) => {
               fontSize: 18,
             }}
           />
-          <Box fontSize={{xs: 12, md: 14}} component='span' ml={1.5}>
+          <Box fontSize={{ xs: 12, md: 14 }} component='span' ml={1.5}>
             {post.comments.length} Comments
           </Box>
         </Box>
@@ -58,7 +58,7 @@ const PostStats = ({post}) => {
             fontSize: 18,
           }}
         />
-        <Box fontSize={{xs: 12, md: 14}} component='span' ml={1.5}>
+        <Box fontSize={{ xs: 12, md: 14 }} component='span' ml={1.5}>
           {post.shares} Shares
         </Box>
       </Box>

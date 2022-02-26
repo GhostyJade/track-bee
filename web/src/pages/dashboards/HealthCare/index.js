@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetHCData} from '../../../redux/actions';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { onGetHCData } from '../../../redux/actions';
 import AppInfoView from '@crema/core/AppInfoView';
-import {Grid} from '@mui/material';
+import { Grid } from '@mui/material';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import DrCard from './DrCard';
 import AppAnimate from '@crema/core/AppAnimate';
@@ -28,7 +28,7 @@ const HealthCare = () => {
     dispatch(onGetHCData());
   }, [dispatch]);
 
-  const {healthCare} = useSelector(({dashboard}) => dashboard);
+  const { healthCare } = useSelector(({ dashboard }) => dashboard);
 
   return (
     <>

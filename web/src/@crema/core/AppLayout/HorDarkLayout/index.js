@@ -4,15 +4,15 @@ import AppContentView from '@crema/core/AppContentView';
 import AppFixedFooter from './AppFixedFooter';
 import AppHeader from './AppHeader';
 import AppSidebar from './AppSidebar';
-import {useLayoutContext} from '../../../utility/AppContextProvider/LayoutContextProvider';
+import { useLayoutContext } from '../../../utility/AppContextProvider/LayoutContextProvider';
 import AppThemeSetting from '../../AppThemeSetting';
 import HorDarkWrapper from './HorDarkWrapper';
 import MainContent from './MainContent';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
+import { LayoutType } from '../../../../shared/constants/AppEnums';
 import HorDarkContainer from './HorDarkContainer';
 
 const HorDarkLayout = () => {
-  const {footer, layoutType, footerType} = useLayoutContext();
+  const { footer, layoutType, footerType } = useLayoutContext();
 
   return (
     <HorDarkContainer

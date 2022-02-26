@@ -3,11 +3,11 @@ import Box from '@mui/material/Box';
 import StaticsGraph from './StaticsGraph';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import AppCard from '@crema/core/AppCard';
 import PropTypes from 'prop-types';
 
-const ReportCard = ({data}) => {
+const ReportCard = ({ data }) => {
   return (
     <AppCard className='card-hover'>
       <Box
@@ -58,9 +58,9 @@ const ReportCard = ({data}) => {
             color={data.strokeColor}
           >
             {data.growth > 0 ? (
-              <ArrowUpwardIcon style={{color: data.strokeColor}} />
+              <ArrowUpwardIcon style={{ color: data.strokeColor }} />
             ) : (
-              <ArrowDownwardIcon style={{color: data.strokeColor}} />
+              <ArrowDownwardIcon style={{ color: data.strokeColor }} />
             )}
             {data.growth}
           </Box>

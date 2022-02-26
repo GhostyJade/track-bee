@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   onAddNewList,
   onDeleteSelectedList,
@@ -7,7 +7,7 @@ import {
 } from '../../../../redux/actions';
 import AddCard from './List/AddCard';
 import AppsContent from '@crema/core/AppsContainer/AppsContent';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Board from 'react-trello';
 import CardDetail from './List/CardDetail';
 import ListHeader from './List/ListHeader';
@@ -15,9 +15,9 @@ import AddCardButton from './List/AddCardButton';
 import AddNewList from './AddNewList';
 import NewListButton from './NewListButton';
 import PropTypes from 'prop-types';
-import {Box, useTheme} from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 
-const BoardWrapper = ({children}) => {
+const BoardWrapper = ({ children }) => {
   return (
     <Box
       sx={{
@@ -44,7 +44,7 @@ const BoardDetailView = (props) => {
   const [isAddCardOpen, setAddCardOpen] = useState(false);
 
   const [selectedCard, setSelectedCard] = useState(null);
-  const {boardDetail} = props;
+  const { boardDetail } = props;
 
   const getBoardData = useCallback(() => {
     return {
@@ -74,7 +74,7 @@ const BoardDetailView = (props) => {
   };
 
   const onAddList = (name) => {
-    dispatch(onAddNewList(boardDetail.id, {name}));
+    dispatch(onAddNewList(boardDetail.id, { name }));
   };
 
   const getCardById = (lane, cardId) =>
@@ -151,7 +151,7 @@ const BoardDetailView = (props) => {
         onLaneUpdate={(laneId, data) => {
           const lane = boardData.lanes.find((item) => item.id === laneId);
           dispatch(
-            onEditBoardList(boardDetail.id, {...lane, name: data.title}),
+            onEditBoardList(boardDetail.id, { ...lane, name: data.title }),
           );
         }}
         onLaneDelete={(laneId) =>

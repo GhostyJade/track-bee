@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   auth,
@@ -7,7 +7,7 @@ import {
   googleAuthProvider,
   twitterAuthProvider,
 } from './firebase';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
   FETCH_ERROR,
   FETCH_START,
@@ -21,7 +21,7 @@ export const useFirebase = () => useContext(FirebaseContext);
 
 export const useFirebaseActions = () => useContext(FirebaseActionsContext);
 
-const FirebaseAuthProvider = ({children}) => {
+const FirebaseAuthProvider = ({ children }) => {
   const [firebaseData, setFirebaseData] = useState({
     user: undefined,
     isLoading: true,
@@ -79,44 +79,47 @@ const FirebaseAuthProvider = ({children}) => {
   };
 
   const signInWithPopup = async (providerName) => {
-    dispatch({type: FETCH_START});
+    dispatch({ type: FETCH_START });
     try {
-      const {user} = await auth.signInWithPopup(getProvider(providerName));
+      const { user } = await auth.signInWithPopup(getProvider(providerName));
       setFirebaseData({
         user,
         isAuthenticated: true,
         isLoading: false,
       });
-      dispatch({type: FETCH_SUCCESS});
+      dispatch({ type: FETCH_SUCCESS });
     } catch (error) {
       setFirebaseData({
         ...firebaseData,
         isAuthenticated: false,
         isLoading: false,
       });
-      dispatch({type: FETCH_ERROR, payload: error.message});
+      dispatch({ type: FETCH_ERROR, payload: error.message });
     }
   };
 
-  const signInWithEmailAndPassword = async ({email, password}) => {
-    dispatch({type: FETCH_START});
+  const signInWithEmailAndPassword = async ({ email, password }) => {
+    dispatch({ type: FETCH_START });
     try {
-      const {user} = await auth.signInWithEmailAndPassword(email, password);
-      setFirebaseData({user, isAuthenticated: true, isLoading: false});
-      dispatch({type: FETCH_SUCCESS});
+      const { user } = await auth.signInWithEmailAndPassword(email, password);
+      setFirebaseData({ user, isAuthenticated: true, isLoading: false });
+      dispatch({ type: FETCH_SUCCESS });
     } catch (error) {
       setFirebaseData({
         ...firebaseData,
         isAuthenticated: false,
         isLoading: false,
       });
-      dispatch({type: FETCH_ERROR, payload: error.message});
+      dispatch({ type: FETCH_ERROR, payload: error.message });
     }
   };
-  const createUserWithEmailAndPassword = async ({name, email, password}) => {
-    dispatch({type: FETCH_START});
+  const createUserWithEmailAndPassword = async ({ name, email, password }) => {
+    dispatch({ type: FETCH_START });
     try {
-      const {user} = await auth.createUserWithEmailAndPassword(email, password);
+      const { user } = await auth.createUserWithEmailAndPassword(
+        email,
+        password,
+      );
       await auth.currentUser.sendEmailVerification({
         url: window.location.href,
         handleCodeInApp: true,
@@ -125,23 +128,23 @@ const FirebaseAuthProvider = ({children}) => {
         displayName: name,
       });
       setFirebaseData({
-        user: {...user, displayName: name},
+        user: { ...user, displayName: name },
         isAuthenticated: true,
         isLoading: false,
       });
-      dispatch({type: FETCH_SUCCESS});
+      dispatch({ type: FETCH_SUCCESS });
     } catch (error) {
       setFirebaseData({
         ...firebaseData,
         isAuthenticated: false,
         isLoading: false,
       });
-      dispatch({type: FETCH_ERROR, payload: error.message});
+      dispatch({ type: FETCH_ERROR, payload: error.message });
     }
   };
 
   const logout = async () => {
-    setFirebaseData({...firebaseData, isLoading: true});
+    setFirebaseData({ ...firebaseData, isLoading: true });
     try {
       await auth.signOut();
       setFirebaseData({

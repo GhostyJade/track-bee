@@ -4,12 +4,12 @@ import Tab from '@mui/material/Tab';
 import TabForm from './TabForm';
 import IntlMessages from '../../../../@crema/utility/IntlMessages';
 import PropTypes from 'prop-types';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import AppCard from '../../../../@crema/core/AppCard';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 
 const BuySell = (props) => {
-  const {buySell} = props;
+  const { buySell } = props;
 
   const [value, setValue] = React.useState(0);
 
@@ -23,9 +23,9 @@ const BuySell = (props) => {
       'aria-controls': `simple-tabpanel-${index}`,
     };
   };
-  const {messages} = useIntl();
+  const { messages } = useIntl();
   return (
-    <AppCard sxStyle={{height: 1}} footer={messages['dashboard.buyNow']}>
+    <AppCard sxStyle={{ height: 1 }} footer={messages['dashboard.buyNow']}>
       <Tabs
         value={value}
         onChange={handleChange}
@@ -35,12 +35,12 @@ const BuySell = (props) => {
         sx={{
           position: 'relative',
           mt: -2,
-          ml: {xs: -2, xl: -5},
+          ml: { xs: -2, xl: -5 },
           '& .muiTab': {
             fontSize: 16,
             textTransform: 'capitalize',
             padding: 0,
-            mx: {xs: 2, xl: 5},
+            mx: { xs: 2, xl: 5 },
             minWidth: 10,
             fontWeight: Fonts.BOLD,
           },

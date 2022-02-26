@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {makeStyles} from '@mui/styles';
-import {DataGrid, useGridApiContext, useGridState} from '@mui/x-data-grid';
-import {useDemoData} from '@mui/x-data-grid-generator';
+import { makeStyles } from '@mui/styles';
+import { DataGrid, useGridApiContext, useGridState } from '@mui/x-data-grid';
+import { useDemoData } from '@mui/x-data-grid-generator';
 import Pagination from '@mui/material/Pagination';
 
 const useStyles = makeStyles({
@@ -27,14 +27,14 @@ function CustomPagination() {
 }
 
 export default function CustomPaginationGrid() {
-  const {data} = useDemoData({
+  const { data } = useDemoData({
     dataSet: 'Commodity',
     rowLength: 100,
     maxColumns: 6,
   });
 
   return (
-    <div style={{height: 400, width: '100%'}}>
+    <div style={{ height: 400, width: '100%' }}>
       <DataGrid
         pagination
         pageSize={5}

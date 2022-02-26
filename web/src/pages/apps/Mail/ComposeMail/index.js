@@ -1,26 +1,26 @@
-import React, {useState} from 'react';
-import {Form, Formik} from 'formik';
+import React, { useState } from 'react';
+import { Form, Formik } from 'formik';
 import * as yup from 'yup';
-import {onComposeMail} from '../../../../redux/actions';
-import {useDispatch} from 'react-redux';
+import { onComposeMail } from '../../../../redux/actions';
+import { useDispatch } from 'react-redux';
 import moment from 'moment';
-import {useLocation} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Chip from '@mui/material/Chip';
 import IntlMessages from '@crema/utility/IntlMessages';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
-import {AppInfoView} from '@crema';
+import { AppInfoView } from '@crema';
 import Button from '@mui/material/Button';
-import {useAuthUser} from '@crema/utility/AuthHooks';
+import { useAuthUser } from '@crema/utility/AuthHooks';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
 import AppDialog from '../../../../@crema/core/AppDialog';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import {blue} from '@mui/material/colors';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { blue } from '@mui/material/colors';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
 const ReactQuillWrapper = styled(ReactQuill)(() => {
   return {
@@ -67,10 +67,10 @@ const validationSchema = yup.object({
 });
 
 const ComposeMail = (props) => {
-  const {isComposeMail, onCloseComposeMail} = props;
+  const { isComposeMail, onCloseComposeMail } = props;
   const dispatch = useDispatch();
 
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
   const [isShowBcc, onShowBcc] = useState(false);
 
@@ -84,9 +84,9 @@ const ComposeMail = (props) => {
     }
   };
 
-  const {user} = useAuthUser();
+  const { user } = useAuthUser();
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
     <AppDialog
@@ -113,7 +113,7 @@ const ComposeMail = (props) => {
           content: '',
         }}
         validationSchema={validationSchema}
-        onSubmit={(data, {setSubmitting, resetForm}) => {
+        onSubmit={(data, { setSubmitting, resetForm }) => {
           const mail = {
             id: Math.floor(Math.random()) * 1000,
             isChecked: false,
@@ -160,7 +160,7 @@ const ComposeMail = (props) => {
           setSubmitting(false);
         }}
       >
-        {({isSubmitting, values, setFieldValue}) => (
+        {({ isSubmitting, values, setFieldValue }) => (
           <Form
             style={{
               width: '100%',

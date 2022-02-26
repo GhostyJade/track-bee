@@ -1,5 +1,5 @@
 import React from 'react';
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import TableHead from '@mui/material/TableHead';
 import TableBody from '@mui/material/TableBody';
 import invoiceData from '../../../../@crema/services/db/extraPages/invoice/invoiceData';

@@ -5,13 +5,13 @@ import {
   StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material/styles';
-import {useThemeContext} from '../AppContextProvider/ThemeContextProvider';
+import { useThemeContext } from '../AppContextProvider/ThemeContextProvider';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import {responsiveFontSizes} from '@mui/material';
+import { responsiveFontSizes } from '@mui/material';
 
 const AppThemeProvider = (props) => {
-  const {theme} = useThemeContext();
+  const { theme } = useThemeContext();
 
   return (
     <StyledEngineProvider injectFirst>

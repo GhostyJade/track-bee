@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import Introduction from './Introduction';
 import Team from './Team';
-import {aboutUsData} from '../../../@crema/services/db/extraPages/aboutUs';
+import { aboutUsData } from '../../../@crema/services/db/extraPages/aboutUs';
 import Sections from './Sections';
 import Box from '@mui/material/Box';
 import AppAnimate from '../../../@crema/core/AppAnimate';

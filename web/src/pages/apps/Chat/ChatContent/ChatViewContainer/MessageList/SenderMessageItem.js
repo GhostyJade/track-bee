@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
@@ -9,18 +9,18 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import EditIcon from '@mui/icons-material/Edit';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import IntlMessages from '@crema/utility/IntlMessages';
-import {MessageType} from '@crema/services/db/apps/chat/connectionList';
-import {getFileSize} from '@crema/utility/helper/Utils';
+import { MessageType } from '@crema/services/db/apps/chat/connectionList';
+import { getFileSize } from '@crema/utility/helper/Utils';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import IconButton from '@mui/material/IconButton';
 import MediaViewer from '@crema/core/AppMedialViewer';
-import {orange} from '@mui/material/colors';
-import {alpha} from '@mui/material';
-import {Fonts} from '../../../../../../shared/constants/AppEnums';
+import { orange } from '@mui/material/colors';
+import { alpha } from '@mui/material';
+import { Fonts } from '../../../../../../shared/constants/AppEnums';
 
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
-const SenderMessageWrapper = styled('div')(({theme}) => {
+const SenderMessageWrapper = styled('div')(({ theme }) => {
   return {
     mt: 5.5,
     display: 'flex',
@@ -64,7 +64,7 @@ const SenderMessageWrapper = styled('div')(({theme}) => {
   };
 });
 
-const VideoWrapper = styled('div')(({theme}) => {
+const VideoWrapper = styled('div')(({ theme }) => {
   return {
     position: 'relative',
     width: 56,
@@ -91,7 +91,7 @@ const VideoWrapper = styled('div')(({theme}) => {
     },
   };
 });
-const MessageChat = styled('div')(({theme}) => {
+const MessageChat = styled('div')(({ theme }) => {
   return {
     display: 'inline-flex',
     border: `solid 1px ${theme.palette.grey[200]}`,
@@ -167,10 +167,10 @@ const getMediaMessage = (item) => {
             ml: 2,
           }}
         >
-          <Box component='span' sx={{display: 'block'}}>
+          <Box component='span' sx={{ display: 'block' }}>
             {item.file_name}
           </Box>
-          <Box component='span' sx={{display: 'block'}}>
+          <Box component='span' sx={{ display: 'block' }}>
             {getFileSize(item.file_size)}
           </Box>
         </Box>

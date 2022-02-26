@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import {GoogleMap, TrafficLayer, withGoogleMap} from 'react-google-maps';
+import React, { Component } from 'react';
+import { GoogleMap, TrafficLayer, withGoogleMap } from 'react-google-maps';
 import '../../../../shared/vendors/maps.css';
 
 const TrafficLayerExampleGoogleMap = withGoogleMap(() => (
   <GoogleMap
     defaultZoom={15}
-    defaultCenter={{lat: 47.646935, lng: -122.303763}}
+    defaultCenter={{ lat: 47.646935, lng: -122.303763 }}
   >
     <TrafficLayer autoUpdate />
   </GoogleMap>

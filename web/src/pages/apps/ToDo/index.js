@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import TaskSideBar from './TaskSideBar/index';
 import TasksList from './TasksList';
 import TaskDetail from './TaskDetail';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
   onGetToDoFolderList,
   onGetToDoLabelList,
@@ -11,15 +11,15 @@ import {
   onGetToDoStatusList,
 } from '../../../redux/actions';
 import PropTypes from 'prop-types';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import AppsContainer from '@crema/core/AppsContainer';
 import clsx from 'clsx';
-import {useParams} from 'react-router-dom';
-import {Box} from '@mui/material';
+import { useParams } from 'react-router-dom';
+import { Box } from '@mui/material';
 
 const ToDo = () => {
   const dispatch = useDispatch();
-  const {id} = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     dispatch(onGetToDoLabelList());
@@ -41,7 +41,7 @@ const ToDo = () => {
     dispatch(onGetToDoStatusList());
   }, [dispatch]);
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
   return (
     <AppsContainer
       title={messages['todo.todoApp']}

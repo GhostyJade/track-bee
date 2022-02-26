@@ -1,11 +1,11 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
-import {Box, alpha} from '@mui/material';
-import {useSidebarContext} from '../../../../../utility/AppContextProvider/SidebarContextProvider';
-import {ThemeMode} from '../../../../../../shared/constants/AppEnums';
+import { Box, alpha } from '@mui/material';
+import { useSidebarContext } from '../../../../../utility/AppContextProvider/SidebarContextProvider';
+import { ThemeMode } from '../../../../../../shared/constants/AppEnums';
 
-const BucketMinibarWrapper = ({children, ...rest}) => {
-  const {sidebarBgColor, mode, sidebarTextColor} = useSidebarContext();
+const BucketMinibarWrapper = ({ children, ...rest }) => {
+  const { sidebarBgColor, mode, sidebarTextColor } = useSidebarContext();
 
   return (
     <Box

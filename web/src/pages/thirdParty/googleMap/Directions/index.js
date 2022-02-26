@@ -1,5 +1,9 @@
-import React, {Component} from 'react';
-import {DirectionsRenderer, GoogleMap, withGoogleMap} from 'react-google-maps';
+import React, { Component } from 'react';
+import {
+  DirectionsRenderer,
+  GoogleMap,
+  withGoogleMap,
+} from 'react-google-maps';
 import '../../../../shared/vendors/maps.css';
 const google = window.google;
 

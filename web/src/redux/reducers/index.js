@@ -1,5 +1,5 @@
-import {combineReducers} from 'redux';
-import {connectRouter} from 'connected-react-router';
+import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
 import Settings from './Setting';
 import Common from './Common';
 import Dashboard from './Dashboard';

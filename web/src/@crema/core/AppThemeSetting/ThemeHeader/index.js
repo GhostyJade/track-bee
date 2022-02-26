@@ -1,23 +1,23 @@
 import React from 'react';
-import {CustomizerItemWrapper} from '../index.style';
+import { CustomizerItemWrapper } from '../index.style';
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-import {HeaderType} from '../../../../shared/constants/AppEnums';
+import { HeaderType } from '../../../../shared/constants/AppEnums';
 import {
   useLayoutActionsContext,
   useLayoutContext,
 } from '../../../utility/AppContextProvider/LayoutContextProvider';
 
 const ThemeHeader = () => {
-  const {headerType} = useLayoutContext();
-  const {setHeaderType} = useLayoutActionsContext();
+  const { headerType } = useLayoutContext();
+  const { setHeaderType } = useLayoutActionsContext();
 
   return (
     <CustomizerItemWrapper>
-      <Box sx={{display: 'flex', alignItems: 'center', mb: 4}}>
+      <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
         <Box component='h4'>Header</Box>
       </Box>
       <FormControl

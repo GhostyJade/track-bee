@@ -1,8 +1,8 @@
 import React from 'react';
-import {Redirect, Route} from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 
 import _extends from '@babel/runtime/helpers/esm/extends';
-import {authRole, RoutePermittedRole} from 'shared/constants/AppConst';
+import { authRole, RoutePermittedRole } from 'shared/constants/AppConst';
 
 /**
  * @param {Object} structure - The passed object that defines the routes.
@@ -72,7 +72,7 @@ const routesGenerator = (
   userRole,
 ) => {
   const generatedRoutes = [];
-  const {fallbackPath = ''} = routeSet || {};
+  const { fallbackPath = '' } = routeSet || {};
 
   const isAnonymous = type === 'anonymous';
   const isAuthorized = type === 'authorized';

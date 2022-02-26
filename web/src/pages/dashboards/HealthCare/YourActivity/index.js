@@ -1,15 +1,15 @@
 import React from 'react';
 import AppCard from '@crema/core/AppCard';
 import AppSelect from '@crema/core/AppSelect';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import ActivityGraph from './ActivityGraph';
 import PropTypes from 'prop-types';
 
-const YourActivity = ({data}) => {
+const YourActivity = ({ data }) => {
   const handleChange = (value) => {
     console.log('value', value);
   };
-  const {messages} = useIntl();
+  const { messages } = useIntl();
   return (
     <AppCard
       title={messages['healthCare.yourActivity']}

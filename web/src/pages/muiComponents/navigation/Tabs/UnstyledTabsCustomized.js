@@ -1,10 +1,10 @@
 import * as React from 'react';
-import {styled} from '@mui/system';
+import { styled } from '@mui/system';
 import TabsUnstyled from '@mui/base/TabsUnstyled';
 import TabsListUnstyled from '@mui/base/TabsListUnstyled';
 import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
-import {buttonUnstyledClasses} from '@mui/base/ButtonUnstyled';
-import TabUnstyled, {tabUnstyledClasses} from '@mui/base/TabUnstyled';
+import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
+import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
 
 const primary = {
   50: '#F0F7FF',

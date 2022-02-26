@@ -7,7 +7,7 @@ import TableHeading from './TableHeading';
 import TableItem from './TableItem';
 import AppTableContainer from '../../../../@crema/core/AppTableContainer';
 
-const OrderTable = ({orderData}) => {
+const OrderTable = ({ orderData }) => {
   return (
     <AppTableContainer>
       <Table stickyHeader className='table'>

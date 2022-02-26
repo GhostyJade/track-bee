@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {GoogleMap, withGoogleMap} from 'react-google-maps';
+import React, { Component } from 'react';
+import { GoogleMap, withGoogleMap } from 'react-google-maps';
 import DrawingManager from 'react-google-maps/lib/components/drawing/DrawingManager';
 import '../../../../shared/vendors/maps.css';
 

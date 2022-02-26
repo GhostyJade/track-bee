@@ -1,6 +1,6 @@
 import React from 'react';
-import {toggleNavCollapsed} from '../../../../../redux/actions';
-import {useDispatch, useSelector} from 'react-redux';
+import { toggleNavCollapsed } from '../../../../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import AppScrollbar from '../../../AppScrollbar';
@@ -14,14 +14,14 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import BitBucketSidebarWrapper from './BitBucketSidebarWrapper';
 import AppSidebarContainer from './AppSidebarContainer';
 import BucketMinibar from './BucketMinibar';
-import {Typography} from '@mui/material';
-import {Fonts} from '../../../../../shared/constants/AppEnums';
+import { Typography } from '@mui/material';
+import { Fonts } from '../../../../../shared/constants/AppEnums';
 
 const AppSidebar = (props) => {
-  const {isCollapsed, setCollapsed} = props;
+  const { isCollapsed, setCollapsed } = props;
 
   const dispatch = useDispatch();
-  const navCollapsed = useSelector(({settings}) => settings.navCollapsed);
+  const navCollapsed = useSelector(({ settings }) => settings.navCollapsed);
 
   const handleToggleDrawer = () => {
     dispatch(toggleNavCollapsed());
@@ -82,7 +82,7 @@ const AppSidebar = (props) => {
             root: clsx(props.variant),
             paper: clsx(props.variant),
           }}
-          style={{position: 'absolute'}}
+          style={{ position: 'absolute' }}
         >
           {sideBarComponent()}
         </Drawer>

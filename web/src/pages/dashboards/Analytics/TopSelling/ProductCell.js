@@ -1,12 +1,12 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import AppCircularProgress from '@crema/core/AppCircularProgress';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import Hidden from '@mui/material/Hidden';
 import PropTypes from 'prop-types';
 
-const ProductCell = ({data}) => {
+const ProductCell = ({ data }) => {
   return (
     <Box
       key={data.id}

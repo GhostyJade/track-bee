@@ -5,7 +5,7 @@ import LocaleContextProvider from './LocaleContextProvide';
 import LayoutContextProvider from './LayoutContextProvider';
 import SidebarContextProvider from './SidebarContextProvider';
 
-const AppContextProvider = ({children}) => {
+const AppContextProvider = ({ children }) => {
   return (
     <ThemeContextProvider>
       <LocaleContextProvider>

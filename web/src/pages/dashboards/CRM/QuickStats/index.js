@@ -5,9 +5,9 @@ import IntlMessages from '../../../../@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
 
 import PropTypes from 'prop-types';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 
-const QuickStats = ({quickStatsData}) => {
+const QuickStats = ({ quickStatsData }) => {
   console.log('quickStatsData', quickStatsData);
   return (
     <>
@@ -16,14 +16,14 @@ const QuickStats = ({quickStatsData}) => {
         sx={{
           color: 'text.primary',
           fontSize: 16,
-          mb: {xs: 4, sm: 4, xl: 6},
+          mb: { xs: 4, sm: 4, xl: 6 },
           fontWeight: Fonts.BOLD,
           textTransform: 'uppercase',
         }}
       >
         <IntlMessages id='dashboard.quickStats' />
       </Box>
-      <Grid container spacing={{xs: 4, md: 8}}>
+      <Grid container spacing={{ xs: 4, md: 8 }}>
         <Grid item xs={12} sm={6}>
           <StatsCard
             icon={'/assets/images/dashboard/total-clients.svg'}

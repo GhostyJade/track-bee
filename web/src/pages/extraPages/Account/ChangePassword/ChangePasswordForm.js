@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Button} from '@mui/material';
+import { Box, Button } from '@mui/material';
 import AppGridContainer from '../../../../@crema/core/AppGridContainer';
 import Grid from '@mui/material/Grid';
 import FormControl from '@mui/material/FormControl';
@@ -8,8 +8,8 @@ import IntlMessages from '../../../../@crema/utility/IntlMessages';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
-import {Visibility, VisibilityOff} from '@mui/icons-material';
-import {Form} from 'formik';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { Form } from 'formik';
 
 const ChangePasswordForm = () => {
   const [oldPassword, setOldPassword] = React.useState({
@@ -26,7 +26,7 @@ const ChangePasswordForm = () => {
   });
 
   const onOldPassword = (prop) => (event) => {
-    setOldPassword({...oldPassword, [prop]: event.target.value});
+    setOldPassword({ ...oldPassword, [prop]: event.target.value });
   };
 
   const onShowOldPassword = () => {
@@ -41,7 +41,7 @@ const ChangePasswordForm = () => {
   };
 
   const onNewPassword = (prop) => (event) => {
-    setNewPassword({...newPassword, [prop]: event.target.value});
+    setNewPassword({ ...newPassword, [prop]: event.target.value });
   };
 
   const onShowNewPassword = () => {
@@ -56,7 +56,7 @@ const ChangePasswordForm = () => {
   };
 
   const onRetypeNewPassword = (prop) => (event) => {
-    setRetypeNewPassword({...retypeNewPassword, [prop]: event.target.value});
+    setRetypeNewPassword({ ...retypeNewPassword, [prop]: event.target.value });
   };
 
   const onShowRetypeNewPassword = () => {
@@ -74,7 +74,7 @@ const ChangePasswordForm = () => {
     <Form autoComplete='off'>
       <AppGridContainer spacing={4}>
         <Grid item xs={12} md={6}>
-          <FormControl sx={{width: '100%'}} variant='outlined'>
+          <FormControl sx={{ width: '100%' }} variant='outlined'>
             <InputLabel htmlFor='oldPassword'>
               <IntlMessages id='common.oldPassword' />
             </InputLabel>
@@ -104,9 +104,9 @@ const ChangePasswordForm = () => {
             />
           </FormControl>
         </Grid>
-        <Grid item xs={12} md={6} sx={{p: '0 !important'}} />
+        <Grid item xs={12} md={6} sx={{ p: '0 !important' }} />
         <Grid item xs={12} md={6}>
-          <FormControl sx={{width: '100%'}} variant='outlined'>
+          <FormControl sx={{ width: '100%' }} variant='outlined'>
             <InputLabel htmlFor='newPassword'>
               <IntlMessages id='common.newPassword' />
             </InputLabel>
@@ -137,7 +137,7 @@ const ChangePasswordForm = () => {
           </FormControl>
         </Grid>
         <Grid item xs={12} md={6}>
-          <FormControl sx={{width: '100%'}} variant='outlined'>
+          <FormControl sx={{ width: '100%' }} variant='outlined'>
             <InputLabel htmlFor='retypeNewPassword'>
               <IntlMessages id='common.retypeNewPassword' />
             </InputLabel>

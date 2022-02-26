@@ -1,18 +1,18 @@
 import React from 'react';
 import AppSidebar from './AppSidebar';
-import {AppContentView} from '../../../index';
+import { AppContentView } from '../../../index';
 import AppThemeSetting from '../../AppThemeSetting';
 import AppHeader from './AppHeader';
 import clsx from 'clsx';
 import Box from '@mui/material/Box';
 import UserHeaderWrapper from './UserHeaderWrapper';
 import AppFixedFooter from './AppFixedFooter';
-import {useLayoutContext} from '../../../utility/AppContextProvider/LayoutContextProvider';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
+import { useLayoutContext } from '../../../utility/AppContextProvider/LayoutContextProvider';
+import { LayoutType } from '../../../../shared/constants/AppEnums';
 import UserHeaderContainer from './UserHeaderContainer';
 
 const UserHeader = () => {
-  const {footer, layoutType, footerType} = useLayoutContext();
+  const { footer, layoutType, footerType } = useLayoutContext();
 
   return (
     <UserHeaderContainer

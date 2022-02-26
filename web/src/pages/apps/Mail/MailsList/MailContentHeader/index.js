@@ -1,15 +1,15 @@
 import React from 'react';
 import Checkbox from '@mui/material/Checkbox/index';
-import {useSelector} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import Box from '@mui/material/Box';
-import {Hidden} from '@mui/material';
+import { Hidden } from '@mui/material';
 import PropTypes from 'prop-types';
 import CheckedMailActions from './CheckedMailActions';
 import MoreOptions from './MoreOptions';
 import AppsPagination from '@crema/core/AppsPagination';
 import AppSearchBar from '../../../../../@crema/core/AppSearchBar';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 
 const MailContentHeader = (props) => {
   const {
@@ -22,11 +22,11 @@ const MailContentHeader = (props) => {
     onSetFilterText,
   } = props;
 
-  const mailList = useSelector(({mailApp}) => mailApp.mailList);
+  const mailList = useSelector(({ mailApp }) => mailApp.mailList);
 
-  const totalMails = useSelector(({mailApp}) => mailApp.totalMails);
+  const totalMails = useSelector(({ mailApp }) => mailApp.totalMails);
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   const onHandleMasterCheckbox = (event) => {
     if (event.target.checked) {
@@ -43,7 +43,7 @@ const MailContentHeader = (props) => {
         sx={{
           display: 'flex',
           alignItems: 'center',
-          width: {xs: '100%', sm: 'auto'},
+          width: { xs: '100%', sm: 'auto' },
         }}
       >
         <Box component='span'>
@@ -61,7 +61,7 @@ const MailContentHeader = (props) => {
             onChange={onHandleMasterCheckbox}
           />
         </Box>
-        <Box sx={{mr: 5}}>
+        <Box sx={{ mr: 5 }}>
           <AppSearchBar
             iconPosition='right'
             overlap={false}
@@ -88,7 +88,7 @@ const MailContentHeader = (props) => {
           <Box
             component='span'
             sx={{
-              ml: {sm: 'auto'},
+              ml: { sm: 'auto' },
             }}
           >
             <AppsPagination

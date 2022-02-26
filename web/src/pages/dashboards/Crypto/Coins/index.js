@@ -4,9 +4,9 @@ import CoinStats from './CoinStats';
 import PropTypes from 'prop-types';
 import IntlMessages from '../../../../@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 
-const Coins = ({coinsData}) => {
+const Coins = ({ coinsData }) => {
   return (
     <Box>
       <Box
@@ -15,13 +15,13 @@ const Coins = ({coinsData}) => {
           color: 'text.primary',
           textTransform: 'uppercase',
           fontSize: 16,
-          mb: {xs: 4, sm: 4, xl: 6},
+          mb: { xs: 4, sm: 4, xl: 6 },
           fontWeight: Fonts.BOLD,
         }}
       >
         <IntlMessages id='dashboard.coins' />
       </Box>
-      <Grid container spacing={{xs: 4, md: 8}}>
+      <Grid container spacing={{ xs: 4, md: 8 }}>
         <Grid item xs={12} sm={6}>
           <CoinStats
             icon={'/assets/images/bitcoin.svg'}

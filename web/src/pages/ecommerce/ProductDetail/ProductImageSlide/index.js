@@ -1,18 +1,18 @@
-import React, {useState} from 'react';
-import Carousel, {Dots} from '@brainhubeu/react-carousel';
+import React, { useState } from 'react';
+import Carousel, { Dots } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
-import {Button, Checkbox} from '@mui/material';
+import { Button, Checkbox } from '@mui/material';
 import Box from '@mui/material/Box';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import Grid from '@mui/material/Grid';
-import {addItemToCart} from '../../../../redux/actions';
-import {useDispatch} from 'react-redux';
-import {useHistory} from 'react-router-dom';
+import { addItemToCart } from '../../../../redux/actions';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import {styled} from '@mui/material/styles';
-const BrainHubSliderRoot = styled(Box)(({theme}) => {
+import { styled } from '@mui/material/styles';
+const BrainHubSliderRoot = styled(Box)(({ theme }) => {
   return {
     position: 'relative',
     display: 'flex',
@@ -49,7 +49,7 @@ const BrainHubSliderRoot = styled(Box)(({theme}) => {
   };
 });
 
-const ProductImageSlide = ({product}) => {
+const ProductImageSlide = ({ product }) => {
   const [value, setValue] = useState(0);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -116,12 +116,12 @@ const ProductImageSlide = ({product}) => {
           variant='contained'
           color='primary'
           onClick={onAddToCard}
-          style={{marginRight: 20, width: 140}}
+          style={{ marginRight: 20, width: 140 }}
         >
           Add to cart
         </Button>
         <Button
-          style={{width: 140}}
+          style={{ width: 140 }}
           variant='contained'
           color='secondary'
           onClick={onButNowToCard}

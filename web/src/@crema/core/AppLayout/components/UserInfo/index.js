@@ -1,18 +1,18 @@
 import React from 'react';
 import orange from '@mui/material/colors/orange';
-import {useAuthMethod, useAuthUser} from '../../../../utility/AuthHooks';
-import {Box} from '@mui/material';
+import { useAuthMethod, useAuthUser } from '../../../../utility/AuthHooks';
+import { Box } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import {Fonts} from '../../../../../shared/constants/AppEnums';
-import {useHistory} from 'react-router-dom';
+import { Fonts } from '../../../../../shared/constants/AppEnums';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const UserInfo = ({color}) => {
-  const {logout} = useAuthMethod();
-  const {user} = useAuthUser();
+const UserInfo = ({ color }) => {
+  const { logout } = useAuthMethod();
+  const { user } = useAuthUser();
   const history = useHistory();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -47,7 +47,7 @@ const UserInfo = ({color}) => {
         }}
         className='user-info-view'
       >
-        <Box sx={{py: 0.5}}>
+        <Box sx={{ py: 0.5 }}>
           {user.photoURL ? (
             <Avatar
               sx={{
@@ -73,7 +73,7 @@ const UserInfo = ({color}) => {
         </Box>
         <Box
           sx={{
-            width: {xs: 'calc(100% - 62px)', xl: 'calc(100% - 72px)'},
+            width: { xs: 'calc(100% - 62px)', xl: 'calc(100% - 72px)' },
             ml: 4,
             color: color,
           }}

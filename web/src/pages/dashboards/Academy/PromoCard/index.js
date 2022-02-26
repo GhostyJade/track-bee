@@ -2,11 +2,11 @@ import React from 'react';
 import AppCard from '@crema/core/AppCard';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 
 const PromoCard = () => {
   return (
-    <AppCard sxStyle={{height: 1, backgroundColor: '#0A8FDC'}}>
+    <AppCard sxStyle={{ height: 1, backgroundColor: '#0A8FDC' }}>
       <Box
         sx={{
           display: 'flex',

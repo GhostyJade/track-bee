@@ -1,15 +1,15 @@
 import React from 'react';
-import {Button} from '@mui/material';
+import { Button } from '@mui/material';
 import AppGridContainer from '../../../../@crema/core/AppGridContainer';
 import Grid from '@mui/material/Grid';
 import IntlMessages from '../../../../@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
 import ProfileConnection from './ProfileConnection';
-import {Form} from 'formik';
+import { Form } from 'formik';
 import PropTypes from 'prop-types';
 import AppTextField from '../../../../@crema/core/AppFormComponents/AppTextField';
 
-const SocialForm = ({social}) => {
+const SocialForm = ({ social }) => {
   return (
     <Form autoComplete='off'>
       <AppGridContainer spacing={4}>

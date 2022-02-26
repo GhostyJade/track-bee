@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import CustomerTable from './CustomerTable';
 import AppsContainer from '../../../@crema/core/AppsContainer';
-import {useIntl} from 'react-intl';
-import {useDispatch, useSelector} from 'react-redux';
-import {getCustomers} from '../../../redux/actions';
-import {Button, Hidden} from '@mui/material';
+import { useIntl } from 'react-intl';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCustomers } from '../../../redux/actions';
+import { Button, Hidden } from '@mui/material';
 import AppsHeader from '../../../@crema/core/AppsContainer/AppsHeader';
 import AppsContent from '../../../@crema/core/AppsContainer/AppsContent';
 import AppsPagination from '../../../@crema/core/AppsPagination';
@@ -13,10 +13,10 @@ import AppInfoView from '../../../@crema/core/AppInfoView';
 import AppSearchBar from '../../../@crema/core/AppSearchBar';
 
 const Customers = () => {
-  const {messages} = useIntl();
+  const { messages } = useIntl();
   const dispatch = useDispatch();
-  const customers = useSelector(({ecommerce}) => ecommerce.customers);
-  const customerCount = useSelector(({ecommerce}) => ecommerce.customerCount);
+  const customers = useSelector(({ ecommerce }) => ecommerce.customers);
+  const customerCount = useSelector(({ ecommerce }) => ecommerce.customerCount);
   const [page, setPage] = useState(0);
   const [search, setSearchQuery] = useState('');
 

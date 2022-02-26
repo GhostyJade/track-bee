@@ -1,9 +1,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
-import {makeStyles} from '@mui/styles';
-import {useDemoData} from '@mui/x-data-grid-generator';
-import {DataGrid} from '@mui/x-data-grid';
+import { makeStyles } from '@mui/styles';
+import { useDemoData } from '@mui/x-data-grid-generator';
+import { DataGrid } from '@mui/x-data-grid';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 const useStyles = makeStyles({
@@ -39,11 +39,11 @@ CustomFooterStatusComponent.propTypes = {
   status: PropTypes.oneOf(['connected', 'disconnected']).isRequired,
 };
 
-export {CustomFooterStatusComponent};
+export { CustomFooterStatusComponent };
 
 export default function CustomFooter() {
   const [status, setStatus] = React.useState('connected');
-  const {data} = useDemoData({
+  const { data } = useDemoData({
     dataSet: 'Employee',
     rowLength: 4,
     maxColumns: 6,
@@ -55,14 +55,14 @@ export default function CustomFooter() {
         width: '100%',
       }}
     >
-      <div style={{height: 350, width: '100%', marginBottom: 16}}>
+      <div style={{ height: 350, width: '100%', marginBottom: 16 }}>
         <DataGrid
           {...data}
           components={{
             Footer: CustomFooterStatusComponent,
           }}
           componentsProps={{
-            footer: {status},
+            footer: { status },
           }}
         />
       </div>

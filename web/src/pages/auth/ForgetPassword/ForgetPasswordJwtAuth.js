@@ -1,14 +1,14 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import {Form, Formik} from 'formik';
+import { Form, Formik } from 'formik';
 import * as yup from 'yup';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import AppInfoView from '@crema/core/AppInfoView';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import IntlMessages from '@crema/utility/IntlMessages';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import { Fonts } from '../../../shared/constants/AppEnums';
 import AuthWrapper from '../AuthWrapper';
 import AppLogo from '../../../@crema/core/AppLayout/components/AppLogo';
 
@@ -22,8 +22,8 @@ const validationSchema = yup.object({
 const ForgetPasswordJwtAuth = () => {
   return (
     <AuthWrapper>
-      <Box sx={{width: '100%'}}>
-        <Box sx={{mb: {xs: 8, xl: 10}}}>
+      <Box sx={{ width: '100%' }}>
+        <Box sx={{ mb: { xs: 8, xl: 10 } }}>
           <Box
             sx={{
               mb: 5,
@@ -40,7 +40,7 @@ const ForgetPasswordJwtAuth = () => {
               mb: 1.5,
               color: (theme) => theme.palette.text.primary,
               fontWeight: Fonts.SEMI_BOLD,
-              fontSize: {xs: 14, xl: 16},
+              fontSize: { xs: 14, xl: 16 },
             }}
           >
             <IntlMessages id='common.forgetPassword' />
@@ -53,7 +53,7 @@ const ForgetPasswordJwtAuth = () => {
               color: 'grey.500',
             }}
           >
-            <span style={{marginRight: 4}}>
+            <span style={{ marginRight: 4 }}>
               <IntlMessages id='common.alreadyHavePassword' />
             </span>
             <Box
@@ -73,24 +73,24 @@ const ForgetPasswordJwtAuth = () => {
           </Typography>
         </Box>
 
-        <Box sx={{flex: 1, display: 'flex', flexDirection: 'column'}}>
-          <Box sx={{flex: 1, display: 'flex', flexDirection: 'column'}}>
+        <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+          <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
             <Formik
               validateOnChange={true}
               initialValues={{
                 email: '',
               }}
               validationSchema={validationSchema}
-              onSubmit={(data, {setSubmitting, resetForm}) => {
+              onSubmit={(data, { setSubmitting, resetForm }) => {
                 setSubmitting(true);
                 //reset password api goes here
                 setSubmitting(false);
                 resetForm();
               }}
             >
-              {({isSubmitting}) => (
-                <Form style={{textAlign: 'left'}}>
-                  <Box sx={{mb: {xs: 5, lg: 8}}}>
+              {({ isSubmitting }) => (
+                <Form style={{ textAlign: 'left' }}>
+                  <Box sx={{ mb: { xs: 5, lg: 8 } }}>
                     <AppTextField
                       placeholder='Email'
                       name='email'

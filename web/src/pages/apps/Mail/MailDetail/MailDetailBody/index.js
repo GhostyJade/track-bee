@@ -1,7 +1,7 @@
 import React from 'react';
-import {useDispatch} from 'react-redux';
-import {withRouter} from 'react-router-dom';
-import {onUpdateSelectedMail} from '../../../../../redux/actions';
+import { useDispatch } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { onUpdateSelectedMail } from '../../../../../redux/actions';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
 import MessageItem from './MessageItem';
@@ -9,7 +9,7 @@ import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
 import AppTooltip from '../../../../../@crema/core/AppTooltip';
 
 const MailDetailBody = (props) => {
-  const {selectedMail} = props;
+  const { selectedMail } = props;
   const dispatch = useDispatch();
 
   const onSubmitMail = (message, index) => {
@@ -27,7 +27,7 @@ const MailDetailBody = (props) => {
     dispatch(onUpdateSelectedMail(selectedMail));
   };
   return (
-    <Box sx={{px: 5, py: 1}}>
+    <Box sx={{ px: 5, py: 1 }}>
       {selectedMail ? (
         <>
           <Box
@@ -41,9 +41,9 @@ const MailDetailBody = (props) => {
             <Box
               component='span'
               sx={{
-                fontSize: {xs: 16, sm: 18},
+                fontSize: { xs: 16, sm: 18 },
                 marginRight: 3,
-                paddingLeft: {xs: 0, sm: 12.5},
+                paddingLeft: { xs: 0, sm: 12.5 },
               }}
             >
               {selectedMail.subject}

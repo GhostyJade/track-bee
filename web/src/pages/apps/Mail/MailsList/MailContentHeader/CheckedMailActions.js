@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import IntlMessages from '@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
@@ -12,21 +12,21 @@ import {
   onUpdateMailFolders,
   onUpdateMailLabels,
 } from '../../../../../redux/actions';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import IconButton from '@mui/material/IconButton';
 import AppTooltip from '@crema/core/AppTooltip';
 
 const CheckedMailActions = (props) => {
-  const {checkedMails, setCheckedMails} = props;
+  const { checkedMails, setCheckedMails } = props;
   const dispatch = useDispatch();
   const [isLabelOpen, onOpenLabel] = useState(null);
 
   const [isMoveToOpen, onOpenMoveToIcon] = useState(null);
 
-  const labelList = useSelector(({mailApp}) => mailApp.labelList);
+  const labelList = useSelector(({ mailApp }) => mailApp.labelList);
 
-  const folderList = useSelector(({mailApp}) => mailApp.folderList);
+  const folderList = useSelector(({ mailApp }) => mailApp.folderList);
 
   const onLabelOpen = (event) => {
     onOpenLabel(event.currentTarget);

@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import IntlMessages from '../../../../utility/IntlMessages';
-import {menuStyles} from '../../../../services/db/navigationStyle';
+import { menuStyles } from '../../../../services/db/navigationStyle';
 import {
   useSidebarActionsContext,
   useSidebarContext,
@@ -9,16 +9,16 @@ import {
 import AppSelectedIcon from '../../../AppSelectedIcon';
 
 const NavMenuStyle = () => {
-  const {menuStyle} = useSidebarContext();
+  const { menuStyle } = useSidebarContext();
 
-  const {updateMenuStyle} = useSidebarActionsContext();
+  const { updateMenuStyle } = useSidebarActionsContext();
   const onMenuStyleChange = (menuStyle) => {
     updateMenuStyle(menuStyle);
   };
 
   return (
     <>
-      <Box component='h4' sx={{mb: 3}}>
+      <Box component='h4' sx={{ mb: 3 }}>
         <IntlMessages id='customizer.sidebarMenuStyle' />
       </Box>
       <Box

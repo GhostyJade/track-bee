@@ -1,20 +1,20 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import VisitorsGraph from './VisitorsGraph';
-import {green, red} from '@mui/material/colors';
+import { green, red } from '@mui/material/colors';
 import Link from '@mui/material/Link';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import AppCard from '@crema/core/AppCard';
 
-const ActiveVisitors = ({data}) => {
-  const {messages} = useIntl();
+const ActiveVisitors = ({ data }) => {
+  const { messages } = useIntl();
   return (
-    <AppCard contentStyle={{padding: 0}}>
+    <AppCard contentStyle={{ padding: 0 }}>
       <Box
         sx={{
-          pt: {xs: 5, sm: 5, xl: 5},
+          pt: { xs: 5, sm: 5, xl: 5 },
           backgroundColor: '#49bd65',
         }}
       >
@@ -110,7 +110,7 @@ const ActiveVisitors = ({data}) => {
             sx={{
               color: (theme) => theme.palette.secondary.main,
               fontSize: 16,
-              marginTop: {xs: 1.5, xl: 4},
+              marginTop: { xs: 1.5, xl: 4 },
               textDecoration: 'none',
             }}
           >

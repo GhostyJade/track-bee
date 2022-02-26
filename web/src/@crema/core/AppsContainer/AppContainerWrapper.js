@@ -1,14 +1,14 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
 import Box from '@mui/material/Box';
-import {NavStyle} from '../../../shared/constants/AppEnums';
+import { NavStyle } from '../../../shared/constants/AppEnums';
 
 const getMainHeaderHeight = (navStyle, screenSize) => {
   if (navStyle === NavStyle.BIT_BUCKET) return screenSize >= 1200 ? 0 : 70; // Header Height
   return screenSize >= 600 ? 70 : 56;
 };
 
-const AppContainerWrapper = ({children, navStyle, footer, ...rest}) => {
+const AppContainerWrapper = ({ children, navStyle, footer, ...rest }) => {
   return (
     <Box
       sx={{

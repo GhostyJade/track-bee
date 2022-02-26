@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import SimpleBarReact from 'simplebar-react';
 
 const AppsContentContainer = styled(SimpleBarReact)((props) => {
@@ -33,4 +33,4 @@ AppsContent.propTypes = {
   isDetailView: PropTypes.bool,
 };
 
-AppsContent.defaultProps = {isDetailView: false};
+AppsContent.defaultProps = { isDetailView: false };

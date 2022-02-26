@@ -1,11 +1,11 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import AppCircularProgress from '@crema/core/AppCircularProgress';
-import {alpha, useTheme} from '@mui/material';
+import { alpha, useTheme } from '@mui/material';
 import PropTypes from 'prop-types';
 
-const LearningItem = ({course}) => {
+const LearningItem = ({ course }) => {
   const theme = useTheme();
   return (
     <Box

@@ -1,16 +1,16 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import IntlMessages from '@crema/utility/IntlMessages';
 import Select from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
-import {useDispatch, useSelector} from 'react-redux';
-import {onUpdateSelectedTask} from '../../../../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { onUpdateSelectedTask } from '../../../../../redux/actions';
 import PropTypes from 'prop-types';
-import {MenuItem} from '@mui/material';
+import { MenuItem } from '@mui/material';
 
-const TaskPriority = ({selectedTask}) => {
+const TaskPriority = ({ selectedTask }) => {
   const dispatch = useDispatch();
-  const priorityList = useSelector(({todoApp}) => todoApp.priorityList);
+  const priorityList = useSelector(({ todoApp }) => todoApp.priorityList);
 
   const [priority, setPriority] = useState(selectedTask.priority.type);
 

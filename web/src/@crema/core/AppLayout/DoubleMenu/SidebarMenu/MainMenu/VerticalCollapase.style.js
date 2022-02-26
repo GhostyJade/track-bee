@@ -1,5 +1,5 @@
-import {makeStyles} from '@mui/material/styles';
-import {Fonts, ThemeMode} from '../../../../../../shared/constants/AppEnums';
+import { makeStyles } from '@mui/material/styles';
+import { Fonts, ThemeMode } from '../../../../../../shared/constants/AppEnums';
 
 const useStyles = makeStyles((theme) => {
   return {

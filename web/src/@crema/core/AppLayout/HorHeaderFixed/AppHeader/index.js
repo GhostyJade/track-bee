@@ -6,20 +6,20 @@ import Box from '@mui/material/Box';
 import AppSearchBar from '@crema/core/AppSearchBar';
 import Hidden from '@mui/material/Hidden';
 import IconButton from '@mui/material/IconButton';
-import {toggleNavCollapsed} from '../../../../../redux/actions';
+import { toggleNavCollapsed } from '../../../../../redux/actions';
 import MenuIcon from '@mui/icons-material/Menu';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import AppMessages from '../../../AppMessages';
 import AppNotifications from '../../../AppNotifications';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import AppTooltip from '../../../AppTooltip';
-import {alpha} from '@mui/material/styles';
+import { alpha } from '@mui/material/styles';
 import AppLogo from '../../components/AppLogo';
 import UserInfo from '../../components/UserInfo';
 import HorizontalNav from '../../components/HorizontalNav';
-import {useSidebarContext} from '../../../../utility/AppContextProvider/SidebarContextProvider';
+import { useSidebarContext } from '../../../../utility/AppContextProvider/SidebarContextProvider';
 
 const AppHeader = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -32,7 +32,7 @@ const AppHeader = () => {
     setAnchorEl(null);
   };
   const dispatch = useDispatch();
-  const {sidebarMenuSelectedBgColor, sidebarMenuSelectedTextColor} =
+  const { sidebarMenuSelectedBgColor, sidebarMenuSelectedTextColor } =
     useSidebarContext();
 
   return (
@@ -52,14 +52,14 @@ const AppHeader = () => {
         <Toolbar
           sx={{
             boxSizing: 'border-box',
-            minHeight: {xs: 56, sm: 70},
-            px: {xs: 0},
+            minHeight: { xs: 56, sm: 70 },
+            px: { xs: 0 },
           }}
         >
           <Box
             sx={{
               width: '100%',
-              maxWidth: {lg: 1140, xl: 1420},
+              maxWidth: { lg: 1140, xl: 1420 },
               mx: 'auto',
               px: 5,
               display: 'flex',
@@ -95,7 +95,7 @@ const AppHeader = () => {
                   pl: 0,
                 },
                 '& .logo-text': {
-                  display: {xs: 'none', sm: 'block'},
+                  display: { xs: 'none', sm: 'block' },
                 },
               }}
             >
@@ -108,13 +108,13 @@ const AppHeader = () => {
                   '& .navbarNav': {
                     display: 'flex',
                     padding: 0,
-                    mx: {xs: -4, lg: -5},
+                    mx: { xs: -4, lg: -5 },
                     marginRight: -16,
                   },
                   '& .navItem': {
                     width: 'auto',
                     cursor: 'pointer',
-                    px: {xs: 4, lg: 5},
+                    px: { xs: 4, lg: 5 },
                     py: 1,
                     borderRadius: 1,
                     '&.active': {
@@ -145,17 +145,17 @@ const AppHeader = () => {
               sx={{
                 minHeight: 40,
                 position: 'relative',
-                display: {xs: 'none', sm: 'block'},
+                display: { xs: 'none', sm: 'block' },
                 '& .searchRoot': {
-                  position: {xs: 'absolute', sm: 'relative'},
-                  right: {xs: 0, sm: 'auto'},
-                  top: {xs: 0, sm: 'auto'},
+                  position: { xs: 'absolute', sm: 'relative' },
+                  right: { xs: 0, sm: 'auto' },
+                  top: { xs: 0, sm: 'auto' },
                 },
               }}
             >
               <AppSearchBar iconPosition='right' placeholder='Search…' />
             </Box>
-            <Box sx={{ml: 4}}>
+            <Box sx={{ ml: 4 }}>
               <AppLngSwitcher iconOnly={true} tooltipPosition='bottom' />
             </Box>
 
@@ -195,8 +195,8 @@ const AppHeader = () => {
 
               <Box
                 sx={{
-                  ml: {sm: 4},
-                  mr: {xs: 4, sm: 0},
+                  ml: { sm: 4 },
+                  mr: { xs: 4, sm: 0 },
                   '& .user-info-view': {
                     p: 0,
                   },

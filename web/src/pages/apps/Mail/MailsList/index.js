@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react';
-import {useHistory, useLocation, useParams} from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useHistory, useLocation, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import MailContentHeader from './MailContentHeader';
 import {
   onGetMailList,
   onUpdateMailStarredStatus,
 } from '../../../../redux/actions';
-import {Hidden} from '@mui/material';
+import { Hidden } from '@mui/material';
 import AppsPagination from '@crema/core/AppsPagination';
 import AppsContent from '@crema/core/AppsContainer/AppsContent';
 import AppsHeader from '@crema/core/AppsContainer/AppsHeader';
@@ -20,21 +20,21 @@ import MailListItem from './MailListItem';
 const MailsList = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const {folder, label} = useParams();
+  const { folder, label } = useParams();
 
   const [filterText, onSetFilterText] = useState('');
 
-  const mailList = useSelector(({mailApp}) => mailApp.mailList);
+  const mailList = useSelector(({ mailApp }) => mailApp.mailList);
 
-  const labelList = useSelector(({mailApp}) => mailApp.labelList);
+  const labelList = useSelector(({ mailApp }) => mailApp.labelList);
 
   const [page, setPage] = useState(0);
 
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
   const path = pathname.split('/');
 
-  const loading = useSelector(({common}) => common.loading);
+  const loading = useSelector(({ common }) => common.loading);
 
   useEffect(() => {
     setPage(0);
@@ -86,7 +86,7 @@ const MailsList = () => {
     }
   };
 
-  const totalMails = useSelector(({mailApp}) => mailApp.totalMails);
+  const totalMails = useSelector(({ mailApp }) => mailApp.totalMails);
 
   const list = onGetFilteredMails();
   return (

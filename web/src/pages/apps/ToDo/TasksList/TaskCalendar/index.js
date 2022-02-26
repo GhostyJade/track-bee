@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {momentLocalizer} from 'react-big-calendar';
+import React, { useState } from 'react';
+import { momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import AddNewTask from '../../AddNewTask';
-import {StyledCalendar} from './Calendar.style';
-import {Box} from '@mui/material';
-import {useHistory, useParams} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import { StyledCalendar } from './Calendar.style';
+import { Box } from '@mui/material';
+import { useHistory, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './calendar.css';
 import AppTooltip from '../../../../../@crema/core/AppTooltip';
 import CustomToolbar from './CustomToolbar';
@@ -34,15 +34,15 @@ const localizer = momentLocalizer(moment);
 
 const TaskCalender = () => {
   const [isAddTaskOpen, setAddTaskOpen] = useState(false);
-  const taskList = useSelector(({todoApp}) => todoApp.taskList);
+  const taskList = useSelector(({ todoApp }) => todoApp.taskList);
   const history = useHistory();
-  const {folder, label} = useParams();
+  const { folder, label } = useParams();
   console.log('taskList:', taskList);
   const [selectedDate, setSelectedDate] = useState(null);
 
   // const history = useHistory();
   // const {folder, label} = useParams();
-  const onSelectDate = ({start}) => {
+  const onSelectDate = ({ start }) => {
     setSelectedDate(start);
     setAddTaskOpen(true);
   };

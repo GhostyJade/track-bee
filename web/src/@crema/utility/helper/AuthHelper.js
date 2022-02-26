@@ -1,4 +1,4 @@
-import {authRole} from '../../../shared/constants/AppConst';
+import { authRole } from '../../../shared/constants/AppConst';
 
 export const getUserFromAuth0 = (user) => {
   if (user)

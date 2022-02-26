@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductsCategory from './ProductsCategory';
-import {Box} from '@mui/material';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Box } from '@mui/material';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import Divider from '@mui/material/Divider';
 import PriceSelector from './PriceSelector';
 import AppScrollbar from '../../../../@crema/core/AppScrollbar';
@@ -16,12 +16,12 @@ import {
 import AppGrid from '../../../../@crema/core/AppGrid';
 import ColorCell from './ColorCell';
 import RatingCell from './RatingCell';
-import {useDispatch, useSelector} from 'react-redux';
-import {setFilters} from '../../../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilters } from '../../../../redux/actions';
 
 const ProductSidebar = () => {
   const dispatch = useDispatch();
-  const filterData = useSelector(({ecommerce}) => ecommerce.filterData);
+  const filterData = useSelector(({ ecommerce }) => ecommerce.filterData);
   const [selectedBrand, setSelectedBrand] = useState(filterData.brand);
   const [selectedFor, setSelectedFor] = useState(filterData.ideaFor);
   const [selectedDiscount, setSelectedDiscount] = useState(filterData.discount);
@@ -217,7 +217,7 @@ const ProductSidebar = () => {
             fontWeight: Fonts.MEDIUM,
           }}
         >
-          <Box sx={{mb: 3}}>COLOR</Box>
+          <Box sx={{ mb: 3 }}>COLOR</Box>
 
           <AppGrid
             data={Object.values(ProductColors)}

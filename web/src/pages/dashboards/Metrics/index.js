@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetMetricsData} from '../../../redux/actions';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { onGetMetricsData } from '../../../redux/actions';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import Grid from '@mui/material/Grid';
 import StatsCard from './StatsCard';
@@ -24,11 +24,11 @@ import IntlMessages from '@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
 import Subscriptions from './Subscriptions';
 import Share from './Share';
-import {blue, green, grey, indigo, red} from '@mui/material/colors';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import { blue, green, grey, indigo, red } from '@mui/material/colors';
+import { Fonts } from '../../../shared/constants/AppEnums';
 import AppAnimate from '@crema/core/AppAnimate';
-import {useIntl} from 'react-intl';
-import {AppLoader} from '../../../@crema';
+import { useIntl } from 'react-intl';
+import { AppLoader } from '../../../@crema';
 
 const Metrics = () => {
   const dispatch = useDispatch();
@@ -36,9 +36,9 @@ const Metrics = () => {
   useEffect(() => {
     dispatch(onGetMetricsData());
   }, [dispatch]);
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
-  const metricsData = useSelector(({dashboard}) => dashboard.metricsData);
+  const metricsData = useSelector(({ dashboard }) => dashboard.metricsData);
 
   return (
     <>
@@ -49,7 +49,7 @@ const Metrics = () => {
               component='h2'
               sx={{
                 color: 'text.primary',
-                mb: {xs: 4, sm: 4, xl: 6},
+                mb: { xs: 4, sm: 4, xl: 6 },
                 fontSize: 16,
                 fontWeight: Fonts.BOLD,
               }}

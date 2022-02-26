@@ -1,10 +1,10 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 
-const ProductCell = ({data}) => {
+const ProductCell = ({ data }) => {
   return (
     <Box
       key={data.id}

@@ -3,10 +3,10 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import IntlMessages from '@crema/utility/IntlMessages';
-import {BiUser} from 'react-icons/bi';
-import {AiOutlineLock} from 'react-icons/ai';
-import {IoMdInformationCircleOutline} from 'react-icons/io';
-import {IoShareSocialOutline} from 'react-icons/io5';
+import { BiUser } from 'react-icons/bi';
+import { AiOutlineLock } from 'react-icons/ai';
+import { IoMdInformationCircleOutline } from 'react-icons/io';
+import { IoShareSocialOutline } from 'react-icons/io5';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AccountTabsWrapper from './AccountTabsWrapper';
 import PersonalInfo from './PersonalInfo';
@@ -15,8 +15,8 @@ import Information from './Information';
 import Social from './Social';
 import Notification from './Notification';
 import accountData from '@crema/services/db/extraPages/account';
-import {AppAnimate} from '../../../@crema';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import { AppAnimate } from '../../../@crema';
+import { Fonts } from '../../../shared/constants/AppEnums';
 
 function a11yProps(index) {
   return {
@@ -26,7 +26,7 @@ function a11yProps(index) {
 }
 
 const tabs = [
-  {id: 1, icon: <BiUser />, name: <IntlMessages id='common.personalInfo' />},
+  { id: 1, icon: <BiUser />, name: <IntlMessages id='common.personalInfo' /> },
   {
     id: 2,
     icon: <AiOutlineLock />,

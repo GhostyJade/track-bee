@@ -1,31 +1,31 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import AppsHeader from '../../../../@crema/core/AppsContainer/AppsHeader';
 import ProductHeader from '../ProductHeader';
-import {useDispatch, useSelector} from 'react-redux';
-import {VIEW_TYPE} from '../../../../redux/reducers/Ecommerce';
+import { useDispatch, useSelector } from 'react-redux';
+import { VIEW_TYPE } from '../../../../redux/reducers/Ecommerce';
 import ProductGrid from './ProductGrid/index';
 
 import ProductList from './ProductList';
 import AppsContent from '../../../../@crema/core/AppsContainer/AppsContent';
-import {alpha, Box, Hidden} from '@mui/material';
-import {useThemeContext} from '../../../../@crema/utility/AppContextProvider/ThemeContextProvider';
-import {onGetEcommerceData, setFilters} from '../../../../redux/actions';
+import { alpha, Box, Hidden } from '@mui/material';
+import { useThemeContext } from '../../../../@crema/utility/AppContextProvider/ThemeContextProvider';
+import { onGetEcommerceData, setFilters } from '../../../../redux/actions';
 import AppsFooter from '../../../../@crema/core/AppsContainer/AppsFooter';
 import AppsPagination from '../../../../@crema/core/AppsPagination';
 
 const ProductListing = () => {
   const dispatch = useDispatch();
-  const {theme} = useThemeContext();
+  const { theme } = useThemeContext();
   const [page, setPage] = useState(0);
 
-  const ecommerceList = useSelector(({ecommerce}) => ecommerce.ecommerceList);
-  const {list = [], total = 0} = ecommerceList;
-  const viewType = useSelector(({ecommerce}) => ecommerce.viewType);
-  const filterData = useSelector(({ecommerce}) => ecommerce.filterData);
-  const loading = useSelector(({common}) => common.loading);
+  const ecommerceList = useSelector(({ ecommerce }) => ecommerce.ecommerceList);
+  const { list = [], total = 0 } = ecommerceList;
+  const viewType = useSelector(({ ecommerce }) => ecommerce.viewType);
+  const filterData = useSelector(({ ecommerce }) => ecommerce.filterData);
+  const loading = useSelector(({ common }) => common.loading);
 
   useEffect(() => {
-    dispatch(onGetEcommerceData({...filterData, page}));
+    dispatch(onGetEcommerceData({ ...filterData, page }));
   }, [dispatch, filterData, page]);
 
   const onPageChange = (event, value) => {
@@ -33,7 +33,7 @@ const ProductListing = () => {
   };
 
   const searchProduct = (title) => {
-    dispatch(setFilters({...filterData, title}));
+    dispatch(setFilters({ ...filterData, title }));
   };
   return (
     <>
@@ -49,7 +49,9 @@ const ProductListing = () => {
       </AppsHeader>
 
       <AppsContent
-        style={{backgroundColor: alpha(theme.palette.background.default, 0.6)}}
+        style={{
+          backgroundColor: alpha(theme.palette.background.default, 0.6),
+        }}
       >
         <Box
           sx={{

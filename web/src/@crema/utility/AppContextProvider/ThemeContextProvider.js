@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import defaultConfig, {
   backgroundDark,
   backgroundLight,
@@ -7,7 +7,7 @@ import defaultConfig, {
   textLight,
 } from './defaultConfig';
 import PropTypes from 'prop-types';
-import {LayoutDirection, ThemeMode} from '../../../shared/constants/AppEnums';
+import { LayoutDirection, ThemeMode } from '../../../shared/constants/AppEnums';
 
 const ThemeContext = createContext();
 const ThemeActionsContext = createContext();
@@ -16,7 +16,7 @@ export const useThemeContext = () => useContext(ThemeContext);
 
 export const useThemeActionsContext = () => useContext(ThemeActionsContext);
 
-const ThemeContextProvider = ({children}) => {
+const ThemeContextProvider = ({ children }) => {
   const [theme, updateTheme] = useState(defaultTheme.theme);
   const [themeMode, updateThemeMode] = useState(defaultConfig.themeMode);
   const [themeStyle, updateThemeStyle] = useState(defaultConfig.themeStyle);

@@ -1,6 +1,6 @@
-import {inputBaseClasses, lighten} from '@mui/material';
-import {Fonts} from 'shared/constants/AppEnums';
-import {styled} from '@mui/material/styles';
+import { inputBaseClasses, lighten } from '@mui/material';
+import { Fonts } from 'shared/constants/AppEnums';
+import { styled } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 
 export const SearchWrapper = styled('div')((props) => ({
@@ -13,7 +13,7 @@ export const SearchWrapper = styled('div')((props) => ({
   },
 }));
 
-export const SearchInputBase = styled(InputBase)(({theme}) => ({
+export const SearchInputBase = styled(InputBase)(({ theme }) => ({
   fontWeight: Fonts.MEDIUM,
 
   [`& .${inputBaseClasses.root}`]: {
@@ -75,7 +75,7 @@ export const SearchIconBox = styled('div')((props) => ({
     },
   },
 }));
-export const SearchIconWrapper = styled('div')(({theme}) => ({
+export const SearchIconWrapper = styled('div')(({ theme }) => ({
   height: '100%',
   position: 'absolute',
   top: 0,

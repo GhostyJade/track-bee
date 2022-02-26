@@ -4,13 +4,13 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import GraphFile from './GraphFile';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
-import {Fonts} from '../../../../shared/constants/AppEnums';
-import {green} from '@mui/material/colors';
+import { Fonts } from '../../../../shared/constants/AppEnums';
+import { green } from '@mui/material/colors';
 import AppCard from '@crema/core/AppCard';
 
-const FloatingGraphs = ({data, title}) => {
+const FloatingGraphs = ({ data, title }) => {
   return (
-    <AppCard sxStyle={{height: 1, textAlign: 'center'}}>
+    <AppCard sxStyle={{ height: 1, textAlign: 'center' }}>
       <Box
         component='p'
         sx={{

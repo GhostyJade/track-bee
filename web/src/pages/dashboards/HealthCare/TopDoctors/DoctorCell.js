@@ -2,10 +2,10 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import PropTypes from 'prop-types';
-import {Button} from '@mui/material';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Button } from '@mui/material';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 
-const DoctorCell = ({doctor}) => {
+const DoctorCell = ({ doctor }) => {
   return (
     <Box
       sx={{

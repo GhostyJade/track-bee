@@ -4,7 +4,7 @@ import AppList from '../../../../../@crema/core/AppList';
 import ListEmptyResult from '../../../../../@crema/core/AppList/ListEmptyResult';
 import PropTypes from 'prop-types';
 
-const ProductList = ({ecommerceList, loading}) => {
+const ProductList = ({ ecommerceList, loading }) => {
   return (
     <AppList
       delay={200}

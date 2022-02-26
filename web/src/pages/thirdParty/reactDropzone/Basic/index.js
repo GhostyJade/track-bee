@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import UploadModern from '../components/UploadModern';
 import Box from '@mui/material/Box';
-import {AppList} from '../../../../@crema';
-import {useDropzone} from 'react-dropzone';
+import { AppList } from '../../../../@crema';
+import { useDropzone } from 'react-dropzone';
 import FileRow from '../components/FileRow';
 
 const Basic = () => {
@@ -19,7 +19,7 @@ const Basic = () => {
   };
 
   return (
-    <Box sx={{position: 'relative'}}>
+    <Box sx={{ position: 'relative' }}>
       <UploadModern
         uploadText='Drag n drop some files here, or click to select files'
         dropzone={dropzone}

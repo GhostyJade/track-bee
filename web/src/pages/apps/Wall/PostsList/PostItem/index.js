@@ -4,15 +4,15 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import Avatar from '@mui/material/Avatar';
-import {timeFromNow} from '@crema/utility/helper/DateHelper';
+import { timeFromNow } from '@crema/utility/helper/DateHelper';
 import Attachments from './Attachments';
 import PostStats from './PostStats';
 import AddComment from './AddComment';
 import CommentsList from './CommentsList';
 import PropTypes from 'prop-types';
 
-const PostItem = ({post, wallData}) => {
-  const {owner, message, date, attachments, comments} = post;
+const PostItem = ({ post, wallData }) => {
+  const { owner, message, date, attachments, comments } = post;
 
   const getTitle = () => (
     <Box display='flex' alignItems='center'>

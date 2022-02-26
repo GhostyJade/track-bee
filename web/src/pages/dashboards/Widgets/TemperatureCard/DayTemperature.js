@@ -1,10 +1,10 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 
 const DayTemperature = (props) => {
-  const {day} = props;
+  const { day } = props;
 
   return (
     <Box

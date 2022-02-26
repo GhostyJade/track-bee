@@ -4,14 +4,14 @@ import IntlMessages from '@crema/utility/IntlMessages';
 import moment from 'moment';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
-import {TextField} from '@mui/material';
+import { TextField } from '@mui/material';
 
-const AppDatePicker = ({date, setDate}) => {
+const AppDatePicker = ({ date, setDate }) => {
   return (
     <Box
       sx={{
-        ml: {xs: 0, sm: 5},
-        mt: {xs: 2, sm: 0},
+        ml: { xs: 0, sm: 5 },
+        mt: { xs: 2, sm: 0 },
       }}
     >
       <DatePicker

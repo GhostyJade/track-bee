@@ -6,11 +6,11 @@ import MenuItem from '@mui/material/MenuItem';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import FormControl from '@mui/material/FormControl';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
-const ChangeStaff = ({selectedStaff, handleStaffChange}) => {
-  const staffList = useSelector(({todoApp}) => todoApp.staffList);
+const ChangeStaff = ({ selectedStaff, handleStaffChange }) => {
+  const staffList = useSelector(({ todoApp }) => todoApp.staffList);
 
   return (
     <FormControl

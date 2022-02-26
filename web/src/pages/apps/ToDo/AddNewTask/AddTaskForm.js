@@ -3,7 +3,7 @@ import IntlMessages from '@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
-import {Form} from 'formik';
+import { Form } from 'formik';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
@@ -12,16 +12,16 @@ import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
-import {useSelector} from 'react-redux';
-import {useIntl} from 'react-intl';
+import { useSelector } from 'react-redux';
+import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import Grid from '@mui/material/Grid';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
-import {Fonts} from '../../../../shared/constants/AppEnums';
-import {styled} from '@mui/material/styles';
+import { Fonts } from '../../../../shared/constants/AppEnums';
+import { styled } from '@mui/material/styles';
 
-const StyledDivider = styled(Divider)(({theme}) => ({
+const StyledDivider = styled(Divider)(({ theme }) => ({
   marginTop: 20,
   marginBottom: 20,
   [theme.breakpoints.up('xl')]: {
@@ -30,18 +30,18 @@ const StyledDivider = styled(Divider)(({theme}) => ({
   },
 }));
 const AddTaskForm = (props) => {
-  const {values, setFieldValue, isSubmitting, setTaskLabels, taskLabels} =
+  const { values, setFieldValue, isSubmitting, setTaskLabels, taskLabels } =
     props;
 
-  const labelList = useSelector(({todoApp}) => todoApp.labelList);
+  const labelList = useSelector(({ todoApp }) => todoApp.labelList);
 
-  const priorityList = useSelector(({todoApp}) => todoApp.priorityList);
+  const priorityList = useSelector(({ todoApp }) => todoApp.priorityList);
 
-  const staffList = useSelector(({todoApp}) => todoApp.staffList);
+  const staffList = useSelector(({ todoApp }) => todoApp.staffList);
 
   const inputLabel = React.useRef(null);
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
     <Form
@@ -218,7 +218,7 @@ const AddTaskForm = (props) => {
 
         <StyledDivider />
       </div>
-      <div style={{textAlign: 'right'}}>
+      <div style={{ textAlign: 'right' }}>
         <Button
           sx={{
             position: 'relative',

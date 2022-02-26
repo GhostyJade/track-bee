@@ -1,7 +1,7 @@
 import React from 'react';
 import AppCard from '@crema/core/AppCard';
 import Avatar from '@mui/material/Avatar';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
 
 const ProfileCard = () => {
   return (
@@ -15,7 +15,7 @@ const ProfileCard = () => {
         }}
       >
         <Avatar
-          sx={{height: 80, width: 80}}
+          sx={{ height: 80, width: 80 }}
           src={'/assets/images/avatar/A10.jpg'}
         />
         <Box

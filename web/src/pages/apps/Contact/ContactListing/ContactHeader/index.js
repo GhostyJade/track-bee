@@ -1,10 +1,10 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import Box from '@mui/material/Box';
 import AppSearchBar from '@crema/core/AppSearchBar';
-import {Hidden} from '@mui/material';
+import { Hidden } from '@mui/material';
 import PropTypes from 'prop-types';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import CheckBox from './CheckBox';
 import ContactCheckedActions from './ContactCheckedActions';
 import ViewSelectButtons from './ViewSelectButtons';
@@ -23,11 +23,13 @@ const ContactHeader = (props) => {
     pageView,
   } = props;
 
-  const contactList = useSelector(({contactApp}) => contactApp.contactList);
+  const contactList = useSelector(({ contactApp }) => contactApp.contactList);
 
-  const totalContacts = useSelector(({contactApp}) => contactApp.totalContacts);
+  const totalContacts = useSelector(
+    ({ contactApp }) => contactApp.totalContacts,
+  );
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
     <>
@@ -67,7 +69,7 @@ const ContactHeader = (props) => {
       <Hidden smDown>
         {contactList.length > 0 ? (
           <AppsPagination
-            sx={{ml: 2}}
+            sx={{ ml: 2 }}
             count={totalContacts}
             page={page}
             onPageChange={onPageChange}

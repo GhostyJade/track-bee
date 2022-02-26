@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppCard} from '../../../@crema';
+import { AppCard } from '../../../@crema';
 import ContactUsForm from './ContactUsForm';
 import AppGridContainer from '../../../@crema/core/AppGridContainer';
 import Grid from '@mui/material/Grid';
@@ -9,7 +9,7 @@ import Address from './Address';
 import AppAnimate from '../../../@crema/core/AppAnimate';
 import SimpleMap from './SimpleMap';
 import Box from '@mui/material/Box';
-import {Formik} from 'formik';
+import { Formik } from 'formik';
 import * as yup from 'yup';
 import IntlMessages from '../../../@crema/utility/IntlMessages';
 
@@ -28,7 +28,7 @@ const ContactUs = () => {
   return (
     <AppAnimate animation='transition.slideUpIn' delay={200}>
       <AppCard>
-        <Box sx={{mb: 5, maxHeight: '40%'}}>
+        <Box sx={{ mb: 5, maxHeight: '40%' }}>
           <SimpleMap />
         </Box>
         <SendMessage sendMessage={contactUsData.sendMessage} />
@@ -43,7 +43,7 @@ const ContactUs = () => {
                 message: '',
               }}
               validationSchema={validationSchema}
-              onSubmit={(data, {setSubmitting}) => {
+              onSubmit={(data, { setSubmitting }) => {
                 setSubmitting(true);
                 console.log('data: ', data);
                 //TODO Api Call here to save user info

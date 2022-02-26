@@ -1,5 +1,5 @@
-import {dateConfigs} from './dateTime';
-import {RoutePermittedRole} from '../../../shared/constants/AppConst';
+import { dateConfigs } from './dateTime';
+import { RoutePermittedRole } from '../../../shared/constants/AppConst';
 import React from 'react';
 
 export const labConfigs = [

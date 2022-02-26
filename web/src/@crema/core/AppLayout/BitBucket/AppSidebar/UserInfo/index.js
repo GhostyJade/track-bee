@@ -1,16 +1,16 @@
 import React from 'react';
 import orange from '@mui/material/colors/orange';
-import {useAuthMethod, useAuthUser} from '../../../../../utility/AuthHooks';
-import {Box, alpha} from '@mui/material';
+import { useAuthMethod, useAuthUser } from '../../../../../utility/AuthHooks';
+import { Box, alpha } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import {Fonts} from '../../../../../../shared/constants/AppEnums';
-import {useHistory} from 'react-router-dom';
+import { Fonts } from '../../../../../../shared/constants/AppEnums';
+import { useHistory } from 'react-router-dom';
 
 const UserInfo = () => {
-  const {logout} = useAuthMethod();
-  const {user} = useAuthUser();
+  const { logout } = useAuthMethod();
+  const { user } = useAuthUser();
   const history = useHistory();
 
   const [anchorEl, setAnchorEl] = React.useState(null);

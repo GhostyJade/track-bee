@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import IntlMessages from '@crema/utility/IntlMessages';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   onUpdateMailReadStatus,
   onUpdateMailStarredStatus,
@@ -14,7 +14,7 @@ import IconButton from '@mui/material/IconButton';
 import AppTooltip from '@crema/core/AppTooltip';
 
 const MoreOptions = (props) => {
-  const {checkedMails, setCheckedMails, path} = props;
+  const { checkedMails, setCheckedMails, path } = props;
 
   let unReadOption;
   let readOption;
@@ -23,7 +23,7 @@ const MoreOptions = (props) => {
 
   const dispatch = useDispatch();
 
-  const mailList = useSelector(({mailApp}) => mailApp.mailList);
+  const mailList = useSelector(({ mailApp }) => mailApp.mailList);
 
   const [isMoreIcon, onOpenMoreIcon] = useState(null);
 
@@ -86,7 +86,7 @@ const MoreOptions = (props) => {
   return (
     <>
       {checkedMails.length > 0 ? (
-        <Box component='span' sx={{ml: {xs: 'auto', sm: 0}}}>
+        <Box component='span' sx={{ ml: { xs: 'auto', sm: 0 } }}>
           <AppTooltip title={<IntlMessages id='common.more' />}>
             <IconButton
               sx={{
@@ -127,7 +127,7 @@ const MoreOptions = (props) => {
           </Menu>
         </Box>
       ) : (
-        <Box component='span' sx={{ml: {xs: 'auto', sm: 0}}}>
+        <Box component='span' sx={{ ml: { xs: 'auto', sm: 0 } }}>
           <AppTooltip title={<IntlMessages id='common.more' />}>
             <IconButton
               sx={{

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Box} from '@mui/material';
-import {getBreakPointsValue} from '../../utility/helper/Utils';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import { Box } from '@mui/material';
+import { getBreakPointsValue } from '../../utility/helper/Utils';
+import { Fonts } from '../../../shared/constants/AppEnums';
 
 // FIXME checkout https://material-ui.com/components/use-media-query/#migrating-from-withwidth
 const withWidth = () => (WrappedComponent) => (props) =>
@@ -51,11 +51,11 @@ const AppSemiCircleProgress = ({
   }
 
   return (
-    <Box sx={{width: actualDiameter}} style={{position: 'relative'}}>
+    <Box sx={{ width: actualDiameter }} style={{ position: 'relative' }}>
       <svg
         width={actualDiameter}
         height={actualDiameter / 2}
-        style={{transform: rotation, overflow: 'hidden'}}
+        style={{ transform: rotation, overflow: 'hidden' }}
       >
         <circle
           cx={coordinateForCircle}
@@ -103,7 +103,7 @@ const AppSemiCircleProgress = ({
           <Box
             component='span'
             sx={{
-              fontSize: {xs: 18, sm: 20, xl: 22},
+              fontSize: { xs: 18, sm: 20, xl: 22 },
               fontWeight: Fonts.LIGHT,
             }}
           >
@@ -112,7 +112,7 @@ const AppSemiCircleProgress = ({
           <Box
             component='span'
             sx={{
-              fontSize: {xs: 16, sm: 18, xl: 20},
+              fontSize: { xs: 16, sm: 18, xl: 20 },
               textTransform: 'uppercase',
               color: (theme) => theme.palette.text.secondary,
             }}

@@ -1,14 +1,14 @@
 import React from 'react';
-import {Form, Formik} from 'formik';
+import { Form, Formik } from 'formik';
 import * as yup from 'yup';
 import Button from '@mui/material/Button';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import {useDispatch} from 'react-redux';
-import {showMessage} from '../../../../redux/actions';
+import { useDispatch } from 'react-redux';
+import { showMessage } from '../../../../redux/actions';
 import IntlMessages from '@crema/utility/IntlMessages';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import Box from '@mui/material/Box';
-import {red} from '@mui/material/colors';
+import { red } from '@mui/material/colors';
 import AppCard from '@crema/core/AppCard';
 import AppTextField from '../../../../@crema/core/AppFormComponents/AppTextField';
 
@@ -22,7 +22,7 @@ const validationSchema = yup.object({
 const Subscribe = () => {
   const dispatch = useDispatch();
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
     <AppCard
@@ -31,7 +31,7 @@ const Subscribe = () => {
         backgroundColor: red[600],
         color: 'white',
       }}
-      titleStyle={{color: 'white'}}
+      titleStyle={{ color: 'white' }}
       title={messages['dashboard.subscribe']}
     >
       <Box
@@ -50,7 +50,7 @@ const Subscribe = () => {
           email: '',
         }}
         validationSchema={validationSchema}
-        onSubmit={(data, {setSubmitting, resetForm}) => {
+        onSubmit={(data, { setSubmitting, resetForm }) => {
           setSubmitting(true);
           dispatch(
             showMessage(<IntlMessages id='message.thankYouSubscription' />),
@@ -59,7 +59,7 @@ const Subscribe = () => {
           resetForm();
         }}
       >
-        {({isSubmitting}) => (
+        {({ isSubmitting }) => (
           <Box
             sx={{
               textAlign: 'left',

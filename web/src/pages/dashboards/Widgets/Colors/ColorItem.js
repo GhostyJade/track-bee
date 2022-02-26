@@ -2,10 +2,10 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import PropTypes from 'prop-types';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 
 const ColorItem = (props) => {
-  const {item, handleChange} = props;
+  const { item, handleChange } = props;
 
   return (
     <Box

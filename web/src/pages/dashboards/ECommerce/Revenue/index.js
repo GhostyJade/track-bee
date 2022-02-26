@@ -1,12 +1,12 @@
 import React from 'react';
 import AppCard from '@crema/core/AppCard';
-import {useIntl} from 'react-intl';
-import {Box} from '@mui/material';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { useIntl } from 'react-intl';
+import { Box } from '@mui/material';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import AppCircularProgress from '@crema/core/AppCircularProgress';
 
 const Revenue = () => {
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
     <AppCard title={messages['eCommerce.revenue']}>

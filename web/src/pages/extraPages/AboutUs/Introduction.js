@@ -1,9 +1,9 @@
 import React from 'react';
-import {Card} from '@mui/material';
+import { Card } from '@mui/material';
 import Button from '@mui/material/Button';
 import IntlMessages from '../../../@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import { Fonts } from '../../../shared/constants/AppEnums';
 
 const Introduction = () => {
   return (
@@ -58,7 +58,7 @@ const Introduction = () => {
           >
             <IntlMessages id='extra.aboutUs' />
           </Box>
-          <Box component='p' sx={{mb: 5}}>
+          <Box component='p' sx={{ mb: 5 }}>
             <IntlMessages id='extra.aboutContent' />
           </Box>
           <Box
@@ -74,7 +74,7 @@ const Introduction = () => {
               sx={{
                 fontWeight: Fonts.LIGHT,
                 fontSize: 14,
-                marginRight: {xs: 4, xl: 6},
+                marginRight: { xs: 4, xl: 6 },
                 marginBottom: 2,
               }}
             >

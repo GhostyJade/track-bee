@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import OrderTable from './OrderTable';
 import AppsContainer from '../../../@crema/core/AppsContainer';
-import {useIntl} from 'react-intl';
-import {useDispatch, useSelector} from 'react-redux';
-import {getRecentOrders} from '../../../redux/actions';
-import {Button, Hidden} from '@mui/material';
+import { useIntl } from 'react-intl';
+import { useDispatch, useSelector } from 'react-redux';
+import { getRecentOrders } from '../../../redux/actions';
+import { Button, Hidden } from '@mui/material';
 import AppsHeader from '../../../@crema/core/AppsContainer/AppsHeader';
 import AppsContent from '../../../@crema/core/AppsContainer/AppsContent';
 import AppsPagination from '../../../@crema/core/AppsPagination';
@@ -13,10 +13,10 @@ import AppInfoView from '../../../@crema/core/AppInfoView';
 import AppSearchBar from '../../../@crema/core/AppSearchBar';
 
 const Orders = () => {
-  const {messages} = useIntl();
+  const { messages } = useIntl();
   const dispatch = useDispatch();
-  const recentOrders = useSelector(({ecommerce}) => ecommerce.recentOrders);
-  const orderCount = useSelector(({ecommerce}) => ecommerce.orderCount);
+  const recentOrders = useSelector(({ ecommerce }) => ecommerce.recentOrders);
+  const orderCount = useSelector(({ ecommerce }) => ecommerce.orderCount);
   const [page, setPage] = useState(0);
   const [search, setSearchQuery] = useState('');
 

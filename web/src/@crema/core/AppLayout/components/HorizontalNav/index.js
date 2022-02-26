@@ -24,7 +24,7 @@ const HorizontalNav = () => {
             <HorizontalItem item={item} nestedLevel={0} />
           )}
 
-          {item.type === 'divider' && <Divider sx={{my: 5}} />}
+          {item.type === 'divider' && <Divider sx={{ my: 5 }} />}
         </React.Fragment>
       ))}
     </List>

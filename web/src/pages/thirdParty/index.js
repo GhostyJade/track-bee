@@ -1,4 +1,4 @@
-import {rechartsConfigs} from './recharts';
+import { rechartsConfigs } from './recharts';
 import React from 'react';
 
 export const thirdPartyConfigs = [

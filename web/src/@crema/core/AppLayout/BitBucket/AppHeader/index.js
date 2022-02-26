@@ -1,6 +1,6 @@
 import React from 'react';
-import {toggleNavCollapsed} from '../../../../../redux/actions';
-import {useDispatch} from 'react-redux';
+import { toggleNavCollapsed } from '../../../../../redux/actions';
+import { useDispatch } from 'react-redux';
 import SearchBar from '../../../AppSearchBar';
 import AppLogo from '../../components/AppLogo';
 import Hidden from '@mui/material/Hidden';

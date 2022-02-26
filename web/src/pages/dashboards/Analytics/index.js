@@ -1,10 +1,10 @@
-import React, {useEffect} from 'react';
-import {Grid} from '@mui/material';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { useEffect } from 'react';
+import { Grid } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import AppInfoView from '@crema/core/AppInfoView';
 
-import {onGetAnalyticsData} from '../../../redux/actions';
+import { onGetAnalyticsData } from '../../../redux/actions';
 import WelcomeCard from './WelcomeCard/index';
 import SalesState from './SalesState';
 import StateCard from './StateCards';
@@ -26,7 +26,7 @@ const CRM = () => {
     dispatch(onGetAnalyticsData());
   }, [dispatch]);
 
-  const analyticsData = useSelector(({dashboard}) => dashboard.analyticsData);
+  const analyticsData = useSelector(({ dashboard }) => dashboard.analyticsData);
 
   return (
     <>

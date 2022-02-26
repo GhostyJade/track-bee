@@ -15,8 +15,8 @@ export default function CustomInput() {
         onChange={(newValue) => {
           setValue(newValue);
         }}
-        renderInput={({inputRef, inputProps, InputProps}) => (
-          <Box sx={{display: 'flex', alignItems: 'center'}}>
+        renderInput={({ inputRef, inputProps, InputProps }) => (
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <input ref={inputRef} {...inputProps} />
             {InputProps?.endAdornment}
           </Box>

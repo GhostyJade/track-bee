@@ -1,13 +1,13 @@
 import React from 'react';
-import {AppCard} from '../../../../@crema';
+import { AppCard } from '../../../../@crema';
 import PropTypes from 'prop-types';
 import AppGridContainer from '../../../../@crema/core/AppGridContainer';
 import Grid from '@mui/material/Grid';
 import PackageCard from './PackageCard';
 
-const PackageThree = ({pricing}) => {
+const PackageThree = ({ pricing }) => {
   return (
-    <AppCard title='Pricing Package Style 3' sxStyle={{alignItems: 'center'}}>
+    <AppCard title='Pricing Package Style 3' sxStyle={{ alignItems: 'center' }}>
       <AppGridContainer
         sx={{
           maxWidth: 1000,

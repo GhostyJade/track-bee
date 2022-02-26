@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import IntlMessages from '@crema/utility/IntlMessages';
-import {Form} from 'formik';
+import { Form } from 'formik';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
@@ -10,13 +10,13 @@ import CardAttachments from './CardAttachments';
 import CardCheckedList from './CardCheckedList';
 import CardComments from './CardComments';
 import Button from '@mui/material/Button';
-import {useIntl} from 'react-intl';
-import {useSelector} from 'react-redux';
+import { useIntl } from 'react-intl';
+import { useSelector } from 'react-redux';
 import Divider from '@mui/material/Divider';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import {Autocomplete, DatePicker} from '@mui/lab';
-import {AppScrollbar} from '@crema';
+import { Autocomplete, DatePicker } from '@mui/lab';
+import { AppScrollbar } from '@crema';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
 
 const AddCardForm = (props) => {
@@ -39,11 +39,13 @@ const AddCardForm = (props) => {
     isSubmitting,
   } = props;
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
-  const labelList = useSelector(({scrumboardApp}) => scrumboardApp.labelList);
+  const labelList = useSelector(({ scrumboardApp }) => scrumboardApp.labelList);
 
-  const memberList = useSelector(({scrumboardApp}) => scrumboardApp.memberList);
+  const memberList = useSelector(
+    ({ scrumboardApp }) => scrumboardApp.memberList,
+  );
 
   const onDeleteCheckedItem = (id) => {
     const updatedList = checkedList.filter((item) => item.id !== id);
@@ -112,17 +114,17 @@ const AddCardForm = (props) => {
         <Box
           sx={{
             pt: 6,
-            px: {xs: 5, lg: 8, xl: 10},
+            px: { xs: 5, lg: 8, xl: 10 },
             pb: 2,
             display: 'flex',
-            flexDirection: {xs: 'column', md: 'row'},
-            alignItems: {md: 'center'},
+            flexDirection: { xs: 'column', md: 'row' },
+            alignItems: { md: 'center' },
           }}
         >
           <Box
             sx={{
               mb: 3,
-              width: {md: '60%'},
+              width: { md: '60%' },
             }}
           >
             <AppTextField
@@ -137,9 +139,9 @@ const AddCardForm = (props) => {
 
           <Box
             sx={{
-              ml: {md: 8},
+              ml: { md: 8 },
               mb: 3,
-              width: {md: '40%'},
+              width: { md: '40%' },
               '& .MuiFormControl-root': {
                 width: '100%',
               },
@@ -162,7 +164,7 @@ const AddCardForm = (props) => {
         <Box
           sx={{
             pb: 5,
-            px: {xs: 5, lg: 8, xl: 10},
+            px: { xs: 5, lg: 8, xl: 10 },
           }}
         >
           <AppTextField
@@ -249,8 +251,8 @@ const AddCardForm = (props) => {
 
           <Divider
             sx={{
-              mb: {xs: 4, md: 6},
-              mx: {xs: -5, lg: -8, xl: -10},
+              mb: { xs: 4, md: 6 },
+              mx: { xs: -5, lg: -8, xl: -10 },
             }}
           />
 

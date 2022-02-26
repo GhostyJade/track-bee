@@ -4,15 +4,15 @@ import AppContentView from '@crema/core/AppContentView';
 import AppFixedFooter from './AppFixedFooter';
 import AppHeader from './AppHeader';
 import AppSidebar from './AppSidebar';
-import {useLayoutContext} from '../../../utility/AppContextProvider/LayoutContextProvider';
+import { useLayoutContext } from '../../../utility/AppContextProvider/LayoutContextProvider';
 import AppThemeSetting from '../../AppThemeSetting';
 import HorDefaultWrapper from './HorDefaultWrapper';
 import MainContent from './MainContent';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
+import { LayoutType } from '../../../../shared/constants/AppEnums';
 import HorDefaultContainer from './HorDefaultContainer';
 
 const HorDefault = () => {
-  const {footer, layoutType, footerType} = useLayoutContext();
+  const { footer, layoutType, footerType } = useLayoutContext();
 
   return (
     <HorDefaultContainer

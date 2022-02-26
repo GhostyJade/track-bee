@@ -2,25 +2,25 @@ import React from 'react';
 import Drawer from '@mui/material/Drawer';
 import Hidden from '@mui/material/Hidden';
 import clsx from 'clsx';
-import {toggleNavCollapsed} from '../../../../redux/actions';
-import {useDispatch, useSelector} from 'react-redux';
+import { toggleNavCollapsed } from '../../../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
 import useStyles from './AppSidebarSubMenu.style';
 import AppScrollbar from '@crema/core/AppScrollbar';
 import MainMenu from './SidebarMenu/MainMenu';
-import {useThemeContext} from '../../../utility/AppContextProvider/ThemeContextProvider';
+import { useThemeContext } from '../../../utility/AppContextProvider/ThemeContextProvider';
 
 const AppSidebarSubMenu = (props) => {
   const dispatch = useDispatch();
-  const {themeMode} = useThemeContext();
+  const { themeMode } = useThemeContext();
 
-  const navCollapsed = useSelector(({settings}) => settings.navCollapsed);
+  const navCollapsed = useSelector(({ settings }) => settings.navCollapsed);
 
   const handleToggleDrawer = () => {
     dispatch(toggleNavCollapsed());
   };
-  const classes = useStyles({themeMode});
+  const classes = useStyles({ themeMode });
   let sidebarClasses = classes.sidebarStandard;
   return (
     <>
@@ -33,7 +33,7 @@ const AppSidebarSubMenu = (props) => {
             root: clsx(props.variant),
             paper: clsx(props.variant),
           }}
-          style={{position: 'absolute'}}
+          style={{ position: 'absolute' }}
         >
           <Box
             className={clsx(

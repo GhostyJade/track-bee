@@ -1,17 +1,17 @@
-import React, {useMemo} from 'react';
+import React, { useMemo } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import VerticalCollapse from '../VerticalCollapse';
 import VerticalItem from '../VerticalItem';
 import IntlMessages from '../../../../../utility/IntlMessages';
-import {checkPermission} from '../../../../../utility/helper/RouteHelper';
-import {useAuthUser} from '../../../../../utility/AuthHooks';
-import {useSidebarContext} from '../../../../../utility/AppContextProvider/SidebarContextProvider';
+import { checkPermission } from '../../../../../utility/helper/RouteHelper';
+import { useAuthUser } from '../../../../../utility/AuthHooks';
+import { useSidebarContext } from '../../../../../utility/AppContextProvider/SidebarContextProvider';
 import VerticalNavGroupItem from './VerticalNavGroupItem';
 
-const VerticalNavGroup = ({item, level}) => {
-  const {sidebarTextColor} = useSidebarContext();
-  const {user} = useAuthUser();
+const VerticalNavGroup = ({ item, level }) => {
+  const { sidebarTextColor } = useSidebarContext();
+  const { user } = useAuthUser();
   const hasPermission = useMemo(
     () => checkPermission(item.permittedRole, user.role),
     [item.permittedRole, user.role],

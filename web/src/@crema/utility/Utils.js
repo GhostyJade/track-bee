@@ -1,5 +1,5 @@
 import moment from 'moment';
-import {authRole} from '../../shared/constants/AppConst';
+import { authRole } from '../../shared/constants/AppConst';
 
 export const createRoutes = (routeConfigs) => {
   let allRoutes = [];
@@ -16,7 +16,7 @@ export const setRoutes = (config) => {
       let auth = route.auth
         ? [...config.auth, ...route.auth]
         : [...config.auth];
-      return {...route, auth};
+      return { ...route, auth };
     });
   }
 

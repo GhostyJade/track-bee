@@ -1,11 +1,11 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
-import {timeFromNow} from '@crema/utility/helper/DateHelper';
+import { timeFromNow } from '@crema/utility/helper/DateHelper';
 import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 
-const RequestItem = ({request}) => {
+const RequestItem = ({ request }) => {
   return (
     <Box
       className='item-hover'

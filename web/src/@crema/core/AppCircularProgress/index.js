@@ -4,7 +4,7 @@ import CircularProgress, {
   circularProgressClasses,
 } from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import { Fonts } from '../../../shared/constants/AppEnums';
 
 const AppCircularProgress = ({
   value,
@@ -25,7 +25,7 @@ const AppCircularProgress = ({
         margin: '0 auto',
       }}
     >
-      <Box sx={{position: 'relative'}}>
+      <Box sx={{ position: 'relative' }}>
         <CircularProgress
           variant='determinate'
           value={100}

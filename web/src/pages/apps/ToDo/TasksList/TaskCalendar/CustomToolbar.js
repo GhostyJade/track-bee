@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import CalendarViewMonthOutlinedIcon from '@mui/icons-material/CalendarViewMonthOutlined';
@@ -6,13 +6,13 @@ import ViewAgendaOutlinedIcon from '@mui/icons-material/ViewAgendaOutlined';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import PropTypes from 'prop-types';
-import {alpha, Box, Button, IconButton, Stack} from '@mui/material';
+import { alpha, Box, Button, IconButton, Stack } from '@mui/material';
 import AppTooltip from '../../../../../@crema/core/AppTooltip';
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import clsx from 'clsx';
-import {Fonts} from '../../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../../shared/constants/AppEnums';
 
-const IconBtn = styled(IconButton)(({theme}) => {
+const IconBtn = styled(IconButton)(({ theme }) => {
   return {
     color: theme.palette.text.disabled,
     backgroundColor: alpha(theme.palette.primary.main, 0.05),
@@ -111,7 +111,7 @@ const CustomToolbar = (props) => {
           mb: 2,
         }}
       >
-        <Stack spacing={2} direction='row' sx={{alignItems: 'center'}}>
+        <Stack spacing={2} direction='row' sx={{ alignItems: 'center' }}>
           <IconBtn
             className={clsx({
               active: viewState === 'month',
@@ -138,18 +138,18 @@ const CustomToolbar = (props) => {
           </IconBtn>
         </Stack>
 
-        <Box sx={{fontWeight: Fonts.SEMI_BOLD}}>
+        <Box sx={{ fontWeight: Fonts.SEMI_BOLD }}>
           {moment(props.date).format('DD/MM/YYYY')}
         </Box>
 
-        <Stack spacing={2} direction='row' sx={{alignItems: 'center'}}>
+        <Stack spacing={2} direction='row' sx={{ alignItems: 'center' }}>
           <IconButton>
             <AppTooltip title='Next'>
               <ArrowBackIosNewIcon onClick={goToBack} />
             </AppTooltip>
           </IconButton>
           <Button
-            sx={{maxHeight: 36}}
+            sx={{ maxHeight: 36 }}
             size='small'
             color='primary'
             variant='contained'

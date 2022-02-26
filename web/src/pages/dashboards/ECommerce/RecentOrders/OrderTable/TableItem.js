@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-const TableItem = ({data}) => {
+const TableItem = ({ data }) => {
   const getPaymentStatusColor = () => {
     switch (data.status) {
       case 'Pending': {

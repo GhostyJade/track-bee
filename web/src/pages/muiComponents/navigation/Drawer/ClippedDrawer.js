@@ -17,11 +17,11 @@ const drawerWidth = 240;
 
 export default function ClippedDrawer() {
   return (
-    <Box sx={{display: 'flex'}}>
+    <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar
         position='fixed'
-        sx={{zIndex: (theme) => theme.zIndex.drawer + 1}}
+        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       >
         <Toolbar>
           <Typography variant='h6' noWrap component='div'>
@@ -34,11 +34,14 @@ export default function ClippedDrawer() {
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          [`& .MuiDrawer-paper`]: {width: drawerWidth, boxSizing: 'border-box'},
+          [`& .MuiDrawer-paper`]: {
+            width: drawerWidth,
+            boxSizing: 'border-box',
+          },
         }}
       >
         <Toolbar />
-        <Box sx={{overflow: 'auto'}}>
+        <Box sx={{ overflow: 'auto' }}>
           <List>
             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
               <ListItem button key={text}>
@@ -62,7 +65,7 @@ export default function ClippedDrawer() {
           </List>
         </Box>
       </Drawer>
-      <Box component='main' sx={{flexGrow: 1, p: 3}}>
+      <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

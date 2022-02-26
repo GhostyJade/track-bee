@@ -1,16 +1,16 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import {Checkbox} from '@mui/material';
-import {Form, Formik} from 'formik';
+import { Checkbox } from '@mui/material';
+import { Form, Formik } from 'formik';
 import * as yup from 'yup';
 
 import AppInfoView from '@crema/core/AppInfoView';
 import Box from '@mui/material/Box';
 import IntlMessages from '@crema/utility/IntlMessages';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
-import {useAuthMethod} from '@crema/utility/AuthHooks';
-import {Fonts} from '../../../shared/constants/AppEnums';
-import {Link} from 'react-router-dom';
+import { useAuthMethod } from '@crema/utility/AuthHooks';
+import { Fonts } from '../../../shared/constants/AppEnums';
+import { Link } from 'react-router-dom';
 
 const validationSchema = yup.object({
   name: yup.string().required(<IntlMessages id='validation.nameRequired' />),
@@ -24,11 +24,11 @@ const validationSchema = yup.object({
 });
 
 const SignupJwtAuth = () => {
-  const {signUpUser} = useAuthMethod();
+  const { signUpUser } = useAuthMethod();
 
   return (
-    <Box sx={{flex: 1, display: 'flex', flexDirection: 'column'}}>
-      <Box sx={{flex: 1, display: 'flex', flexDirection: 'column', mb: 5}}>
+    <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', mb: 5 }}>
         <Formik
           validateOnChange={true}
           initialValues={{
@@ -38,7 +38,7 @@ const SignupJwtAuth = () => {
             confirmPassword: '',
           }}
           validationSchema={validationSchema}
-          onSubmit={(data, {setSubmitting}) => {
+          onSubmit={(data, { setSubmitting }) => {
             setSubmitting(true);
             signUpUser({
               email: data.email,
@@ -48,9 +48,9 @@ const SignupJwtAuth = () => {
             setSubmitting(false);
           }}
         >
-          {({isSubmitting}) => (
-            <Form style={{textAlign: 'left'}} noValidate autoComplete='off'>
-              <Box sx={{mb: {xs: 4, xl: 5}}}>
+          {({ isSubmitting }) => (
+            <Form style={{ textAlign: 'left' }} noValidate autoComplete='off'>
+              <Box sx={{ mb: { xs: 4, xl: 5 } }}>
                 <AppTextField
                   label={<IntlMessages id='common.name' />}
                   name='name'
@@ -64,7 +64,7 @@ const SignupJwtAuth = () => {
                 />
               </Box>
 
-              <Box sx={{mb: {xs: 4, xl: 5}}}>
+              <Box sx={{ mb: { xs: 4, xl: 5 } }}>
                 <AppTextField
                   label={<IntlMessages id='common.email' />}
                   name='email'
@@ -78,7 +78,7 @@ const SignupJwtAuth = () => {
                 />
               </Box>
 
-              <Box sx={{mb: {xs: 4, xl: 5}}}>
+              <Box sx={{ mb: { xs: 4, xl: 5 } }}>
                 <AppTextField
                   label={<IntlMessages id='common.password' />}
                   name='password'
@@ -95,7 +95,7 @@ const SignupJwtAuth = () => {
 
               <Box
                 sx={{
-                  mb: {xs: 3, xl: 4},
+                  mb: { xs: 3, xl: 4 },
                   display: 'flex',
                   alignItems: 'center',
                   flexWrap: 'wrap',
@@ -160,7 +160,7 @@ const SignupJwtAuth = () => {
           color: 'grey.500',
         }}
       >
-        <span style={{marginRight: 4}}>
+        <span style={{ marginRight: 4 }}>
           <IntlMessages id='common.alreadyHaveAccount' />
         </span>
         <Box

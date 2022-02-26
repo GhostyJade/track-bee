@@ -1,13 +1,13 @@
 import * as React from 'react';
-import {DataGrid} from '@mui/x-data-grid';
+import { DataGrid } from '@mui/x-data-grid';
 
 function loadServerRows(commodityFilterValue) {
   const serverRows = [
-    {id: '1', commodity: 'rice'},
-    {id: '2', commodity: 'soybeans'},
-    {id: '3', commodity: 'milk'},
-    {id: '4', commodity: 'wheat'},
-    {id: '5', commodity: 'oats'},
+    { id: '1', commodity: 'rice' },
+    { id: '2', commodity: 'soybeans' },
+    { id: '3', commodity: 'milk' },
+    { id: '4', commodity: 'wheat' },
+    { id: '5', commodity: 'oats' },
   ];
 
   return new Promise((resolve) => {
@@ -27,7 +27,7 @@ function loadServerRows(commodityFilterValue) {
 }
 
 export default function ServerFilterGrid() {
-  const [columns] = React.useState([{field: 'commodity', width: 150}]);
+  const [columns] = React.useState([{ field: 'commodity', width: 150 }]);
 
   const [rows, setRows] = React.useState([]);
   const [filterValue, setFilterValue] = React.useState();
@@ -58,7 +58,7 @@ export default function ServerFilterGrid() {
   }, [filterValue]);
 
   return (
-    <div style={{height: 400, width: '100%'}}>
+    <div style={{ height: 400, width: '100%' }}>
       <DataGrid
         rows={rows}
         columns={columns}

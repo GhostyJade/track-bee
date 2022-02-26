@@ -1,20 +1,20 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Gallery from 'react-photo-gallery';
 import photos from '../../../@crema/services/db/gallery/photos';
 import IntlMessages from '../../../@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import { Fonts } from '../../../shared/constants/AppEnums';
 import AppAnimate from '../../../@crema/core/AppAnimate';
 
 const tabs = [
-  {id: 323, name: <IntlMessages id='common.all' />},
-  {id: 333, name: <IntlMessages id='portfolio.logo' />},
-  {id: 32323, name: <IntlMessages id='portfolio.painting' />},
-  {id: 421, name: <IntlMessages id='portfolio.graphicDesign' />},
-  {id: 4454, name: <IntlMessages id='portfolio.webDesign' />},
-  {id: 221, name: <IntlMessages id='portfolio.ui' />},
+  { id: 323, name: <IntlMessages id='common.all' /> },
+  { id: 333, name: <IntlMessages id='portfolio.logo' /> },
+  { id: 32323, name: <IntlMessages id='portfolio.painting' /> },
+  { id: 421, name: <IntlMessages id='portfolio.graphicDesign' /> },
+  { id: 4454, name: <IntlMessages id='portfolio.webDesign' /> },
+  { id: 221, name: <IntlMessages id='portfolio.ui' /> },
 ];
 
 const Portfolio = () => {

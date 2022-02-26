@@ -1,7 +1,7 @@
 import React from 'react';
-import {useDispatch} from 'react-redux';
-import {onUpdateSelectedTask} from '../../../../../redux/actions';
-import {useHistory} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { onUpdateSelectedTask } from '../../../../../redux/actions';
+import { useHistory } from 'react-router-dom';
 import IntlMessages from '@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
@@ -12,7 +12,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import AppTooltip from '@crema/core/AppTooltip';
 
 const TaskDetailHeader = (props) => {
-  const {selectedTask} = props;
+  const { selectedTask } = props;
   const dispatch = useDispatch();
 
   const history = useHistory();
@@ -41,7 +41,7 @@ const TaskDetailHeader = (props) => {
           cursor: 'pointer',
         }}
         component='span'
-        mr={{xs: 2, sm: 4}}
+        mr={{ xs: 2, sm: 4 }}
       >
         <AppTooltip title={<IntlMessages id='common.back' />}>
           <ArrowBackIcon
@@ -59,7 +59,7 @@ const TaskDetailHeader = (props) => {
         component='span'
         sx={{
           marginLeft: 'auto',
-          display: {xs: 'none', sm: 'block'},
+          display: { xs: 'none', sm: 'block' },
         }}
       >
         <AppsStarredIcon item={selectedTask} onChange={onChangeStarred} />

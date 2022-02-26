@@ -1,20 +1,20 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import UserInfo from './UserInfo';
 import ChatTabs from './ChatTabs';
 import Box from '@mui/material/Box';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import moment from 'moment';
-import {Zoom} from '@mui/material';
-import {useIntl} from 'react-intl';
+import { Zoom } from '@mui/material';
+import { useIntl } from 'react-intl';
 import AppSearchBar from '@crema/core/AppSearchBar';
-import {useAuthUser} from '@crema/utility/AuthHooks';
+import { useAuthUser } from '@crema/utility/AuthHooks';
 
 const ChatSideBar = () => {
   const [keywords, setKeywords] = useState('');
-  const {user} = useAuthUser();
+  const { user } = useAuthUser();
 
-  const connectionList = useSelector(({chatApp}) => chatApp.connectionList);
-  const loading = useSelector(({common}) => common.loading);
+  const connectionList = useSelector(({ chatApp }) => chatApp.connectionList);
+  const loading = useSelector(({ common }) => common.loading);
 
   const getConnectionList = () => {
     if (keywords !== '') {
@@ -44,7 +44,7 @@ const ChatSideBar = () => {
 
   const chatListData = getChatList();
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
     <Box
@@ -54,7 +54,7 @@ const ChatSideBar = () => {
         flexDirection: 'column',
       }}
     >
-      <Zoom in style={{transitionDelay: '300ms'}}>
+      <Zoom in style={{ transitionDelay: '300ms' }}>
         <Box
           sx={{
             px: 5,

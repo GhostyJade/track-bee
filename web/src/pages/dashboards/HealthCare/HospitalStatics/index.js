@@ -1,10 +1,10 @@
 import React from 'react';
 import AppCard from '@crema/core/AppCard';
-import {Box, Typography} from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
 
-const HospitalStatics = ({data}) => {
-  const {bgColor, icon, value, name} = data;
+const HospitalStatics = ({ data }) => {
+  const { bgColor, icon, value, name } = data;
   return (
     <AppCard
       sxStyle={{

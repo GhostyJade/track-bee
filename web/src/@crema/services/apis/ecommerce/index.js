@@ -4,19 +4,19 @@ import ecommerceData, {
   customersData,
   recentOrders,
 } from '../../db/ecommerce/ecommerceData';
-import {multiPropsFilter} from '../../../utility/helper/Utils';
+import { multiPropsFilter } from '../../../utility/helper/Utils';
 
 mock.onGet('/api/ecommerce/list').reply((request) => {
-  const {filterData} = request.params;
+  const { filterData } = request.params;
   const data = multiPropsFilter(ecommerceData, filterData);
   const index = filterData.page * 10;
   const total = data.length;
   const list = data.length > 10 ? data.slice(index, index + 10) : data;
-  return [200, {list, total}];
+  return [200, { list, total }];
 });
 
 mock.onGet('/api/ecommerce/get').reply((request) => {
-  const {id} = request.params;
+  const { id } = request.params;
   console.log('id: ', id);
   if (id >= 1 && id <= 12) {
     const data = ecommerceData.filter((item) => +item.id === +id);
@@ -27,7 +27,7 @@ mock.onGet('/api/ecommerce/get').reply((request) => {
 });
 
 mock.onGet('/api/ecommerce/orders').reply((request) => {
-  const {search, page} = request.params;
+  const { search, page } = request.params;
 
   let orders = [...recentOrders];
 
@@ -50,7 +50,7 @@ mock.onGet('/api/ecommerce/orders').reply((request) => {
 });
 
 mock.onGet('/api/ecommerce/customers').reply((request) => {
-  const {search, page} = request.params;
+  const { search, page } = request.params;
 
   let customers = [...customersData];
 

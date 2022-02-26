@@ -6,16 +6,16 @@ import Box from '@mui/material/Box';
 import AppSearchBar from '@crema/core/AppSearchBar';
 import Hidden from '@mui/material/Hidden';
 import IconButton from '@mui/material/IconButton';
-import {toggleNavCollapsed} from '../../../../../redux/actions';
+import { toggleNavCollapsed } from '../../../../../redux/actions';
 import MenuIcon from '@mui/icons-material/Menu';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import AppMessages from '../../../AppMessages';
 import AppNotifications from '../../../AppNotifications';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import AppTooltip from '../../../AppTooltip';
-import {alpha} from '@mui/material/styles';
+import { alpha } from '@mui/material/styles';
 import AppLogo from '../../components/AppLogo';
 import UserInfo from '../../components/UserInfo';
 
@@ -46,14 +46,14 @@ const AppHeader = () => {
       <Toolbar
         sx={{
           boxSizing: 'border-box',
-          minHeight: {xs: 56, sm: 70},
-          paddingLeft: {xs: 2.5, md: 5},
-          paddingRight: {xs: 2.5, md: 5},
+          minHeight: { xs: 56, sm: 70 },
+          paddingLeft: { xs: 2.5, md: 5 },
+          paddingRight: { xs: 2.5, md: 5 },
         }}
       >
         <Hidden lgUp>
           <IconButton
-            sx={{color: 'text.secondary'}}
+            sx={{ color: 'text.secondary' }}
             edge='start'
             className='menu-btn'
             color='inherit'
@@ -72,7 +72,7 @@ const AppHeader = () => {
         <Box
           sx={{
             '& .logo-text': {
-              display: {xs: 'none', sm: 'block'},
+              display: { xs: 'none', sm: 'block' },
             },
           }}
         >
@@ -87,18 +87,18 @@ const AppHeader = () => {
           sx={{
             minHeight: 40,
             position: 'relative',
-            display: {xs: 'none', sm: 'block'},
+            display: { xs: 'none', sm: 'block' },
             '& .searchRoot': {
-              position: {xs: 'absolute', sm: 'relative'},
-              right: {xs: 0, sm: 'auto'},
-              top: {xs: 0, sm: 'auto'},
+              position: { xs: 'absolute', sm: 'relative' },
+              right: { xs: 0, sm: 'auto' },
+              top: { xs: 0, sm: 'auto' },
             },
           }}
         >
           <AppSearchBar iconPosition='right' placeholder='Search…' />
         </Box>
 
-        <Box sx={{ml: 4}}>
+        <Box sx={{ ml: 4 }}>
           <AppLngSwitcher iconOnly={true} tooltipPosition='bottom' />
         </Box>
 
@@ -138,14 +138,14 @@ const AppHeader = () => {
 
           <Box
             sx={{
-              ml: {sm: 4},
-              mr: {xs: 4, sm: 0},
-              minWidth: {md: 220},
+              ml: { sm: 4 },
+              mr: { xs: 4, sm: 0 },
+              minWidth: { md: 220 },
               '& .user-info-view': {
                 p: 0,
               },
               '& .user-info': {
-                display: {xs: 'none', md: 'block'},
+                display: { xs: 'none', md: 'block' },
               },
             }}
           >

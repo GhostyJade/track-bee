@@ -1,8 +1,8 @@
 import React from 'react';
-import {BarChart, Bar, XAxis, ResponsiveContainer, Tooltip} from 'recharts';
+import { BarChart, Bar, XAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import PropTypes from 'prop-types';
 
-const MixBarChart = ({data}) => {
+const MixBarChart = ({ data }) => {
   return (
     <ResponsiveContainer width='100%' height={270}>
       <BarChart

@@ -3,13 +3,13 @@ import InputLabel from '@mui/material/InputLabel';
 import IntlMessages from '@crema/utility/IntlMessages';
 import Select from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
-import {useDispatch, useSelector} from 'react-redux';
-import {onUpdateSelectedTask} from '../../../../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { onUpdateSelectedTask } from '../../../../../redux/actions';
 import PropTypes from 'prop-types';
-import {MenuItem} from '@mui/material';
+import { MenuItem } from '@mui/material';
 
-const TaskStatus = ({selectedTask}) => {
-  const statusList = useSelector(({todoApp}) => todoApp.statusList);
+const TaskStatus = ({ selectedTask }) => {
+  const statusList = useSelector(({ todoApp }) => todoApp.statusList);
 
   const dispatch = useDispatch();
 

@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Box from '@mui/material/Box';
 import AppsContainer from '@crema/core/AppsContainer';
 import BoardDetailView from './BoardDetailView';
-import {useHistory, useLocation} from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import {
   onGetBoardDetail,
   onNullifyBoardDetail,
@@ -12,10 +12,10 @@ import {
 const BoardDetail = () => {
   const history = useHistory();
   const boardDetail = useSelector(
-    ({scrumboardApp}) => scrumboardApp.boardDetail,
+    ({ scrumboardApp }) => scrumboardApp.boardDetail,
   );
   const dispatch = useDispatch();
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const path = pathname.split('/');

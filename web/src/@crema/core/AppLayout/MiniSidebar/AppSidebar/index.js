@@ -1,6 +1,6 @@
 import React from 'react';
-import {toggleNavCollapsed} from '../../../../../redux/actions';
-import {useDispatch, useSelector} from 'react-redux';
+import { toggleNavCollapsed } from '../../../../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import AppScrollbar from '../../../AppScrollbar';
@@ -9,16 +9,16 @@ import Hidden from '@mui/material/Hidden';
 import Drawer from '@mui/material/Drawer';
 import VerticalNav from '../../components/VerticalNav';
 import SidebarWrapper from './SidebarWrapper';
-import {useLayoutContext} from '../../../../utility/AppContextProvider/LayoutContextProvider';
+import { useLayoutContext } from '../../../../utility/AppContextProvider/LayoutContextProvider';
 import UserInfo from '../../components/UserInfo';
-import {useSidebarContext} from '../../../../utility/AppContextProvider/SidebarContextProvider';
+import { useSidebarContext } from '../../../../utility/AppContextProvider/SidebarContextProvider';
 
 const AppSidebar = (props) => {
   const dispatch = useDispatch();
-  const navCollapsed = useSelector(({settings}) => settings.navCollapsed);
-  const {footer, footerType} = useLayoutContext();
+  const navCollapsed = useSelector(({ settings }) => settings.navCollapsed);
+  const { footer, footerType } = useLayoutContext();
 
-  const {sidebarTextColor} = useSidebarContext();
+  const { sidebarTextColor } = useSidebarContext();
 
   const handleToggleDrawer = () => {
     dispatch(toggleNavCollapsed());
@@ -35,7 +35,7 @@ const AppSidebar = (props) => {
             root: clsx(props.variant),
             paper: clsx(props.variant),
           }}
-          style={{position: 'absolute'}}
+          style={{ position: 'absolute' }}
         >
           <SidebarWrapper className='mini-sidebar'>
             <MainSidebar>

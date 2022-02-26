@@ -1,18 +1,18 @@
 import React from 'react';
-import {Icon, ListItem, ListItemText} from '@mui/material';
-import {withRouter} from 'react-router-dom';
+import { Icon, ListItem, ListItemText } from '@mui/material';
+import { withRouter } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import IntlMessages from '../../../../utility/IntlMessages';
 import Box from '@mui/material/Box';
 import AppNavLink from '../../../AppNavLink';
 import Badge from '@mui/material/Badge';
-import {useSidebarContext} from '../../../../utility/AppContextProvider/SidebarContextProvider';
+import { useSidebarContext } from '../../../../utility/AppContextProvider/SidebarContextProvider';
 
 function HorizontalItem(props) {
-  const {item, dense} = props;
+  const { item, dense } = props;
   const active = isUrlInChildren(item, props.location.pathname);
-  const {sidebarMenuSelectedBgColor, sidebarMenuSelectedTextColor} =
+  const { sidebarMenuSelectedBgColor, sidebarMenuSelectedTextColor } =
     useSidebarContext();
 
   function isUrlInChildren(parent, url) {
@@ -79,7 +79,7 @@ function HorizontalItem(props) {
           sx={{
             color: active ? sidebarMenuSelectedTextColor : 'action',
             mr: 3,
-            fontSize: {xs: 16, xl: 18},
+            fontSize: { xs: 16, xl: 18 },
           }}
         >
           {item.icon}

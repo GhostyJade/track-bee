@@ -1,8 +1,8 @@
 import React from 'react';
-import {Icon} from '@mui/material';
+import { Icon } from '@mui/material';
 import PropTypes from 'prop-types';
 
-const PollReaction = ({userReaction, selectedReaction}) => {
+const PollReaction = ({ userReaction, selectedReaction }) => {
   /* const getReactionByPosition = (position) => {
     switch (position) {
       case 0:

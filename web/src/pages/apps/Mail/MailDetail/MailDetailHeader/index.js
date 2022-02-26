@@ -8,22 +8,22 @@ import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MarkunreadOutlinedIcon from '@mui/icons-material/MarkunreadOutlined';
-import {onUpdateSelectedMail} from '../../../../../redux/actions';
-import {useDispatch, useSelector} from 'react-redux';
+import { onUpdateSelectedMail } from '../../../../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 import IntlMessages from '@crema/utility/IntlMessages';
-import {Box} from '@mui/material';
-import {useHistory} from 'react-router-dom';
+import { Box } from '@mui/material';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AppTooltip from '@crema/core/AppTooltip';
 import IconButton from '@mui/material/IconButton';
 
 const MailDetailHeader = (props) => {
-  const {selectedMail} = props;
+  const { selectedMail } = props;
   const dispatch = useDispatch();
 
   const history = useHistory();
 
-  const labelList = useSelector(({mailApp}) => mailApp.labelList);
+  const labelList = useSelector(({ mailApp }) => mailApp.labelList);
 
   const [isLabelOpen, onOpenLabel] = React.useState(null);
 

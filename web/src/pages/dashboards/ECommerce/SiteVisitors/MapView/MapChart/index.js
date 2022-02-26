@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, { memo } from 'react';
 import {
   ComposableMap,
   Geographies,
@@ -20,19 +20,19 @@ const rounded = (num) => {
   }
 };
 
-const MapChart = ({setTooltipContent}) => {
+const MapChart = ({ setTooltipContent }) => {
   return (
     <>
-      <ComposableMap data-tip='' projectionConfig={{scale: 200}}>
+      <ComposableMap data-tip='' projectionConfig={{ scale: 200 }}>
         <ZoomableGroup>
           <Geographies geography={geoUrl}>
-            {({geographies}) =>
+            {({ geographies }) =>
               geographies.map((geo) => (
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
                   onMouseEnter={() => {
-                    const {NAME, POP_EST} = geo.properties;
+                    const { NAME, POP_EST } = geo.properties;
                     setTooltipContent(`${NAME} — ${rounded(POP_EST)}`);
                   }}
                   onMouseLeave={() => {

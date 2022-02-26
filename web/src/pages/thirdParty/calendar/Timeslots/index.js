@@ -1,8 +1,8 @@
 import React from 'react';
-import {momentLocalizer} from 'react-big-calendar';
+import { momentLocalizer } from 'react-big-calendar';
 import events from '../events';
 import moment from 'moment';
-import {StyledCalendar} from '../calandar.style';
+import { StyledCalendar } from '../calandar.style';
 
 const localizer = momentLocalizer(moment);
 

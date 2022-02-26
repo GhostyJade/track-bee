@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import AppMenu from '@crema/core/AppMenu';
 import Avatar from '@mui/material/Avatar';
-import {Fonts} from '../../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../../shared/constants/AppEnums';
 
-const TableItem = ({data}) => {
+const TableItem = ({ data }) => {
   return (
     <TableRow
       key={data.name}

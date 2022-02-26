@@ -18,7 +18,7 @@ const wallReducer = (state = initialState, action) => {
         wallData: action.payload,
       };
     case GET_FEED_POSTS: {
-      return {...state, postList: action.payload};
+      return { ...state, postList: action.payload };
     }
 
     case CREATE_NEW_POST: {

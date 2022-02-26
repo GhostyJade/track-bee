@@ -1,24 +1,24 @@
 import React from 'react';
-import {CustomizerItemWrapper, StyledToggleButton} from '../index.style';
+import { CustomizerItemWrapper, StyledToggleButton } from '../index.style';
 import Box from '@mui/material/Box';
 import IntlMessages from '../../../utility/IntlMessages';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import {ThemeMode} from '../../../../shared/constants/AppEnums';
+import { ThemeMode } from '../../../../shared/constants/AppEnums';
 import clsx from 'clsx';
 import {
   useThemeActionsContext,
   useThemeContext,
 } from '../../../utility/AppContextProvider/ThemeContextProvider';
-import {useSidebarActionsContext} from '../../../utility/AppContextProvider/SidebarContextProvider';
+import { useSidebarActionsContext } from '../../../utility/AppContextProvider/SidebarContextProvider';
 import {
   DarkSidebar,
   LightSidebar,
 } from '../../../utility/AppContextProvider/defaultConfig';
 
 const ThemeModes = () => {
-  const {updateThemeMode} = useThemeActionsContext();
-  const {updateSidebarColorSet} = useSidebarActionsContext();
-  const {themeMode, theme} = useThemeContext();
+  const { updateThemeMode } = useThemeActionsContext();
+  const { updateSidebarColorSet } = useSidebarActionsContext();
+  const { themeMode, theme } = useThemeContext();
 
   const onModeChange = (event, themeMode) => {
     if (themeMode) {
@@ -47,7 +47,7 @@ const ThemeModes = () => {
 
   return (
     <CustomizerItemWrapper>
-      <Box component='h4' sx={{mb: 2}}>
+      <Box component='h4' sx={{ mb: 2 }}>
         <IntlMessages id='customizer.themeMode' />
       </Box>
       <ToggleButtonGroup

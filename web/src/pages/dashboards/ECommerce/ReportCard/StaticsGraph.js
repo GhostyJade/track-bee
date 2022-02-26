@@ -1,13 +1,13 @@
 import React from 'react';
-import {Area, AreaChart, ResponsiveContainer} from 'recharts';
+import { Area, AreaChart, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
 
-const StaticsGraph = ({id, graphData, strokeColor}) => {
+const StaticsGraph = ({ id, graphData, strokeColor }) => {
   return (
     <ResponsiveContainer width='100%' height={50}>
       <AreaChart
         data={graphData}
-        margin={{top: 5, right: 0, left: 0, bottom: 0}}
+        margin={{ top: 5, right: 0, left: 0, bottom: 0 }}
       >
         <defs>
           <linearGradient id={'colorPv' + id} x1='0' y1='0' x2='0' y2='1'>

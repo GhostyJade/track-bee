@@ -1,5 +1,5 @@
 import React from 'react';
-import {Checkbox} from '@mui/material';
+import { Checkbox } from '@mui/material';
 import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import DraftsOutlinedIcon from '@mui/icons-material/DraftsOutlined';
@@ -21,12 +21,12 @@ import {
   MailInfoWrapper,
   MainActionWrapper,
 } from './index.styles';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
   onUpdateMailFolders,
   onUpdateMailReadStatus,
 } from '../../../../../redux/actions';
-import {Fonts} from 'shared/constants/AppEnums';
+import { Fonts } from 'shared/constants/AppEnums';
 
 const MailListItem = (props) => {
   const {
@@ -116,7 +116,7 @@ const MailListItem = (props) => {
         sx={{
           display: 'flex',
           alignItems: 'center',
-          width: {xs: '100%', sm: 'auto'},
+          width: { xs: '100%', sm: 'auto' },
         }}
       >
         <Box
@@ -140,7 +140,7 @@ const MailListItem = (props) => {
         <Box
           sx={{
             mr: 2.5,
-            display: {xs: 'none', sm: 'inline-block'},
+            display: { xs: 'none', sm: 'inline-block' },
             '& .MuiCheckbox-root': {
               color: (theme) => theme.palette.warning.main,
             },
@@ -170,7 +170,7 @@ const MailListItem = (props) => {
             whiteSpace: 'nowrap',
             fontWeight: mail.isRead ? Fonts.REGULAR : Fonts.MEDIUM,
             fontSize: 14,
-            width: {sm: '120px'},
+            width: { sm: '120px' },
           }}
           className={clsx(!mail.isRead ? 'fontBold' : '')}
         >

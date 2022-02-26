@@ -1,6 +1,6 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
-import {RoutePermittedRole} from 'shared/constants/AppConst';
+import { Redirect } from 'react-router-dom';
+import { RoutePermittedRole } from 'shared/constants/AppConst';
 
 export const appsConfig = [
   {

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Cell, Pie, PieChart} from 'recharts';
+import { Cell, Pie, PieChart } from 'recharts';
 import PropTypes from 'prop-types';
 
 const RADIAN = Math.PI / 180;
@@ -29,7 +29,7 @@ const renderCustomizedLabel = ({
   );
 };
 
-const EarningGraph = ({data}) => {
+const EarningGraph = ({ data }) => {
   return (
     <PieChart width={400} height={400}>
       <Pie

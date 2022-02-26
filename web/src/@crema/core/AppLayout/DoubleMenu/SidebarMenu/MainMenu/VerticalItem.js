@@ -1,5 +1,5 @@
-import React, {useMemo} from 'react';
-import {Icon, ListItem, ListItemText} from '@mui/material';
+import React, { useMemo } from 'react';
+import { Icon, ListItem, ListItemText } from '@mui/material';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import AppBadge from '@crema/core/AppBadge';
@@ -7,14 +7,14 @@ import AppNavLink from '@crema/core/AppNavLink';
 import Box from '@mui/material/Box';
 import IntlMessages from '../../../../../utility/IntlMessages';
 import useStyles from './VerticalItem.style';
-import {useSelector} from 'react-redux';
-import {checkPermission} from '../../../../../utility/helper/RouteHelper';
-import {useThemeContext} from '../../../../../utility/AppContextProvider/ThemeContextProvider';
+import { useSelector } from 'react-redux';
+import { checkPermission } from '../../../../../utility/helper/RouteHelper';
+import { useThemeContext } from '../../../../../utility/AppContextProvider/ThemeContextProvider';
 
-const VerticalItem = ({level, item}) => {
-  const {themeMode} = useThemeContext();
-  const classes = useStyles({level, themeMode});
-  const {user} = useSelector(({auth}) => auth);
+const VerticalItem = ({ level, item }) => {
+  const { themeMode } = useThemeContext();
+  const classes = useStyles({ level, themeMode });
+  const { user } = useSelector(({ auth }) => auth);
   const hasPermission = useMemo(
     () => checkPermission(item.auth, user.role),
     [item.auth, user.role],
@@ -43,10 +43,10 @@ const VerticalItem = ({level, item}) => {
       )}
       <ListItemText
         primary={<IntlMessages id={item.messageId} />}
-        classes={{primary: 'nav-item-text'}}
+        classes={{ primary: 'nav-item-text' }}
       />
       {item.count && (
-        <Box sx={{mr: 4.25}}>
+        <Box sx={{ mr: 4.25 }}>
           <AppBadge count={item.count} color={item.color} />
         </Box>
       )}

@@ -4,15 +4,15 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import PropTypes from 'prop-types';
 import ListItem from '@mui/material/ListItem';
-import {useDispatch} from 'react-redux';
-import {onSelectUser} from '../../../../../../redux/actions';
+import { useDispatch } from 'react-redux';
+import { onSelectUser } from '../../../../../../redux/actions';
 import clsx from 'clsx';
 
-import {green, red} from '@mui/material/colors';
-import {alpha} from '@mui/material';
+import { green, red } from '@mui/material/colors';
+import { alpha } from '@mui/material';
 
 const ChatItem = (props) => {
-  const {item, selectedUser} = props;
+  const { item, selectedUser } = props;
   const dispatch = useDispatch();
 
   return (
@@ -59,7 +59,7 @@ const ChatItem = (props) => {
                 }}
               >
                 <Avatar
-                  sx={{height: 12, width: 12}}
+                  sx={{ height: 12, width: 12 }}
                   src={item.members[0].image}
                 />
               </Box>

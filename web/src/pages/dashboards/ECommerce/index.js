@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetECommerceData} from '../../../redux/actions';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { onGetECommerceData } from '../../../redux/actions';
 import AppInfoView from '@crema/core/AppInfoView';
-import {Grid} from '@mui/material';
+import { Grid } from '@mui/material';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import SalesState from './SalesState';
 import SaleStatics from './SaleStatics';
@@ -25,7 +25,7 @@ const ECommerce = () => {
     dispatch(onGetECommerceData());
   }, [dispatch]);
 
-  const ecommerceData = useSelector(({dashboard}) => dashboard.ecommerceData);
+  const ecommerceData = useSelector(({ dashboard }) => dashboard.ecommerceData);
 
   return (
     <>

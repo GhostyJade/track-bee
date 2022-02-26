@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, Formik} from 'formik';
+import { Form, Formik } from 'formik';
 import * as yup from 'yup';
 import AppTextField from '../../../@crema/core/AppFormComponents/AppTextField';
 import IntlMessages from '../../../@crema/utility/IntlMessages';
@@ -8,11 +8,11 @@ import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import AppInfoView from '../../../@crema/core/AppInfoView';
-import {useAuthMethod, useAuthUser} from '../../../@crema/utility/AuthHooks';
-import {Fonts} from '../../../shared/constants/AppEnums';
-import {Link} from 'react-router-dom';
-import {FaFacebookF} from 'react-icons/fa';
-import {AiOutlineGoogle} from 'react-icons/ai';
+import { useAuthMethod, useAuthUser } from '../../../@crema/utility/AuthHooks';
+import { Fonts } from '../../../shared/constants/AppEnums';
+import { Link } from 'react-router-dom';
+import { FaFacebookF } from 'react-icons/fa';
+import { AiOutlineGoogle } from 'react-icons/ai';
 
 const validationSchema = yup.object({
   name: yup.string().required(<IntlMessages id='validation.nameRequired' />),
@@ -29,12 +29,12 @@ const validationSchema = yup.object({
 });
 
 const SignupAwsCognito = () => {
-  const {auth} = useAuthUser();
-  const {signUpCognitoUser} = useAuthMethod();
+  const { auth } = useAuthUser();
+  const { signUpCognitoUser } = useAuthMethod();
 
   return (
-    <Box sx={{flex: 1, display: 'flex', flexDirection: 'column'}}>
-      <Box sx={{flex: 1, display: 'flex', flexDirection: 'column', mb: 5}}>
+    <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', mb: 5 }}>
         <Formik
           validateOnChange={true}
           initialValues={{
@@ -44,7 +44,7 @@ const SignupAwsCognito = () => {
             confirmPassword: '',
           }}
           validationSchema={validationSchema}
-          onSubmit={(data, {setSubmitting, setErrors}) => {
+          onSubmit={(data, { setSubmitting, setErrors }) => {
             if (data.password !== data.confirmPassword) {
               setErrors({
                 confirmPassword: (
@@ -62,9 +62,9 @@ const SignupAwsCognito = () => {
             }
           }}
         >
-          {({isSubmitting}) => (
-            <Form style={{textAlign: 'left'}} noValidate autoComplete='off'>
-              <Box sx={{mb: {xs: 4, xl: 5}}}>
+          {({ isSubmitting }) => (
+            <Form style={{ textAlign: 'left' }} noValidate autoComplete='off'>
+              <Box sx={{ mb: { xs: 4, xl: 5 } }}>
                 <AppTextField
                   label={<IntlMessages id='common.name' />}
                   name='name'
@@ -78,7 +78,7 @@ const SignupAwsCognito = () => {
                 />
               </Box>
 
-              <Box sx={{mb: {xs: 4, xl: 5}}}>
+              <Box sx={{ mb: { xs: 4, xl: 5 } }}>
                 <AppTextField
                   label={<IntlMessages id='common.email' />}
                   name='email'
@@ -92,7 +92,7 @@ const SignupAwsCognito = () => {
                 />
               </Box>
 
-              <Box sx={{mb: {xs: 4, xl: 5}}}>
+              <Box sx={{ mb: { xs: 4, xl: 5 } }}>
                 <AppTextField
                   label={<IntlMessages id='common.password' />}
                   name='password'
@@ -109,7 +109,7 @@ const SignupAwsCognito = () => {
 
               <Box
                 sx={{
-                  mb: {xs: 3, xl: 4},
+                  mb: { xs: 3, xl: 4 },
                   display: 'flex',
                   alignItems: 'center',
                   flexWrap: 'wrap',
@@ -172,10 +172,10 @@ const SignupAwsCognito = () => {
       <Box
         sx={{
           color: 'grey.500',
-          mb: {xs: 5, md: 7},
+          mb: { xs: 5, md: 7 },
         }}
       >
-        <span style={{marginRight: 4}}>
+        <span style={{ marginRight: 4 }}>
           <IntlMessages id='common.alreadyHaveAccount' />
         </span>
         <Box
@@ -200,11 +200,11 @@ const SignupAwsCognito = () => {
           alignItems: 'center',
           justifyContent: 'space-between',
           backgroundColor: (theme) => theme.palette.background.default,
-          mx: {xs: -5, lg: -10},
-          mb: {xs: -6, lg: -11},
+          mx: { xs: -5, lg: -10 },
+          mb: { xs: -6, lg: -11 },
           mt: 'auto',
           py: 2,
-          px: {xs: 5, lg: 10},
+          px: { xs: 5, lg: 10 },
         }}
       >
         <Box
@@ -223,20 +223,20 @@ const SignupAwsCognito = () => {
           <IconButton
             sx={{
               p: 2,
-              '& svg': {fontSize: 18},
+              '& svg': { fontSize: 18 },
               color: (theme) => theme.palette.text.secondary,
             }}
-            onClick={() => auth.federatedSignIn({provider: 'Google'})}
+            onClick={() => auth.federatedSignIn({ provider: 'Google' })}
           >
             <AiOutlineGoogle />
           </IconButton>
           <IconButton
             sx={{
               p: 1.5,
-              '& svg': {fontSize: 18},
+              '& svg': { fontSize: 18 },
               color: (theme) => theme.palette.text.secondary,
             }}
-            onClick={() => auth.federatedSignIn({provider: 'Facebook'})}
+            onClick={() => auth.federatedSignIn({ provider: 'Facebook' })}
           >
             <FaFacebookF />
           </IconButton>

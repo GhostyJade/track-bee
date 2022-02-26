@@ -1,6 +1,6 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   getConnectionMessages,
   onDeleteConversation,
@@ -16,11 +16,11 @@ import PropTypes from 'prop-types';
 import IntlMessages from '@crema/utility/IntlMessages';
 import AppsHeader from '@crema/core/AppsContainer/AppsHeader';
 import AppsFooter from '@crema/core/AppsContainer/AppsFooter';
-import {MessageType} from '@crema/services/db/apps/chat/connectionList';
-import {useAuthUser} from '@crema/utility/AuthHooks';
+import { MessageType } from '@crema/services/db/apps/chat/connectionList';
+import { useAuthUser } from '@crema/utility/AuthHooks';
 import SimpleBarReact from 'simplebar-react';
 
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
 const ScrollbarWrapper = styled(SimpleBarReact)(() => {
   return {
@@ -39,14 +39,14 @@ const ScrollChatNoMainWrapper = styled('div')(() => {
   };
 });
 
-const ChatViewContainer = ({selectedUser}) => {
+const ChatViewContainer = ({ selectedUser }) => {
   const [message, setMessage] = useState('');
   const [isEdit, setIsEdit] = useState(false);
 
   const [selectedMessage, setSelectedMessage] = useState(null);
-  const userMessages = useSelector(({chatApp}) => chatApp.userMessages);
+  const userMessages = useSelector(({ chatApp }) => chatApp.userMessages);
   const dispatch = useDispatch();
-  const {user} = useAuthUser();
+  const { user } = useAuthUser();
 
   let _scrollBarRef = useRef();
   useEffect(() => {

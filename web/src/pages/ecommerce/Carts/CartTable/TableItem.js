@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import CancelIcon from '@mui/icons-material/Cancel';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import {removeCartItem, updateCartItem} from '../../../../redux/actions';
-import {Fonts} from '../../../../shared/constants/AppEnums';
-import {styled} from '@mui/material/styles';
+import { removeCartItem, updateCartItem } from '../../../../redux/actions';
+import { Fonts } from '../../../../shared/constants/AppEnums';
+import { styled } from '@mui/material/styles';
 
 const StyledTableCell = styled(TableCell)(() => ({
   fontSize: 14,
@@ -22,7 +22,7 @@ const StyledTableCell = styled(TableCell)(() => ({
     paddingRight: 20,
   },
 }));
-const TableItem = ({data}) => {
+const TableItem = ({ data }) => {
   const dispatch = useDispatch();
 
   const onRemoveItem = (data) => {
@@ -31,20 +31,20 @@ const TableItem = ({data}) => {
 
   const onDecrement = () => {
     if (data.count > 0) {
-      dispatch(updateCartItem({...data, count: data.count - 1}));
+      dispatch(updateCartItem({ ...data, count: data.count - 1 }));
     } else {
       dispatch(removeCartItem(data));
     }
   };
   const onIncrement = () => {
-    dispatch(updateCartItem({...data, count: data.count + 1}));
+    dispatch(updateCartItem({ ...data, count: data.count + 1 }));
   };
 
   return (
     <TableRow key={data.name} className='item-hover'>
       <StyledTableCell>
         <Box display='flex'>
-          <Avatar sx={{mr: 3.5}} src={data.image} />
+          <Avatar sx={{ mr: 3.5 }} src={data.image} />
           <Box>
             <Box fontSize={14} fontWeight={Fonts.MEDIUM}>
               {data.title}

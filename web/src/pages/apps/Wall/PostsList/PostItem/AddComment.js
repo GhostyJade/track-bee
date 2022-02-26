@@ -1,21 +1,21 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import TextField from '@mui/material/TextField';
 import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined';
-import {onAddNewComment} from '../../../../../redux/actions/Wall';
-import {useDispatch} from 'react-redux';
+import { onAddNewComment } from '../../../../../redux/actions/Wall';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import IconButton from '@mui/material/IconButton';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
-import {useDropzone} from 'react-dropzone';
-import {MessageType} from '../../../../../@crema/services/db/apps/chat/connectionList';
-import {generateUniqueID} from 'web-vitals/dist/modules/lib/generateUniqueID';
+import { useDropzone } from 'react-dropzone';
+import { MessageType } from '../../../../../@crema/services/db/apps/chat/connectionList';
+import { generateUniqueID } from 'web-vitals/dist/modules/lib/generateUniqueID';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
-import {styled} from '@mui/material/styles';
-import {darken} from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { darken } from '@mui/material';
 
-const AddCommentWrapper = styled('div')(({theme}) => ({
+const AddCommentWrapper = styled('div')(({ theme }) => ({
   borderTop: `solid 1px ${theme.palette.divider}`,
   display: 'flex',
   paddingTop: 16,
@@ -23,7 +23,7 @@ const AddCommentWrapper = styled('div')(({theme}) => ({
     marginBottom: 20,
   },
 }));
-const AddCommentContent = styled(Box)(({theme}) => ({
+const AddCommentContent = styled(Box)(({ theme }) => ({
   backgroundColor: darken(theme.palette.background.paper, 0.03),
   borderRadius: 30,
   padding: '7px 20px',
@@ -47,10 +47,10 @@ const CommentTextField = styled(TextField)(() => ({
     padding: '6px 5px 7px',
   },
 }));
-const AddComment = ({postId, wallData}) => {
+const AddComment = ({ postId, wallData }) => {
   const dispatch = useDispatch();
   const [comment, setComment] = useState('');
-  const {getRootProps, getInputProps} = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     multiple: false,
     onDrop: (acceptedFiles) => {
       console.log('acceptedFiles', acceptedFiles);
@@ -105,7 +105,7 @@ const AddComment = ({postId, wallData}) => {
       />
       <AddCommentContent
         sx={{
-          mb: {xs: 3, md: 0},
+          mb: { xs: 3, md: 0 },
         }}
       >
         <CommentTextField

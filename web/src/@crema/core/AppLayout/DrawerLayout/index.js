@@ -3,16 +3,16 @@ import clsx from 'clsx';
 import AppContentView from '@crema/core/AppContentView';
 import AppFixedFooter from './AppFixedFooter';
 import AppHeader from './AppHeader';
-import {useLayoutContext} from '../../../utility/AppContextProvider/LayoutContextProvider';
+import { useLayoutContext } from '../../../utility/AppContextProvider/LayoutContextProvider';
 import AppThemeSetting from '../../AppThemeSetting';
 import DrawerLayoutWrapper from './DrawerLayoutWrapper';
 import MainContent from './MainContent';
-import {LayoutType} from '../../../../shared/constants/AppEnums';
+import { LayoutType } from '../../../../shared/constants/AppEnums';
 import AppSidebar from './AppSidebar';
 import DrawerLayoutContainer from './DrawerLayoutContainer';
 
 const DrawerLayout = () => {
-  const {footer, layoutType, headerType, footerType} = useLayoutContext();
+  const { footer, layoutType, headerType, footerType } = useLayoutContext();
 
   return (
     <DrawerLayoutContainer

@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 import ReviewItem from './ReviewItem';
 import AppList from '@crema/core/AppList';
 import AppCard from '@crema/core/AppCard';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import AppScrollbar from '@crema/core/AppScrollbar';
 
 const Reviews = (props) => {
-  const {data} = props;
-  const {messages} = useIntl();
+  const { data } = props;
+  const { messages } = useIntl();
 
   return (
     <AppCard
-      sxStyle={{height: 1}}
+      sxStyle={{ height: 1 }}
       title={messages['common.reviews']}
-      contentStyle={{px: 0}}
+      contentStyle={{ px: 0 }}
     >
       <AppScrollbar
         sx={{
-          height: {xs: 362, xl: 316},
+          height: { xs: 362, xl: 316 },
         }}
       >
         <AppList

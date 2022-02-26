@@ -1,25 +1,25 @@
 import React from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import AppInfoView from '@crema/core/AppInfoView';
-import {Box, Slide, Zoom} from '@mui/material';
+import { Box, Slide, Zoom } from '@mui/material';
 import Hidden from '@mui/material/Hidden';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import PropTypes from 'prop-types';
 import Card from '@mui/material/Card';
 
-import {onToggleAppDrawer} from '../../../redux/actions';
+import { onToggleAppDrawer } from '../../../redux/actions';
 import AppSidebar from './AppSidebar';
-import {useLayoutContext} from '../../utility/AppContextProvider/LayoutContextProvider';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import { useLayoutContext } from '../../utility/AppContextProvider/LayoutContextProvider';
+import { Fonts } from '../../../shared/constants/AppEnums';
 import AppContainerWrapper from './AppContainerWrapper';
 
 const AppsContainer = (props) => {
   const dispatch = useDispatch();
-  const isAppDrawerOpen = useSelector(({common}) => common.isAppDrawerOpen);
-  const {footer} = useLayoutContext();
-  const {navStyle} = useLayoutContext();
-  const {title, sidebarContent, fullView, children} = props;
+  const isAppDrawerOpen = useSelector(({ common }) => common.isAppDrawerOpen);
+  const { footer } = useLayoutContext();
+  const { navStyle } = useLayoutContext();
+  const { title, sidebarContent, fullView, children } = props;
 
   return (
     <Box
@@ -69,7 +69,7 @@ const AppsContainer = (props) => {
             </IconButton>
           </Hidden>
         )}
-        <Zoom in style={{transitionDelay: '300ms'}}>
+        <Zoom in style={{ transitionDelay: '300ms' }}>
           <Box
             component='h2'
             variant='h2'

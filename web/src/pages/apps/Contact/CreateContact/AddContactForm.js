@@ -1,25 +1,25 @@
 import React from 'react';
-import {alpha, Box, Button, Select} from '@mui/material';
+import { alpha, Box, Button, Select } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
-import {Field, Form} from 'formik';
-import {useSelector} from 'react-redux';
-import {useDropzone} from 'react-dropzone';
-import {useIntl} from 'react-intl';
+import { Field, Form } from 'formik';
+import { useSelector } from 'react-redux';
+import { useDropzone } from 'react-dropzone';
+import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import IntlMessages from '@crema/utility/IntlMessages';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import {Fonts} from 'shared/constants/AppEnums';
+import { Fonts } from 'shared/constants/AppEnums';
 import EditIcon from '@mui/icons-material/Edit';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import Grid from '@mui/material/Grid';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
 import AppDateFiled from '@crema/core/AppFormComponents/AppDateFiled';
 
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
-const HeaderWrapper = styled('div')(({theme}) => {
+const HeaderWrapper = styled('div')(({ theme }) => {
   return {
     padding: 20,
     marginLeft: -24,
@@ -38,7 +38,7 @@ const HeaderWrapper = styled('div')(({theme}) => {
   };
 });
 
-const AvatarViewWrapper = styled('div')(({theme}) => {
+const AvatarViewWrapper = styled('div')(({ theme }) => {
   return {
     position: 'relative',
     cursor: 'pointer',
@@ -65,22 +65,22 @@ const AvatarViewWrapper = styled('div')(({theme}) => {
 });
 
 const AddContactForm = (props) => {
-  const {values, userImage, setUserImage, setFieldValue} = props;
-  const labelList = useSelector(({contactApp}) => contactApp.labelList);
+  const { values, userImage, setUserImage, setFieldValue } = props;
+  const labelList = useSelector(({ contactApp }) => contactApp.labelList);
 
-  const {getRootProps, getInputProps} = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/*',
     onDrop: (acceptedFiles) => {
       setUserImage(URL.createObjectURL(acceptedFiles[0]));
     },
   });
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
     <Form noValidate autoComplete='off'>
       <HeaderWrapper>
-        <div {...getRootProps({className: 'dropzone'})}>
+        <div {...getRootProps({ className: 'dropzone' })}>
           <input {...getInputProps()} />
           <label htmlFor='icon-button-file'>
             <AvatarViewWrapper>
@@ -123,7 +123,7 @@ const AddContactForm = (props) => {
           <Box
             component='h6'
             sx={{
-              mb: {xs: 4, xl: 6},
+              mb: { xs: 4, xl: 6 },
               fontSize: 14,
               fontWeight: Fonts.SEMI_BOLD,
             }}
@@ -135,7 +135,7 @@ const AddContactForm = (props) => {
             <AppTextField
               sx={{
                 width: '100%',
-                mb: {xs: 4, xl: 6},
+                mb: { xs: 4, xl: 6 },
               }}
               variant='outlined'
               label={<IntlMessages id='common.name' />}
@@ -145,7 +145,7 @@ const AddContactForm = (props) => {
             <AppTextField
               sx={{
                 width: '100%',
-                mb: {xs: 4, xl: 6},
+                mb: { xs: 4, xl: 6 },
               }}
               variant='outlined'
               label={<IntlMessages id='common.email' />}
@@ -155,7 +155,7 @@ const AddContactForm = (props) => {
             <AppTextField
               sx={{
                 width: '100%',
-                mb: {xs: 4, xl: 6},
+                mb: { xs: 4, xl: 6 },
               }}
               variant='outlined'
               label={<IntlMessages id='common.phone' />}
@@ -168,7 +168,7 @@ const AddContactForm = (props) => {
                   disableFuture
                   sx={{
                     width: '100%',
-                    mb: {xs: 4, xl: 6},
+                    mb: { xs: 4, xl: 6 },
                   }}
                   format='MM/DD/YYYY'
                   variant='outlined'
@@ -196,7 +196,7 @@ const AddContactForm = (props) => {
                     as={Select}
                     sx={{
                       width: '100%',
-                      mb: {xs: 4, xl: 6},
+                      mb: { xs: 4, xl: 6 },
                     }}
                   >
                     {labelList.map((label) => {
@@ -240,7 +240,7 @@ const AddContactForm = (props) => {
           <Box
             component='h6'
             sx={{
-              mb: {xs: 4, xl: 6},
+              mb: { xs: 4, xl: 6 },
               fontSize: 14,
               fontWeight: Fonts.SEMI_BOLD,
             }}
@@ -252,7 +252,7 @@ const AddContactForm = (props) => {
             <AppTextField
               sx={{
                 width: '100%',
-                mb: {xs: 4, xl: 6},
+                mb: { xs: 4, xl: 6 },
               }}
               variant='outlined'
               label={<IntlMessages id='common.company' />}
@@ -282,7 +282,7 @@ const AddContactForm = (props) => {
           <Box
             component='h6'
             sx={{
-              mb: {xs: 4, xl: 6},
+              mb: { xs: 4, xl: 6 },
               fontSize: 14,
               fontWeight: Fonts.SEMI_BOLD,
             }}
@@ -294,7 +294,7 @@ const AddContactForm = (props) => {
             <AppTextField
               sx={{
                 width: '100%',
-                mb: {xs: 4, xl: 6},
+                mb: { xs: 4, xl: 6 },
               }}
               variant='outlined'
               label={<IntlMessages id='common.facebookId' />}
@@ -316,7 +316,7 @@ const AddContactForm = (props) => {
           <Box
             component='h6'
             sx={{
-              mb: {xs: 4, xl: 6},
+              mb: { xs: 4, xl: 6 },
               fontSize: 14,
               fontWeight: Fonts.SEMI_BOLD,
             }}

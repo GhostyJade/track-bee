@@ -2,9 +2,9 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import PropTypes from 'prop-types';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 
-const AppointmentCell = ({appointment}) => {
+const AppointmentCell = ({ appointment }) => {
   return (
     <Box
       sx={{

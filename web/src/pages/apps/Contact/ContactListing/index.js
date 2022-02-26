@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {useLocation} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import {
   onDeleteContacts,
   onGetContactList,
@@ -10,7 +10,7 @@ import ContactHeader from './ContactHeader';
 import AppConfirmDialog from '@crema/core/AppConfirmDialog';
 import IntlMessages from '@crema/utility/IntlMessages';
 import CreateContact from '../CreateContact';
-import {Hidden} from '@mui/material';
+import { Hidden } from '@mui/material';
 import ContactView from './ContactView';
 import ContactDetail from '../ContactDetail';
 import AppsPagination from '@crema/core/AppsPagination';
@@ -20,11 +20,13 @@ import AppsFooter from '@crema/core/AppsContainer/AppsFooter';
 
 const ContactListing = () => {
   const dispatch = useDispatch();
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
-  const contactList = useSelector(({contactApp}) => contactApp.contactList);
+  const contactList = useSelector(({ contactApp }) => contactApp.contactList);
 
-  const totalContacts = useSelector(({contactApp}) => contactApp.totalContacts);
+  const totalContacts = useSelector(
+    ({ contactApp }) => contactApp.totalContacts,
+  );
 
   const [filterText, onSetFilterText] = useState('');
 
@@ -44,7 +46,7 @@ const ContactListing = () => {
 
   const [selectedContact, setSelectedContact] = useState(null);
 
-  const loading = useSelector(({common}) => common.loading);
+  const loading = useSelector(({ common }) => common.loading);
 
   useEffect(() => {
     setPage(0);

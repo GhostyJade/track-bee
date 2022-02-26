@@ -1,6 +1,6 @@
 import React from 'react';
-import {Checkbox, Hidden} from '@mui/material';
-import {useHistory, useParams} from 'react-router-dom';
+import { Checkbox, Hidden } from '@mui/material';
+import { useHistory, useParams } from 'react-router-dom';
 import IntlMessages from '@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
 import clsx from 'clsx';
@@ -11,7 +11,7 @@ import AppsStarredIcon from '@crema/core/AppsStarredIcon';
 import Avatar from '@mui/material/Avatar';
 import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
-import {ActionWrapper, StyledListItem, TaskInfoWrapper} from './index.style';
+import { ActionWrapper, StyledListItem, TaskInfoWrapper } from './index.style';
 
 const TaskListItem = ({
   task,
@@ -21,7 +21,7 @@ const TaskListItem = ({
   onDeleteTask,
 }) => {
   const history = useHistory();
-  const {folder, label} = useParams();
+  const { folder, label } = useParams();
 
   const onViewTaskDetail = (task) => {
     if (folder) history.push(`/apps/todo/${folder}/${task.id}`);

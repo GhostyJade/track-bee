@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import defaultConfig from './defaultConfig';
 
@@ -9,7 +9,7 @@ export const useSidebarContext = () => useContext(SidebarContext);
 
 export const useSidebarActionsContext = () => useContext(SidebarActionsContext);
 
-const SidebarContextProvider = ({children}) => {
+const SidebarContextProvider = ({ children }) => {
   const [menuStyle, updateMenuStyle] = useState(
     defaultConfig.sidebar.menuStyle,
   );

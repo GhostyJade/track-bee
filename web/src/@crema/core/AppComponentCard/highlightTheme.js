@@ -1,4 +1,4 @@
-import {Fonts} from 'shared/constants/AppEnums';
+import { Fonts } from 'shared/constants/AppEnums';
 
 export const highlightTheme = {
   plain: {

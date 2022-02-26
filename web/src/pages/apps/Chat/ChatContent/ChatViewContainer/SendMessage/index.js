@@ -1,18 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
-import {useDropzone} from 'react-dropzone';
-import {Box, darken, IconButton} from '@mui/material';
+import { useDropzone } from 'react-dropzone';
+import { Box, darken, IconButton } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import PropTypes from 'prop-types';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
-import {MessageType} from '@crema/services/db/apps/chat/connectionList';
-import {generateUniqueID} from 'web-vitals/dist/modules/lib/generateUniqueID';
+import { MessageType } from '@crema/services/db/apps/chat/connectionList';
+import { generateUniqueID } from 'web-vitals/dist/modules/lib/generateUniqueID';
 
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
-const SendBtn = styled(IconButton)(({theme}) => {
+const SendBtn = styled(IconButton)(({ theme }) => {
   return {
     height: 40,
     width: 40,
@@ -29,9 +29,13 @@ const SendBtn = styled(IconButton)(({theme}) => {
   };
 });
 
-const SendMessage = ({sendFileMessage, onSendMessage, currentMessage = ''}) => {
+const SendMessage = ({
+  sendFileMessage,
+  onSendMessage,
+  currentMessage = '',
+}) => {
   const [message, setMessage] = useState(currentMessage);
-  const {getRootProps, getInputProps} = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     multiple: true,
     onDrop: (acceptedFiles) => {
       console.log('acceptedFiles', acceptedFiles);
@@ -68,7 +72,7 @@ const SendMessage = ({sendFileMessage, onSendMessage, currentMessage = ''}) => {
     }
   };
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
     <Box
@@ -87,7 +91,7 @@ const SendMessage = ({sendFileMessage, onSendMessage, currentMessage = ''}) => {
             {...getRootProps({
               className: clsx('dropzone'),
             })}
-            style={{height: 40, width: 40}}
+            style={{ height: 40, width: 40 }}
             size='large'
           >
             <input {...getInputProps()} />

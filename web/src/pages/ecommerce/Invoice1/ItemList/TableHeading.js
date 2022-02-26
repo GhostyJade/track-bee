@@ -2,8 +2,8 @@ import React from 'react';
 import TableCell from '@mui/material/TableCell';
 import IntlMessages from '../../../../@crema/utility/IntlMessages';
 import TableRow from '@mui/material/TableRow';
-import {Box} from '@mui/material';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Box } from '@mui/material';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 
 const TableHeading = () => {
   return (

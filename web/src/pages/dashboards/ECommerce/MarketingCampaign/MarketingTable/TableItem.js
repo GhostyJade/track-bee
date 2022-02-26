@@ -4,7 +4,7 @@ import TableRow from '@mui/material/TableRow';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
-import {Fonts} from '../../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../../shared/constants/AppEnums';
 
 const TableItem = (props) => {
   return (

@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import {Grid} from '@mui/material';
+import React, { useEffect } from 'react';
+import { Grid } from '@mui/material';
 import TotalRevenue from './TotalRevenue';
 import QuickStats from './QuickStats';
 import Statistics from './Statisitcs';
@@ -11,8 +11,8 @@ import GoalProgress from './GoalProgress';
 import WebTraffic from './WebTraffic';
 import Reviews from './Reviews';
 import TicketSupport from './TicketSupport';
-import {useDispatch, useSelector} from 'react-redux';
-import {onGetCrmData} from '../../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { onGetCrmData } from '../../../redux/actions';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import AppInfoView from '@crema/core/AppInfoView';
 import AppAnimate from '../../../@crema/core/AppAnimate';
@@ -24,7 +24,7 @@ const CRM = () => {
     dispatch(onGetCrmData());
   }, [dispatch]);
 
-  const crmData = useSelector(({dashboard}) => dashboard.crmData);
+  const crmData = useSelector(({ dashboard }) => dashboard.crmData);
 
   return (
     <>

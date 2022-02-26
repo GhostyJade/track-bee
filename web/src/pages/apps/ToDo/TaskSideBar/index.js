@@ -2,21 +2,21 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import AddNewTask from '../AddNewTask';
 import IntlMessages from '@crema/utility/IntlMessages';
 import AppScrollbar from '@crema/core/AppScrollbar';
 import AppsSideBarFolderItem from '@crema/core/AppsSideBarFolderItem';
 import LabelItem from './LabelItem';
-import {Fonts} from 'shared/constants/AppEnums';
+import { Fonts } from 'shared/constants/AppEnums';
 import AppList from '@crema/core/AppList';
 import ListEmptyResult from '@crema/core/AppList/ListEmptyResult';
 import SidebarPlaceholder from '@crema/core/AppSkeleton/SidebarListSkeleton';
 import AddIcon from '@mui/icons-material/Add';
-import {Zoom} from '@mui/material';
-import {styled} from '@mui/material/styles';
+import { Zoom } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
-const ListWrapper = styled(List)(({theme}) => ({
+const ListWrapper = styled(List)(({ theme }) => ({
   marginBottom: 8,
   [theme.breakpoints.up('xl')]: {
     marginBottom: 20,
@@ -24,9 +24,9 @@ const ListWrapper = styled(List)(({theme}) => ({
 }));
 
 const TaskSideBar = () => {
-  const labelList = useSelector(({todoApp}) => todoApp.labelList);
+  const labelList = useSelector(({ todoApp }) => todoApp.labelList);
 
-  const folderList = useSelector(({todoApp}) => todoApp.folderList);
+  const folderList = useSelector(({ todoApp }) => todoApp.folderList);
 
   const [isAddTaskOpen, setAddTaskOpen] = React.useState(false);
 
@@ -40,8 +40,8 @@ const TaskSideBar = () => {
 
   return (
     <>
-      <Box sx={{px: {xs: 4, md: 5}, pt: {xs: 4, md: 5}, pb: 2.5}}>
-        <Zoom in style={{transitionDelay: '300ms'}}>
+      <Box sx={{ px: { xs: 4, md: 5 }, pt: { xs: 4, md: 5 }, pb: 2.5 }}>
+        <Zoom in style={{ transitionDelay: '300ms' }}>
           <Button
             variant='outlined'
             color='primary'
@@ -67,7 +67,7 @@ const TaskSideBar = () => {
         <Box
           sx={{
             pr: 4,
-            pb: {xs: 4, md: 5, lg: 6.2},
+            pb: { xs: 4, md: 5, lg: 6.2 },
           }}
         >
           <ListWrapper component='nav' aria-label='main task folders'>
@@ -77,7 +77,7 @@ const TaskSideBar = () => {
                 <ListEmptyResult
                   loading={true}
                   placeholder={
-                    <Box px={{xs: 4, md: 5, lg: 6.2}}>
+                    <Box px={{ xs: 4, md: 5, lg: 6.2 }}>
                       <SidebarPlaceholder />
                     </Box>
                   }
@@ -95,8 +95,8 @@ const TaskSideBar = () => {
 
           <Box
             component='h4'
-            mt={{xs: 4, xl: 5}}
-            px={{xs: 4, md: 5, lg: 6.2}}
+            mt={{ xs: 4, xl: 5 }}
+            px={{ xs: 4, md: 5, lg: 6.2 }}
             fontWeight={Fonts.SEMI_BOLD}
           >
             Labels
@@ -109,7 +109,7 @@ const TaskSideBar = () => {
                 <ListEmptyResult
                   loading={true}
                   placeholder={
-                    <Box px={{xs: 4, md: 5, lg: 6.2}}>
+                    <Box px={{ xs: 4, md: 5, lg: 6.2 }}>
                       <SidebarPlaceholder />
                     </Box>
                   }

@@ -1,18 +1,18 @@
-import React, {useMemo} from 'react';
-import {Icon, ListItem} from '@mui/material';
+import React, { useMemo } from 'react';
+import { Icon, ListItem } from '@mui/material';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import IntlMessages from '../../../../../utility/IntlMessages';
 import useStyles from './GroupItem.style';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import Box from '@mui/material/Box';
-import {checkPermission} from '../../../../../utility/helper/RouteHelper';
-import {useThemeContext} from '../../../../../utility/AppContextProvider/ThemeContextProvider';
+import { checkPermission } from '../../../../../utility/helper/RouteHelper';
+import { useThemeContext } from '../../../../../utility/AppContextProvider/ThemeContextProvider';
 
-const GroupItem = ({item, setSelectedMenu, selectedMenu}) => {
-  const {themeMode} = useThemeContext();
-  const classes = useStyles({themeMode});
-  const {user} = useSelector(({auth}) => auth);
+const GroupItem = ({ item, setSelectedMenu, selectedMenu }) => {
+  const { themeMode } = useThemeContext();
+  const classes = useStyles({ themeMode });
+  const { user } = useSelector(({ auth }) => auth);
   const hasPermission = useMemo(
     () => checkPermission(item.auth, user.role),
     [item.auth, user.role],

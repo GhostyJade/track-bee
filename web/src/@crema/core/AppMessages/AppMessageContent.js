@@ -1,6 +1,6 @@
 import React from 'react';
 import messages from '@crema/services/db/messages';
-import {Box, IconButton} from '@mui/material';
+import { Box, IconButton } from '@mui/material';
 import MessageItem from './MessageItem';
 import List from '@mui/material/List';
 import Button from '@mui/material/Button';
@@ -10,7 +10,7 @@ import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 
-const AppMessageContent = ({onClose, sxStyle}) => {
+const AppMessageContent = ({ onClose, sxStyle }) => {
   return (
     <Box
       sx={{
@@ -28,7 +28,7 @@ const AppMessageContent = ({onClose, sxStyle}) => {
           alignItems: 'center',
           borderBottom: 1,
           borderBottomColor: (theme) => theme.palette.divider,
-          minHeight: {xs: 56, sm: 70},
+          minHeight: { xs: 56, sm: 70 },
         }}
       >
         <Typography component='h3' variant='h3'>
@@ -49,7 +49,7 @@ const AppMessageContent = ({onClose, sxStyle}) => {
       </Box>
       <AppScrollbar
         sx={{
-          height: {xs: 'calc(100% - 96px)', sm: 'calc(100% - 110px)'},
+          height: { xs: 'calc(100% - 96px)', sm: 'calc(100% - 110px)' },
         }}
       >
         <List

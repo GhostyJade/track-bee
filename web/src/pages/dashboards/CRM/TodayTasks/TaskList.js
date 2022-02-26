@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Checkbox from '@mui/material/Checkbox';
@@ -7,11 +7,11 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import PropTypes from 'prop-types';
 import IntlMessages from '../../../../@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 
 import AppList from '../../../../@crema/core/AppList';
 
-const TaskList = ({todayTaskData}) => {
+const TaskList = ({ todayTaskData }) => {
   const [taskList, handleList] = useState(todayTaskData);
 
   const handleChange = (e, task) => {
@@ -38,7 +38,7 @@ const TaskList = ({todayTaskData}) => {
                 sx={{
                   marginTop: -2,
                   minWidth: 0,
-                  width: {xs: 35, xl: 40},
+                  width: { xs: 35, xl: 40 },
                 }}
               >
                 <Box

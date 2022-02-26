@@ -1,11 +1,11 @@
 import React from 'react';
 import Checkbox from '@mui/material/Checkbox';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 
-const CheckBox = ({checkedContacts, setCheckedContacts}) => {
-  const contactList = useSelector(({contactApp}) => contactApp.contactList);
+const CheckBox = ({ checkedContacts, setCheckedContacts }) => {
+  const contactList = useSelector(({ contactApp }) => contactApp.contactList);
 
   const onHandleMasterCheckbox = (event) => {
     if (event.target.checked) {

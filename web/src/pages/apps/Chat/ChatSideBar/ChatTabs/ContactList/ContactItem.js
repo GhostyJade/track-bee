@@ -4,13 +4,13 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import PropTypes from 'prop-types';
 import ListItem from '@mui/material/ListItem';
-import {useDispatch} from 'react-redux';
-import {onSelectUser} from '../../../../../../redux/actions';
+import { useDispatch } from 'react-redux';
+import { onSelectUser } from '../../../../../../redux/actions';
 import clsx from 'clsx';
-import {alpha} from '@mui/material';
+import { alpha } from '@mui/material';
 
 const ContactItem = (props) => {
-  const {item, selectedUser} = props;
+  const { item, selectedUser } = props;
   const dispatch = useDispatch();
 
   return (

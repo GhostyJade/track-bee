@@ -13,9 +13,9 @@ import {
   AvatarWrapper,
   MailMobileItemWrapper,
 } from './index.styles';
-import {getStringFromHtml} from '../../../../../@crema/utility/helper/StringHelper';
+import { getStringFromHtml } from '../../../../../@crema/utility/helper/StringHelper';
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
-import {Fonts} from '../../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../../shared/constants/AppEnums';
 
 const MailListItemMobile = (props) => {
   const {

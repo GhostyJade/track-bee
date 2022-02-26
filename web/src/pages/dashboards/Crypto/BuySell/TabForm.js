@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import IntlMessages from '../../../../@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 
 const TabForm = (props) => {
-  const {data} = props;
+  const { data } = props;
 
   const [inputValue, setValue] = useState(data.value);
   const [inputPrice, setPrice] = useState(data.price);

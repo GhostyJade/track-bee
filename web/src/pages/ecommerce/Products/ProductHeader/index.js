@@ -1,18 +1,18 @@
 import React from 'react';
-import {alpha, Box, Hidden, Stack} from '@mui/material';
+import { alpha, Box, Hidden, Stack } from '@mui/material';
 import AppSearch from '../../../../@crema/core/AppSearchBar';
 import ListIcon from '@mui/icons-material/List';
 import AppsIcon from '@mui/icons-material/Apps';
-import {useDispatch} from 'react-redux';
-import {VIEW_TYPE} from '../../../../redux/reducers/Ecommerce';
+import { useDispatch } from 'react-redux';
+import { VIEW_TYPE } from '../../../../redux/reducers/Ecommerce';
 import IconButton from '@mui/material/IconButton';
 import PropTypes from 'prop-types';
-import {setViewType} from '../../../../redux/actions';
-import {styled} from '@mui/material/styles';
+import { setViewType } from '../../../../redux/actions';
+import { styled } from '@mui/material/styles';
 import clsx from 'clsx';
 import AppsPagination from '../../../../@crema/core/AppsPagination';
 
-const IconBtn = styled(IconButton)(({theme}) => {
+const IconBtn = styled(IconButton)(({ theme }) => {
   return {
     color: theme.palette.text.disabled,
     backgroundColor: alpha(theme.palette.primary.main, 0.05),
@@ -43,7 +43,7 @@ const ProductHeader = ({
         alignItems: 'center',
       }}
     >
-      <Box sx={{mr: 3}}>
+      <Box sx={{ mr: 3 }}>
         <AppSearch
           placeholder='Search here'
           onChange={(e) => onSearch(e.target.value)}
@@ -80,7 +80,7 @@ const ProductHeader = ({
             <Box
               component='span'
               sx={{
-                ml: {sm: 'auto'},
+                ml: { sm: 'auto' },
               }}
             >
               <AppsPagination

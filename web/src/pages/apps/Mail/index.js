@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import MailsList from './MailsList';
 import MailDetail from './MailDetail';
 import {
@@ -6,18 +6,18 @@ import {
   onGetMailFolderList,
   onGetMailLabelList,
 } from '../../../redux/actions';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import AppsContainer from '@crema/core/AppsContainer';
 import MailSidebar from './MailSideBar';
-import {useIntl} from 'react-intl';
-import {useParams} from 'react-router-dom';
+import { useIntl } from 'react-intl';
+import { useParams } from 'react-router-dom';
 import clsx from 'clsx';
 import Box from '@mui/material/Box';
 
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
-const MailDetailViewWrapper = styled(Box)(({theme}) => {
+const MailDetailViewWrapper = styled(Box)(({ theme }) => {
   return {
     transition: 'all 0.5s ease',
     transform: 'translateX(100%)',
@@ -40,7 +40,7 @@ const MailDetailViewWrapper = styled(Box)(({theme}) => {
 
 const Mail = () => {
   const dispatch = useDispatch();
-  const {id} = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     dispatch(onGetMailLabelList());
@@ -54,7 +54,7 @@ const Mail = () => {
     dispatch(onGetConnectionList());
   }, [dispatch]);
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
     <AppsContainer

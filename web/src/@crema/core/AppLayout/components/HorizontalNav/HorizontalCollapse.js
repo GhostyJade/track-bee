@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   Grow,
   Icon,
@@ -7,25 +7,25 @@ import {
   ListItemText,
   Paper,
 } from '@mui/material';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import {Manager, Popper, Reference} from 'react-popper';
+import { Manager, Popper, Reference } from 'react-popper';
 import * as ReactDOM from 'react-dom';
 import HorizontalItem from './HorizontalItem';
 import HorizontalGroup from './HorizontalGroup';
 import Box from '@mui/material/Box';
 import IntlMessages from '../../../../utility/IntlMessages';
-import {useThemeContext} from '../../../../utility/AppContextProvider/ThemeContextProvider';
+import { useThemeContext } from '../../../../utility/AppContextProvider/ThemeContextProvider';
 import List from '@mui/material/List';
-import {useSidebarContext} from '../../../../utility/AppContextProvider/SidebarContextProvider';
+import { useSidebarContext } from '../../../../utility/AppContextProvider/SidebarContextProvider';
 
 function HorizontalCollapse(props) {
   const [opened, setOpened] = useState(false);
-  const {theme} = useThemeContext();
-  const {item, nestedLevel, dense} = props;
+  const { theme } = useThemeContext();
+  const { item, nestedLevel, dense } = props;
   const active = isUrlInChildren(item, props.location.pathname);
-  const {sidebarMenuSelectedBgColor, sidebarMenuSelectedTextColor} =
+  const { sidebarMenuSelectedBgColor, sidebarMenuSelectedTextColor } =
     useSidebarContext();
 
   const handleToggle = (open) => {
@@ -67,7 +67,7 @@ function HorizontalCollapse(props) {
     >
       <Manager>
         <Reference>
-          {({ref}) => (
+          {({ ref }) => (
             <ListItem
               ref={ref}
               button
@@ -104,7 +104,7 @@ function HorizontalCollapse(props) {
                   sx={{
                     color: active ? sidebarMenuSelectedTextColor : 'action',
                     mr: 3.5,
-                    fontSize: {xs: 16, xl: 18},
+                    fontSize: { xs: 16, xl: 18 },
                   }}
                 >
                   {item.icon}
@@ -132,7 +132,7 @@ function HorizontalCollapse(props) {
         </Reference>
         {ReactDOM.createPortal(
           <Popper placement='right' eventsEnabled={opened} positionFixed>
-            {({ref, style, placement}) =>
+            {({ ref, style, placement }) =>
               opened && (
                 <Box
                   ref={ref}
@@ -152,7 +152,7 @@ function HorizontalCollapse(props) {
                   <Grow
                     in={opened}
                     id='menu-list-grow'
-                    sx={{transformOrigin: '0 0 0'}}
+                    sx={{ transformOrigin: '0 0 0' }}
                   >
                     <Paper
                       onMouseEnter={() => handleToggle(true)}

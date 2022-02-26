@@ -1,17 +1,17 @@
-import React, {useMemo} from 'react';
-import {Icon, ListItemText} from '@mui/material';
+import React, { useMemo } from 'react';
+import { Icon, ListItemText } from '@mui/material';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import AppBadge from '@crema/core/AppBadge';
 import AppNavLink from '@crema/core/AppNavLink';
 import Box from '@mui/material/Box';
 import IntlMessages from '../../../../../utility/IntlMessages';
-import {checkPermission} from '../../../../../utility/helper/RouteHelper';
-import {useAuthUser} from '../../../../../utility/AuthHooks';
+import { checkPermission } from '../../../../../utility/helper/RouteHelper';
+import { useAuthUser } from '../../../../../utility/AuthHooks';
 import VerticalNavItem from './VerticalNavItem';
 
-const VerticalItem = ({level, item}) => {
-  const {user} = useAuthUser();
+const VerticalItem = ({ level, item }) => {
+  const { user } = useAuthUser();
   const hasPermission = useMemo(
     () => checkPermission(item.permittedRole, user.role),
     [item.permittedRole, user.role],
@@ -47,10 +47,10 @@ const VerticalItem = ({level, item}) => {
       <ListItemText
         className='nav-item-content'
         primary={<IntlMessages id={item.messageId} />}
-        classes={{primary: 'nav-item-text'}}
+        classes={{ primary: 'nav-item-text' }}
       />
       {item.count && (
-        <Box sx={{mr: 3.5}} className='menu-badge'>
+        <Box sx={{ mr: 3.5 }} className='menu-badge'>
           <AppBadge count={item.count} color={item.color} />
         </Box>
       )}

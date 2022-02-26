@@ -7,15 +7,15 @@ import React, {
 } from 'react';
 import Auth from '@aws-amplify/auth';
 import PropTypes from 'prop-types';
-import {awsConfig} from './aws-exports';
+import { awsConfig } from './aws-exports';
 import {
   FETCH_ERROR,
   FETCH_START,
   FETCH_SUCCESS,
   SHOW_MESSAGE,
 } from '../../../../shared/constants/ActionTypes';
-import {useDispatch} from 'react-redux';
-import {useHistory} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 const AwsCognitoContext = createContext();
 const AwsCognitoActionsContext = createContext();
@@ -24,7 +24,7 @@ export const useAwsCognito = () => useContext(AwsCognitoContext);
 
 export const useAwsCognitoActions = () => useContext(AwsCognitoActionsContext);
 
-const AwsAuthProvider = ({children}) => {
+const AwsAuthProvider = ({ children }) => {
   const [awsCognitoData, setAwsCognitoData] = useState({
     user: null,
     isAuthenticated: false,
@@ -58,12 +58,12 @@ const AwsAuthProvider = ({children}) => {
       );
   }, [auth]);
 
-  const signIn = async ({email, password}) => {
-    dispatch({type: FETCH_START});
+  const signIn = async ({ email, password }) => {
+    dispatch({ type: FETCH_START });
     try {
       const user = await Auth.signIn(email, password);
       console.log('user: ', user);
-      dispatch({type: FETCH_SUCCESS});
+      dispatch({ type: FETCH_SUCCESS });
       setAwsCognitoData({
         user: user,
         isLoading: false,
@@ -75,11 +75,11 @@ const AwsAuthProvider = ({children}) => {
         isLoading: false,
         isAuthenticated: false,
       });
-      dispatch({type: FETCH_ERROR, payload: error.message});
+      dispatch({ type: FETCH_ERROR, payload: error.message });
     }
   };
-  const signUpCognitoUser = async ({email, password, name}) => {
-    dispatch({type: FETCH_START});
+  const signUpCognitoUser = async ({ email, password, name }) => {
+    dispatch({ type: FETCH_START });
     try {
       await Auth.signUp({
         username: email,
@@ -88,8 +88,8 @@ const AwsAuthProvider = ({children}) => {
           name,
         },
       });
-      dispatch({type: FETCH_SUCCESS});
-      history.push('/confirm-signup', {email: email});
+      dispatch({ type: FETCH_SUCCESS });
+      history.push('/confirm-signup', { email: email });
       dispatch({
         type: SHOW_MESSAGE,
         payload:
@@ -101,11 +101,11 @@ const AwsAuthProvider = ({children}) => {
         isLoading: false,
         isAuthenticated: false,
       });
-      dispatch({type: FETCH_ERROR, payload: error.message});
+      dispatch({ type: FETCH_ERROR, payload: error.message });
     }
   };
   const confirmCognitoUserSignup = async (username, code) => {
-    dispatch({type: FETCH_START});
+    dispatch({ type: FETCH_START });
     try {
       await Auth.confirmSignUp(username, code, {
         forceAliasCreation: false,
@@ -122,11 +122,11 @@ const AwsAuthProvider = ({children}) => {
         isLoading: false,
         isAuthenticated: false,
       });
-      dispatch({type: FETCH_ERROR, payload: error.message});
+      dispatch({ type: FETCH_ERROR, payload: error.message });
     }
   };
   const forgotPassword = async (username, code) => {
-    dispatch({type: FETCH_START});
+    dispatch({ type: FETCH_START });
     try {
       await Auth.confirmSignUp(username, code, {
         forceAliasCreation: false,
@@ -143,12 +143,12 @@ const AwsAuthProvider = ({children}) => {
         isLoading: false,
         isAuthenticated: false,
       });
-      dispatch({type: FETCH_ERROR, payload: error.message});
+      dispatch({ type: FETCH_ERROR, payload: error.message });
     }
   };
 
   const logout = async () => {
-    setAwsCognitoData({...awsCognitoData, isLoading: true});
+    setAwsCognitoData({ ...awsCognitoData, isLoading: true });
     try {
       await auth.signOut();
       setAwsCognitoData({

@@ -1,14 +1,14 @@
 import React from 'react';
 import AppCard from '@crema/core/AppCard';
-import {Box, Grid} from '@mui/material';
-import {useIntl} from 'react-intl';
-import {AppGridContainer} from '@crema';
+import { Box, Grid } from '@mui/material';
+import { useIntl } from 'react-intl';
+import { AppGridContainer } from '@crema';
 import MapView from './MapView';
 import AppList from '@crema/core/AppList';
-import {Fonts} from '../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 
-const CountryCell = ({data}) => (
+const CountryCell = ({ data }) => (
   <Box
     sx={{
       display: 'flex',
@@ -60,13 +60,13 @@ CountryCell.propTypes = {
   data: PropTypes.object,
 };
 
-const SiteVisitors = ({siteVisitorsData}) => {
-  const {messages} = useIntl();
+const SiteVisitors = ({ siteVisitorsData }) => {
+  const { messages } = useIntl();
   return (
     <AppCard
-      sxStyle={{height: 1}}
+      sxStyle={{ height: 1 }}
       title={messages['eCommerce.siteVisitorsStatistics']}
-      contentStyle={{px: 0}}
+      contentStyle={{ px: 0 }}
     >
       <AppGridContainer>
         <Grid item xs={12} md={3}>

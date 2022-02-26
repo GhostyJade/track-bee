@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Alert from '@mui/material/Alert';
-import {GridEvents, useGridApiRef, DataGridPro} from '@mui/x-data-grid-pro';
+import { GridEvents, useGridApiRef, DataGridPro } from '@mui/x-data-grid-pro';
 import {
   randomCreatedDate,
   randomTraderName,
@@ -29,12 +29,12 @@ export default function CatchEditingEventsGrid() {
   }, [apiRef]);
 
   return (
-    <div style={{width: '100%'}}>
-      <div style={{height: 180, width: '100%'}}>
+    <div style={{ width: '100%' }}>
+      <div style={{ height: 180, width: '100%' }}>
         <DataGridPro rows={rows} columns={columns} apiRef={apiRef} />
       </div>
       {message && (
-        <Alert severity='info' style={{marginTop: 8}}>
+        <Alert severity='info' style={{ marginTop: 8 }}>
           {message}
         </Alert>
       )}
@@ -43,8 +43,8 @@ export default function CatchEditingEventsGrid() {
 }
 
 const columns = [
-  {field: 'name', headerName: 'Name', width: 180, editable: true},
-  {field: 'age', headerName: 'Age', type: 'number', editable: true},
+  { field: 'name', headerName: 'Name', width: 180, editable: true },
+  { field: 'age', headerName: 'Age', type: 'number', editable: true },
   {
     field: 'dateCreated',
     headerName: 'Date Created',

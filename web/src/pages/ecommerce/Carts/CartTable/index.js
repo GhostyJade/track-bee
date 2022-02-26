@@ -7,7 +7,7 @@ import TableItem from './TableItem';
 import AppTableContainer from '../../../../@crema/core/AppTableContainer';
 import PropTypes from 'prop-types';
 
-const CartTable = ({cartItems}) => {
+const CartTable = ({ cartItems }) => {
   return (
     <AppTableContainer>
       <Table stickyHeader className='table'>

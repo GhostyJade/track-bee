@@ -1,17 +1,17 @@
-import {authRouteConfig} from './auth';
-import {initialUrl} from 'shared/constants/AppConst';
-import {appsConfig} from './apps';
-import {Redirect} from 'react-router-dom';
+import { authRouteConfig } from './auth';
+import { initialUrl } from 'shared/constants/AppConst';
+import { appsConfig } from './apps';
+import { Redirect } from 'react-router-dom';
 import Error403 from './errorPages/Error403';
 import React from 'react';
-import {dashBoardConfigs} from './dashboards';
-import {errorPagesConfigs} from './errorPages';
-import {thirdPartyConfigs} from './thirdParty';
-import {extraPagesConfigs} from './extraPages';
-import {ecommerceConfig} from './ecommerce';
-import {muiComponentConfigs} from './muiComponents';
-import {userPagesConfig} from './userPages';
-import {userListConfig} from './userList';
+import { dashBoardConfigs } from './dashboards';
+import { errorPagesConfigs } from './errorPages';
+import { thirdPartyConfigs } from './thirdParty';
+import { extraPagesConfigs } from './extraPages';
+import { ecommerceConfig } from './ecommerce';
+import { muiComponentConfigs } from './muiComponents';
+import { userPagesConfig } from './userPages';
+import { userListConfig } from './userList';
 
 const authorizedStructure = {
   fallbackPath: '/signin',
@@ -43,4 +43,4 @@ const anonymousStructure = {
   ]),
 };
 
-export {authorizedStructure, unAuthorizedStructure, anonymousStructure};
+export { authorizedStructure, unAuthorizedStructure, anonymousStructure };

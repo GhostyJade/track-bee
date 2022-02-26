@@ -7,11 +7,11 @@ import {
   GridToolbarDensitySelector,
   GridToolbarFilterButton,
 } from '@mui/x-data-grid';
-import {useDemoData} from '@mui/x-data-grid-generator';
+import { useDemoData } from '@mui/x-data-grid-generator';
 import ClearIcon from '@mui/icons-material/Clear';
 import SearchIcon from '@mui/icons-material/Search';
-import {createTheme} from '@mui/material/styles';
-import {createStyles, makeStyles} from '@mui/styles';
+import { createTheme } from '@mui/material/styles';
+import { createStyles, makeStyles } from '@mui/styles';
 
 function escapeRegExp(value) {
   return value.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
@@ -41,7 +41,7 @@ const useStyles = makeStyles(
         },
       },
     }),
-  {defaultTheme},
+  { defaultTheme },
 );
 
 function QuickSearchToolbar(props) {
@@ -66,7 +66,7 @@ function QuickSearchToolbar(props) {
               title='Clear'
               aria-label='Clear'
               size='small'
-              style={{visibility: props.value ? 'visible' : 'hidden'}}
+              style={{ visibility: props.value ? 'visible' : 'hidden' }}
               onClick={props.clearSearch}
             >
               <ClearIcon fontSize='small' />
@@ -85,7 +85,7 @@ QuickSearchToolbar.propTypes = {
 };
 
 export default function QuickFilteringGrid() {
-  const {data} = useDemoData({
+  const { data } = useDemoData({
     dataSet: 'Commodity',
     rowLength: 100,
     maxColumns: 6,
@@ -110,9 +110,9 @@ export default function QuickFilteringGrid() {
   }, [data.rows]);
 
   return (
-    <div style={{height: 400, width: '100%'}}>
+    <div style={{ height: 400, width: '100%' }}>
       <DataGrid
-        components={{Toolbar: QuickSearchToolbar}}
+        components={{ Toolbar: QuickSearchToolbar }}
         rows={rows}
         columns={data.columns}
         componentsProps={{

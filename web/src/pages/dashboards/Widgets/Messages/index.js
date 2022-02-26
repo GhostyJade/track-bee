@@ -3,7 +3,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import PropTypes from 'prop-types';
 import AppList from '@crema/core/AppList';
 import AppCard from '@crema/core/AppCard';
-import {useIntl} from 'react-intl';
+import { useIntl } from 'react-intl';
 import AppScrollbar from '@crema/core/AppScrollbar';
 import MessageItem from '../../../../@crema/core/AppMessages/MessageItem';
 
@@ -14,12 +14,12 @@ const getData = (data) => {
 const Messages = (props) => {
   const data = getData(props.data);
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
   return (
     <AppCard
-      sxStyle={{height: 1}}
+      sxStyle={{ height: 1 }}
       title={messages['dashboard.messages']}
-      contentStyle={{px: 0}}
+      contentStyle={{ px: 0 }}
       action={
         <CloseIcon
           sx={{

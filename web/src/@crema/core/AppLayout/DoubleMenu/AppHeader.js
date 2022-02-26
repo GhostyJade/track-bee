@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import AppLngSwitcher from '@crema/core/AppLngSwitcher';
@@ -9,7 +9,7 @@ import clsx from 'clsx';
 import Hidden from '@mui/material/Hidden';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
@@ -22,7 +22,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Tooltip from '@mui/material/Tooltip';
 import PropTypes from 'prop-types';
 
-const AppHeader = ({updateNavState, sidebarMenuState}) => {
+const AppHeader = ({ updateNavState, sidebarMenuState }) => {
   const [showMessage, setShowMessage] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
 
@@ -86,7 +86,7 @@ const AppHeader = ({updateNavState, sidebarMenuState}) => {
         <Box className={classes.grow} />
         <AppLngSwitcher />
 
-        <Box ml={{xs: 2, sm: 4}}>
+        <Box ml={{ xs: 2, sm: 4 }}>
           <Hidden xsDown>
             <Box className={classes.hsHeaderAction}>
               <Box className={classes.hsHeaderActionItem}>

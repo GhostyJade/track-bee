@@ -6,9 +6,9 @@ import Box from '@mui/material/Box';
 import AppSearchBar from '@crema/core/AppSearchBar';
 import Hidden from '@mui/material/Hidden';
 import IconButton from '@mui/material/IconButton';
-import {toggleNavCollapsed} from '../../../../../redux/actions';
+import { toggleNavCollapsed } from '../../../../../redux/actions';
 import MenuIcon from '@mui/icons-material/Menu';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import AppMessages from '../../../AppMessages';
 import AppNotifications from '../../../AppNotifications';
 import Menu from '@mui/material/Menu';
@@ -16,11 +16,11 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import AppTooltip from '../../../AppTooltip';
 import PropTypes from 'prop-types';
-import {alpha} from '@mui/material/styles';
+import { alpha } from '@mui/material/styles';
 import AppLogo from '../../components/AppLogo';
 
 const AppHeader = (props) => {
-  const {isCollapsed, setCollapsed} = props;
+  const { isCollapsed, setCollapsed } = props;
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -49,14 +49,14 @@ const AppHeader = (props) => {
       <Toolbar
         sx={{
           boxSizing: 'border-box',
-          minHeight: {xs: 56, sm: 70},
-          paddingLeft: {xs: 5},
-          paddingRight: {xs: 5, md: 7.5},
+          minHeight: { xs: 56, sm: 70 },
+          paddingLeft: { xs: 5 },
+          paddingRight: { xs: 5, md: 7.5 },
         }}
       >
         <Hidden lgDown>
           <IconButton
-            sx={{color: 'text.secondary'}}
+            sx={{ color: 'text.secondary' }}
             edge='start'
             className='menu-btn'
             color='inherit'
@@ -74,7 +74,7 @@ const AppHeader = (props) => {
         </Hidden>
         <Hidden lgUp>
           <IconButton
-            sx={{color: 'text.secondary'}}
+            sx={{ color: 'text.secondary' }}
             edge='start'
             className='menu-btn'
             color='inherit'
@@ -93,7 +93,7 @@ const AppHeader = (props) => {
         <Box
           sx={{
             '& .logo-text': {
-              display: {xs: 'none', sm: 'block'},
+              display: { xs: 'none', sm: 'block' },
             },
           }}
         >
@@ -109,20 +109,20 @@ const AppHeader = (props) => {
             minHeight: 40,
             position: 'relative',
             '& .searchRoot': {
-              position: {xs: 'absolute', sm: 'relative'},
-              right: {xs: 0, sm: 'auto'},
-              top: {xs: 0, sm: 'auto'},
+              position: { xs: 'absolute', sm: 'relative' },
+              right: { xs: 0, sm: 'auto' },
+              top: { xs: 0, sm: 'auto' },
             },
           }}
         >
           <AppSearchBar iconPosition='right' placeholder='Search…' />
         </Box>
 
-        <Box sx={{ml: 4}}>
+        <Box sx={{ ml: 4 }}>
           <AppLngSwitcher iconOnly={true} tooltipPosition='bottom' />
         </Box>
 
-        <Box sx={{ml: 4}}>
+        <Box sx={{ ml: 4 }}>
           <Hidden smDown>
             <Box
               sx={{

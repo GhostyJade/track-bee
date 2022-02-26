@@ -4,18 +4,18 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Box from '@mui/material/Box';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import {alpha, Typography} from '@mui/material';
-import {useAuthMethod, useAuthUser} from '../../../../../utility/AuthHooks';
-import {useSidebarContext} from '../../../../../utility/AppContextProvider/SidebarContextProvider';
-import {Fonts} from '../../../../../../shared/constants/AppEnums';
+import { alpha, Typography } from '@mui/material';
+import { useAuthMethod, useAuthUser } from '../../../../../utility/AuthHooks';
+import { useSidebarContext } from '../../../../../utility/AppContextProvider/SidebarContextProvider';
+import { Fonts } from '../../../../../../shared/constants/AppEnums';
 import Status from './Status';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const SidebarUserInfo = () => {
-  const {borderColor, sidebarTextColor} = useSidebarContext();
-  const {user} = useAuthUser();
+  const { borderColor, sidebarTextColor } = useSidebarContext();
+  const { user } = useAuthUser();
   const history = useHistory();
-  const {logout} = useAuthMethod();
+  const { logout } = useAuthMethod();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 

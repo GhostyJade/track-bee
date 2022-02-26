@@ -1,24 +1,24 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
-import React, {useState} from 'react';
-import {useSelector} from 'react-redux';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import IntlMessages from '@crema/utility/IntlMessages';
 import AppScrollbar from '@crema/core/AppScrollbar';
 import CreateContact from '../CreateContact';
 import LabelItem from './LabelItem';
 import AppsSideBarFolderItem from '@crema/core/AppsSideBarFolderItem';
-import {Fonts} from 'shared/constants/AppEnums';
+import { Fonts } from 'shared/constants/AppEnums';
 import AppList from '@crema/core/AppList';
 import ListEmptyResult from '@crema/core/AppList/ListEmptyResult';
 import SidebarPlaceholder from '@crema/core/AppSkeleton/SidebarListSkeleton';
 import AddIcon from '@mui/icons-material/Add';
-import {Zoom} from '@mui/material';
+import { Zoom } from '@mui/material';
 
 const SideBarContent = () => {
-  const labelList = useSelector(({contactApp}) => contactApp.labelList);
+  const labelList = useSelector(({ contactApp }) => contactApp.labelList);
 
-  const folderList = useSelector(({contactApp}) => contactApp.folderList);
+  const folderList = useSelector(({ contactApp }) => contactApp.folderList);
 
   const [isAddContact, onSetIsAddContact] = useState(false);
 
@@ -34,12 +34,12 @@ const SideBarContent = () => {
     <>
       <Box
         sx={{
-          px: {xs: 4, md: 5},
-          pt: {xs: 4, md: 5},
+          px: { xs: 4, md: 5 },
+          pt: { xs: 4, md: 5 },
           pb: 2.5,
         }}
       >
-        <Zoom in style={{transitionDelay: '300ms'}}>
+        <Zoom in style={{ transitionDelay: '300ms' }}>
           <Button
             variant='outlined'
             color='primary'
@@ -62,12 +62,12 @@ const SideBarContent = () => {
         <Box
           sx={{
             pr: 4,
-            pb: {xs: 4, md: 5, lg: 6.2},
+            pb: { xs: 4, md: 5, lg: 6.2 },
           }}
         >
           <List
             sx={{
-              mb: {xs: 2, xl: 5},
+              mb: { xs: 2, xl: 5 },
             }}
             component='nav'
             aria-label='main task folders'
@@ -81,7 +81,7 @@ const SideBarContent = () => {
                   placeholder={
                     <Box
                       sx={{
-                        px: {xs: 4, md: 5, lg: 6.2},
+                        px: { xs: 4, md: 5, lg: 6.2 },
                       }}
                     >
                       <SidebarPlaceholder />
@@ -102,8 +102,8 @@ const SideBarContent = () => {
           <Box
             component='h4'
             sx={{
-              mt: {xs: 4, xl: 5},
-              px: {xs: 4, md: 5, lg: 6.2},
+              mt: { xs: 4, xl: 5 },
+              px: { xs: 4, md: 5, lg: 6.2 },
               fontWeight: Fonts.SEMI_BOLD,
             }}
           >
@@ -120,7 +120,7 @@ const SideBarContent = () => {
                   placeholder={
                     <Box
                       sx={{
-                        px: {xs: 4, md: 5, lg: 6.2},
+                        px: { xs: 4, md: 5, lg: 6.2 },
                       }}
                     >
                       <SidebarPlaceholder />

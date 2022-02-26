@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {AppCard} from '@crema';
+import React, { useState } from 'react';
+import { AppCard } from '@crema';
 import PropTypes from 'prop-types';
-import {alpha, Avatar, Box, Typography} from '@mui/material';
+import { alpha, Avatar, Box, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
-import {Fonts} from '../../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../../shared/constants/AppEnums';
 
-const Member = ({member}) => {
+const Member = ({ member }) => {
   const [connect, setConnect] = useState(false);
 
   const onConnect = () => {
@@ -32,7 +32,7 @@ const Member = ({member}) => {
       }}
     >
       {connect ? (
-        <Box sx={{mb: 2}}>
+        <Box sx={{ mb: 2 }}>
           <Button
             sx={{
               boxShadow: 'none',
@@ -55,10 +55,10 @@ const Member = ({member}) => {
             alignItems: 'center',
           }}
         >
-          <Box sx={{mr: 2.5}}>
+          <Box sx={{ mr: 2.5 }}>
             <Avatar src={member.srcImg} alt={member.title} />
           </Box>
-          <Box sx={{width: 'calc(100% - 50px)'}}>
+          <Box sx={{ width: 'calc(100% - 50px)' }}>
             <Typography
               sx={{
                 fontWeight: Fonts.MEDIUM,

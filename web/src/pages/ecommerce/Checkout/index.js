@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
-import {Box, Grid} from '@mui/material';
-import {AppGridContainer} from '../../../@crema';
+import React, { useEffect } from 'react';
+import { Box, Grid } from '@mui/material';
+import { AppGridContainer } from '../../../@crema';
 import AppCard from '../../../@crema/core/AppCard';
 import IntlMessages from '../../../@crema/utility/IntlMessages';
-import {Fonts} from '../../../shared/constants/AppEnums';
-import {useDispatch, useSelector} from 'react-redux';
-import {getCartItems} from '../../../redux/actions';
+import { Fonts } from '../../../shared/constants/AppEnums';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCartItems } from '../../../redux/actions';
 import OrderSummary from '../OrderSummary';
 import DeliveryAddress from './DeliveryAddress';
 import PaymentInfo from './PaymentInfo';
@@ -14,7 +14,7 @@ import AppAnimate from '../../../@crema/core/AppAnimate';
 
 const Checkout = () => {
   const dispatch = useDispatch();
-  const cartItems = useSelector(({ecommerce}) => ecommerce.cartItems);
+  const cartItems = useSelector(({ ecommerce }) => ecommerce.cartItems);
 
   useEffect(() => {
     dispatch(getCartItems());
@@ -38,7 +38,7 @@ const Checkout = () => {
           <Grid item xs={12} md={8}>
             <AppCard
               title={
-                <Box sx={{fontSize: 16, fontWeight: Fonts.BOLD}}>
+                <Box sx={{ fontSize: 16, fontWeight: Fonts.BOLD }}>
                   Delivery Address
                 </Box>
               }

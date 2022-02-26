@@ -1,8 +1,8 @@
 import React from 'react';
-import {CustomizerItemWrapper} from '../index.style';
+import { CustomizerItemWrapper } from '../index.style';
 import Box from '@mui/material/Box';
 import IntlMessages from '../../../utility/IntlMessages';
-import {navStyles} from '../../../services/db/navigationStyle';
+import { navStyles } from '../../../services/db/navigationStyle';
 import {
   useLayoutActionsContext,
   useLayoutContext,
@@ -10,8 +10,8 @@ import {
 import AppSelectedIcon from '../../AppSelectedIcon';
 
 const NavStyles = () => {
-  const {updateNavStyle} = useLayoutActionsContext();
-  const {navStyle} = useLayoutContext();
+  const { updateNavStyle } = useLayoutActionsContext();
+  const { navStyle } = useLayoutContext();
 
   const onNavStyleChange = (navStyle) => {
     updateNavStyle(navStyle);
@@ -23,7 +23,7 @@ const NavStyles = () => {
         pb: 1,
       }}
     >
-      <Box component='h4' sx={{mb: 3}}>
+      <Box component='h4' sx={{ mb: 3 }}>
         <IntlMessages id='customizer.navigationStyles' />
       </Box>
       <Box

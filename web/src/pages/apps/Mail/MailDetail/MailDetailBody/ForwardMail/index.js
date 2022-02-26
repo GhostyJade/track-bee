@@ -1,19 +1,19 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button/index';
 import InputAdornment from '@mui/material/InputAdornment/index';
-import {Form, Formik} from 'formik';
+import { Form, Formik } from 'formik';
 import * as yup from 'yup';
 import IntlMessages from '@crema/utility/IntlMessages';
-import {useIntl} from 'react-intl';
-import {Box} from '@mui/material';
+import { useIntl } from 'react-intl';
+import { Box } from '@mui/material';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import {useAuthUser} from '@crema/utility/AuthHooks';
+import { useAuthUser } from '@crema/utility/AuthHooks';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
 import ReactQuill from 'react-quill';
-import {Fonts} from '../../../../../../shared/constants/AppEnums';
+import { Fonts } from '../../../../../../shared/constants/AppEnums';
 
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
 const ReactQuillWrapper = styled(ReactQuill)(() => {
   return {
@@ -36,16 +36,16 @@ const validationSchema = yup.object({
   cc: yup.string().email(<IntlMessages id='validation.emailFormat' />),
 });
 
-const MailForward = ({onSubmitForwardedMail}) => {
+const MailForward = ({ onSubmitForwardedMail }) => {
   const [isShowCC, onShowCC] = useState(false);
 
   const onShowCcInput = () => {
     onShowCC(true);
   };
 
-  const {user} = useAuthUser();
+  const { user } = useAuthUser();
 
-  const {messages} = useIntl();
+  const { messages } = useIntl();
 
   return (
     <Box
@@ -53,7 +53,7 @@ const MailForward = ({onSubmitForwardedMail}) => {
         border: 1,
         borderColor: 'grey.300',
         borderRadius: 2,
-        ml: {md: 12.5},
+        ml: { md: 12.5 },
         mt: 4,
         mb: 3,
         p: 5,
@@ -67,7 +67,7 @@ const MailForward = ({onSubmitForwardedMail}) => {
           content: '',
         }}
         validationSchema={validationSchema}
-        onSubmit={(data, {setSubmitting, resetForm}) => {
+        onSubmit={(data, { setSubmitting, resetForm }) => {
           console.log('data: ', data);
           setSubmitting(true);
           const mail = {
@@ -96,7 +96,7 @@ const MailForward = ({onSubmitForwardedMail}) => {
           resetForm();
         }}
       >
-        {({setFieldValue}) => (
+        {({ setFieldValue }) => (
           <Form>
             <Box
               sx={{
@@ -160,7 +160,7 @@ const MailForward = ({onSubmitForwardedMail}) => {
               />
             </Box>
 
-            <div style={{textAlign: 'right'}}>
+            <div style={{ textAlign: 'right' }}>
               <Button type='submit' color='primary' variant='outlined'>
                 <IntlMessages id='common.send' />
               </Button>
