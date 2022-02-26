@@ -1,20 +1,20 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import {useDispatch} from 'react-redux';
-import {Form, Formik} from 'formik';
+import { useDispatch } from 'react-redux';
+import { Form, Formik } from 'formik';
 import * as yup from 'yup';
-import {showMessage} from '../../../redux/actions';
+import { showMessage } from '../../../redux/actions';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import {grey} from '@mui/material/colors';
-import {Fonts} from 'shared/constants/AppEnums';
+import { grey } from '@mui/material/colors';
+import { Fonts } from 'shared/constants/AppEnums';
 import IntlMessages from '@crema/utility/IntlMessages';
-import {AppAnimate, AppInfoView} from '@crema';
+import { AppAnimate, AppInfoView } from '@crema';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
 
-import {styled} from '@mui/material/styles';
-import {ReactComponent as Logo} from '../../../assets/icon/comingsoon.svg';
-import {useTheme} from '@mui/material';
+import { styled } from '@mui/material/styles';
+// import {ReactComponent as Logo} from '../../../assets/icon/comingsoon.svg';
+// import {useTheme} from '@mui/material';
 
 const FormWrapper = styled(Form)(() => {
   return {
@@ -43,7 +43,7 @@ const validationSchema = yup.object({
 });
 
 const ComingSoon = () => {
-  const theme = useTheme();
+  // const theme = useTheme();
   const dispatch = useDispatch();
 
   return (
@@ -51,7 +51,7 @@ const ComingSoon = () => {
       <>
         <Box
           sx={{
-            py: {xl: 8},
+            py: { xl: 8 },
             flex: 1,
             display: 'flex',
             flexDirection: 'column',
@@ -62,23 +62,23 @@ const ComingSoon = () => {
         >
           <Box
             sx={{
-              mb: {xs: 4, xl: 8},
+              mb: { xs: 4, xl: 8 },
               width: '100%',
-              maxWidth: {xs: 200, sm: 300, xl: 706},
+              maxWidth: { xs: 200, sm: 300, xl: 706 },
               '& svg': {
                 width: '100%',
                 maxWidth: 400,
               },
             }}
           >
-            <Logo fill={theme.palette.primary.main} />
+            {/* <Logo fill={theme.palette.primary.main} /> */}
           </Box>
 
           <Box
             variant='h3'
             sx={{
-              mb: {xs: 3, xl: 4},
-              fontSize: {xs: 20, md: 24},
+              mb: { xs: 3, xl: 4 },
+              fontSize: { xs: 20, md: 24 },
               fontWeight: Fonts.MEDIUM,
             }}
           >
@@ -87,14 +87,14 @@ const ComingSoon = () => {
 
           <Box
             sx={{
-              mb: {xs: 4, xl: 5},
+              mb: { xs: 4, xl: 5 },
               color: grey[600],
             }}
           >
-            <Typography style={{fontSize: 18, marginTop: 3}}>
+            <Typography style={{ fontSize: 18, marginTop: 3 }}>
               <IntlMessages id='error.comingSoonMessage1' />
             </Typography>
-            <Typography style={{fontSize: 18}}>
+            <Typography style={{ fontSize: 18 }}>
               <IntlMessages id='error.comingSoonMessage2' />
             </Typography>
           </Box>
@@ -112,7 +112,7 @@ const ComingSoon = () => {
               email: '',
             }}
             validationSchema={validationSchema}
-            onSubmit={(data, {resetForm}) => {
+            onSubmit={(data, { resetForm }) => {
               dispatch(
                 showMessage(<IntlMessages id='error.comingSoonNotification' />),
               );
