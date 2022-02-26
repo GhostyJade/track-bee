@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  web:
+    image: track-bee-web:v1
+    ports:
+      - "80:80"
+      - "443:443"
+  api:
+    image: track-bee-api:v1
+    ports:
+      - "5000:5000"
+  database:
+    image: postgres
+    ports:
+      - "5432:5432"
+    # TODO: add volumes to store postgres data
+    # ${HOME}/postgres-data/:/var/lib/postgresql/data
