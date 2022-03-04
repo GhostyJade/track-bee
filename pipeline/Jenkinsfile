@@ -7,7 +7,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 echo('Build Backend')
-                bat 'nuget restore api/TrackBEE-API.sln'
+                bat 'dotnet restore api/TrackBEE-API.sln'
 		        bat "\"${tool 'MSBuild'}\" api/TrackBEE-API.sln /p:Configuration=Release /p:Platform=\"Any CPU\""
                 // TODO: add build number /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}
             }
