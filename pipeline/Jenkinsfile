@@ -9,9 +9,11 @@ pipeline {
                 echo('Build Backend')
                 bat 'dotnet restore api/TrackBEE-API.sln'
 		        
-                def msbuild = tool name: 'MSBuild', type: 'hudson.plugins.msbuild.MsBuildInstallation'
-                bat "${msbuild} api/TrackBEE-API.sln /p:Configuration=Release /p:Platform=\"Any CPU\""
-                // TODO: add build number /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}
+                script {
+                    def msbuild = tool name: 'MSBuild', type: 'hudson.plugins.msbuild.MsBuildInstallation'
+                    bat "${msbuild} api/TrackBEE-API.sln /p:Configuration=Release /p:Platform=\"Any CPU\""
+                    // TODO: add build number /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}
+                }
             }
         }
         stage('Test'){
