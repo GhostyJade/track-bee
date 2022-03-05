@@ -8,7 +8,7 @@ pipeline {
             steps { 
                 echo('Build Backend')
                 
-                bat '${TOOLS_PATH}/nuget.exe restore api/TrackBEE-API.sln'
+                bat '$TOOLS_PATH/nuget.exe restore api/TrackBEE-API.sln'
 		        
                 script {
                     def msbuild = tool name: 'MSBuild', type: 'hudson.plugins.msbuild.MsBuildInstallation'
