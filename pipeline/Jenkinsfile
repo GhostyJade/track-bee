@@ -8,13 +8,15 @@ pipeline {
             steps {
                 echo('Build Backend')
                 dir('api') {
-                    bat 'D:/Tools/nuget.exe restore TrackBEE-API.sln'
-                    // TODO: change hard coded paths to parametrizable paths ${TOOLS_PATH}
+                    withEnv(['NUGET_PACKAGES=D:/Tools/NugetCache']) {
+                        bat 'D:/Tools/nuget.exe restore TrackBEE-API.sln'
+                        // TODO: change hard coded paths to parametrizable paths ${TOOLS_PATH}
 
-                    script {
-                        def msbuild = tool name: 'MSBuild', type: 'hudson.plugins.msbuild.MsBuildInstallation'
-                        bat "\"${msbuild}\" TrackBEE-API.sln /p:Configuration=Release /p:Platform=\"Any CPU\""
-                        // TODO: add build number /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}
+                        script {
+                            def msbuild = tool name: 'MSBuild', type: 'hudson.plugins.msbuild.MsBuildInstallation'
+                            bat "\"${msbuild}\" TrackBEE-API.sln /p:Configuration=Release /p:Platform=\"Any CPU\""
+                            // TODO: add build number /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}
+                        }
                     }
                 }
             }
