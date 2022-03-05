@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
 using TrackBEE.API.Data;
+using TrackBEE.API.Models;
 
 namespace TrackBEE.API.Controllers
 {
@@ -9,12 +10,17 @@ namespace TrackBEE.API.Controllers
     [Route("api")]
     public class DataController : ControllerBase
     {
-        [HttpGet("")]
-        public async Task<IActionResult> Get()
+        // TODO: add authentication
+        /// <summary>
+        /// Execute a function on the PostgreSQL database and return a json containing the response
+        /// </summary>
+        /// <returns>A JObject containing the respose from database</returns>
+        [HttpGet("data")]
+        public async Task<IActionResult> Get([FromBody] DBBody data)
         {
             try
             {
-                var result = await DatabaseInterface.ExecuteStored("st_test_list", null, null);
+                var result = await DatabaseInterface.ExecuteStored(data.Function, null, data.Data);
                 return StatusCode(200, result);
             }
             catch (Exception ex)
