@@ -19,6 +19,18 @@ pipeline {
                         }
                     }
                 }
+
+                echo('Build Docs')
+                dir('docs') {
+                    bat 'pnpm install'
+                    bat 'pnpm build'
+                }
+
+                echo('Build Frontend')
+                dir('web'){
+                    bat 'pnpm install'
+                    bat 'pnpm build'
+                }
             }
         }
         stage('Test') {
@@ -28,7 +40,11 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo('Deploy')
+                echo('Deploy Containers')
+                bat 'docker build -t track-bee.api:v1 - < api/Dockerfile'
+                bat 'docker build -t track-bee.web:v1 - < web/Dockerfile'
+                // maybe add some post build task to run docker-compose?
+                // also, consider build and run the docs website
             }
         }
     }
