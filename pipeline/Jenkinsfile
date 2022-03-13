@@ -22,16 +22,20 @@ pipeline {
 
                 echo('Build Docs')
                 dir('docs') {
-                    bat 'npm install -g pnpm'
-                    bat 'pnpm install'
-                    bat 'pnpm build'
+                    nodejs(nodeJSInstallationName: 'Node') {
+                        bat 'npm install -g pnpm'
+                        bat 'pnpm install'
+                        bat 'pnpm build'
+                    }
                 }
 
                 echo('Build Frontend')
                 dir('web'){
-                    bat 'npm install -g pnpm'
-                    bat 'pnpm install'
-                    bat 'pnpm build'
+                    nodejs(nodeJSInstallationName: 'Node') {
+                        bat 'npm install -g pnpm'
+                        bat 'pnpm install'
+                        bat 'pnpm build'
+                    }
                 }
             }
         }
