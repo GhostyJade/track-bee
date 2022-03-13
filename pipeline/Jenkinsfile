@@ -23,7 +23,6 @@ pipeline {
                 echo('Build Docs')
                 dir('docs') {
                     nodejs(nodeJSInstallationName: 'Node') {
-                        bat 'npm install -g pnpm'
                         bat 'pnpm install'
                         bat 'pnpm build'
                     }
@@ -32,7 +31,6 @@ pipeline {
                 echo('Build Frontend')
                 dir('web'){
                     nodejs(nodeJSInstallationName: 'Node') {
-                        bat 'npm install -g pnpm'
                         bat 'pnpm install'
                         bat 'pnpm build'
                     }
