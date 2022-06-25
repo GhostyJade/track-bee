@@ -1,22 +1,26 @@
 import FuseHighlight from '@fuse/core/FuseHighlight';
-import FusePageSimple from '@fuse/core/FusePageSimple';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
-import { useDispatch } from 'react-redux';
-import { logoutUser } from 'app/auth/store/userSlice';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
+import FusePageCarded from '@fuse/core/FusePageCarded';
+import { NavLink } from 'react-router-dom';
 
 function AdminRoleExample(props) {
-  const dispatch = useDispatch();
-
   return (
-    <FusePageSimple
+    <FusePageCarded
       header={
         <div className="flex flex-1 items-center justify-between p-24">
-          <Typography className="h2">Admin: Auth role example page</Typography>
-          <Button variant="contained" onClick={(ev) => dispatch(logoutUser())}>
-            <Icon>exit_to_app</Icon>
-            <span className="mx-4">Logout</span>
+          <Typography className="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
+            Admin: Auth role example page
+          </Typography>
+          <Button
+            component={NavLink}
+            variant="contained"
+            color="secondary"
+            to="/sign-out"
+            startIcon={<FuseSvgIcon>heroicons-outline:logout</FuseSvgIcon>}
+          >
+            Sign out
           </Button>
         </div>
       }
@@ -31,24 +35,24 @@ function AdminRoleExample(props) {
 
           <FuseHighlight component="pre" className="language-js">
             {`
-                            import {authRoles} from 'auth';
-                            import AdminRoleExample from 'app/main/auth/admin-role-example/AdminRoleExample';
+              import {authRoles} from 'auth';
+              import AdminRoleExample from './AdminRoleExample';
 
-                            export const AdminRoleExampleConfig = {
-                                settings: {
-                                    layout: {
-                                        config: {}
-                                    }
-                                },
-                                auth    : authRoles.admin,//['admin']
-                                routes  : [
-                                    {
-                                        path     : '/auth/admin-role-example',
-                                        element: <AdminRoleExample/>
-                                    }
-                                ]
-                            };
-                            `}
+              export const AdminRoleExampleConfig = {
+                  settings: {
+                      layout: {
+                          config: {}
+                      }
+                  },
+                  auth    : authRoles.admin,//['admin']
+                  routes  : [
+                      {
+                          path     : '/auth/admin-role-example',
+                          element: <AdminRoleExample/>
+                      }
+                  ]
+              };
+              `}
           </FuseHighlight>
 
           <Typography className="my-24">
@@ -58,17 +62,17 @@ function AdminRoleExample(props) {
 
           <FuseHighlight component="pre" className="language-json">
             {`
-                                export const fuseNavigationConfig = [
-                                   {
-                                        'id'   : 'only-admin-navigation-item',
-                                        'title': 'Nav item only for Admin',
-                                        'type' : 'item',
-                                        'auth' : authRoles.admin,//['admin']
-                                        'url'  : '/auth/admin-role-example',
-                                        'icon' : 'verified_user'
-                                    }
-                                ];
-                            `}
+              export const fuseNavigationConfig = [
+                 {
+                      'id'   : 'only-admin-navigation-item',
+                      'title': 'Nav item only for Admin',
+                      'type' : 'item',
+                      'auth' : authRoles.admin,//['admin']
+                      'url'  : '/auth/admin-role-example',
+                      'icon' : 'verified_user'
+                  }
+              ];
+          `}
           </FuseHighlight>
         </div>
       }

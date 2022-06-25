@@ -1,8 +1,11 @@
-import FusePageSimple from '@fuse/core/FusePageSimple';
 import withReducer from 'app/store/withReducer';
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { styled } from '@mui/material/styles';
+import { lighten, styled } from '@mui/material/styles';
+import { useParams } from 'react-router-dom';
+import Box from '@mui/material/Box';
+import FusePageCarded from '@fuse/core/FusePageCarded';
+import useThemeMediaQuery from '@fuse/hooks/useThemeMediaQuery';
 import LabelsDialog from './dialogs/labels/LabelsDialog';
 import NoteDialog from './dialogs/note/NoteDialog';
 import NewNote from './NewNote';
@@ -13,53 +16,51 @@ import reducer from './store';
 import { getLabels } from './store/labelsSlice';
 import { getNotes } from './store/notesSlice';
 
-const Root = styled(FusePageSimple)(({ theme }) => ({
-  '& .FusePageSimple-header': {
-    minHeight: 72,
-    height: 72,
-  },
-  '& .FusePageSimple-contentWrapper': {
-    padding: 16,
-    paddingBottom: 80,
-    [theme.breakpoints.up('sm')]: {
-      padding: 24,
-    },
-  },
-  '& .FusePageSimple-content': {
-    display: 'flex',
-    minHeight: '100%',
-  },
-  '& .FusePageSimple-sidebar': {
-    width: 256,
-    border: 0,
-  },
+const Root = styled(FusePageCarded)(({ theme }) => ({
+  '& .FusePageCarded-header': {},
+  '& .FusePageCarded-sidebar': {},
+  '& .FusePageCarded-leftSidebar': {},
 }));
 
 function NotesApp(props) {
   const dispatch = useDispatch();
-
-  const pageLayout = useRef(null);
+  const isMobile = useThemeMediaQuery((theme) => theme.breakpoints.down('lg'));
+  const [leftSidebarOpen, setLeftSidebarOpen] = useState(!isMobile);
+  const routeParams = useParams();
 
   useEffect(() => {
-    dispatch(getNotes());
+    dispatch(getNotes(routeParams));
     dispatch(getLabels());
-  }, [dispatch]);
+  }, [dispatch, routeParams]);
 
   return (
     <>
       <Root
-        header={<NotesHeader pageLayout={pageLayout} />}
+        header={<NotesHeader onSetSidebarOpen={setLeftSidebarOpen} />}
         content={
-          <div className="flex flex-col w-full items-center">
-            <NewNote />
-            <NoteList />
+          <div className="flex flex-col w-full items-center p-24">
+            <Box
+              className="w-full rounded-16 border p-12 flex flex-col items-center"
+              sx={{
+                backgroundColor: (theme) =>
+                  theme.palette.mode === 'light'
+                    ? lighten(theme.palette.background.default, 0.4)
+                    : lighten(theme.palette.background.default, 0.02),
+              }}
+            >
+              <NewNote />
+              <NoteList />
+            </Box>
             <NoteDialog />
             <LabelsDialog />
           </div>
         }
+        leftSidebarOpen={leftSidebarOpen}
+        leftSidebarOnClose={() => {
+          setLeftSidebarOpen(false);
+        }}
         leftSidebarContent={<NotesSidebarContent />}
-        sidebarInner
-        ref={pageLayout}
+        scroll={isMobile ? 'normal' : 'content'}
       />
     </>
   );

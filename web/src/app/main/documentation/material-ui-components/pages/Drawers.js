@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function DrawersDoc(props) {
           href="https://mui.com/components/drawers"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -58,11 +58,8 @@ function DrawersDoc(props) {
           name="TemporaryDrawer.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/drawers/TemporaryDrawer.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/drawers/TemporaryDrawer.js')}
+          component={require('../components/drawers/TemporaryDrawer.js').default}
+          raw={require('!raw-loader!../components/drawers/TemporaryDrawer.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -81,11 +78,8 @@ function DrawersDoc(props) {
           name="SwipeableTemporaryDrawer.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/drawers/SwipeableTemporaryDrawer.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/drawers/SwipeableTemporaryDrawer.js')}
+          component={require('../components/drawers/SwipeableTemporaryDrawer.js').default}
+          raw={require('!raw-loader!../components/drawers/SwipeableTemporaryDrawer.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -126,11 +120,8 @@ const iOS =
           name="SwipeableEdgeDrawer.js"
           className="my-24"
           iframe
-          component={
-            require('app/main/documentation/material-ui-components/components/drawers/SwipeableEdgeDrawer.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/drawers/SwipeableEdgeDrawer.js')}
+          component={require('../components/drawers/SwipeableEdgeDrawer.js').default}
+          raw={require('!raw-loader!../components/drawers/SwipeableEdgeDrawer.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -147,12 +138,13 @@ const iOS =
   variant="temporary"
   ModalProps={{
     keepMounted: true,
-
+  
 />
 `}
       </FuseHighlight>
       <Typography className="mb-40" component="div">
-        More details in the <a href="/components/modal/#performance">Modal performance section</a>.
+        More details in the{' '}
+        <a href="/material-ui/react-modal/#performance">Modal performance section</a>.
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         Responsive drawer
@@ -166,11 +158,8 @@ const iOS =
           name="ResponsiveDrawer.js"
           className="my-24"
           iframe
-          component={
-            require('app/main/documentation/material-ui-components/components/drawers/ResponsiveDrawer.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/drawers/ResponsiveDrawer.js')}
+          component={require('../components/drawers/ResponsiveDrawer.js').default}
+          raw={require('!raw-loader!../components/drawers/ResponsiveDrawer.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -196,21 +185,15 @@ const iOS =
           name="PersistentDrawerLeft.js"
           className="my-24"
           iframe
-          component={
-            require('app/main/documentation/material-ui-components/components/drawers/PersistentDrawerLeft.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/drawers/PersistentDrawerLeft.js')}
+          component={require('../components/drawers/PersistentDrawerLeft.js').default}
+          raw={require('!raw-loader!../components/drawers/PersistentDrawerLeft.js')}
         />
         <FuseExample
           name="PersistentDrawerRight.js"
           className="my-24"
           iframe
-          component={
-            require('app/main/documentation/material-ui-components/components/drawers/PersistentDrawerRight.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/drawers/PersistentDrawerRight.js')}
+          component={require('../components/drawers/PersistentDrawerRight.js').default}
+          raw={require('!raw-loader!../components/drawers/PersistentDrawerRight.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -230,11 +213,8 @@ const iOS =
           name="MiniDrawer.js"
           className="my-24"
           iframe
-          component={
-            require('app/main/documentation/material-ui-components/components/drawers/MiniDrawer.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/drawers/MiniDrawer.js')}
+          component={require('../components/drawers/MiniDrawer.js').default}
+          raw={require('!raw-loader!../components/drawers/MiniDrawer.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -258,21 +238,15 @@ const iOS =
           name="PermanentDrawerLeft.js"
           className="my-24"
           iframe
-          component={
-            require('app/main/documentation/material-ui-components/components/drawers/PermanentDrawerLeft.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/drawers/PermanentDrawerLeft.js')}
+          component={require('../components/drawers/PermanentDrawerLeft.js').default}
+          raw={require('!raw-loader!../components/drawers/PermanentDrawerLeft.js')}
         />
         <FuseExample
           name="PermanentDrawerRight.js"
           className="my-24"
           iframe
-          component={
-            require('app/main/documentation/material-ui-components/components/drawers/PermanentDrawerRight.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/drawers/PermanentDrawerRight.js')}
+          component={require('../components/drawers/PermanentDrawerRight.js').default}
+          raw={require('!raw-loader!../components/drawers/PermanentDrawerRight.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -286,11 +260,8 @@ const iOS =
           name="ClippedDrawer.js"
           className="my-24"
           iframe
-          component={
-            require('app/main/documentation/material-ui-components/components/drawers/ClippedDrawer.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/drawers/ClippedDrawer.js')}
+          component={require('../components/drawers/ClippedDrawer.js').default}
+          raw={require('!raw-loader!../components/drawers/ClippedDrawer.js')}
         />
       </Typography>
     </>

@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function PaginationDoc(props) {
           href="https://mui.com/components/pagination"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -40,11 +40,8 @@ function PaginationDoc(props) {
           name="BasicPagination.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/pagination/BasicPagination.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/pagination/BasicPagination.js')}
+          component={require('../components/pagination/BasicPagination.js').default}
+          raw={require('!raw-loader!../components/pagination/BasicPagination.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -55,11 +52,8 @@ function PaginationDoc(props) {
           name="PaginationOutlined.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/pagination/PaginationOutlined.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/pagination/PaginationOutlined.js')}
+          component={require('../components/pagination/PaginationOutlined.js').default}
+          raw={require('!raw-loader!../components/pagination/PaginationOutlined.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -70,11 +64,8 @@ function PaginationDoc(props) {
           name="PaginationRounded.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/pagination/PaginationRounded.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/pagination/PaginationRounded.js')}
+          component={require('../components/pagination/PaginationRounded.js').default}
+          raw={require('!raw-loader!../components/pagination/PaginationRounded.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -85,11 +76,8 @@ function PaginationDoc(props) {
           name="PaginationSize.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/pagination/PaginationSize.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/pagination/PaginationSize.js')}
+          component={require('../components/pagination/PaginationSize.js').default}
+          raw={require('!raw-loader!../components/pagination/PaginationSize.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -104,11 +92,8 @@ function PaginationDoc(props) {
           name="PaginationButtons.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/pagination/PaginationButtons.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/pagination/PaginationButtons.js')}
+          component={require('../components/pagination/PaginationButtons.js').default}
+          raw={require('!raw-loader!../components/pagination/PaginationButtons.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -122,11 +107,8 @@ function PaginationDoc(props) {
           name="CustomIcons.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/pagination/CustomIcons.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/pagination/CustomIcons.js')}
+          component={require('../components/pagination/CustomIcons.js').default}
+          raw={require('!raw-loader!../components/pagination/CustomIcons.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -142,11 +124,8 @@ function PaginationDoc(props) {
           name="PaginationRanges.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/pagination/PaginationRanges.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/pagination/PaginationRanges.js')}
+          component={require('../components/pagination/PaginationRanges.js').default}
+          raw={require('!raw-loader!../components/pagination/PaginationRanges.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -157,14 +136,11 @@ function PaginationDoc(props) {
           name="PaginationControlled.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/pagination/PaginationControlled.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/pagination/PaginationControlled.js')}
+          component={require('../components/pagination/PaginationControlled.js').default}
+          raw={require('!raw-loader!../components/pagination/PaginationControlled.js')}
         />
       </Typography>
-      {/* <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+      {/*   <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         Router integration
       </Typography>
       <Typography className="mb-40" component="div">
@@ -172,11 +148,8 @@ function PaginationDoc(props) {
           name="PaginationLink.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/pagination/PaginationLink.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/pagination/PaginationLink.js')}
+          component={require('../components/pagination/PaginationLink.js').default}
+          raw={require('!raw-loader!../components/pagination/PaginationLink.js')}
         />
       </Typography> */}
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -198,11 +171,8 @@ import { usePagination } from '@mui/material/Pagination';
           name="UsePagination.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/pagination/UsePagination.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/pagination/UsePagination.js')}
+          component={require('../components/pagination/UsePagination.js').default}
+          raw={require('!raw-loader!../components/pagination/UsePagination.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -222,24 +192,19 @@ import { usePagination } from '@mui/material/Pagination';
           name="TablePagination.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/pagination/TablePagination.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/pagination/TablePagination.js')}
+          component={require('../components/pagination/TablePagination.js').default}
+          raw={require('!raw-loader!../components/pagination/TablePagination.js')}
         />
       </Typography>
-      <blockquote>
-        <Typography className="mb-40" component="div">
-          ⚠️ Note that the <code>Pagination</code> page prop starts at 1 to match the requirement of
-          including the value in the URL, while the <code>TablePagination</code> page prop starts at
-          0 to match the requirement of zero-based JavaScript arrays that comes with rendering a lot
-          of tabular data.
-        </Typography>
-      </blockquote>
+      <Typography className="mb-40" component="div">
+        :::info ⚠️ Note that the <code>Pagination</code> page prop starts at 1 to match the
+        requirement of including the value in the URL, while the <code>TablePagination</code> page
+        prop starts at 0 to match the requirement of zero-based JavaScript arrays that comes with
+        rendering a lot of tabular data. :::
+      </Typography>
       <Typography className="mb-40" component="div">
         You can learn more about this use case in the{' '}
-        <a href="/components/tables/#custom-pagination-options">table section</a> of the
+        <a href="/material-ui/react-table/#custom-pagination-options">table section</a> of the
         documentation.
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">

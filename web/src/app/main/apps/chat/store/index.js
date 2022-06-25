@@ -1,13 +1,13 @@
 import { combineReducers } from '@reduxjs/toolkit';
+import chats from './chatsSlice';
 import chat from './chatSlice';
 import contacts from './contactsSlice';
-import sidebars from './sidebarsSlice';
 import user from './userSlice';
 
 const reducer = combineReducers({
-  sidebars,
   user,
   contacts,
+  chats,
   chat,
 });
 

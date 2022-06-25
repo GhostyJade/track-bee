@@ -2,7 +2,7 @@ import { lazy } from 'react';
 
 const MaintenancePage = lazy(() => import('./MaintenancePage'));
 
-const MaintenancePageConfig = {
+const maintenancePageConfig = {
   settings: {
     layout: {
       config: {},
@@ -16,4 +16,4 @@ const MaintenancePageConfig = {
   ],
 };
 
-export default MaintenancePageConfig;
+export default maintenancePageConfig;

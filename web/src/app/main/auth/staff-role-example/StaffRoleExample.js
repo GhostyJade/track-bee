@@ -1,22 +1,26 @@
 import FuseHighlight from '@fuse/core/FuseHighlight';
-import FusePageSimple from '@fuse/core/FusePageSimple';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
-import { useDispatch } from 'react-redux';
-import { logoutUser } from 'app/auth/store/userSlice';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
+import { NavLink } from 'react-router-dom';
+import FusePageCarded from '@fuse/core/FusePageCarded';
 
 function StaffRoleExample(props) {
-  const dispatch = useDispatch();
-
   return (
-    <FusePageSimple
+    <FusePageCarded
       header={
         <div className="flex flex-1 items-center justify-between p-24">
-          <Typography className="h2">Staff: Auth role example page</Typography>
-          <Button variant="contained" onClick={(ev) => dispatch(logoutUser())}>
-            <Icon>exit_to_app</Icon>
-            <span className="mx-4">Logout</span>
+          <Typography className="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
+            Staff: Auth role example page
+          </Typography>
+          <Button
+            component={NavLink}
+            variant="contained"
+            color="secondary"
+            to="/sign-out"
+            startIcon={<FuseSvgIcon>heroicons-outline:logout</FuseSvgIcon>}
+          >
+            Sign out
           </Button>
         </div>
       }
@@ -31,24 +35,24 @@ function StaffRoleExample(props) {
 
           <FuseHighlight component="pre" className="language-js">
             {`
-                            import {authRoles} from 'auth';
-                            import StaffRoleExample from 'app/main/auth/staff-role-example/StaffRoleExample';
+              import {authRoles} from 'auth';
+              import StaffRoleExample from './StaffRoleExample';
 
-                            export const StaffRoleExampleConfig = {
-                                settings: {
-                                    layout: {
-                                        config: {}
-                                    }
-                                },
-                                auth    : authRoles.staff,//['admin',staff']
-                                routes  : [
-                                    {
-                                        path     : '/auth/staff-role-example',
-                                        element:StaffRoleExample
-                                    }
-                                ]
-                            };
-                            `}
+              export const StaffRoleExampleConfig = {
+                  settings: {
+                      layout: {
+                          config: {}
+                      }
+                  },
+                  auth    : authRoles.staff,//['admin',staff']
+                  routes  : [
+                      {
+                          path     : '/auth/staff-role-example',
+                          element:StaffRoleExample
+                      }
+                  ]
+              };
+              `}
           </FuseHighlight>
 
           <Typography className="my-24">
@@ -58,17 +62,17 @@ function StaffRoleExample(props) {
 
           <FuseHighlight component="pre" className="language-json">
             {`
-                                export const fuseNavigationConfig = [
-                                   {
-                                        'id'   : 'only-staff-navigation-item',
-                                        'title': 'Nav item only for Staff',
-                                        'type' : 'item',
-                                        'auth' : authRoles.staff,//['admin','staff']
-                                        'url'  : '/auth/staff-role-example',
-                                        'icon' : 'verified_user'
-                                    }
-                                ];
-                            `}
+              export const fuseNavigationConfig = [
+                 {
+                      'id'   : 'only-staff-navigation-item',
+                      'title': 'Nav item only for Staff',
+                      'type' : 'item',
+                      'auth' : authRoles.staff,//['admin','staff']
+                      'url'  : '/auth/staff-role-example',
+                      'icon' : 'verified_user'
+                  }
+              ];
+          `}
           </FuseHighlight>
         </div>
       }

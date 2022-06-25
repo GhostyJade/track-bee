@@ -1,9 +1,9 @@
 import Card from '@mui/material/Card';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import NoteLabel from './NoteLabel';
 import NoteReminderLabel from './NoteReminderLabel';
 import setDescriptionStyle from './setDescriptionStyle';
@@ -29,33 +29,33 @@ function NoteListItem(props) {
           <Typography className="px-20 my-16 text-14 font-semibold">{props.note.title}</Typography>
         )}
 
-        {props.note.description && props.note.description !== '' && (
+        {props.note.content && props.note.content !== '' && (
           <Typography className="px-20 my-16 " component="div">
             <div
               className={clsx('w-full break-words', props.variateDescSize ? 'font-500' : 'text-14')}
               ref={(el) => {
                 setTimeout(() =>
-                  setDescriptionStyle(props.note.description, el, props.variateDescSize)
+                  setDescriptionStyle(props.note.content, el, props.variateDescSize)
                 );
               }}
             >
-              {props.note.description}
+              {props.note.content}
             </div>
           </Typography>
         )}
 
-        {props.note.checklist && props.note.checklist.length > 0 && (
+        {props.note.tasks && props.note.tasks.length > 0 && (
           <ul className="px-20 my-16 flex flex-wrap list-reset">
-            {props.note.checklist.map((item) => (
+            {props.note.tasks.map((item) => (
               <li key={item.id} className="flex items-center w-full">
-                <Icon color="action" className="text-16">
-                  {item.checked ? 'check_box_outline' : 'check_box_outline_blank'}
-                </Icon>
+                <FuseSvgIcon color={item.completed ? 'secondary' : 'disabled'} size={20}>
+                  heroicons-outline:check-circle
+                </FuseSvgIcon>
                 <Typography
-                  className={clsx('truncate mx-8', item.checked && 'line-through')}
-                  color={item.checked ? 'textSecondary' : 'inherit'}
+                  className={clsx('truncate mx-8', item.completed && 'line-through')}
+                  color={item.completed ? 'text.secondary' : 'inherit'}
                 >
-                  {item.text}
+                  {item.content}
                 </Typography>
               </li>
             ))}

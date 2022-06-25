@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function AutocompleteDoc(props) {
           href="https://mui.com/components/autocomplete"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -62,11 +62,8 @@ function AutocompleteDoc(props) {
           name="ComboBox.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/ComboBox.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/ComboBox.js')}
+          component={require('../components/autocomplete/ComboBox.js').default}
+          raw={require('!raw-loader!../components/autocomplete/ComboBox.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -113,11 +110,8 @@ const options = ['The Godfather', 'Pulp Fiction'];
           name="Playground.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/Playground.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/Playground.js')}
+          component={require('../components/autocomplete/Playground.js').default}
+          raw={require('!raw-loader!../components/autocomplete/Playground.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -131,11 +125,8 @@ const options = ['The Godfather', 'Pulp Fiction'];
           name="CountrySelect.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/CountrySelect.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/CountrySelect.js')}
+          component={require('../components/autocomplete/CountrySelect.js').default}
+          raw={require('!raw-loader!../components/autocomplete/CountrySelect.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -156,21 +147,16 @@ const options = ['The Godfather', 'Pulp Fiction'];
           the textbox.
         </li>
       </ol>
-      <blockquote>
-        <Typography className="mb-40" component="div">
-          ⚠️ These two states are isolated, they should be controlled independently.
-        </Typography>
-      </blockquote>
+      <Typography className="mb-40" component="div">
+        :::warning ⚠️ These two states are isolated, they should be controlled independently. :::
+      </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="ControllableStates.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/ControllableStates.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/ControllableStates.js')}
+          component={require('../components/autocomplete/ControllableStates.js').default}
+          raw={require('!raw-loader!../components/autocomplete/ControllableStates.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -191,12 +177,17 @@ const options = ['The Godfather', 'Pulp Fiction'];
           name="FreeSolo.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/FreeSolo.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/FreeSolo.js')}
+          component={require('../components/autocomplete/FreeSolo.js').default}
+          raw={require('!raw-loader!../components/autocomplete/FreeSolo.js')}
         />
+      </Typography>
+      <Typography className="mb-40" component="div">
+        :::warning ⚠️ Be careful when using the free solo mode with non-string options, as it may
+        cause type mismatch.
+      </Typography>
+      <Typography className="mb-40" component="div">
+        The value created by typing into the textbox is always a string, regardless of the type of
+        the options. :::
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
         Creatable
@@ -217,7 +208,7 @@ const options = ['The Godfather', 'Pulp Fiction'];
           <kbd className="key">Home</kbd> and <kbd className="key">End</kbd> keys.
         </li>
         <li>
-          A last option, for instance: <code>Add "YOUR SEARCH"</code>.
+          A last option, for instance: <code>{`Add "YOUR SEARCH"`}</code>.
         </li>
       </ul>
       <Typography className="mb-40" component="div">
@@ -225,11 +216,8 @@ const options = ['The Godfather', 'Pulp Fiction'];
           name="FreeSoloCreateOption.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/FreeSoloCreateOption.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/FreeSoloCreateOption.js')}
+          component={require('../components/autocomplete/FreeSoloCreateOption.js').default}
+          raw={require('!raw-loader!../components/autocomplete/FreeSoloCreateOption.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -240,11 +228,8 @@ const options = ['The Godfather', 'Pulp Fiction'];
           name="FreeSoloCreateOptionDialog.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/FreeSoloCreateOptionDialog.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/FreeSoloCreateOptionDialog.js')}
+          component={require('../components/autocomplete/FreeSoloCreateOptionDialog.js').default}
+          raw={require('!raw-loader!../components/autocomplete/FreeSoloCreateOptionDialog.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -260,11 +245,8 @@ const options = ['The Godfather', 'Pulp Fiction'];
           name="Grouped.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/Grouped.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/Grouped.js')}
+          component={require('../components/autocomplete/Grouped.js').default}
+          raw={require('!raw-loader!../components/autocomplete/Grouped.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -275,11 +257,8 @@ const options = ['The Godfather', 'Pulp Fiction'];
           name="DisabledOptions.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/DisabledOptions.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/DisabledOptions.js')}
+          component={require('../components/autocomplete/DisabledOptions.js').default}
+          raw={require('!raw-loader!../components/autocomplete/DisabledOptions.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -316,11 +295,8 @@ import useAutocomplete from '@mui/material/useAutocomplete';
           name="UseAutocomplete.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/UseAutocomplete.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/UseAutocomplete.js')}
+          component={require('../components/autocomplete/UseAutocomplete.js').default}
+          raw={require('!raw-loader!../components/autocomplete/UseAutocomplete.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -331,11 +307,8 @@ import useAutocomplete from '@mui/material/useAutocomplete';
           name="CustomizedHook.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/CustomizedHook.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/CustomizedHook.js')}
+          component={require('../components/autocomplete/CustomizedHook.js').default}
+          raw={require('!raw-loader!../components/autocomplete/CustomizedHook.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -369,11 +342,8 @@ import useAutocomplete from '@mui/material/useAutocomplete';
           name="Asynchronous.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/Asynchronous.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/Asynchronous.js')}
+          component={require('../components/autocomplete/Asynchronous.js').default}
+          raw={require('!raw-loader!../components/autocomplete/Asynchronous.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -393,7 +363,7 @@ import useAutocomplete from '@mui/material/useAutocomplete';
 <Autocomplete filterOptions={(x) => x} />
 `}
       </FuseHighlight>
-     {/*  <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
+      <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
         Google Maps place
       </Typography>
       <Typography className="mb-40" component="div">
@@ -412,19 +382,14 @@ import useAutocomplete from '@mui/material/useAutocomplete';
           name="GoogleMaps.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/GoogleMaps.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/GoogleMaps.js')}
+          component={require('../components/autocomplete/GoogleMaps.js').default}
+          raw={require('!raw-loader!../components/autocomplete/GoogleMaps.js')}
         />
       </Typography>
-      <blockquote>
-        <Typography className="mb-40" component="div">
-          ⚠️ Before you can start using the Google Maps JavaScript API and Places API, you must sign
-          up and create a billing account.
-        </Typography>
-      </blockquote> */}
+      <Typography className="mb-40" component="div">
+        :::warning ⚠️ Before you can start using the Google Maps JavaScript API and Places API, you
+        must sign up and create a billing account. :::
+      </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         Multiple values
       </Typography>
@@ -436,11 +401,8 @@ import useAutocomplete from '@mui/material/useAutocomplete';
           name="Tags.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/Tags.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/Tags.js')}
+          component={require('../components/autocomplete/Tags.js').default}
+          raw={require('!raw-loader!../components/autocomplete/Tags.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -455,11 +417,8 @@ import useAutocomplete from '@mui/material/useAutocomplete';
           name="FixedTags.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/FixedTags.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/FixedTags.js')}
+          component={require('../components/autocomplete/FixedTags.js').default}
+          raw={require('!raw-loader!../components/autocomplete/FixedTags.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -470,11 +429,8 @@ import useAutocomplete from '@mui/material/useAutocomplete';
           name="CheckboxesTags.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/CheckboxesTags.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/CheckboxesTags.js')}
+          component={require('../components/autocomplete/CheckboxesTags.js').default}
+          raw={require('!raw-loader!../components/autocomplete/CheckboxesTags.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -489,11 +445,8 @@ import useAutocomplete from '@mui/material/useAutocomplete';
           name="LimitTags.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/LimitTags.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/LimitTags.js')}
+          component={require('../components/autocomplete/LimitTags.js').default}
+          raw={require('!raw-loader!../components/autocomplete/LimitTags.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -507,11 +460,8 @@ import useAutocomplete from '@mui/material/useAutocomplete';
           name="Sizes.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/Sizes.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/Sizes.js')}
+          component={require('../components/autocomplete/Sizes.js').default}
+          raw={require('!raw-loader!../components/autocomplete/Sizes.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -530,11 +480,8 @@ import useAutocomplete from '@mui/material/useAutocomplete';
           name="CustomInputAutocomplete.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/CustomInputAutocomplete.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/CustomInputAutocomplete.js')}
+          component={require('../components/autocomplete/CustomInputAutocomplete.js').default}
+          raw={require('!raw-loader!../components/autocomplete/CustomInputAutocomplete.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -548,11 +495,8 @@ import useAutocomplete from '@mui/material/useAutocomplete';
           name="GitHubLabel.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/GitHubLabel.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/GitHubLabel.js')}
+          component={require('../components/autocomplete/GitHubLabel.js').default}
+          raw={require('!raw-loader!../components/autocomplete/GitHubLabel.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -572,11 +516,8 @@ import useAutocomplete from '@mui/material/useAutocomplete';
           name="Highlights.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/Highlights.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/Highlights.js')}
+          component={require('../components/autocomplete/Highlights.js').default}
+          raw={require('!raw-loader!../components/autocomplete/Highlights.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -621,7 +562,7 @@ import { createFilterOptions } from '@mui/material/Autocomplete';
         </li>
         <li>
           <code>config.matchFrom</code> (<em>&#39;any&#39; | &#39;start&#39;</em> [optional]):
-          Defaults to <code>'any'</code>.
+          Defaults to <code>{`'any'`}</code>.
         </li>
         <li>
           <code>config.stringify</code> (<em>func</em> [optional]): Controls how an option is
@@ -659,11 +600,8 @@ const filterOptions = createFilterOptions({
           name="Filter.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/Filter.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/Filter.js')}
+          component={require('../components/autocomplete/Filter.js').default}
+          raw={require('!raw-loader!../components/autocomplete/Filter.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -695,11 +633,8 @@ const filterOptions = (options, { inputValue }) => matchSorter(options, inputVal
           name="Virtualize.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/autocomplete/Virtualize.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/autocomplete/Virtualize.js')}
+          component={require('../components/autocomplete/Virtualize.js').default}
+          raw={require('!raw-loader!../components/autocomplete/Virtualize.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -719,7 +654,7 @@ const filterOptions = (options, { inputValue }) => matchSorter(options, inputVal
       event.defaultMuiPrevented = true;
       // your handler code
     }
-
+  
 />
 `}
       </FuseHighlight>
@@ -736,7 +671,7 @@ const filterOptions = (options, { inputValue }) => matchSorter(options, inputVal
       <Typography className="mb-40" component="div">
         By default, the component disables the input <strong>autocomplete</strong> feature
         (remembering what the user has typed for a given field in a previous session) with the{' '}
-        <code>autoComplete="off"</code> attribute. Google Chrome does not currently support this
+        <code>{`autoComplete="off"`}</code> attribute. Google Chrome does not currently support this
         attribute setting (
         <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=587466">Issue 587466</a>). A
         possible workaround is to remove the <code>id</code> to have the component generate a random
@@ -751,13 +686,13 @@ const filterOptions = (options, { inputValue }) => matchSorter(options, inputVal
         <li>
           <Typography className="mb-40" component="div">
             Name the input without leaking any information the browser can use. e.g.{' '}
-            <code>id="field1"</code> instead of <code>id="country"</code>. If you leave the id
-            empty, the component uses a random id.
+            <code>{`id="field1"`}</code> instead of <code>{`id="country"`}</code>. If you leave the
+            id empty, the component uses a random id.
           </Typography>
         </li>
         <li>
           <Typography className="mb-40" component="div">
-            Set <code>autoComplete="new-password"</code> (some browsers will suggest a strong
+            Set <code>{`autoComplete="new-password"`}</code> (some browsers will suggest a strong
             password for inputs with this attribute setting):
           </Typography>
 
@@ -768,7 +703,7 @@ const filterOptions = (options, { inputValue }) => matchSorter(options, inputVal
   inputProps={{
     ...params.inputProps,
     autoComplete: 'new-password',
-
+  
 />
 `}
           </FuseHighlight>

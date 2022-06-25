@@ -1,37 +1,37 @@
-import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
-import Hidden from '@mui/material/Hidden';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import Toolbar from '@mui/material/Toolbar';
 import withReducer from 'app/store/withReducer';
-import clsx from 'clsx';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import withRouter from '@fuse/core/withRouter';
 import { useDeepCompareEffect } from '@fuse/hooks';
-import GlobalStyles from '@mui/material/GlobalStyles';
+import FusePageSimple from '@fuse/core/FusePageSimple';
+import useThemeMediaQuery from '@fuse/hooks/useThemeMediaQuery';
 import reducer from '../store';
-import { reorderCard, reorderList, resetBoard, getBoard } from '../store/boardSlice';
-import BoardAddList from './BoardAddList';
-import BoardList from './BoardList';
-import BoardTitle from './BoardTitle';
+import { getBoard, reorderCard, reorderList, resetBoard, selectBoard } from '../store/boardSlice';
+import BoardAddList from './board-list/BoardAddList';
+import BoardList from './board-list/BoardList';
 import BoardCardDialog from './dialogs/card/BoardCardDialog';
 import BoardSettingsSidebar from './sidebars/settings/BoardSettingsSidebar';
+import { getCards } from '../store/cardsSlice';
+import { getLists } from '../store/listsSlice';
+import { getLabels } from '../store/labelsSlice';
+import BoardHeader from './BoardHeader';
 
 function Board(props) {
   const dispatch = useDispatch();
-  const board = useSelector(({ scrumboardApp }) => scrumboardApp.board);
+  const board = useSelector(selectBoard);
+  const isMobile = useThemeMediaQuery((theme) => theme.breakpoints.down('lg'));
 
   const routeParams = useParams();
-  const containerRef = useRef(null);
-  const [settingsDrawerOpen, setSettingsDrawerOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useDeepCompareEffect(() => {
-    dispatch(getBoard(routeParams));
+    dispatch(getBoard(routeParams.boardId));
+    dispatch(getCards(routeParams.boardId));
+    dispatch(getLists(routeParams.boardId));
+    dispatch(getLabels(routeParams.boardId));
+
     return () => {
       dispatch(resetBoard());
     };
@@ -61,105 +61,49 @@ function Board(props) {
     }
   }
 
-  function toggleSettingsDrawer(state) {
-    setSettingsDrawerOpen(state === undefined ? !settingsDrawerOpen : state);
-  }
-
   if (!board) {
     return null;
   }
 
   return (
     <>
-      <GlobalStyles
-        styles={(theme) => ({
-          '#fuse-main': {
-            height: '100vh',
-          },
-        })}
+      <FusePageSimple
+        header={<BoardHeader onSetSidebarOpen={setSidebarOpen} />}
+        content={
+          <>
+            {board?.lists && (
+              <div className="flex flex-1 overflow-x-auto overflow-y-hidden h-full">
+                <DragDropContext onDragEnd={onDragEnd}>
+                  <Droppable droppableId="list" type="list" direction="horizontal">
+                    {(provided) => (
+                      <div ref={provided.innerRef} className="flex py-16 md:py-24 px-8 md:px-12">
+                        {board?.lists.map((list, index) => (
+                          <BoardList
+                            key={list.id}
+                            listId={list.id}
+                            cardIds={list.cards}
+                            index={index}
+                          />
+                        ))}
+
+                        {provided.placeholder}
+
+                        <BoardAddList />
+                      </div>
+                    )}
+                  </Droppable>
+                </DragDropContext>
+              </div>
+            )}
+          </>
+        }
+        rightSidebarOpen={sidebarOpen}
+        rightSidebarContent={<BoardSettingsSidebar onSetSidebarOpen={setSidebarOpen} />}
+        rightSidebarOnClose={() => setSidebarOpen(false)}
+        scroll={isMobile ? 'normal' : 'content'}
+        rightSidebarWidth={320}
       />
-      <div className="flex flex-1 flex-auto flex-col w-full h-full relative" ref={containerRef}>
-        <AppBar position="static" color="primary" elevation={0}>
-          <Toolbar className="flex items-center justify-between px-4 sm:px-24 h-48 sm:h-64 sm:h-96 container">
-            <Hidden smDown>
-              <Button
-                to="/apps/scrumboard/boards/"
-                component={Link}
-                variant="contained"
-                color="secondary"
-              >
-                <Icon>assessment</Icon>
-                <span className="px-8">Boards</span>
-              </Button>
-            </Hidden>
-
-            <Hidden smUp>
-              <IconButton
-                color="inherit"
-                to="/apps/scrumboard/boards/"
-                component={Link}
-                size="large"
-              >
-                <Icon>assessment</Icon>
-              </IconButton>
-            </Hidden>
-
-            <div className="flex flex-1 justify-center items-center">
-              <BoardTitle />
-            </div>
-
-            <IconButton color="inherit" onClick={() => toggleSettingsDrawer(true)} size="large">
-              <Icon>settings</Icon>
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-
-        <div className={clsx('flex flex-1 overflow-x-auto overflow-y-hidden')}>
-          <DragDropContext onDragEnd={onDragEnd}>
-            <Droppable droppableId="list" type="list" direction="horizontal">
-              {(provided) => (
-                <div
-                  ref={provided.innerRef}
-                  className="flex container py-16 md:py-24 px-8 md:px-12"
-                >
-                  {board.lists.map((list, index) => (
-                    <BoardList key={list.id} list={list} index={index} />
-                  ))}
-                  {provided.placeholder}
-
-                  <BoardAddList />
-                </div>
-              )}
-            </Droppable>
-          </DragDropContext>
-        </div>
-
-        <SwipeableDrawer
-          anchor="right"
-          className="absolute overflow-hidden"
-          classes={{
-            paper: 'absolute w-320',
-          }}
-          BackdropProps={{
-            classes: {
-              root: 'absolute',
-            },
-          }}
-          container={containerRef.current}
-          ModalProps={{
-            keepMounted: true,
-            style: { position: 'absolute' },
-          }}
-          open={settingsDrawerOpen}
-          onOpen={(ev) => {}}
-          onClose={() => toggleSettingsDrawer(false)}
-          disableSwipeToOpen
-        >
-          <BoardSettingsSidebar />
-        </SwipeableDrawer>
-
-        <BoardCardDialog />
-      </div>
+      <BoardCardDialog />
     </>
   );
 }

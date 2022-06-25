@@ -1,7 +1,6 @@
 import FuseExample from '@fuse/core/FuseExample';
-import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +19,9 @@ function BadgesDoc(props) {
           href="https://mui.com/components/badges"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -44,11 +43,8 @@ function BadgesDoc(props) {
           name="SimpleBadge.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/badges/SimpleBadge.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/badges/SimpleBadge.js')}
+          component={require('../components/badges/SimpleBadge.js').default}
+          raw={require('!raw-loader!../components/badges/SimpleBadge.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -62,11 +58,8 @@ function BadgesDoc(props) {
           name="ColorBadge.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/badges/ColorBadge.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/badges/ColorBadge.js')}
+          component={require('../components/badges/ColorBadge.js').default}
+          raw={require('!raw-loader!../components/badges/ColorBadge.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -74,18 +67,15 @@ function BadgesDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         Here is an example of customizing the component. You can learn more about this in the{' '}
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href="/material-ui/customization/how-to-customize/">overrides documentation page</a>.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="CustomizedBadges.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/badges/CustomizedBadges.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/badges/CustomizedBadges.js')}
+          component={require('../components/badges/CustomizedBadges.js').default}
+          raw={require('!raw-loader!../components/badges/CustomizedBadges.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -99,27 +89,21 @@ function BadgesDoc(props) {
           name="BadgeVisibility.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/badges/BadgeVisibility.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/badges/BadgeVisibility.js')}
+          component={require('../components/badges/BadgeVisibility.js').default}
+          raw={require('!raw-loader!../components/badges/BadgeVisibility.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
-        The badge auto hides with badgeContent is zero. You can override this with the{' '}
-        <code>showZero</code> prop.
+        The badge hides automatically when <code>badgeContent</code> is zero. You can override this
+        with the <code>showZero</code> prop.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="ShowZeroBadge.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/badges/ShowZeroBadge.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/badges/ShowZeroBadge.js')}
+          component={require('../components/badges/ShowZeroBadge.js').default}
+          raw={require('!raw-loader!../components/badges/ShowZeroBadge.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -133,11 +117,8 @@ function BadgesDoc(props) {
           name="BadgeMax.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/badges/BadgeMax.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/badges/BadgeMax.js')}
+          component={require('../components/badges/BadgeMax.js').default}
+          raw={require('!raw-loader!../components/badges/BadgeMax.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -152,11 +133,8 @@ function BadgesDoc(props) {
           name="DotBadge.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/badges/DotBadge.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/badges/DotBadge.js')}
+          component={require('../components/badges/DotBadge.js').default}
+          raw={require('!raw-loader!../components/badges/DotBadge.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -171,11 +149,8 @@ function BadgesDoc(props) {
           name="BadgeOverlap.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/badges/BadgeOverlap.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/badges/BadgeOverlap.js')}
+          component={require('../components/badges/BadgeOverlap.js').default}
+          raw={require('!raw-loader!../components/badges/BadgeOverlap.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -190,36 +165,8 @@ function BadgesDoc(props) {
           name="BadgeAlignment.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/badges/BadgeAlignment.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/badges/BadgeAlignment.js')}
-        />
-      </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
-        Unstyled
-      </Typography>
-      <Typography className="mb-40" component="div">
-        The badge also comes with an unstyled version. It&#39;s ideal for doing heavy customizations
-        and minimizing bundle size.
-      </Typography>
-
-      <FuseHighlight component="pre" className="language-js">
-        {` 
-import BadgeUnstyled from '@mui/base/BadgeUnstyled';
-`}
-      </FuseHighlight>
-      <Typography className="mb-40" component="div">
-        <FuseExample
-          name="UnstyledBadge.js"
-          className="my-24"
-          iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/badges/UnstyledBadge.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/badges/UnstyledBadge.js')}
+          component={require('../components/badges/BadgeAlignment.js').default}
+          raw={require('!raw-loader!../components/badges/BadgeAlignment.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -234,11 +181,8 @@ import BadgeUnstyled from '@mui/base/BadgeUnstyled';
           name="AccessibleBadges.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/badges/AccessibleBadges.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/badges/AccessibleBadges.js')}
+          component={require('../components/badges/AccessibleBadges.js').default}
+          raw={require('!raw-loader!../components/badges/AccessibleBadges.js')}
         />
       </Typography>
     </>

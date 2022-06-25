@@ -1,9 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
+const path = require('path');
+
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   safelist: ['pl-24', 'pl-40', 'pl-56', 'pl-72', 'pl-80'],
   presets: [],
-  darkMode: 'media', // or 'class'
+  darkMode: 'class', // or 'class'
   theme: {
     screens: {
       sm: '600px',
@@ -375,17 +377,17 @@ module.exports = {
       12: '12',
       '3xs': '16rem',
       '2xs': '18rem',
-      xs: '20rem',
-      sm: '24rem',
-      md: '28rem',
-      lg: '32rem',
-      xl: '36rem',
-      '2xl': '42rem',
-      '3xl': '48rem',
-      '4xl': '56rem',
-      '5xl': '64rem',
-      '6xl': '72rem',
-      '7xl': '80rem',
+      xs: '32rem',
+      sm: '48rem',
+      md: '64rem',
+      lg: '80rem',
+      xl: '57.6rem',
+      '2xl': '65.6rem',
+      '3xl': '76.8rem',
+      '4xl': '89.6rem',
+      '5xl': '102.4rem',
+      '6xl': '115.2rem',
+      '7xl': '128rem',
     },
     spacing: {
       xs: '32rem',
@@ -393,10 +395,12 @@ module.exports = {
       md: '64rem',
       lg: '80rem',
       xl: '96rem',
-      '2xl': '112rem',
-      '3xl': '128rem',
-      '4xl': '144rem',
-      '5xl': '160rem',
+      '2xl': '65.6rem',
+      '3xl': '76.8rem',
+      '4xl': '89.6rem',
+      '5xl': '102.4rem',
+      '6xl': '115.2rem',
+      '7xl': '128rem',
       px: '1px',
       0: '0px',
       0.5: '0.05rem',
@@ -437,8 +441,11 @@ module.exports = {
       88: '8.8rem',
       92: '9.2rem',
       96: '9.6rem',
+      112: '11.2rem',
+      120: '12rem',
       128: '12.8rem',
       136: '13.6rem',
+      144: '14.4rem',
       160: '16rem',
       192: '19.2rem',
       200: '20rem',
@@ -451,6 +458,7 @@ module.exports = {
       360: '36rem',
       384: '38.4rem',
       400: '40rem',
+      480: '48rem',
       512: '51.2rem',
       640: '64rem',
     },
@@ -543,6 +551,7 @@ module.exports = {
       '2xl': '1.6rem',
       '3xl': '2.4rem',
       full: '9999px',
+      0: '0px',
       2: '.2rem',
       4: '.4rem',
       6: '.6rem',
@@ -554,6 +563,9 @@ module.exports = {
       28: '2.8rem',
       32: '3.2rem',
     },
+    borderSpacing: ({ theme }) => ({
+      ...theme('spacing'),
+    }),
     borderWidth: {
       DEFAULT: '1px',
       0: '0px',
@@ -764,19 +776,34 @@ module.exports = {
       ],
     },
     fontSize: {
-      xs: ['1.2rem', { lineHeight: '1.6rem' }],
-      sm: ['1.4rem', { lineHeight: '2rem' }],
-      base: ['1.6rem', { lineHeight: '2.4rem' }],
-      lg: ['1.8rem', { lineHeight: '2.8em' }],
-      xl: ['2rem', { lineHeight: '2.8rem' }],
-      '2xl': ['2.4rem', { lineHeight: '3.2rem' }],
-      '3xl': ['3rem', { lineHeight: '3.6rem' }],
-      '4xl': ['3.6rem', { lineHeight: '4rem' }],
-      '5xl': ['4.8rem', { lineHeight: '1' }],
-      '6xl': ['6rem', { lineHeight: '1' }],
-      '7xl': ['7.2rem', { lineHeight: '1' }],
-      '8xl': ['9.6rem', { lineHeight: '1' }],
-      '9xl': ['12.8rem', { lineHeight: '1' }],
+      xs: '1rem',
+      sm: '1.2rem',
+      md: '1.3rem',
+      base: '1.4rem',
+      lg: '1.6rem',
+      xl: '1.8rem',
+      '2xl': '2rem',
+      '3xl': '2.4rem',
+      '4xl': '3.2rem',
+      '5xl': '3.6rem',
+      '6xl': '4rem',
+      '7xl': '4.8rem',
+      '8xl': '6.4rem',
+      '9xl': '9.6rem',
+      '10xl': '12.8rem',
+      // xs: ['1.2rem', { lineHeight: '1.6rem' }],
+      // sm: ['1.4rem', { lineHeight: '2rem' }],
+      // base: ['1.6rem', { lineHeight: '2.4rem' }],
+      // lg: ['1.8rem', { lineHeight: '2.8em' }],
+      // xl: ['2rem', { lineHeight: '2.8rem' }],
+      // '2xl': ['2.4rem', { lineHeight: '3.2rem' }],
+      // '3xl': ['3rem', { lineHeight: '3.6rem' }],
+      // '4xl': ['3.6rem', { lineHeight: '4rem' }],
+      // '5xl': ['4.8rem', { lineHeight: '1' }],
+      // '6xl': ['6rem', { lineHeight: '1' }],
+      // '7xl': ['7.2rem', { lineHeight: '1' }],
+      // '8xl': ['9.6rem', { lineHeight: '1' }],
+      // '9xl': ['12.8rem', { lineHeight: '1' }],
       10: ['1rem'],
       11: ['1.1rem'],
       12: ['1.2rem'],
@@ -1046,6 +1073,7 @@ module.exports = {
       ...negative(theme('spacing')),
     }),
     maxHeight: ({ theme }) => ({
+      none: 'none',
       ...theme('spacing'),
       full: '100%',
       screen: '100vh',
@@ -1367,6 +1395,7 @@ module.exports = {
     },
     zIndex: {
       auto: 'auto',
+      '-1': -1,
       0: '0',
       10: '10',
       20: '20',
@@ -1376,6 +1405,26 @@ module.exports = {
       99: '99',
       999: '999',
       9999: '9999',
+    },
+    extend: {
+      // @tailwindcss/typography
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            fontSize: '1.4rem',
+          },
+        },
+        sm: {
+          css: {
+            fontSize: '1.2rem',
+          },
+        },
+        lg: {
+          css: {
+            fontSize: '1.6rem',
+          },
+        },
+      }),
     },
   },
   variantOrder: [
@@ -1396,5 +1445,12 @@ module.exports = {
     'active',
     'disabled',
   ],
-  plugins: [],
+  plugins: [
+    // eslint-disable-next-line import/no-dynamic-require
+    require(path.resolve(__dirname, 'src/@fuse/tailwind/plugins/icon-size')),
+    // Other third party and/or custom plugins
+    require('@tailwindcss/typography')({ modifiers: ['sm', 'lg'] }),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/line-clamp'),
+  ],
 };

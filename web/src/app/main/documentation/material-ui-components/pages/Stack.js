@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function StackDoc(props) {
           href="https://mui.com/components/stack"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -38,26 +38,23 @@ function StackDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         <code>Stack</code> is concerned with one-dimensional layouts, while{' '}
-        <a href="/components/grid/">Grid</a> handles two-dimensional layouts. The default direction
-        is <code>column</code> which stacks children vertically.
+        <a href="/material-ui/react-grid/">Grid</a> handles two-dimensional layouts. The default
+        direction is <code>column</code> which stacks children vertically.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="BasicStack.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/stack/BasicStack.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/stack/BasicStack.js')}
+          component={require('../components/stack/BasicStack.js').default}
+          raw={require('!raw-loader!../components/stack/BasicStack.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
         To control space between children, use the <code>spacing</code> prop. The spacing value can
         be any number, including decimals and any string. The prop is converted into a CSS property
         using the{' '}
-        <a href="/customization/spacing/">
+        <a href="/material-ui/customization/spacing/">
           <code>theme.spacing()</code>
         </a>{' '}
         helper.
@@ -75,11 +72,8 @@ function StackDoc(props) {
           name="DirectionStack.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/stack/DirectionStack.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/stack/DirectionStack.js')}
+          component={require('../components/stack/DirectionStack.js').default}
+          raw={require('!raw-loader!../components/stack/DirectionStack.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -87,18 +81,15 @@ function StackDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         Use the <code>divider</code> prop to insert an element between each child. This works
-        particularly well with the <a href="/components/dividers/">Divider</a> component.
+        particularly well with the <a href="/material-ui/react-divider/">Divider</a> component.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="DividerStack.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/stack/DividerStack.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/stack/DividerStack.js')}
+          component={require('../components/stack/DividerStack.js').default}
+          raw={require('!raw-loader!../components/stack/DividerStack.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -113,11 +104,8 @@ function StackDoc(props) {
           name="ResponsiveStack.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/stack/ResponsiveStack.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/stack/ResponsiveStack.js')}
+          component={require('../components/stack/ResponsiveStack.js').default}
+          raw={require('!raw-loader!../components/stack/ResponsiveStack.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -132,11 +120,8 @@ function StackDoc(props) {
           name="InteractiveStack.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/stack/InteractiveStack.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/stack/InteractiveStack.js')}
+          component={require('../components/stack/InteractiveStack.js').default}
+          raw={require('!raw-loader!../components/stack/InteractiveStack.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">

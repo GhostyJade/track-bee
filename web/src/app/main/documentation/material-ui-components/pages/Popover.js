@@ -1,6 +1,6 @@
 import FuseExample from '@fuse/core/FuseExample';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -19,9 +19,9 @@ function PopoverDoc(props) {
           href="https://mui.com/components/popover"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -37,14 +37,14 @@ function PopoverDoc(props) {
       <ul>
         <li>
           The component is built on top of the{' '}
-          <a href="/components/modal/">
+          <a href="/material-ui/react-modal/">
             <code>Modal</code>
           </a>{' '}
           component.
         </li>
         <li>
           The scroll and click away are blocked unlike with the{' '}
-          <a href="/components/popper/">
+          <a href="/material-ui/react-popper/">
             <code>Popper</code>
           </a>{' '}
           component.
@@ -58,11 +58,8 @@ function PopoverDoc(props) {
           name="BasicPopover.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/popover/BasicPopover.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/popover/BasicPopover.js')}
+          component={require('../components/popover/BasicPopover.js').default}
+          raw={require('!raw-loader!../components/popover/BasicPopover.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -80,11 +77,8 @@ function PopoverDoc(props) {
           name="AnchorPlayground.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/popover/AnchorPlayground.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/popover/AnchorPlayground.js')}
+          component={require('../components/popover/AnchorPlayground.js').default}
+          raw={require('!raw-loader!../components/popover/AnchorPlayground.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -99,11 +93,8 @@ function PopoverDoc(props) {
           name="MouseOverPopover.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/popover/MouseOverPopover.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/popover/MouseOverPopover.js')}
+          component={require('../components/popover/MouseOverPopover.js').default}
+          raw={require('!raw-loader!../components/popover/MouseOverPopover.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -127,11 +118,8 @@ function PopoverDoc(props) {
           name="PopoverPopupState.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/popover/PopoverPopupState.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/popover/PopoverPopupState.js')}
+          component={require('../components/popover/PopoverPopupState.js').default}
+          raw={require('!raw-loader!../components/popover/PopoverPopupState.js')}
         />
       </Typography>
     </>

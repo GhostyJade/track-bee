@@ -1,7 +1,6 @@
 import NavLinkAdapter from '@fuse/core/NavLinkAdapter';
-import { styled, alpha } from '@mui/material/styles';
+import { alpha, styled } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
-import Icon from '@mui/material/Icon';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import clsx from 'clsx';
@@ -9,9 +8,11 @@ import PropTypes from 'prop-types';
 import { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { Box } from '@mui/system';
 import FuseNavBadge from '../../FuseNavBadge';
+import FuseSvgIcon from '../../../FuseSvgIcon';
 
-const Root = styled('div')(({ theme }) => ({
+const Root = styled(Box)(({ theme }) => ({
   '& > .fuse-list-item': {
     minHeight: 100,
     height: 100,
@@ -71,7 +72,7 @@ function FuseNavVerticalTab(props) {
 
   return useMemo(
     () => (
-      <Root>
+      <Root sx={item.sx}>
         <ListItem
           button
           component={item.url && NavLinkAdapter}
@@ -85,17 +86,18 @@ function FuseNavVerticalTab(props) {
           )}
           onClick={() => onItemClick && onItemClick(item)}
           role="button"
+          disabled={item.disabled}
         >
           {dense ? (
             <Tooltip title={item.title || ''} placement="right">
               <div className="w-32 h-32 min-h-32 flex items-center justify-center relative">
                 {item.icon ? (
-                  <Icon
-                    className={clsx('fuse-list-item-icon text-24', item.iconClass)}
+                  <FuseSvgIcon
+                    className={clsx('fuse-list-item-icon', item.iconClass)}
                     color="action"
                   >
                     {item.icon}
-                  </Icon>
+                  </FuseSvgIcon>
                 ) : (
                   item.title && <div className="font-bold text-16">{item.title[0]}</div>
                 )}
@@ -111,12 +113,13 @@ function FuseNavVerticalTab(props) {
             <>
               <div className="w-32 h-32 min-h-32 flex items-center justify-center relative mb-8">
                 {item.icon ? (
-                  <Icon
-                    className={clsx('fuse-list-item-icon text-32', item.iconClass)}
+                  <FuseSvgIcon
+                    size={32}
+                    className={clsx('fuse-list-item-icon', item.iconClass)}
                     color="action"
                   >
                     {item.icon}
-                  </Icon>
+                  </FuseSvgIcon>
                 ) : (
                   item.title && <div className="font-bold text-20">{item.title[0]}</div>
                 )}
@@ -129,10 +132,11 @@ function FuseNavVerticalTab(props) {
               </div>
 
               <ListItemText
-                className="fuse-list-item-text grow-0 w-full m-0"
+                className="fuse-list-item-text grow-0 w-full"
                 primary={item.title}
                 classes={{
-                  primary: 'text-12 font-medium fuse-list-item-text-primary truncate text-center',
+                  primary:
+                    'text-12 font-medium fuse-list-item-text-primary truncate text-center truncate',
                 }}
               />
             </>

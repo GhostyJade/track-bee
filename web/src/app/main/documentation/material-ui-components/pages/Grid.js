@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function GridDoc(props) {
           href="https://mui.com/components/grid"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -38,16 +38,14 @@ function GridDoc(props) {
         visual consistency between layouts while allowing flexibility across a wide variety of
         designs. Material Design&#39;s responsive UI is based on a 12-column grid layout.
       </Typography>
-      <blockquote>
-        <Typography className="mb-40" component="div">
-          ⚠️ The <code>Grid</code> component shouldn&#39;t be confused with a data grid; it is
-          closer to a layout grid. For a data grid head to{' '}
-          <a href="/components/data-grid/">
-            the <code>DataGrid</code> component
-          </a>
-          .
-        </Typography>
-      </blockquote>
+      <Typography className="mb-40" component="div">
+        :::warning ⚠️ The <code>Grid</code> component shouldn&#39;t be confused with a data grid; it
+        is closer to a layout grid. For a data grid head to{' '}
+        <a href="/x/react-data-grid/">
+          the <code>DataGrid</code> component
+        </a>
+        . :::
+      </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         How it works
       </Typography>
@@ -71,7 +69,10 @@ function GridDoc(props) {
         <li>
           Integer values can be given to each breakpoint, indicating how many of the 12 available
           columns are occupied by the component when the viewport width satisfies the{' '}
-          <a href="/customization/breakpoints/#default-breakpoints">breakpoint constraints</a>.
+          <a href="/material-ui/customization/breakpoints/#default-breakpoints">
+            breakpoint constraints
+          </a>
+          .
         </li>
       </ul>
       <Typography className="mb-40" component="div">
@@ -103,11 +104,8 @@ function GridDoc(props) {
           name="BasicGrid.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/grid/BasicGrid.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/grid/BasicGrid.js')}
+          component={require('../components/grid/BasicGrid.js').default}
+          raw={require('!raw-loader!../components/grid/BasicGrid.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -121,19 +119,16 @@ function GridDoc(props) {
       <Typography className="mb-40" component="div">
         For example, <code>{`xs={12} sm={6}`}</code> sizes a component to occupy half of the
         viewport width (6 columns) when viewport width is{' '}
-        <a href="/customization/breakpoints/#default-breakpoints">600 or more pixels</a>. For
-        smaller viewports, the component fills all 12 available columns.
+        <a href="/material-ui/customization/breakpoints/#default-breakpoints">600 or more pixels</a>
+        . For smaller viewports, the component fills all 12 available columns.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="FullWidthGrid.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/grid/FullWidthGrid.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/grid/FullWidthGrid.js')}
+          component={require('../components/grid/FullWidthGrid.js').default}
+          raw={require('!raw-loader!../components/grid/FullWidthGrid.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -143,7 +138,7 @@ function GridDoc(props) {
         To control space between children, use the <code>spacing</code> prop. The spacing value can
         be any positive number, including decimals and any string. The prop is converted into a CSS
         property using the{' '}
-        <a href="/customization/spacing/">
+        <a href="/material-ui/customization/spacing/">
           <code>theme.spacing()</code>
         </a>{' '}
         helper.
@@ -153,11 +148,8 @@ function GridDoc(props) {
           name="SpacingGrid.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/grid/SpacingGrid.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/grid/SpacingGrid.js')}
+          component={require('../components/grid/SpacingGrid.js').default}
+          raw={require('!raw-loader!../components/grid/SpacingGrid.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -174,11 +166,8 @@ function GridDoc(props) {
           name="RowAndColumnSpacing.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/grid/RowAndColumnSpacing.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/grid/RowAndColumnSpacing.js')}
+          component={require('../components/grid/RowAndColumnSpacing.js').default}
+          raw={require('!raw-loader!../components/grid/RowAndColumnSpacing.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -197,11 +186,8 @@ function GridDoc(props) {
           name="ResponsiveGrid.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/grid/ResponsiveGrid.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/grid/ResponsiveGrid.js')}
+          component={require('../components/grid/ResponsiveGrid.js').default}
+          raw={require('!raw-loader!../components/grid/ResponsiveGrid.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -227,21 +213,22 @@ function GridDoc(props) {
           all the <a href="#system-props">other props</a> of the system
         </li>
       </ul>
-      <blockquote>
-        <Typography className="mb-40" component="div">
-          ⚠️ When using a responsive <code>columns</code> prop, each grid item needs its
-          corresponding breakpoint. For instance, this is not working. The grid item misses the
-          value for <code>md</code>:
-        </Typography>
+      <Typography className="mb-40" component="div">
+        :::warning ⚠️ When using a responsive <code>columns</code> prop, each grid item needs its
+        corresponding breakpoint. For instance, this is not working. The grid item misses the value
+        for <code>md</code>:
+      </Typography>
 
-        <FuseHighlight component="pre" className="language-jsx">
-          {` 
+      <FuseHighlight component="pre" className="language-jsx">
+        {` 
 <Grid container columns={{ xs: 4, md: 12 }}>
   <Grid item xs={2} />
 </Grid>
 `}
-        </FuseHighlight>
-      </blockquote>
+      </FuseHighlight>
+      <Typography className="mb-40" component="div">
+        :::
+      </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         Interactive
       </Typography>
@@ -254,11 +241,8 @@ function GridDoc(props) {
           name="InteractiveGrid.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/grid/InteractiveGrid.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/grid/InteractiveGrid.js')}
+          component={require('../components/grid/InteractiveGrid.js').default}
+          raw={require('!raw-loader!../components/grid/InteractiveGrid.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -274,30 +258,24 @@ function GridDoc(props) {
           name="AutoGrid.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/grid/AutoGrid.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/grid/AutoGrid.js')}
+          component={require('../components/grid/AutoGrid.js').default}
+          raw={require('!raw-loader!../components/grid/AutoGrid.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
         Variable width content
       </Typography>
       <Typography className="mb-40" component="div">
-        Set one of the size breakpoint props to <code>"auto"</code> instead of <code>true</code> / a{' '}
-        <code>number</code> to size a column based on the natural width of its content.
+        Set one of the size breakpoint props to <code>{`"auto"`}</code> instead of <code>true</code>{' '}
+        / a <code>number</code> to size a column based on the natural width of its content.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="VariableWidthGrid.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/grid/VariableWidthGrid.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/grid/VariableWidthGrid.js')}
+          component={require('../components/grid/VariableWidthGrid.js').default}
+          raw={require('!raw-loader!../components/grid/VariableWidthGrid.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -312,11 +290,8 @@ function GridDoc(props) {
           name="ComplexGrid.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/grid/ComplexGrid.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/grid/ComplexGrid.js')}
+          component={require('../components/grid/ComplexGrid.js').default}
+          raw={require('!raw-loader!../components/grid/ComplexGrid.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -326,14 +301,12 @@ function GridDoc(props) {
         The <code>container</code> and <code>item</code> props are two independent booleans; they
         can be combined to allow a Grid component to be both a flex container and child.
       </Typography>
-      <blockquote>
-        <Typography className="mb-40" component="div">
-          A flex <strong>container</strong> is the box generated by an element with a computed
-          display of <code>flex</code> or <code>inline-flex</code>. In-flow children of a flex
-          container are called flex <strong>items</strong> and are laid out using the flex layout
-          model.
-        </Typography>
-      </blockquote>
+      <Typography className="mb-40" component="div">
+        :::info A flex <strong>container</strong> is the box generated by an element with a computed
+        display of <code>flex</code> or <code>inline-flex</code>. In-flow children of a flex
+        container are called flex <strong>items</strong> and are laid out using the flex layout
+        model. :::
+      </Typography>
       <Typography className="mb-40" component="div">
         <a href="https://www.w3.org/TR/css-flexbox-1/#box-model">
           https://www.w3.org/TR/css-flexbox-1/#box-model
@@ -344,11 +317,8 @@ function GridDoc(props) {
           name="NestedGrid.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/grid/NestedGrid.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/grid/NestedGrid.js')}
+          component={require('../components/grid/NestedGrid.js').default}
+          raw={require('!raw-loader!../components/grid/NestedGrid.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -375,11 +345,8 @@ function GridDoc(props) {
           name="ColumnsGrid.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/grid/ColumnsGrid.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/grid/ColumnsGrid.js')}
+          component={require('../components/grid/ColumnsGrid.js').default}
+          raw={require('!raw-loader!../components/grid/ColumnsGrid.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -424,11 +391,8 @@ function GridDoc(props) {
           name="AutoGridNoWrap.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/grid/AutoGridNoWrap.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/grid/AutoGridNoWrap.js')}
+          component={require('../components/grid/AutoGridNoWrap.js').default}
+          raw={require('!raw-loader!../components/grid/AutoGridNoWrap.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -436,8 +400,8 @@ function GridDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         The <code>xs</code>, <code>sm</code>, <code>md</code>, <code>lg</code>, and <code>xl</code>{' '}
-        props are <strong>not supported</strong> within <code>direction="column"</code> and{' '}
-        <code>direction="column-reverse"</code> containers.
+        props are <strong>not supported</strong> within <code>{`direction="column"`}</code> and{' '}
+        <code>{`direction="column-reverse"`}</code> containers.
       </Typography>
       <Typography className="mb-40" component="div">
         They define the number of grids the component will use for a given breakpoint. They are
@@ -457,11 +421,8 @@ function GridDoc(props) {
           name="CSSGrid.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/grid/CSSGrid.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/grid/CSSGrid.js')}
+          component={require('../components/grid/CSSGrid.js').default}
+          raw={require('!raw-loader!../components/grid/CSSGrid.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">

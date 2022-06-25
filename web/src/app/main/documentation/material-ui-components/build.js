@@ -2,7 +2,7 @@
 import fs from 'fs';
 import Beautify from 'js-beautify';
 import _ from 'lodash';
-import marked from 'marked';
+import { marked } from 'marked';
 import path from 'path';
 import { spawn } from 'child_process';
 
@@ -27,7 +27,16 @@ marked.Lexer.prototype.lex = function lex(src) {
     .replace(/\r\n|\r/g, '\n')
     .replace(/\t/g, '    ')
     .replace(/\u2424/g, '\n');
-  return this.token(src, true);
+
+  this.blockTokens(src, this.tokens);
+
+  let next;
+  // eslint-disable-next-line no-cond-assign
+  while ((next = this.inlineQueue.shift())) {
+    this.inlineTokens(next.src, next.tokens);
+  }
+
+  return this.tokens;
 };
 
 const renderer = new marked.Renderer();
@@ -154,9 +163,7 @@ function getHtmlCode(markdownSource, file) {
       const demoOptions = JSON.parse(`{${content}}`);
       const name = demoOptions.demo;
       const iframe = !!demoOptions.iframe;
-      const importPath = `app/main/documentation/material-ui-components/components/${path.basename(
-        file
-      )}/${name}`;
+      const importPath = `../components/${path.basename(file)}/${name}`;
       return `\n<FuseExample
                     name="${name}"
                     className="my-24"
@@ -231,9 +238,9 @@ function writePage(file) {
 							href="https://mui.com/components/${path.basename(file)}" 
 							target="_blank"
 							role="button"
+							startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
 							>
-							<Icon>link</Icon>
-							<span className="mx-4">Reference</span>
+							Reference
 						</Button>
 					</div>
                      ${htmlCode}
@@ -244,6 +251,7 @@ function writePage(file) {
 
   const content = `import FuseExample from '@fuse/core/FuseExample';
                    import FuseHighlight from '@fuse/core/FuseHighlight';
+                   import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
                    import Button from '@mui/material/Button';
                    import Icon from '@mui/material/Icon';
                    import Typography from '@mui/material/Typography';
@@ -267,8 +275,7 @@ function writePage(file) {
 }
 
 function writeRouteFile(pages) {
-  const importPath =
-    "const %s = lazy(() => import('app/main/documentation/material-ui-components/pages/%s'));";
+  const importPath = "const %s = lazy(() => import('./pages/%s'));";
   const imports = pages.map((page) => {
     const componentName = _.upperFirst(_.camelCase(page));
     return importPath.replace(/%s/g, componentName, componentName);
@@ -402,17 +409,14 @@ function replaceInExamples() {
     list.forEach((file) => {
       const fileSource = fs.readFileSync(file, 'utf8');
       const result = fileSource
-        .replace(
-          new RegExp('docs/src/modules/utils/compose', 'g'),
-          'app/main/documentation/material-ui-components/compose'
-        )
+        .replace(new RegExp('docs/src/modules/utils/compose', 'g'), '../../compose')
         .replace(
           new RegExp('docs/src/modules/components/MarkdownElement', 'g'),
-          'app/main/documentation/material-ui-components/utils/MarkdownElement'
+          '../../utils/MarkdownElement'
         )
         .replace(
           new RegExp('docs/src/modules/components/HighlightedCode', 'g'),
-          'app/main/documentation/material-ui-components/utils/HighlightedCode'
+          '../../utils/HighlightedCode'
         )
         .replace(new RegExp('/static/', 'g'), '/material-ui-static/');
       fs.writeFileSync(file, result, 'utf8', (_err) => {
@@ -432,6 +436,7 @@ function removeExcludedComponents() {
     path.resolve(examplesDirectory, './about-the-lab'),
     path.resolve(examplesDirectory, './material-icons'),
     path.resolve(examplesDirectory, './icons'),
+    path.resolve(examplesDirectory, './pickers'),
   ];
 
   excludedComponents.forEach((_path) => rmDir(_path));

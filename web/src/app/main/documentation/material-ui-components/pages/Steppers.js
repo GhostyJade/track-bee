@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function SteppersDoc(props) {
           href="https://mui.com/components/steppers"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -45,13 +45,12 @@ function SteppersDoc(props) {
           <strong>Types of Steppers</strong>: Horizontal, Vertical, Linear, Non-linear
         </li>
       </ul>
-      <blockquote>
-        <Typography className="mb-40" component="div">
-          <strong>Note:</strong> Steppers are no longer documented in the{' '}
-          <a href="https://material.io/">Material Design guidelines</a>, but MUI will continue to
-          support them.
-        </Typography>
-      </blockquote>
+      <Typography className="mb-40" component="div">
+        :::warning
+        <strong>Note:</strong> Steppers are no longer documented in the{' '}
+        <a href="https://material.io/">Material Design guidelines</a>, but Material UI will continue
+        to support them. :::
+      </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         Horizontal stepper
       </Typography>
@@ -84,11 +83,8 @@ function SteppersDoc(props) {
           name="HorizontalLinearStepper.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/steppers/HorizontalLinearStepper.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/steppers/HorizontalLinearStepper.js')}
+          component={require('../components/steppers/HorizontalLinearStepper.js').default}
+          raw={require('!raw-loader!../components/steppers/HorizontalLinearStepper.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -114,11 +110,8 @@ function SteppersDoc(props) {
           name="HorizontalNonLinearStepper.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/steppers/HorizontalNonLinearStepper.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/steppers/HorizontalNonLinearStepper.js')}
+          component={require('../components/steppers/HorizontalNonLinearStepper.js').default}
+          raw={require('!raw-loader!../components/steppers/HorizontalNonLinearStepper.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -134,10 +127,9 @@ function SteppersDoc(props) {
           className="my-24"
           iframe={false}
           component={
-            require('app/main/documentation/material-ui-components/components/steppers/HorizontalLinearAlternativeLabelStepper.js')
-              .default
+            require('../components/steppers/HorizontalLinearAlternativeLabelStepper.js').default
           }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/steppers/HorizontalLinearAlternativeLabelStepper.js')}
+          raw={require('!raw-loader!../components/steppers/HorizontalLinearAlternativeLabelStepper.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -148,11 +140,8 @@ function SteppersDoc(props) {
           name="HorizontalStepperWithError.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/steppers/HorizontalStepperWithError.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/steppers/HorizontalStepperWithError.js')}
+          component={require('../components/steppers/HorizontalStepperWithError.js').default}
+          raw={require('!raw-loader!../components/steppers/HorizontalStepperWithError.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -160,18 +149,15 @@ function SteppersDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         Here is an example of customizing the component. You can learn more about this in the{' '}
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href="/material-ui/customization/how-to-customize/">overrides documentation page</a>.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="CustomizedSteppers.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/steppers/CustomizedSteppers.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/steppers/CustomizedSteppers.js')}
+          component={require('../components/steppers/CustomizedSteppers.js').default}
+          raw={require('!raw-loader!../components/steppers/CustomizedSteppers.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -186,11 +172,8 @@ function SteppersDoc(props) {
           name="VerticalLinearStepper.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/steppers/VerticalLinearStepper.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/steppers/VerticalLinearStepper.js')}
+          component={require('../components/steppers/VerticalLinearStepper.js').default}
+          raw={require('!raw-loader!../components/steppers/VerticalLinearStepper.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -233,11 +216,8 @@ function SteppersDoc(props) {
           name="TextMobileStepper.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/steppers/TextMobileStepper.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/steppers/TextMobileStepper.js')}
+          component={require('../components/steppers/TextMobileStepper.js').default}
+          raw={require('!raw-loader!../components/steppers/TextMobileStepper.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -255,11 +235,8 @@ function SteppersDoc(props) {
           name="SwipeableTextMobileStepper.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/steppers/SwipeableTextMobileStepper.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/steppers/SwipeableTextMobileStepper.js')}
+          component={require('../components/steppers/SwipeableTextMobileStepper.js').default}
+          raw={require('!raw-loader!../components/steppers/SwipeableTextMobileStepper.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -273,11 +250,8 @@ function SteppersDoc(props) {
           name="DotsMobileStepper.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/steppers/DotsMobileStepper.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/steppers/DotsMobileStepper.js')}
+          component={require('../components/steppers/DotsMobileStepper.js').default}
+          raw={require('!raw-loader!../components/steppers/DotsMobileStepper.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -292,11 +266,8 @@ function SteppersDoc(props) {
           name="ProgressMobileStepper.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/steppers/ProgressMobileStepper.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/steppers/ProgressMobileStepper.js')}
+          component={require('../components/steppers/ProgressMobileStepper.js').default}
+          raw={require('!raw-loader!../components/steppers/ProgressMobileStepper.js')}
         />
       </Typography>
     </>

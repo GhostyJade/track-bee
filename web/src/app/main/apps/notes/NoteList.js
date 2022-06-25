@@ -6,12 +6,12 @@ import { useSelector } from 'react-redux';
 import withRouter from '@fuse/core/withRouter';
 import { useParams } from 'react-router-dom';
 import NoteListItem from './NoteListItem';
-import { selectNotes } from './store/notesSlice';
+import { selectNotes, selectSearchText, selectVariateDescSize } from './store/notesSlice';
 
 function NoteList(props) {
   const notes = useSelector(selectNotes);
-  const variateDescSize = useSelector(({ notesApp }) => notesApp.notes.variateDescSize);
-  const searchText = useSelector(({ notesApp }) => notesApp.notes.searchText);
+  const variateDescSize = useSelector(selectVariateDescSize);
+  const searchText = useSelector(selectSearchText);
   const params = useParams();
   const [filteredData, setFilteredData] = useState(null);
 
@@ -20,22 +20,6 @@ function NoteList(props) {
       const { id, labelId } = params;
 
       let data = notes;
-
-      if (labelId) {
-        data = data.filter((note) => note.labels.includes(labelId) && !note.archive);
-      }
-
-      if (!id) {
-        data = data.filter((note) => !note.archive);
-      }
-
-      if (id === 'archive') {
-        data = data.filter((note) => note.archive);
-      }
-
-      if (id === 'reminders') {
-        data = data.filter((note) => Boolean(note.reminder) && !note.archive);
-      }
 
       if (searchText.length === 0) {
         return data;
@@ -53,7 +37,7 @@ function NoteList(props) {
 
   return !filteredData || filteredData.length === 0 ? (
     <div className="flex items-center justify-center h-full">
-      <Typography color="textSecondary" variant="h5">
+      <Typography color="text.secondary" variant="h5">
         There are no notes!
       </Typography>
     </div>
@@ -71,7 +55,7 @@ function NoteList(props) {
           480: 1,
         }}
         className="my-masonry-grid flex w-full"
-        columnClassName="my-masonry-grid_column flex flex-col p-0 md:p-8"
+        columnClassName="my-masonry-grid_column flex flex-col p-8"
       >
         {filteredData.map((note) => (
           <NoteListItem

@@ -4,33 +4,34 @@ import { Controller, useForm } from 'react-hook-form';
 import _ from '@lodash';
 import Button from '@mui/material/Button';
 import Fab from '@mui/material/Fab';
-import Icon from '@mui/material/Icon';
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
-import NoteModel from 'app/main/apps/notes/model/NoteModel';
-import NoteLabel from 'app/main/apps/notes/NoteLabel';
-import NoteReminderLabel from 'app/main/apps/notes/NoteReminderLabel';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import withRouter from '@fuse/core/withRouter';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import * as yup from 'yup';
 import format from 'date-fns/format';
-import NoteFormList from './checklist/NoteFormList';
+import { useDispatch } from 'react-redux';
+import NoteFormList from './tasks/NoteFormList';
 import NoteFormLabelMenu from './NoteFormLabelMenu';
 import NoteFormReminder from './NoteFormReminder';
 import NoteFormUploadImage from './NoteFormUploadImage';
+import NoteModel from '../model/NoteModel';
+import NoteReminderLabel from '../NoteReminderLabel';
+import NoteLabel from '../NoteLabel';
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
   title: yup.string(),
-  description: yup.string(),
+  content: yup.string(),
   image: yup.string(),
-  checklist: yup.array(),
-  oneOfThemRequired: yup.bool().when(['title', 'description', 'image', 'checklist'], {
+  tasks: yup.array(),
+  oneOfThemRequired: yup.bool().when(['title', 'content', 'image', 'tasks'], {
     is: (a, b, c, d) => (!a && !b && !c && !d) || (!!a && !!b && !!c && !!d),
     then: yup.bool().required(''),
     otherwise: yup.bool(),
@@ -40,12 +41,14 @@ const schema = yup.object().shape({
 function NoteForm(props) {
   const [showList, setShowList] = useState(false);
   const routeParams = useParams();
+  const dispatch = useDispatch();
+
   const defaultValues = _.merge(
     {},
     NoteModel(),
     props.note,
     routeParams.labelId ? { labels: [routeParams.labelId] } : null,
-    routeParams.id === 'archive' ? { archive: true } : null
+    routeParams.id === 'archive' ? { archived: true } : null
   );
   const { formState, handleSubmit, getValues, reset, watch, setValue, control } = useForm({
     mode: 'onChange',
@@ -95,7 +98,7 @@ function NoteForm(props) {
             control={control}
             defaultValue=""
             render={({ field: { onChange, value } }) => {
-              if (value === '') {
+              if (!value || value === '') {
                 return null;
               }
               return (
@@ -110,7 +113,7 @@ function NoteForm(props) {
                     type="button"
                     onClick={() => onChange('')}
                   >
-                    <Icon fontSize="small">delete</Icon>
+                    <FuseSvgIcon size={20}>heroicons-outline:trash</FuseSvgIcon>
                   </Fab>
                 </div>
               );
@@ -135,7 +138,7 @@ function NoteForm(props) {
           </div>
           <div className="px-20 my-16">
             <Controller
-              name="description"
+              name="content"
               control={control}
               render={({ field }) => (
                 <Input
@@ -151,22 +154,22 @@ function NoteForm(props) {
           </div>
 
           <Controller
-            name="checklist"
+            name="tasks"
             control={control}
             defaultValue={[]}
             render={({ field: { onChange, value } }) => {
-              if (value.length === 0 && !showList) {
+              if ((value?.length === 0 && !showList) || (!value && !showList)) {
                 return null;
               }
               return (
                 <div className="px-16">
-                  <NoteFormList checklist={value} onCheckListChange={(val) => onChange(val)} />
+                  <NoteFormList tasks={value || []} onCheckListChange={(val) => onChange(val)} />
                 </div>
               );
             }}
           />
 
-          {(noteForm.labels || noteForm.reminder || noteForm.time) && (
+          {(noteForm.labels || noteForm.reminder || noteForm.createdAt) && (
             <div className="flex flex-wrap w-full px-20 my-16 -mx-4">
               {noteForm.reminder && (
                 <NoteReminderLabel
@@ -197,9 +200,9 @@ function NoteForm(props) {
                 }}
               />
 
-              {noteForm.time && (
-                <Typography color="textSecondary" className="text-12 mt-8 mx-4">
-                  Edited: {format(new Date(noteForm.time), 'MMM dd yy, h:mm')}
+              {noteForm.createdAt && (
+                <Typography color="text.secondary" className="text-12 mt-8 mx-4">
+                  Edited: {format(new Date(noteForm.createdAt), 'MMM dd yy, h:mm')}
                 </Typography>
               )}
             </div>
@@ -232,13 +235,13 @@ function NoteForm(props) {
             </div>
           </Tooltip>
 
-          <Tooltip title="Add checklist" placement="bottom">
+          <Tooltip title="Add tasks" placement="bottom">
             <IconButton
               className="w-32 h-32 mx-4 p-0"
               onClick={() => setShowList(!showList)}
               size="large"
             >
-              <Icon fontSize="small">playlist_add_check</Icon>
+              <FuseSvgIcon size={20}>heroicons-outline:pencil-alt</FuseSvgIcon>
             </IconButton>
           </Tooltip>
 
@@ -252,7 +255,7 @@ function NoteForm(props) {
           </Tooltip>
 
           <Controller
-            name="archive"
+            name="archived"
             control={control}
             defaultValue={false}
             render={({ field: { onChange, value } }) => (
@@ -270,7 +273,9 @@ function NoteForm(props) {
                     }}
                     size="large"
                   >
-                    <Icon fontSize="small">{value ? 'unarchive' : 'archive'}</Icon>
+                    <FuseSvgIcon size={20}>
+                      {value ? 'heroicons-solid:archive' : 'heroicons-outline:archive'}
+                    </FuseSvgIcon>
                   </IconButton>
                 </div>
               </Tooltip>
@@ -281,7 +286,7 @@ function NoteForm(props) {
         <div className="flex items-center">
           {props.variant === 'new' ? (
             <Button
-              className="m-4"
+              className="m-4 p-8"
               type="submit"
               variant="contained"
               color="secondary"
@@ -295,10 +300,10 @@ function NoteForm(props) {
             <>
               <Tooltip title="Delete Note" placement="bottom">
                 <IconButton className="w-32 h-32 mx-4 p-0" onClick={props.onRemove} size="large">
-                  <Icon fontSize="small">delete</Icon>
+                  <FuseSvgIcon size={20}>heroicons-outline:trash</FuseSvgIcon>
                 </IconButton>
               </Tooltip>
-              <Button className="m-4" onClick={props.onClose} variant="outlined" size="small">
+              <Button className="m-4" onClick={props.onClose} variant="default">
                 Close
               </Button>
             </>

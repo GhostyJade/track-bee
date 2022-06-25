@@ -1,7 +1,6 @@
 import FuseScrollbars from '@fuse/core/FuseScrollbars';
 import _ from '@lodash';
 import Checkbox from '@mui/material/Checkbox';
-import Icon from '@mui/material/Icon';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -15,13 +14,14 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import withRouter from '@fuse/core/withRouter';
 import FuseLoading from '@fuse/core/FuseLoading';
-import { getProducts, selectProducts } from '../store/productsSlice';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
+import { getProducts, selectProducts, selectProductsSearchText } from '../store/productsSlice';
 import ProductsTableHead from './ProductsTableHead';
 
 function ProductsTable(props) {
   const dispatch = useDispatch();
   const products = useSelector(selectProducts);
-  const searchText = useSelector(({ eCommerceApp }) => eCommerceApp.products.searchText);
+  const searchText = useSelector(selectProductsSearchText);
 
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState([]);
@@ -107,7 +107,11 @@ function ProductsTable(props) {
   }
 
   if (loading) {
-    return <FuseLoading />;
+    return (
+      <div className="flex items-center justify-center h-full">
+        <FuseLoading />
+      </div>
+    );
   }
 
   if (data.length === 0) {
@@ -117,7 +121,7 @@ function ProductsTable(props) {
         animate={{ opacity: 1, transition: { delay: 0.1 } }}
         className="flex flex-1 items-center justify-center h-full"
       >
-        <Typography color="textSecondary" variant="h5">
+        <Typography color="text.secondary" variant="h5">
           There are no products!
         </Typography>
       </motion.div>
@@ -125,7 +129,7 @@ function ProductsTable(props) {
   }
 
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col min-h-full">
       <FuseScrollbars className="grow overflow-x-auto">
         <Table stickyHeader className="min-w-xl" aria-labelledby="tableTitle">
           <ProductsTableHead
@@ -191,7 +195,7 @@ function ProductsTable(props) {
                       ) : (
                         <img
                           className="w-full block rounded"
-                          src="assets/images/ecommerce/product-image-placeholder.png"
+                          src="assets/images/apps/ecommerce/product-image-placeholder.png"
                           alt={n.name}
                         />
                       )}
@@ -224,9 +228,13 @@ function ProductsTable(props) {
 
                     <TableCell className="p-4 md:p-16" component="th" scope="row" align="right">
                       {n.active ? (
-                        <Icon className="text-green text-20">check_circle</Icon>
+                        <FuseSvgIcon className="text-green" size={20}>
+                          heroicons-outline:check-circle
+                        </FuseSvgIcon>
                       ) : (
-                        <Icon className="text-red text-20">remove_circle</Icon>
+                        <FuseSvgIcon className="text-red" size={20}>
+                          heroicons-outline:minus-circle
+                        </FuseSvgIcon>
                       )}
                     </TableCell>
                   </TableRow>

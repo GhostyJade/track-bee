@@ -3,13 +3,14 @@ import MobileDetect from 'mobile-detect';
 import PerfectScrollbar from 'perfect-scrollbar';
 import 'perfect-scrollbar/css/perfect-scrollbar.css';
 import PropTypes from 'prop-types';
-import { createRef, useCallback, useEffect, useRef, forwardRef } from 'react';
+import { createRef, forwardRef, useCallback, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import history from '@history';
 import withRouterAndRef from '../withRouterAndRef/withRouterAndRef';
 
 const Root = styled('div')(({ theme }) => ({
   overscrollBehavior: 'contain',
+  minHeight: '100%',
 }));
 
 const md = new MobileDetect(window.navigator.userAgent);

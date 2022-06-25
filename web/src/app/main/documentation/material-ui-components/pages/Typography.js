@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function TypographyDoc(props) {
           href="https://mui.com/components/typography"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -44,7 +44,7 @@ function TypographyDoc(props) {
         The <em>Roboto</em> font will <strong>not</strong> be automatically loaded by MUI. You are
         responsible for loading any fonts used in your application. Roboto Font has a few easy ways
         to get started. For more advanced configuration, check out
-        <a href="/customization/typography/">the theme customization section</a>.
+        <a href="/material-ui/customization/typography/">the theme customization section</a>.
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         Roboto Font CDN
@@ -102,11 +102,8 @@ import '@fontsource/roboto/700.css';
           name="Types.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/typography/Types.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/typography/Types.js')}
+          component={require('../components/typography/Types.js').default}
+          raw={require('!raw-loader!../components/typography/Types.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -115,7 +112,7 @@ import '@fontsource/roboto/700.css';
       <Typography className="mb-40" component="div">
         In some situations you might not be able to use the <code>Typography</code> component.
         Hopefully, you might be able to take advantage of the{' '}
-        <a href="/customization/default-theme/?expand-path=$.typography">
+        <a href="/material-ui/customization/default-theme/?expand-path=$.typography">
           <code>typography</code>
         </a>{' '}
         keys of the theme.
@@ -125,11 +122,8 @@ import '@fontsource/roboto/700.css';
           name="TypographyTheme.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/typography/TypographyTheme.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/typography/TypographyTheme.js')}
+          component={require('../components/typography/TypographyTheme.js').default}
+          raw={require('!raw-loader!../components/typography/TypographyTheme.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -160,7 +154,10 @@ import '@fontsource/roboto/700.css';
       <ul>
         <li>
           You can change the mapping{' '}
-          <a href="/customization/theme-components/#default-props">globally using the theme</a>:
+          <a href="/material-ui/customization/theme-components/#default-props">
+            globally using the theme
+          </a>
+          :
         </li>
       </ul>
 
@@ -194,7 +191,7 @@ const theme = createTheme({
       <Typography className="mb-40" component="div">
         In addition to using the default typography variants, you can add custom ones, or disable
         any you don&#39;t need. See the{' '}
-        <a href="/customization/typography/#adding-amp-disabling-variants">
+        <a href="/material-ui/customization/typography/#adding-amp-disabling-variants">
           Adding &amp; disabling variants
         </a>{' '}
         example for more info.
@@ -232,8 +229,8 @@ const theme = createTheme({
         </li>
         <li>
           <strong>Font size</strong>. Use{' '}
-          <a href="/customization/typography/#font-size">relative units (rem)</a> to accommodate the
-          user&#39;s settings.
+          <a href="/material-ui/customization/typography/#font-size">relative units (rem)</a> to
+          accommodate the user&#39;s settings.
         </li>
         <li>
           <strong>Heading hierarchy</strong>.{' '}

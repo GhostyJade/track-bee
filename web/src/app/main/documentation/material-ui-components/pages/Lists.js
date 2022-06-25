@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function ListsDoc(props) {
           href="https://mui.com/components/lists"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -44,11 +44,8 @@ function ListsDoc(props) {
           name="BasicList.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/lists/BasicList.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/BasicList.js')}
+          component={require('../components/lists/BasicList.js').default}
+          raw={require('!raw-loader!../components/lists/BasicList.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -64,8 +61,10 @@ function ListsDoc(props) {
       </FuseHighlight>
       <Typography className="mb-40" component="div">
         You can find a{' '}
-        <a href="/guides/routing/#list">demo with React Router following this section</a> of the
-        documentation.
+        <a href="/material-ui/guides/routing/#list">
+          demo with React Router following this section
+        </a>{' '}
+        of the documentation.
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         Nested List
@@ -75,11 +74,8 @@ function ListsDoc(props) {
           name="NestedList.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/lists/NestedList.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/NestedList.js')}
+          component={require('../components/lists/NestedList.js').default}
+          raw={require('!raw-loader!../components/lists/NestedList.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -90,11 +86,8 @@ function ListsDoc(props) {
           name="FolderList.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/lists/FolderList.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/FolderList.js')}
+          component={require('../components/lists/FolderList.js').default}
+          raw={require('!raw-loader!../components/lists/FolderList.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -109,11 +102,8 @@ function ListsDoc(props) {
           name="InteractiveList.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/lists/InteractiveList.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/InteractiveList.js')}
+          component={require('../components/lists/InteractiveList.js').default}
+          raw={require('!raw-loader!../components/lists/InteractiveList.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -124,11 +114,8 @@ function ListsDoc(props) {
           name="SelectedListItem.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/lists/SelectedListItem.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/SelectedListItem.js')}
+          component={require('../components/lists/SelectedListItem.js').default}
+          raw={require('!raw-loader!../components/lists/SelectedListItem.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -136,19 +123,16 @@ function ListsDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         When displaying three lines or more, the avatar is not aligned at the top. You should set
-        the <code>alignItems="flex-start"</code> prop to align the avatar at the top, following the
-        Material Design guidelines:
+        the <code>{`alignItems="flex-start"`}</code> prop to align the avatar at the top, following
+        the Material Design guidelines:
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="AlignItemsList.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/lists/AlignItemsList.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/AlignItemsList.js')}
+          component={require('../components/lists/AlignItemsList.js').default}
+          raw={require('!raw-loader!../components/lists/AlignItemsList.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -169,11 +153,8 @@ function ListsDoc(props) {
           name="CheckboxList.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/lists/CheckboxList.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/CheckboxList.js')}
+          component={require('../components/lists/CheckboxList.js').default}
+          raw={require('!raw-loader!../components/lists/CheckboxList.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -184,11 +165,8 @@ function ListsDoc(props) {
           name="CheckboxListSecondary.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/lists/CheckboxListSecondary.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/CheckboxListSecondary.js')}
+          component={require('../components/lists/CheckboxListSecondary.js').default}
+          raw={require('!raw-loader!../components/lists/CheckboxListSecondary.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -202,11 +180,8 @@ function ListsDoc(props) {
           name="SwitchListSecondary.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/lists/SwitchListSecondary.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/SwitchListSecondary.js')}
+          component={require('../components/lists/SwitchListSecondary.js').default}
+          raw={require('!raw-loader!../components/lists/SwitchListSecondary.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -221,11 +196,8 @@ function ListsDoc(props) {
           name="PinnedSubheaderList.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/lists/PinnedSubheaderList.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/PinnedSubheaderList.js')}
+          component={require('../components/lists/PinnedSubheaderList.js').default}
+          raw={require('!raw-loader!../components/lists/PinnedSubheaderList.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -240,11 +212,8 @@ function ListsDoc(props) {
           name="InsetList.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/lists/InsetList.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/InsetList.js')}
+          component={require('../components/lists/InsetList.js').default}
+          raw={require('!raw-loader!../components/lists/InsetList.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -259,11 +228,8 @@ function ListsDoc(props) {
           name="GutterlessList.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/lists/GutterlessList.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/GutterlessList.js')}
+          component={require('../components/lists/GutterlessList.js').default}
+          raw={require('!raw-loader!../components/lists/GutterlessList.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -280,11 +246,8 @@ function ListsDoc(props) {
           name="VirtualizedList.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/lists/VirtualizedList.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/VirtualizedList.js')}
+          component={require('../components/lists/VirtualizedList.js').default}
+          raw={require('!raw-loader!../components/lists/VirtualizedList.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -298,18 +261,15 @@ function ListsDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         Here are some examples of customizing the component. You can learn more about this in the
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href="/material-ui/customization/how-to-customize/">overrides documentation page</a>.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="CustomizedList.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/lists/CustomizedList.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/lists/CustomizedList.js')}
+          component={require('../components/lists/CustomizedList.js').default}
+          raw={require('!raw-loader!../components/lists/CustomizedList.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">

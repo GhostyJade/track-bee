@@ -1,33 +1,39 @@
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles';
-import Icon from '@mui/material/Icon';
+import { styled, useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import withReducer from 'app/store/withReducer';
-import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import FusePageSimple from '@fuse/core/FusePageSimple';
+import _ from '@lodash';
+import clsx from 'clsx';
+import { Box } from '@mui/system';
+import useThemeMediaQuery from '@fuse/hooks/useThemeMediaQuery';
 import CalendarHeader from './CalendarHeader';
-import EventDialog from './EventDialog';
+import EventDialog from './dialogs/event/EventDialog';
 import reducer from './store';
 import {
-  selectEvents,
-  openNewEventDialog,
-  openEditEventDialog,
-  updateEvent,
   getEvents,
+  openEditEventDialog,
+  openNewEventDialog,
+  selectFilteredEvents,
+  updateEvent,
 } from './store/eventsSlice';
+import { getLabels, selectLabels } from './store/labelsSlice';
+import LabelsDialog from './dialogs/labels/LabelsDialog';
+import CalendarAppSidebar from './CalendarAppSidebar';
 
-const Root = styled('div')(({ theme }) => ({
+const Root = styled(FusePageSimple)(({ theme }) => ({
   '& a': {
     color: `${theme.palette.text.primary}!important`,
     textDecoration: 'none!important',
   },
   '&  .fc-media-screen': {
     minHeight: '100%',
+    width: '100%',
   },
   '& .fc-scrollgrid, & .fc-theme-standard td, & .fc-theme-standard th': {
     borderColor: `${theme.palette.divider}!important`,
@@ -41,61 +47,86 @@ const Root = styled('div')(({ theme }) => ({
     },
   },
   '& .fc-col-header-cell': {
-    borderWidth: '0 0 1px 0',
-    padding: '16px 0',
+    borderWidth: '0 1px 0 1px',
+    padding: '8px 0 0 0',
     '& .fc-col-header-cell-cushion': {
       color: theme.palette.text.secondary,
       fontWeight: 500,
+      fontSize: 12,
+      textTransform: 'uppercase',
     },
   },
   '& .fc-view ': {
-    borderRadius: 20,
-    overflow: 'hidden',
-    border: `1px solid ${theme.palette.divider}`,
     '& > .fc-scrollgrid': {
       border: 0,
     },
   },
-  '& .fc-daygrid-day-number': {
-    color: theme.palette.text.secondary,
-    fontWeight: 500,
+  '& .fc-daygrid-day.fc-day-today': {
+    backgroundColor: 'transparent!important',
+    '& .fc-daygrid-day-number': {
+      borderRadius: '100%',
+      backgroundColor: `${theme.palette.secondary.main}!important`,
+      color: `${theme.palette.secondary.contrastText}!important`,
+    },
+  },
+  '& .fc-daygrid-day-top': {
+    justifyContent: 'center',
+
+    '& .fc-daygrid-day-number': {
+      color: theme.palette.text.secondary,
+      fontWeight: 500,
+      fontSize: 12,
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 26,
+      height: 26,
+      margin: '4px 0',
+      borderRadius: '50%',
+      float: 'none',
+      lineHeight: 1,
+    },
+  },
+  '& .fc-h-event': {
+    background: 'initial',
   },
   '& .fc-event': {
-    backgroundColor: `${theme.palette.primary.dark}!important`,
-    color: `${theme.palette.primary.contrastText}!important`,
     border: 0,
-    padding: '0 6px',
-    borderRadius: '16px!important',
+    padding: '0 ',
+    fontSize: 12,
+    margin: '0 6px 4px 6px!important',
   },
 }));
 
-const StyledAddButton = styled('div')(({ theme }) => ({
-  position: 'absolute',
-  right: 12,
-  top: 172,
-  zIndex: 99,
-}));
 function CalendarApp(props) {
   const [currentDate, setCurrentDate] = useState();
   const dispatch = useDispatch();
-  const events = useSelector(selectEvents);
+  const events = useSelector(selectFilteredEvents);
   const calendarRef = useRef();
-
-  const headerEl = useRef(null);
+  const isMobile = useThemeMediaQuery((theme) => theme.breakpoints.down('lg'));
+  const [leftSidebarOpen, setLeftSidebarOpen] = useState(!isMobile);
+  const theme = useTheme();
+  const labels = useSelector(selectLabels);
 
   useEffect(() => {
     dispatch(getEvents());
+    dispatch(getLabels());
   }, [dispatch]);
+
+  useEffect(() => {
+    setLeftSidebarOpen(!isMobile);
+  }, [isMobile]);
+
+  useEffect(() => {
+    // Correct calendar dimentions after sidebar toggles
+    setTimeout(() => {
+      calendarRef.current?.getApi()?.updateSize();
+    }, 300);
+  }, [leftSidebarOpen]);
 
   const handleDateSelect = (selectInfo) => {
     const { start, end } = selectInfo;
-
-    dispatch(
-      openNewEventDialog({
-        start,
-        end,
-      })
-    );
+    dispatch(openNewEventDialog(selectInfo));
   };
 
   const handleEventDrop = (eventDropInfo) => {
@@ -112,18 +143,26 @@ function CalendarApp(props) {
     );
   };
   const handleEventClick = (clickInfo) => {
-    const { id, title, allDay, start, end, extendedProps } = clickInfo.event;
-    dispatch(
-      openEditEventDialog({
-        id,
-        title,
-        allDay,
-        start,
-        end,
-        extendedProps,
-      })
-    );
+    dispatch(openEditEventDialog(clickInfo));
   };
+
+  function renderEventContent(eventInfo) {
+    const labelId = eventInfo.event.extendedProps.label;
+    const label = _.find(labels, { id: labelId });
+
+    return (
+      <Box
+        sx={{
+          backgroundColor: label?.color,
+          color: label && theme.palette.getContrastText(label?.color),
+        }}
+        className={clsx('flex items-center w-full rounded-4 px-8 py-2 h-22 text-white')}
+      >
+        <Typography className="text-12 font-semibold">{eventInfo.timeText}</Typography>
+        <Typography className="text-12 px-4 truncate">{eventInfo.event.title}</Typography>
+      </Box>
+    );
+  }
 
   const handleDates = (rangeInfo) => {
     setCurrentDate(rangeInfo);
@@ -135,16 +174,21 @@ function CalendarApp(props) {
 
   const handleEventRemove = (removeInfo) => {};
 
-  return (
-    <Root className="flex flex-col flex-auto relative">
-      <CalendarHeader calendarRef={calendarRef} currentDate={currentDate} />
+  function handleToggleLeftSidebar() {
+    setLeftSidebarOpen(!leftSidebarOpen);
+  }
 
-      <div className="flex flex-1 p-24 container">
-        <motion.div
-          className="w-full"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1, transition: { delay: 0.2 } }}
-        >
+  return (
+    <>
+      <Root
+        header={
+          <CalendarHeader
+            calendarRef={calendarRef}
+            currentDate={currentDate}
+            onToggleLeftSidebar={handleToggleLeftSidebar}
+          />
+        }
+        content={
           <FullCalendar
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
             headerToolbar={false}
@@ -163,43 +207,19 @@ function CalendarApp(props) {
             eventChange={handleEventChange}
             eventRemove={handleEventRemove}
             eventDrop={handleEventDrop}
-            initialDate={new Date(2021, 3, 1)}
+            initialDate={new Date(2022, 3, 1)}
             ref={calendarRef}
           />
-        </motion.div>
-
-        <StyledAddButton
-          as={motion.div}
-          initial={{ scale: 0 }}
-          animate={{ scale: 1, transition: { delay: 0.4 } }}
-        >
-          <Fab
-            color="secondary"
-            aria-label="add"
-            onClick={() =>
-              dispatch(
-                openNewEventDialog({
-                  start: new Date(),
-                  end: new Date(),
-                })
-              )
-            }
-          >
-            <Icon>add</Icon>
-          </Fab>
-        </StyledAddButton>
-        <EventDialog />
-      </div>
-    </Root>
-  );
-}
-
-function renderEventContent(eventInfo) {
-  return (
-    <div className="flex items-center">
-      <Typography className="text-12 font-semibold">{eventInfo.timeText}</Typography>
-      <Typography className="text-12 px-4 truncate">{eventInfo.event.title}</Typography>
-    </div>
+        }
+        leftSidebarContent={<CalendarAppSidebar />}
+        leftSidebarOpen={leftSidebarOpen}
+        leftSidebarOnClose={() => setLeftSidebarOpen(false)}
+        leftSidebarWidth={240}
+        scroll="content"
+      />
+      <EventDialog />
+      <LabelsDialog />
+    </>
   );
 }
 

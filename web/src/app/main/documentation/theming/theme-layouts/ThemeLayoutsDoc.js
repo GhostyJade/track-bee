@@ -15,7 +15,7 @@ function ThemeLayoutsDoc() {
       </Typography>
 
       <Typography className="mb-16" component="p">
-        These layouts are accessible from <code>/src/app/fuse-layouts</code> directory and you can
+        These layouts are accessible from <code>/app/theme-layouts</code> directory and you can
         modify them however you like. Each layout has its own options. Those options allow you to
         configure the layout elements such as Toolbar, Footer, and Navbar.
       </Typography>
@@ -25,7 +25,7 @@ function ThemeLayoutsDoc() {
       </Typography>
 
       <Typography className="my-16" component="div">
-        Inside the <code>/src/app/fuse-layouts</code> directory
+        Inside the <code>/app/theme-layouts</code> directory
         <ul className="my-8 list-disc ml-16">
           <li className="mb-8">
             <b>/layout-1</b> :
@@ -46,10 +46,10 @@ function ThemeLayoutsDoc() {
             <b>/shared components</b> : Each layouts shares the components of this directory
           </li>
           <li className="mb-8">
-            <b>/FuseLayoutConfigs.js</b> : Imports all layout configs.
+            <b>/themeLayoutConfigs.js</b> : Imports all layout configs.
           </li>
           <li className="mb-8">
-            <b>/FuseLayouts.js</b> : Imports all layout components.
+            <b>/themeLayouts.js</b> : Imports all layout components.
           </li>
           <li className="mb-8">
             <b>/layout-2</b>

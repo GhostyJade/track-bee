@@ -1,6 +1,6 @@
 import FuseExample from '@fuse/core/FuseExample';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -19,9 +19,9 @@ function AlertDoc(props) {
           href="https://mui.com/components/alert"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -47,11 +47,8 @@ function AlertDoc(props) {
           name="BasicAlerts.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/alert/BasicAlerts.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/alert/BasicAlerts.js')}
+          component={require('../components/alert/BasicAlerts.js').default}
+          raw={require('!raw-loader!../components/alert/BasicAlerts.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -66,11 +63,8 @@ function AlertDoc(props) {
           name="DescriptionAlerts.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/alert/DescriptionAlerts.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/alert/DescriptionAlerts.js')}
+          component={require('../components/alert/DescriptionAlerts.js').default}
+          raw={require('!raw-loader!../components/alert/DescriptionAlerts.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -90,18 +84,15 @@ function AlertDoc(props) {
           name="ActionAlerts.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/alert/ActionAlerts.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/alert/ActionAlerts.js')}
+          component={require('../components/alert/ActionAlerts.js').default}
+          raw={require('!raw-loader!../components/alert/ActionAlerts.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
         Transition
       </Typography>
       <Typography className="mb-40" component="div">
-        You can use a <a href="/components/transitions/">transition component</a> such as{' '}
+        You can use a <a href="/material-ui/transitions/">transition component</a> such as{' '}
         <code>Collapse</code> to transition the appearance of the alert.
       </Typography>
       <Typography className="mb-40" component="div">
@@ -109,11 +100,8 @@ function AlertDoc(props) {
           name="TransitionAlerts.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/alert/TransitionAlerts.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/alert/TransitionAlerts.js')}
+          component={require('../components/alert/TransitionAlerts.js').default}
+          raw={require('!raw-loader!../components/alert/TransitionAlerts.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -126,7 +114,8 @@ function AlertDoc(props) {
       <Typography className="mb-40" component="div">
         You can change the default severity to icon mapping with the <code>iconMapping</code> prop.
         This can be defined globally using{' '}
-        <a href="/customization/theme-components/#default-props">theme customization</a>.
+        <a href="/material-ui/customization/theme-components/#default-props">theme customization</a>
+        .
       </Typography>
       <Typography className="mb-40" component="div">
         Setting the icon prop to <code>false</code> will remove the icon altogether.
@@ -136,11 +125,8 @@ function AlertDoc(props) {
           name="IconAlerts.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/alert/IconAlerts.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/alert/IconAlerts.js')}
+          component={require('../components/alert/IconAlerts.js').default}
+          raw={require('!raw-loader!../components/alert/IconAlerts.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -157,11 +143,8 @@ function AlertDoc(props) {
           name="OutlinedAlerts.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/alert/OutlinedAlerts.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/alert/OutlinedAlerts.js')}
+          component={require('../components/alert/OutlinedAlerts.js').default}
+          raw={require('!raw-loader!../components/alert/OutlinedAlerts.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -172,11 +155,8 @@ function AlertDoc(props) {
           name="FilledAlerts.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/alert/FilledAlerts.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/alert/FilledAlerts.js')}
+          component={require('../components/alert/FilledAlerts.js').default}
+          raw={require('!raw-loader!../components/alert/FilledAlerts.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -184,7 +164,8 @@ function AlertDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         You can use the Snackbar to{' '}
-        <a href="/components/snackbars/#customized-snackbars">display a toast</a> with the Alert.
+        <a href="/material-ui/react-snackbar/#customized-snackbars">display a toast</a> with the
+        Alert.
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         Color
@@ -197,11 +178,8 @@ function AlertDoc(props) {
           name="ColorAlerts.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/alert/ColorAlerts.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/alert/ColorAlerts.js')}
+          component={require('../components/alert/ColorAlerts.js').default}
+          raw={require('!raw-loader!../components/alert/ColorAlerts.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">

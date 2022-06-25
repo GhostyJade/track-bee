@@ -2,6 +2,38 @@ import Typography from '@mui/material/Typography';
 
 const changelogData = [
   {
+    version: '8.0.0',
+    date: '2022-05-15',
+    newChanges: [
+      'Improved the look and feel',
+      'Re-wrote the entire template from scratch',
+      'Mock API regenerated using OPEN API definitions',
+      'react updated to v18.1.0',
+      'material-ui updated to v5.7.0',
+      '@reduxjs/toolkit to v1.8.1',
+      'tailwindcss updated to v3.0.24',
+      'All dependency packages updated.',
+    ],
+    breakingChanges: [
+      'craco replaced with react-app-rewired.',
+      'firebase, auth0 service examples deprecated.',
+    ],
+    fixedChanges: [],
+    notes: (
+      <div className="text-14 p-24 border-2 border-red rounded-16 w-full max-w-lg mt-40 mb-24">
+        <ul className="list-disc">
+          <Typography component="li" className="leading-loose mb-16">
+            This is the new major version of the Fuse React and it's completely different from
+            previous versions with no upgrade path.
+          </Typography>
+          <Typography component="li" className="leading-loose">
+            This version requires a clean installation.
+          </Typography>
+        </ul>
+      </div>
+    ),
+  },
+  {
     version: '7.2.0',
     date: '2022-03-05',
     newChanges: [
@@ -442,7 +474,7 @@ const changelogData = [
       'material-ui updated to v4.5.1',
       'react updated to 16.11.0',
       'All dependency packages updated.',
-      'Fake-db delay option added for testing purposes (src/@fake-db/mock.js).',
+      '@fake-db/mock.js).',
       'E-Commerce App, shows FuseLoading component while product data is loading.',
       'Contacts App Contact Dialog Mobile refinement for scroll.',
       'Calendar App Native date input changed with DateTimePicker.',
@@ -722,7 +754,7 @@ const changelogData = [
       'FuseShortcuts: vertical variant added.',
       'FuseSearch: basic variant added (checkout layout-3)',
       'dark-material-bg.jpg changed to gradient background.',
-      'IconsUI page refined.',
+      'HeroiconsUI page refined.',
       'Generating source map disabled by default on production build.',
       'Navigation data refactored on the demo.',
       'Documentation updated.',

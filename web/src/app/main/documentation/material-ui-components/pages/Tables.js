@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function TablesDoc(props) {
           href="https://mui.com/components/tables"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -53,11 +53,8 @@ function TablesDoc(props) {
           name="BasicTable.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tables/BasicTable.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tables/BasicTable.js')}
+          component={require('../components/tables/BasicTable.js').default}
+          raw={require('!raw-loader!../components/tables/BasicTable.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -69,7 +66,7 @@ function TablesDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         The{' '}
-        <a href="/components/data-grid/">
+        <a href="/x/react-data-grid/">
           <code>DataGrid</code> component
         </a>{' '}
         is designed for use-cases that are focused on handling large amounts of tabular data. While
@@ -80,11 +77,8 @@ function TablesDoc(props) {
           name="DataTable.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tables/DataTable.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tables/DataTable.js')}
+          component={require('../components/tables/DataTable.js').default}
+          raw={require('!raw-loader!../components/tables/DataTable.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -98,11 +92,8 @@ function TablesDoc(props) {
           name="DenseTable.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tables/DenseTable.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tables/DenseTable.js')}
+          component={require('../components/tables/DenseTable.js').default}
+          raw={require('!raw-loader!../components/tables/DenseTable.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -125,11 +116,8 @@ function TablesDoc(props) {
           name="EnhancedTable.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tables/EnhancedTable.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tables/EnhancedTable.js')}
+          component={require('../components/tables/EnhancedTable.js').default}
+          raw={require('!raw-loader!../components/tables/EnhancedTable.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -137,18 +125,15 @@ function TablesDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         Here is an example of customizing the component. You can learn more about this in the{' '}
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href="/material-ui/customization/how-to-customize/">overrides documentation page</a>.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="CustomizedTables.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tables/CustomizedTables.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tables/CustomizedTables.js')}
+          component={require('../components/tables/CustomizedTables.js').default}
+          raw={require('!raw-loader!../components/tables/CustomizedTables.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -196,11 +181,8 @@ function TablesDoc(props) {
           name="CustomPaginationActionsTable.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tables/CustomPaginationActionsTable.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tables/CustomPaginationActionsTable.js')}
+          component={require('../components/tables/CustomPaginationActionsTable.js').default}
+          raw={require('!raw-loader!../components/tables/CustomPaginationActionsTable.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -215,11 +197,8 @@ function TablesDoc(props) {
           name="StickyHeadTable.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tables/StickyHeadTable.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tables/StickyHeadTable.js')}
+          component={require('../components/tables/StickyHeadTable.js').default}
+          raw={require('!raw-loader!../components/tables/StickyHeadTable.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -242,11 +221,8 @@ function TablesDoc(props) {
           name="ColumnGroupingTable.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tables/ColumnGroupingTable.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tables/ColumnGroupingTable.js')}
+          component={require('../components/tables/ColumnGroupingTable.js').default}
+          raw={require('!raw-loader!../components/tables/ColumnGroupingTable.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -254,7 +230,7 @@ function TablesDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         An example of a table with expandable rows, revealing more information. It utilizes the{' '}
-        <a href="/api/collapse/">
+        <a href="/material-ui/api/collapse/">
           <code>Collapse</code>
         </a>{' '}
         component.
@@ -264,11 +240,8 @@ function TablesDoc(props) {
           name="CollapsibleTable.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tables/CollapsibleTable.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tables/CollapsibleTable.js')}
+          component={require('../components/tables/CollapsibleTable.js').default}
+          raw={require('!raw-loader!../components/tables/CollapsibleTable.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -282,11 +255,8 @@ function TablesDoc(props) {
           name="SpanningTable.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tables/SpanningTable.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tables/SpanningTable.js')}
+          component={require('../components/tables/SpanningTable.js').default}
+          raw={require('!raw-loader!../components/tables/SpanningTable.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -303,45 +273,8 @@ function TablesDoc(props) {
           name="ReactVirtualizedTable.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tables/ReactVirtualizedTable.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tables/ReactVirtualizedTable.js')}
-        />
-      </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
-        Unstyled
-      </Typography>
-      <Typography className="mb-40" component="div">
-        If you would like to use an unstyled Table, you can use the primitive elements and enhance
-        the table with the unstyled pagination as shown in the demo below.
-      </Typography>
-      <Typography className="mb-40" component="div">
-        <FuseExample
-          name="TableUnstyled.js"
-          className="my-24"
-          iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tables/TableUnstyled.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tables/TableUnstyled.js')}
-        />
-      </Typography>
-      <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
-        Customized look and feel
-      </Typography>
-      <Typography className="mb-40" component="div">
-        <FuseExample
-          name="TableCustomized.js"
-          className="my-24"
-          iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tables/TableCustomized.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tables/TableCustomized.js')}
+          component={require('../components/tables/ReactVirtualizedTable.js').default}
+          raw={require('!raw-loader!../components/tables/ReactVirtualizedTable.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -367,12 +300,17 @@ function TablesDoc(props) {
           name="AcccessibleTable.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tables/AcccessibleTable.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tables/AcccessibleTable.js')}
+          component={require('../components/tables/AcccessibleTable.js').default}
+          raw={require('!raw-loader!../components/tables/AcccessibleTable.js')}
         />
+      </Typography>
+      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
+        Unstyled
+      </Typography>
+      <Typography className="mb-40" component="div">
+        If you would like to use an unstyled Table, you can use the primitive HTML elements and
+        enhance the table with the TablePaginationUnstyled component. See the demos in the{' '}
+        <a href="/base/react-table-pagination/">unstyled table pagination docs</a>
       </Typography>
     </>
   );

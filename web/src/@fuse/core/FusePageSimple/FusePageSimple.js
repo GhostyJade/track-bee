@@ -2,12 +2,12 @@ import FuseScrollbars from '@fuse/core/FuseScrollbars';
 import { styled } from '@mui/material/styles';
 import clsx from 'clsx';
 import * as PropTypes from 'prop-types';
-import { forwardRef, useImperativeHandle, memo, useRef } from 'react';
+import { forwardRef, memo, useImperativeHandle, useRef } from 'react';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import FusePageSimpleHeader from './FusePageSimpleHeader';
 import FusePageSimpleSidebar from './FusePageSimpleSidebar';
 
-const Root = styled('div')(({ theme }) => ({
+const Root = styled('div')(({ theme, ...props }) => ({
   display: 'flex',
   flexDirection: 'column',
   minWidth: 0,
@@ -18,7 +18,7 @@ const Root = styled('div')(({ theme }) => ({
   height: 'auto',
   backgroundColor: theme.palette.background.default,
 
-  '& .FusePageSimple-innerScroll': {
+  '&.FusePageSimple-scroll-content': {
     height: '100%',
   },
 
@@ -27,20 +27,24 @@ const Root = styled('div')(({ theme }) => ({
     flexDirection: 'row',
     flex: '1 1 auto',
     zIndex: 2,
-    maxWidth: '100%',
     minWidth: 0,
     height: '100%',
     backgroundColor: theme.palette.background.default,
+
+    ...(props.scroll === 'content' && {
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      right: 0,
+      left: 0,
+      overflow: 'hidden',
+    }),
   },
 
   '& .FusePageSimple-header': {
-    height: headerHeight,
-    minHeight: headerHeight,
     display: 'flex',
-    background: `linear-gradient(to right, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
-    color: theme.palette.primary.contrastText,
+    flex: '0 0 auto',
     backgroundSize: 'cover',
-    backgroundColor: theme.palette.primary.dark,
   },
 
   '& .FusePageSimple-topBg': {
@@ -55,9 +59,10 @@ const Root = styled('div')(({ theme }) => ({
   '& .FusePageSimple-contentWrapper': {
     display: 'flex',
     flexDirection: 'column',
+    width: '100%',
     flex: '1 1 auto',
-    overflow: 'auto',
-    WebkitOverflowScrolling: 'touch',
+    overflow: 'hidden',
+    //    WebkitOverflowScrolling: 'touch',
     zIndex: 9999,
   },
 
@@ -69,7 +74,11 @@ const Root = styled('div')(({ theme }) => ({
   },
 
   '& .FusePageSimple-content': {
-    flex: '1 0 auto',
+    display: 'flex',
+    flex: '1 1 auto',
+    alignItems: 'start',
+    minHeight: 0,
+    overflowY: 'auto',
   },
 
   '& .FusePageSimple-sidebarWrapper': {
@@ -79,24 +88,46 @@ const Root = styled('div')(({ theme }) => ({
     '&.permanent': {
       [theme.breakpoints.up('lg')]: {
         position: 'relative',
+        marginLeft: 0,
+        marginRight: 0,
+        transition: theme.transitions.create('margin', {
+          easing: theme.transitions.easing.sharp,
+          duration: theme.transitions.duration.leavingScreen,
+        }),
+        '&.closed': {
+          transition: theme.transitions.create('margin', {
+            easing: theme.transitions.easing.easeOut,
+            duration: theme.transitions.duration.enteringScreen,
+          }),
+
+          '&.FusePageSimple-leftSidebar': {
+            marginLeft: -props.leftsidebarwidth,
+          },
+          '&.FusePageSimple-rightSidebar': {
+            marginRight: -props.rightsidebarwidth,
+          },
+        },
       },
     },
   },
 
   '& .FusePageSimple-sidebar': {
     position: 'absolute',
+    backgroundColor: theme.palette.background.paper,
+    color: theme.palette.text.primary,
+
     '&.permanent': {
       [theme.breakpoints.up('lg')]: {
-        backgroundColor: theme.palette.background.default,
-        color: theme.palette.text.primary,
         position: 'relative',
       },
     },
-    width: drawerWidth,
+    maxWidth: '100%',
     height: '100%',
   },
 
   '& .FusePageSimple-leftSidebar': {
+    width: props.leftsidebarwidth,
+
     [theme.breakpoints.up('lg')]: {
       borderRight: `1px solid ${theme.palette.divider}`,
       borderLeft: 0,
@@ -104,6 +135,8 @@ const Root = styled('div')(({ theme }) => ({
   },
 
   '& .FusePageSimple-rightSidebar': {
+    width: props.rightsidebarwidth,
+
     [theme.breakpoints.up('lg')]: {
       borderLeft: `1px solid ${theme.palette.divider}`,
       borderRight: 0,
@@ -124,7 +157,11 @@ const Root = styled('div')(({ theme }) => ({
     minHeight: 'auto',
   },
 
-  '& .FusePageSimple-sidebarContent': {},
+  '& .FusePageSimple-sidebarContent': {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100%',
+  },
 
   '& .FusePageSimple-backdrop': {
     position: 'absolute',
@@ -133,7 +170,6 @@ const Root = styled('div')(({ theme }) => ({
 
 const headerHeight = 120;
 const toolbarHeight = 64;
-const drawerWidth = 240;
 
 const FusePageSimple = forwardRef((props, ref) => {
   // console.info("render::FusePageSimple");
@@ -143,11 +179,11 @@ const FusePageSimple = forwardRef((props, ref) => {
 
   useImperativeHandle(ref, () => ({
     rootRef,
-    toggleLeftSidebar: () => {
-      leftSidebarRef.current.toggleSidebar();
+    toggleLeftSidebar: (val) => {
+      leftSidebarRef.current.toggleSidebar(val);
     },
-    toggleRightSidebar: () => {
-      rightSidebarRef.current.toggleSidebar();
+    toggleRightSidebar: (val) => {
+      rightSidebarRef.current.toggleSidebar(val);
     },
   }));
 
@@ -155,66 +191,75 @@ const FusePageSimple = forwardRef((props, ref) => {
     <>
       <GlobalStyles
         styles={(theme) => ({
-          '#fuse-main': {
-            height: props.innerScroll && '100vh',
-          },
+          ...(props.scroll !== 'page' && {
+            '#fuse-toolbar': {
+              position: 'static',
+            },
+            '#fuse-footer': {
+              position: 'static',
+            },
+          }),
+          ...(props.scroll === 'page' && {
+            '#fuse-toolbar': {
+              position: 'sticky',
+              top: 0,
+            },
+            '#fuse-footer': {
+              position: 'sticky',
+              bottom: 0,
+            },
+          }),
         })}
       />
       <Root
         className={clsx(
           'FusePageSimple-root',
-          props.innerScroll && 'FusePageSimple-innerScroll',
+          `FusePageSimple-scroll-${props.scroll}`,
           props.className
         )}
         ref={rootRef}
+        scroll={props.scroll}
+        leftsidebarwidth={props.leftSidebarWidth}
+        rightsidebarwidth={props.rightSidebarWidth}
       >
-        <div className={clsx('FusePageSimple-header', 'FusePageSimple-topBg')} />
-
-        <div className="flex flex-auto flex-col container z-10 h-full">
-          {props.header && props.sidebarInner && <FusePageSimpleHeader header={props.header} />}
-
+        <div className="flex flex-auto flex-col z-10 h-full">
           <div className="FusePageSimple-wrapper">
-            {(props.leftSidebarHeader || props.leftSidebarContent) && (
+            {props.leftSidebarContent && (
               <FusePageSimpleSidebar
                 position="left"
-                header={props.leftSidebarHeader}
                 content={props.leftSidebarContent}
                 variant={props.leftSidebarVariant || 'permanent'}
-                innerScroll={props.innerScroll}
-                sidebarInner={props.sidebarInner}
                 ref={leftSidebarRef}
                 rootRef={rootRef}
+                open={props.leftSidebarOpen}
+                onClose={props.leftSidebarOnClose}
               />
             )}
 
-            <FuseScrollbars
+            <div
               className="FusePageSimple-contentWrapper"
-              enable={props.innerScroll && !props.sidebarInner}
+              // enable={props.scroll === 'page'}
             >
-              {props.header && !props.sidebarInner && (
-                <FusePageSimpleHeader header={props.header} />
-              )}
-
-              {props.contentToolbar && (
-                <div className={clsx('FusePageSimple-toolbar')}>{props.contentToolbar}</div>
-              )}
-
+              {props.header && <FusePageSimpleHeader header={props.header} />}
               {props.content && (
-                <div className={clsx('FusePageSimple-content')}>{props.content}</div>
+                <FuseScrollbars
+                  enable={props.scroll === 'content'}
+                  className={clsx('FusePageSimple-content container')}
+                >
+                  {props.content}
+                </FuseScrollbars>
               )}
-            </FuseScrollbars>
-            {/* </FuseScrollbars> */}
+            </div>
 
-            {(props.rightSidebarHeader || props.rightSidebarContent) && (
+            {props.rightSidebarContent && (
               <FusePageSimpleSidebar
                 position="right"
-                header={props.rightSidebarHeader}
                 content={props.rightSidebarContent}
                 variant={props.rightSidebarVariant || 'permanent'}
-                innerScroll={props.innerScroll}
-                sidebarInner={props.sidebarInner}
                 ref={rightSidebarRef}
                 rootRef={rootRef}
+                open={props.rightSidebarOpen}
+                onClose={props.rightSidebarOnClose}
               />
             )}
           </div>
@@ -225,21 +270,28 @@ const FusePageSimple = forwardRef((props, ref) => {
 });
 
 FusePageSimple.propTypes = {
-  leftSidebarHeader: PropTypes.node,
   leftSidebarContent: PropTypes.node,
   leftSidebarVariant: PropTypes.node,
-  rightSidebarHeader: PropTypes.node,
   rightSidebarContent: PropTypes.node,
   rightSidebarVariant: PropTypes.node,
   header: PropTypes.node,
   content: PropTypes.node,
-  contentToolbar: PropTypes.node,
-  sidebarInner: PropTypes.bool,
-  innerScroll: PropTypes.bool,
+  scroll: PropTypes.oneOf(['normal', 'page', 'content']),
+  leftSidebarOpen: PropTypes.bool,
+  rightSidebarOpen: PropTypes.bool,
+  leftSidebarWidth: PropTypes.number,
+  rightSidebarWidth: PropTypes.number,
+  rightSidebarOnClose: PropTypes.func,
+  leftSidebarOnClose: PropTypes.func,
 };
 
 FusePageSimple.defaultProps = {
   classes: {},
+  scroll: 'page',
+  leftSidebarOpen: false,
+  rightSidebarOpen: false,
+  rightSidebarWidth: 240,
+  leftSidebarWidth: 240,
 };
 
 export default memo(styled(FusePageSimple)``);

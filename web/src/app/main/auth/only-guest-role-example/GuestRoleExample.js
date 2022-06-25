@@ -1,13 +1,15 @@
 import FuseHighlight from '@fuse/core/FuseHighlight';
-import FusePageSimple from '@fuse/core/FusePageSimple';
 import Typography from '@mui/material/Typography';
+import FusePageCarded from '@fuse/core/FusePageCarded';
 
 function GuestRoleExample() {
   return (
-    <FusePageSimple
+    <FusePageCarded
       header={
         <div className="p-24 flex items-center">
-          <Typography className="h2">Guest: Auth role example page</Typography>
+          <Typography className="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
+            Guest: Auth role example page
+          </Typography>
         </div>
       }
       content={
@@ -21,24 +23,24 @@ function GuestRoleExample() {
 
           <FuseHighlight component="pre" className="language-js">
             {`
-                            import {authRoles} from 'auth';
-                            import StaffRoleExample from 'app/main/auth/staff-role-example/StaffRoleExample';
+            import {authRoles} from 'auth';
+            import GuestRoleExample from './StaffRoleExample';
 
-                            export const GuestRoleExampleConfig = {
-                                settings: {
-                                    layout: {
-                                        config: {}
-                                    }
-                                },
-                                auth    : authRoles.onlyGuest,//['guest']
-                                routes  : [
-                                    {
-                                        path     : '/auth/guest-role-example',
-                                        element: <GuestRoleExample/>
-                                    }
-                                ]
-                            };
-                            `}
+            export const GuestRoleExampleConfig = {
+                settings: {
+                    layout: {
+                        config: {}
+                    }
+                },
+                auth    : authRoles.onlyGuest,//['guest']
+                routes  : [
+                    {
+                        path     : '/auth/guest-role-example',
+                        element: <GuestRoleExample/>
+                    }
+                ]
+            };
+            `}
           </FuseHighlight>
 
           <Typography className="my-24">
@@ -48,17 +50,17 @@ function GuestRoleExample() {
 
           <FuseHighlight component="pre" className="language-json">
             {`
-                                export const fuseNavigationConfig = [
-                                   {
-                                        'id'   : 'only-staff-navigation-item',
-                                        'title': 'Nav item only for Guest',
-                                        'type' : 'item',
-                                        'auth' : authRoles.onlyGuest,//['guest']
-                                        'url'  : '/auth/guest-role-example',
-                                        'icon' : 'verified_user'
-                                    }
-                                ];
-                            `}
+                export const fuseNavigationConfig = [
+                   {
+                        'id'   : 'only-staff-navigation-item',
+                        'title': 'Nav item only for Guest',
+                        'type' : 'item',
+                        'auth' : authRoles.onlyGuest,//['guest']
+                        'url'  : '/auth/guest-role-example',
+                        'icon' : 'verified_user'
+                    }
+                ];
+            `}
           </FuseHighlight>
         </div>
       }

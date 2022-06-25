@@ -1,6 +1,6 @@
 import FuseExample from '@fuse/core/FuseExample';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -19,9 +19,9 @@ function MenusDoc(props) {
           href="https://mui.com/components/menus"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -58,11 +58,8 @@ function MenusDoc(props) {
           name="BasicMenu.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/menus/BasicMenu.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/menus/BasicMenu.js')}
+          component={require('../components/menus/BasicMenu.js').default}
+          raw={require('!raw-loader!../components/menus/BasicMenu.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -76,11 +73,8 @@ function MenusDoc(props) {
           name="IconMenu.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/menus/IconMenu.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/menus/IconMenu.js')}
+          component={require('../components/menus/IconMenu.js').default}
+          raw={require('!raw-loader!../components/menus/IconMenu.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -95,11 +89,8 @@ function MenusDoc(props) {
           name="DenseMenu.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/menus/DenseMenu.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/menus/DenseMenu.js')}
+          component={require('../components/menus/DenseMenu.js').default}
+          raw={require('!raw-loader!../components/menus/DenseMenu.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -108,19 +99,16 @@ function MenusDoc(props) {
       <Typography className="mb-40" component="div">
         If used for item selection, when opened, simple menus places the initial focus on the
         selected menu item. The currently selected menu item is set using the <code>selected</code>{' '}
-        prop (from <a href="/api/list-item/">ListItem</a>). To use a selected menu item without
-        impacting the initial focus, set the <code>variant</code> prop to &quot;menu&quot;.
+        prop (from <a href="/material-ui/api/list-item/">ListItem</a>). To use a selected menu item
+        without impacting the initial focus, set the <code>variant</code> prop to &quot;menu&quot;.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="SimpleListMenu.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/menus/SimpleListMenu.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/menus/SimpleListMenu.js')}
+          component={require('../components/menus/SimpleListMenu.js').default}
+          raw={require('!raw-loader!../components/menus/SimpleListMenu.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -129,19 +117,16 @@ function MenusDoc(props) {
       <Typography className="mb-40" component="div">
         Because the <code>Menu</code> component uses the <code>Popover</code> component to position
         itself, you can use the same{' '}
-        <a href="/components/popover/#anchor-playground">positioning props</a> to position it. For
-        instance, you can display the menu on top of the anchor:
+        <a href="/material-ui/react-popover/#anchor-playground">positioning props</a> to position
+        it. For instance, you can display the menu on top of the anchor:
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="PositionedMenu.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/menus/PositionedMenu.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/menus/PositionedMenu.js')}
+          component={require('../components/menus/PositionedMenu.js').default}
+          raw={require('!raw-loader!../components/menus/PositionedMenu.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -161,11 +146,8 @@ function MenusDoc(props) {
           name="MenuListComposition.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/menus/MenuListComposition.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/menus/MenuListComposition.js')}
+          component={require('../components/menus/MenuListComposition.js').default}
+          raw={require('!raw-loader!../components/menus/MenuListComposition.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -179,11 +161,8 @@ function MenusDoc(props) {
           name="AccountMenu.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/menus/AccountMenu.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/menus/AccountMenu.js')}
+          component={require('../components/menus/AccountMenu.js').default}
+          raw={require('!raw-loader!../components/menus/AccountMenu.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -191,18 +170,15 @@ function MenusDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         Here is an example of customizing the component. You can learn more about this in the{' '}
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href="/material-ui/customization/how-to-customize/">overrides documentation page</a>.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="CustomizedMenus.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/menus/CustomizedMenus.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/menus/CustomizedMenus.js')}
+          component={require('../components/menus/CustomizedMenus.js').default}
+          raw={require('!raw-loader!../components/menus/CustomizedMenus.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -229,11 +205,8 @@ function MenusDoc(props) {
           name="LongMenu.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/menus/LongMenu.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/menus/LongMenu.js')}
+          component={require('../components/menus/LongMenu.js').default}
+          raw={require('!raw-loader!../components/menus/LongMenu.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -250,11 +223,8 @@ function MenusDoc(props) {
           name="TypographyMenu.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/menus/TypographyMenu.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/menus/TypographyMenu.js')}
+          component={require('../components/menus/TypographyMenu.js').default}
+          raw={require('!raw-loader!../components/menus/TypographyMenu.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -268,11 +238,8 @@ function MenusDoc(props) {
           name="FadeMenu.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/menus/FadeMenu.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/menus/FadeMenu.js')}
+          component={require('../components/menus/FadeMenu.js').default}
+          raw={require('!raw-loader!../components/menus/FadeMenu.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -286,11 +253,8 @@ function MenusDoc(props) {
           name="ContextMenu.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/menus/ContextMenu.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/menus/ContextMenu.js')}
+          component={require('../components/menus/ContextMenu.js').default}
+          raw={require('!raw-loader!../components/menus/ContextMenu.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -314,11 +278,8 @@ function MenusDoc(props) {
           name="MenuPopupState.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/menus/MenuPopupState.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/menus/MenuPopupState.js')}
+          component={require('../components/menus/MenuPopupState.js').default}
+          raw={require('!raw-loader!../components/menus/MenuPopupState.js')}
         />
       </Typography>
     </>

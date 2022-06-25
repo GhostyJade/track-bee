@@ -1,6 +1,6 @@
 import FuseExample from '@fuse/core/FuseExample';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -19,9 +19,9 @@ function ButtonGroupDoc(props) {
           href="https://mui.com/components/button-group"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -43,11 +43,8 @@ function ButtonGroupDoc(props) {
           name="BasicButtonGroup.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/button-group/BasicButtonGroup.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/button-group/BasicButtonGroup.js')}
+          component={require('../components/button-group/BasicButtonGroup.js').default}
+          raw={require('!raw-loader!../components/button-group/BasicButtonGroup.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -61,11 +58,8 @@ function ButtonGroupDoc(props) {
           name="VariantButtonGroup.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/button-group/VariantButtonGroup.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/button-group/VariantButtonGroup.js')}
+          component={require('../components/button-group/VariantButtonGroup.js').default}
+          raw={require('!raw-loader!../components/button-group/VariantButtonGroup.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -80,11 +74,8 @@ function ButtonGroupDoc(props) {
           name="GroupSizesColors.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/button-group/GroupSizesColors.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/button-group/GroupSizesColors.js')}
+          component={require('../components/button-group/GroupSizesColors.js').default}
+          raw={require('!raw-loader!../components/button-group/GroupSizesColors.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -98,11 +89,8 @@ function ButtonGroupDoc(props) {
           name="GroupOrientation.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/button-group/GroupOrientation.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/button-group/GroupOrientation.js')}
+          component={require('../components/button-group/GroupOrientation.js').default}
+          raw={require('!raw-loader!../components/button-group/GroupOrientation.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -117,11 +105,8 @@ function ButtonGroupDoc(props) {
           name="SplitButton.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/button-group/SplitButton.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/button-group/SplitButton.js')}
+          component={require('../components/button-group/SplitButton.js').default}
+          raw={require('!raw-loader!../components/button-group/SplitButton.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -135,11 +120,8 @@ function ButtonGroupDoc(props) {
           name="DisableElevation.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/button-group/DisableElevation.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/button-group/DisableElevation.js')}
+          component={require('../components/button-group/DisableElevation.js').default}
+          raw={require('!raw-loader!../components/button-group/DisableElevation.js')}
         />
       </Typography>
     </>

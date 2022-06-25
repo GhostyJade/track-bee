@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function ProgressDoc(props) {
           href="https://mui.com/components/progress"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -60,11 +60,8 @@ function ProgressDoc(props) {
           name="CircularIndeterminate.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/progress/CircularIndeterminate.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/progress/CircularIndeterminate.js')}
+          component={require('../components/progress/CircularIndeterminate.js').default}
+          raw={require('!raw-loader!../components/progress/CircularIndeterminate.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -75,11 +72,8 @@ function ProgressDoc(props) {
           name="CircularColor.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/progress/CircularColor.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/progress/CircularColor.js')}
+          component={require('../components/progress/CircularColor.js').default}
+          raw={require('!raw-loader!../components/progress/CircularColor.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -90,11 +84,8 @@ function ProgressDoc(props) {
           name="CircularDeterminate.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/progress/CircularDeterminate.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/progress/CircularDeterminate.js')}
+          component={require('../components/progress/CircularDeterminate.js').default}
+          raw={require('!raw-loader!../components/progress/CircularDeterminate.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -105,11 +96,8 @@ function ProgressDoc(props) {
           name="CircularIntegration.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/progress/CircularIntegration.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/progress/CircularIntegration.js')}
+          component={require('../components/progress/CircularIntegration.js').default}
+          raw={require('!raw-loader!../components/progress/CircularIntegration.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -120,11 +108,8 @@ function ProgressDoc(props) {
           name="CircularWithValueLabel.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/progress/CircularWithValueLabel.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/progress/CircularWithValueLabel.js')}
+          component={require('../components/progress/CircularWithValueLabel.js').default}
+          raw={require('!raw-loader!../components/progress/CircularWithValueLabel.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -138,11 +123,8 @@ function ProgressDoc(props) {
           name="LinearIndeterminate.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/progress/LinearIndeterminate.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/progress/LinearIndeterminate.js')}
+          component={require('../components/progress/LinearIndeterminate.js').default}
+          raw={require('!raw-loader!../components/progress/LinearIndeterminate.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -153,11 +135,8 @@ function ProgressDoc(props) {
           name="LinearColor.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/progress/LinearColor.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/progress/LinearColor.js')}
+          component={require('../components/progress/LinearColor.js').default}
+          raw={require('!raw-loader!../components/progress/LinearColor.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -168,11 +147,8 @@ function ProgressDoc(props) {
           name="LinearDeterminate.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/progress/LinearDeterminate.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/progress/LinearDeterminate.js')}
+          component={require('../components/progress/LinearDeterminate.js').default}
+          raw={require('!raw-loader!../components/progress/LinearDeterminate.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -183,11 +159,8 @@ function ProgressDoc(props) {
           name="LinearBuffer.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/progress/LinearBuffer.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/progress/LinearBuffer.js')}
+          component={require('../components/progress/LinearBuffer.js').default}
+          raw={require('!raw-loader!../components/progress/LinearBuffer.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -198,11 +171,8 @@ function ProgressDoc(props) {
           name="LinearWithValueLabel.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/progress/LinearWithValueLabel.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/progress/LinearWithValueLabel.js')}
+          component={require('../components/progress/LinearWithValueLabel.js').default}
+          raw={require('!raw-loader!../components/progress/LinearWithValueLabel.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -238,18 +208,15 @@ function Progress(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         Here are some examples of customizing the component. You can learn more about this in the{' '}
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href="/material-ui/customization/how-to-customize/">overrides documentation page</a>.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="CustomizedProgressBars.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/progress/CustomizedProgressBars.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/progress/CustomizedProgressBars.js')}
+          component={require('../components/progress/CustomizedProgressBars.js').default}
+          raw={require('!raw-loader!../components/progress/CustomizedProgressBars.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -270,11 +237,8 @@ function Progress(props) {
           name="DelayingAppearance.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/progress/DelayingAppearance.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/progress/DelayingAppearance.js')}
+          component={require('../components/progress/DelayingAppearance.js').default}
+          raw={require('!raw-loader!../components/progress/DelayingAppearance.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -301,11 +265,8 @@ function Progress(props) {
           name="CircularUnderLoad.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/progress/CircularUnderLoad.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/progress/CircularUnderLoad.js')}
+          component={require('../components/progress/CircularUnderLoad.js').default}
+          raw={require('!raw-loader!../components/progress/CircularUnderLoad.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">

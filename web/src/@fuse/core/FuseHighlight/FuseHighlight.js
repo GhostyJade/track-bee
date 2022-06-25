@@ -1,22 +1,16 @@
 import * as Prism from 'prismjs';
 import PropTypes from 'prop-types';
-import { memo, useEffect, useRef } from 'react';
+import { memo, useCallback, useEffect, useRef, useState } from 'react';
 import './prism-languages';
 import { styled } from '@mui/material/styles';
+import clsx from 'clsx';
 
 function FuseHighlight(props) {
-  const domNode = useRef(null);
-  const source = useRef(trimCode());
-
-  useEffect(() => {
-    function highlight() {
-      Prism.highlightElement(domNode.current, props.async);
-    }
-
-    highlight();
+  const highlight = useCallback(() => {
+    Prism.highlightElement(domNode.current, props.async);
   }, [props.async]);
 
-  function trimCode() {
+  const trimCode = useCallback(() => {
     let sourceString = props.children;
 
     if (typeof sourceString === 'object' && sourceString.default) {
@@ -58,13 +52,25 @@ function FuseHighlight(props) {
       }
     });
     return sourceRaw;
-  }
+  }, [props.children]);
+
+  const domNode = useRef(null);
+
+  const [source, setSource] = useState(trimCode());
+
+  useEffect(() => {
+    setSource(trimCode());
+  }, [trimCode]);
+
+  useEffect(() => {
+    highlight();
+  }, [highlight, source]);
 
   const { className, component: Wrapper } = props;
 
   return (
-    <Wrapper ref={domNode} className={className}>
-      {source.current}
+    <Wrapper ref={domNode} className={clsx('border', className)}>
+      {source}
     </Wrapper>
   );
 }

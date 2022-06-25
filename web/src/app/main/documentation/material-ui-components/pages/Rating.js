@@ -1,6 +1,6 @@
 import FuseExample from '@fuse/core/FuseExample';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -19,9 +19,9 @@ function RatingDoc(props) {
           href="https://mui.com/components/rating"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -40,11 +40,8 @@ function RatingDoc(props) {
           name="BasicRating.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/rating/BasicRating.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/rating/BasicRating.js')}
+          component={require('../components/rating/BasicRating.js').default}
+          raw={require('!raw-loader!../components/rating/BasicRating.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -59,11 +56,8 @@ function RatingDoc(props) {
           name="HalfRating.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/rating/HalfRating.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/rating/HalfRating.js')}
+          component={require('../components/rating/HalfRating.js').default}
+          raw={require('!raw-loader!../components/rating/HalfRating.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -78,11 +72,8 @@ function RatingDoc(props) {
           name="HoverRating.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/rating/HoverRating.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/rating/HoverRating.js')}
+          component={require('../components/rating/HoverRating.js').default}
+          raw={require('!raw-loader!../components/rating/HoverRating.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -96,11 +87,8 @@ function RatingDoc(props) {
           name="RatingSize.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/rating/RatingSize.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/rating/RatingSize.js')}
+          component={require('../components/rating/RatingSize.js').default}
+          raw={require('!raw-loader!../components/rating/RatingSize.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -108,18 +96,15 @@ function RatingDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         Here are some examples of customizing the component. You can learn more about this in the{' '}
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href="/material-ui/customization/how-to-customize/">overrides documentation page</a>.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="CustomizedRating.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/rating/CustomizedRating.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/rating/CustomizedRating.js')}
+          component={require('../components/rating/CustomizedRating.js').default}
+          raw={require('!raw-loader!../components/rating/CustomizedRating.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -134,11 +119,8 @@ function RatingDoc(props) {
           name="RadioGroupRating.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/rating/RadioGroupRating.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/rating/RadioGroupRating.js')}
+          component={require('../components/rating/RadioGroupRating.js').default}
+          raw={require('!raw-loader!../components/rating/RadioGroupRating.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -164,7 +146,8 @@ function RatingDoc(props) {
           Labels for the radio buttons containing actual text (&quot;1 Star&quot;, &quot;2
           Stars&quot;, …). Be sure to provide a suitable function to the <code>getLabelText</code>{' '}
           prop when the page is in a language other than English. You can use the{' '}
-          <a href="https://mui.com/guides/localization/">included locales</a>, or provide your own.
+          <a href="https://mui.com/material-ui/guides/localization/">included locales</a>, or
+          provide your own.
         </li>
         <li>
           A visually distinct appearance for the rating icons. By default, the rating component uses
@@ -180,11 +163,8 @@ function RatingDoc(props) {
           name="TextRating.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/rating/TextRating.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/rating/TextRating.js')}
+          component={require('../components/rating/TextRating.js').default}
+          raw={require('!raw-loader!../components/rating/TextRating.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">

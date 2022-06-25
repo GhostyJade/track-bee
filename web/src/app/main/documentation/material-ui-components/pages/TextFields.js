@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,13 +20,13 @@ function TextFieldsDoc(props) {
           href="https://mui.com/components/text-fields"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
-        Text Field
+        Text field
       </Typography>
       <Typography className="description">Text fields let users enter and edit text.</Typography>
 
@@ -46,11 +46,8 @@ function TextFieldsDoc(props) {
           name="BasicTextFields.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/BasicTextFields.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/BasicTextFields.js')}
+          component={require('../components/text-fields/BasicTextFields.js').default}
+          raw={require('!raw-loader!../components/text-fields/BasicTextFields.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -74,11 +71,8 @@ function TextFieldsDoc(props) {
           name="FormPropsTextFields.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/FormPropsTextFields.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/FormPropsTextFields.js')}
+          component={require('../components/text-fields/FormPropsTextFields.js').default}
+          raw={require('!raw-loader!../components/text-fields/FormPropsTextFields.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -93,11 +87,8 @@ function TextFieldsDoc(props) {
           name="ValidationTextFields.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/ValidationTextFields.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/ValidationTextFields.js')}
+          component={require('../components/text-fields/ValidationTextFields.js').default}
+          raw={require('!raw-loader!../components/text-fields/ValidationTextFields.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -105,23 +96,18 @@ function TextFieldsDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         The <code>multiline</code> prop transforms the text field into a{' '}
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea">
-          <code>{`<textarea>`}</code>
-        </a>{' '}
-        element. Unless the <code>rows</code> prop is set, the height of the text field dynamically
-        matches its content (using <a href="/components/textarea-autosize/">TextareaAutosize</a>).
-        You can use the <code>minRows</code> and <code>maxRows</code> props to bound it.
+        <a href="/material-ui/react-textarea-autosize/">TextareaAutosize</a> element. Unless the{' '}
+        <code>rows</code> prop is set, the height of the text field dynamically matches its content
+        (using <a href="/material-ui/react-textarea-autosize/">TextareaAutosize</a>). You can use
+        the <code>minRows</code> and <code>maxRows</code> props to bound it.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="MultilineTextFields.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/MultilineTextFields.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/MultilineTextFields.js')}
+          component={require('../components/text-fields/MultilineTextFields.js').default}
+          raw={require('!raw-loader!../components/text-fields/MultilineTextFields.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -129,18 +115,15 @@ function TextFieldsDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         The <code>select</code> prop makes the text field use the{' '}
-        <a href="/components/selects/">Select</a> component internally.
+        <a href="/material-ui/react-select/">Select</a> component internally.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="SelectTextFields.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/SelectTextFields.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/SelectTextFields.js')}
+          component={require('../components/text-fields/SelectTextFields.js').default}
+          raw={require('!raw-loader!../components/text-fields/SelectTextFields.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -154,11 +137,8 @@ function TextFieldsDoc(props) {
           name="InputWithIcon.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/InputWithIcon.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/InputWithIcon.js')}
+          component={require('../components/text-fields/InputWithIcon.js').default}
+          raw={require('!raw-loader!../components/text-fields/InputWithIcon.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -174,11 +154,8 @@ function TextFieldsDoc(props) {
           name="InputAdornments.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/InputAdornments.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/InputAdornments.js')}
+          component={require('../components/text-fields/InputAdornments.js').default}
+          raw={require('!raw-loader!../components/text-fields/InputAdornments.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -192,11 +169,8 @@ function TextFieldsDoc(props) {
           name="TextFieldSizes.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/TextFieldSizes.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/TextFieldSizes.js')}
+          component={require('../components/text-fields/TextFieldSizes.js').default}
+          raw={require('!raw-loader!../components/text-fields/TextFieldSizes.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -208,11 +182,8 @@ function TextFieldsDoc(props) {
           name="TextFieldHiddenLabel.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/TextFieldHiddenLabel.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/TextFieldHiddenLabel.js')}
+          component={require('../components/text-fields/TextFieldHiddenLabel.js').default}
+          raw={require('!raw-loader!../components/text-fields/TextFieldHiddenLabel.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -228,11 +199,8 @@ function TextFieldsDoc(props) {
           name="LayoutTextFields.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/LayoutTextFields.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/LayoutTextFields.js')}
+          component={require('../components/text-fields/LayoutTextFields.js').default}
+          raw={require('!raw-loader!../components/text-fields/LayoutTextFields.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -247,11 +215,8 @@ function TextFieldsDoc(props) {
           name="FullWidthTextField.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/FullWidthTextField.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/FullWidthTextField.js')}
+          component={require('../components/text-fields/FullWidthTextField.js').default}
+          raw={require('!raw-loader!../components/text-fields/FullWidthTextField.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -265,11 +230,8 @@ function TextFieldsDoc(props) {
           name="StateTextFields.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/StateTextFields.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/StateTextFields.js')}
+          component={require('../components/text-fields/StateTextFields.js').default}
+          raw={require('!raw-loader!../components/text-fields/StateTextFields.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -277,27 +239,27 @@ function TextFieldsDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         <code>TextField</code> is composed of smaller components (
-        <a href="/api/form-control/">
+        <a href="/material-ui/api/form-control/">
           <code>FormControl</code>
         </a>
         ,
-        <a href="/api/input/">
+        <a href="/material-ui/api/input/">
           <code>Input</code>
         </a>
         ,
-        <a href="/api/filled-input/">
+        <a href="/material-ui/api/filled-input/">
           <code>FilledInput</code>
         </a>
         ,
-        <a href="/api/input-label/">
+        <a href="/material-ui/api/input-label/">
           <code>InputLabel</code>
         </a>
         ,
-        <a href="/api/outlined-input/">
+        <a href="/material-ui/api/outlined-input/">
           <code>OutlinedInput</code>
         </a>
         , and{' '}
-        <a href="/api/form-helper-text/">
+        <a href="/material-ui/api/form-helper-text/">
           <code>FormHelperText</code>
         </a>
         ) that you can leverage directly to significantly customize your form inputs.
@@ -314,11 +276,8 @@ function TextFieldsDoc(props) {
           name="ComposedTextField.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/ComposedTextField.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/ComposedTextField.js')}
+          component={require('../components/text-fields/ComposedTextField.js').default}
+          raw={require('!raw-loader!../components/text-fields/ComposedTextField.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -329,11 +288,8 @@ function TextFieldsDoc(props) {
           name="Inputs.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/Inputs.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/Inputs.js')}
+          component={require('../components/text-fields/Inputs.js').default}
+          raw={require('!raw-loader!../components/text-fields/Inputs.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -347,11 +303,8 @@ function TextFieldsDoc(props) {
           name="ColorTextFields.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/ColorTextFields.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/ColorTextFields.js')}
+          component={require('../components/text-fields/ColorTextFields.js').default}
+          raw={require('!raw-loader!../components/text-fields/ColorTextFields.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -359,24 +312,21 @@ function TextFieldsDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         Here are some examples of customizing the component. You can learn more about this in the{' '}
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href="/material-ui/customization/how-to-customize/">overrides documentation page</a>.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="CustomizedInputs.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/CustomizedInputs.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/CustomizedInputs.js')}
+          component={require('../components/text-fields/CustomizedInputs.js').default}
+          raw={require('!raw-loader!../components/text-fields/CustomizedInputs.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
         Customization does not stop at CSS. You can use composition to build custom components and
         give your app a unique feel. Below is an example using the{' '}
-        <a href="/api/input-base/">
+        <a href="/material-ui/api/input-base/">
           <code>InputBase</code>
         </a>{' '}
         component, inspired by Google Maps.
@@ -386,11 +336,8 @@ function TextFieldsDoc(props) {
           name="CustomizedInputBase.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/CustomizedInputBase.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/CustomizedInputBase.js')}
+          component={require('../components/text-fields/CustomizedInputBase.js').default}
+          raw={require('!raw-loader!../components/text-fields/CustomizedInputBase.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -496,11 +443,8 @@ import { useFormControl } from '@mui/material/FormControl';
           name="UseFormControl.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/UseFormControl.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/UseFormControl.js')}
+          component={require('../components/text-fields/UseFormControl.js').default}
+          raw={require('!raw-loader!../components/text-fields/UseFormControl.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -594,11 +538,8 @@ import { useFormControl } from '@mui/material/FormControl';
           name="HelperTextMisaligned.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/HelperTextMisaligned.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/HelperTextMisaligned.js')}
+          component={require('../components/text-fields/HelperTextMisaligned.js').default}
+          raw={require('!raw-loader!../components/text-fields/HelperTextMisaligned.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -609,11 +550,8 @@ import { useFormControl } from '@mui/material/FormControl';
           name="HelperTextAligned.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/HelperTextAligned.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/HelperTextAligned.js')}
+          component={require('../components/text-fields/HelperTextAligned.js').default}
+          raw={require('!raw-loader!../components/text-fields/HelperTextAligned.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -635,11 +573,8 @@ import { useFormControl } from '@mui/material/FormControl';
           name="FormattedInputs.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/FormattedInputs.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/FormattedInputs.js')}
+          component={require('../components/text-fields/FormattedInputs.js').default}
+          raw={require('!raw-loader!../components/text-fields/FormattedInputs.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -680,7 +615,7 @@ const MyInputComponent = React.forwardRef((props, ref) => {
     inputProps: {
       component: SomeThirdPartyComponent,
     },
-
+  
 />;
 `}
       </FuseHighlight>
@@ -733,6 +668,10 @@ const MyInputComponent = React.forwardRef((props, ref) => {
           validation.
         </li>
         <li>
+          <a href="https://github.com/dohomi/react-hook-form-mui">react-hook-form-mui</a>: MUI and
+          react-hook-form combined.
+        </li>
+        <li>
           <a href="https://github.com/stackworx/formik-mui">formik-material-ui</a>: Bindings for
           using MUI with <a href="https://formik.org/">formik</a>.
         </li>
@@ -744,56 +683,19 @@ const MyInputComponent = React.forwardRef((props, ref) => {
           <a href="https://github.com/lookfirst/mui-rff">mui-rff</a>: Bindings for using MUI with{' '}
           <a href="https://final-form.org/react">React Final Form</a>.
         </li>
+        <li>
+          <a href="https://www.npmjs.com/package/@ui-schema/ds-material">@ui-schema/ds-material</a>{' '}
+          Bindings for using Material UI with{' '}
+          <a href="https://github.com/ui-schema/ui-schema">UI Schema</a>. JSON Schema compatible.
+        </li>
+        <li>
+          <a href="https://data-driven-forms.org/provided-mappers/mui-component-mapper">
+            @data-driven-forms/mui-component-mapper
+          </a>
+          : Bindings for using Material UI with{' '}
+          <a href="https://github.com/data-driven-forms/react-forms">Data Driven Forms</a>.
+        </li>
       </ul>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
-        Unstyled
-      </Typography>
-      <Typography className="mb-40" component="div">
-        For advanced customization scenarios, you can use the unstyled primitives.
-      </Typography>
-      <Typography className="mb-40" component="div">
-        The basic building blocks are the <code>InputUnstyled</code> component and the{' '}
-        <code>useInput</code> hook.
-      </Typography>
-      <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
-        Unstyled component
-      </Typography>
-      <Typography className="mb-40" component="div">
-        The <code>InputUnstyled</code> component wraps the native <code>input</code> or{' '}
-        <code>textarea</code> element. You can, optionally, provide a custom component to be
-        rendered instead.
-      </Typography>
-      <Typography className="mb-40" component="div">
-        <FuseExample
-          name="UnstyledInput.js"
-          className="my-24"
-          iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/UnstyledInput.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/UnstyledInput.js')}
-        />
-      </Typography>
-      <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
-        Hook
-      </Typography>
-      <Typography className="mb-40" component="div">
-        The <code>useInput</code> hook is the headless version of the <code>InputUnstyled</code>{' '}
-        component. Use it for even greater control over the rendered output.
-      </Typography>
-      <Typography className="mb-40" component="div">
-        <FuseExample
-          name="UseInput.js"
-          className="my-24"
-          iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/text-fields/UseInput.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/text-fields/UseInput.js')}
-        />
-      </Typography>
     </>
   );
 }

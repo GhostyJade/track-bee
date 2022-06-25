@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function BoxDoc(props) {
           href="https://mui.com/components/box"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -59,10 +59,8 @@ function BoxDoc(props) {
           name="BoxSx.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/box/BoxSx.js').default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/box/BoxSx.js')}
+          component={require('../components/box/BoxSx.js').default}
+          raw={require('!raw-loader!../components/box/BoxSx.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -78,11 +76,8 @@ function BoxDoc(props) {
           name="BoxComponent.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/box/BoxComponent.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/box/BoxComponent.js')}
+          component={require('../components/box/BoxComponent.js').default}
+          raw={require('!raw-loader!../components/box/BoxComponent.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -119,76 +114,6 @@ function BoxDoc(props) {
 +<Box component="button" sx={{ border: '1px dashed grey' }}>Save</Box>
 `}
       </FuseHighlight>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
-        API
-      </Typography>
-
-      <FuseHighlight component="pre" className="language-jsx">
-        {` 
-import Box from '@mui/material/Box';
-`}
-      </FuseHighlight>
-      <table>
-        <thead>
-          <tr>
-            <th align="left">Name</th>
-            <th align="left">Type</th>
-            <th align="left">Default</th>
-            <th align="left">Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td align="left">
-              <span className="prop-name">children</span>
-            </td>
-            <td align="left">
-              <span className="prop-type">
-                node
-                <br />
-              </span>
-            </td>
-            <td align="left" />
-            <td align="left">Box render function or node.</td>
-          </tr>
-          <tr>
-            <td align="left">
-              <span className="prop-name">component</span>
-            </td>
-            <td align="left">
-              <span className="prop-type">
-                union:&nbsp;string&nbsp;&#124;
-                <br />
-                &nbsp;func&nbsp;&#124;
-                <br />
-                &nbsp;object
-                <br />
-              </span>
-            </td>
-            <td align="left">
-              <span className="prop-default">&#39;div&#39;</span>
-            </td>
-            <td align="left">
-              The component used for the root node. Either a string to use a DOM element or a
-              component.
-            </td>
-          </tr>
-          <tr>
-            <td align="left">
-              <span className="prop-name">sx</span>
-            </td>
-            <td align="left">
-              <span className="prop-type">object</span>
-            </td>
-            <td align="left">
-              <span className="prop-default">{}</span>
-            </td>
-            <td align="left">
-              Accepts all system properties, as well as any valid CSS properties.
-            </td>
-          </tr>
-        </tbody>
-      </table>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         System props
       </Typography>

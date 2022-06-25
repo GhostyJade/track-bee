@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,72 +20,63 @@ function AppBarDoc(props) {
           href="https://mui.com/components/app-bar"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
-        App Bar
+        App bar
       </Typography>
       <Typography className="description">
-        The App Bar displays information and actions relating to the current screen.
+        The App bar displays information and actions relating to the current screen.
       </Typography>
 
       <Typography className="mb-40" component="div">
-        The top App Bar provides content and actions related to the current screen. It&#39;s used
+        The top App bar provides content and actions related to the current screen. It&#39;s used
         for branding, screen titles, navigation, and actions.
       </Typography>
       <Typography className="mb-40" component="div">
         It can transform into a contextual action bar or be used as a navbar.
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
-        Basic App Bar
+        Basic App bar
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="ButtonAppBar.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/app-bar/ButtonAppBar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/app-bar/ButtonAppBar.js')}
+          component={require('../components/app-bar/ButtonAppBar.js').default}
+          raw={require('!raw-loader!../components/app-bar/ButtonAppBar.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
-        App Bar with menu
+        App bar with menu
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="MenuAppBar.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/app-bar/MenuAppBar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/app-bar/MenuAppBar.js')}
+          component={require('../components/app-bar/MenuAppBar.js').default}
+          raw={require('!raw-loader!../components/app-bar/MenuAppBar.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
-        App Bar with responsive menu
+        App bar with responsive menu
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="ResponsiveAppBar.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/app-bar/ResponsiveAppBar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/app-bar/ResponsiveAppBar.js')}
+          component={require('../components/app-bar/ResponsiveAppBar.js').default}
+          raw={require('!raw-loader!../components/app-bar/ResponsiveAppBar.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
-        App Bar with search field
+        App bar with search field
       </Typography>
       <Typography className="mb-40" component="div">
         A side searchbar.
@@ -95,15 +86,12 @@ function AppBarDoc(props) {
           name="SearchAppBar.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/app-bar/SearchAppBar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/app-bar/SearchAppBar.js')}
+          component={require('../components/app-bar/SearchAppBar.js').default}
+          raw={require('!raw-loader!../components/app-bar/SearchAppBar.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
-        App Bar with a primary search field
+        App bar with a primary search field
       </Typography>
       <Typography className="mb-40" component="div">
         A primary searchbar.
@@ -113,11 +101,8 @@ function AppBarDoc(props) {
           name="PrimarySearchAppBar.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/app-bar/PrimarySearchAppBar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/app-bar/PrimarySearchAppBar.js')}
+          component={require('../components/app-bar/PrimarySearchAppBar.js').default}
+          raw={require('!raw-loader!../components/app-bar/PrimarySearchAppBar.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -128,11 +113,8 @@ function AppBarDoc(props) {
           name="DenseAppBar.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/app-bar/DenseAppBar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/app-bar/DenseAppBar.js')}
+          component={require('../components/app-bar/DenseAppBar.js').default}
+          raw={require('!raw-loader!../components/app-bar/DenseAppBar.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -146,26 +128,20 @@ function AppBarDoc(props) {
           name="ProminentAppBar.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/app-bar/ProminentAppBar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/app-bar/ProminentAppBar.js')}
+          component={require('../components/app-bar/ProminentAppBar.js').default}
+          raw={require('!raw-loader!../components/app-bar/ProminentAppBar.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
-        Bottom App Bar
+        Bottom App bar
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="BottomAppBar.js"
           className="my-24"
           iframe
-          component={
-            require('app/main/documentation/material-ui-components/components/app-bar/BottomAppBar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/app-bar/BottomAppBar.js')}
+          component={require('../components/app-bar/BottomAppBar.js').default}
+          raw={require('!raw-loader!../components/app-bar/BottomAppBar.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -178,8 +154,8 @@ function AppBarDoc(props) {
       </Typography>
       <ol>
         <li>
-          You can use <code>position="sticky"</code> instead of fixed. ⚠️ sticky is not supported by
-          IE11.
+          You can use <code>{`position="sticky"`}</code> instead of fixed. ⚠️ sticky is not
+          supported by IE11.
         </li>
         <li>
           You can render a second <code>{`<Toolbar />`}</code> component:
@@ -229,7 +205,7 @@ function App() {
         You can use the <code>useScrollTrigger()</code> hook to respond to user scroll actions.
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
-        Hide App Bar
+        Hide App bar
       </Typography>
       <Typography className="mb-40" component="div">
         The app bar hides on scroll down to leave more space for reading.
@@ -239,15 +215,12 @@ function App() {
           name="HideAppBar.js"
           className="my-24"
           iframe
-          component={
-            require('app/main/documentation/material-ui-components/components/app-bar/HideAppBar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/app-bar/HideAppBar.js')}
+          component={require('../components/app-bar/HideAppBar.js').default}
+          raw={require('!raw-loader!../components/app-bar/HideAppBar.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
-        Elevate App Bar
+        Elevate App bar
       </Typography>
       <Typography className="mb-40" component="div">
         The app bar elevates on scroll to communicate that the user is not at the top of the page.
@@ -257,11 +230,8 @@ function App() {
           name="ElevateAppBar.js"
           className="my-24"
           iframe
-          component={
-            require('app/main/documentation/material-ui-components/components/app-bar/ElevateAppBar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/app-bar/ElevateAppBar.js')}
+          component={require('../components/app-bar/ElevateAppBar.js').default}
+          raw={require('!raw-loader!../components/app-bar/ElevateAppBar.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -276,11 +246,8 @@ function App() {
           name="BackToTop.js"
           className="my-24"
           iframe
-          component={
-            require('app/main/documentation/material-ui-components/components/app-bar/BackToTop.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/app-bar/BackToTop.js')}
+          component={require('../components/app-bar/BackToTop.js').default}
+          raw={require('!raw-loader!../components/app-bar/BackToTop.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -351,11 +318,8 @@ function HideOnScroll(props) {
           name="EnableColorOnDarkAppBar.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/app-bar/EnableColorOnDarkAppBar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/app-bar/EnableColorOnDarkAppBar.js')}
+          component={require('../components/app-bar/EnableColorOnDarkAppBar.js').default}
+          raw={require('!raw-loader!../components/app-bar/EnableColorOnDarkAppBar.js')}
         />
       </Typography>
     </>

@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function TransitionsDoc(props) {
           href="https://mui.com/components/transitions"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -49,11 +49,8 @@ function TransitionsDoc(props) {
           name="SimpleCollapse.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/transitions/SimpleCollapse.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/transitions/SimpleCollapse.js')}
+          component={require('../components/transitions/SimpleCollapse.js').default}
+          raw={require('!raw-loader!../components/transitions/SimpleCollapse.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -67,11 +64,8 @@ function TransitionsDoc(props) {
           name="SimpleFade.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/transitions/SimpleFade.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/transitions/SimpleFade.js')}
+          component={require('../components/transitions/SimpleFade.js').default}
+          raw={require('!raw-loader!../components/transitions/SimpleFade.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -90,11 +84,8 @@ function TransitionsDoc(props) {
           name="SimpleGrow.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/transitions/SimpleGrow.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/transitions/SimpleGrow.js')}
+          component={require('../components/transitions/SimpleGrow.js').default}
+          raw={require('!raw-loader!../components/transitions/SimpleGrow.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -116,11 +107,8 @@ function TransitionsDoc(props) {
           name="SimpleSlide.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/transitions/SimpleSlide.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/transitions/SimpleSlide.js')}
+          component={require('../components/transitions/SimpleSlide.js').default}
+          raw={require('!raw-loader!../components/transitions/SimpleSlide.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -135,11 +123,8 @@ function TransitionsDoc(props) {
           name="SlideFromContainer.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/transitions/SlideFromContainer.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/transitions/SlideFromContainer.js')}
+          component={require('../components/transitions/SlideFromContainer.js').default}
+          raw={require('!raw-loader!../components/transitions/SlideFromContainer.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -156,11 +141,8 @@ function TransitionsDoc(props) {
           name="SimpleZoom.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/transitions/SimpleZoom.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/transitions/SimpleZoom.js')}
+          component={require('../components/transitions/SimpleZoom.js').default}
+          raw={require('!raw-loader!../components/transitions/SimpleZoom.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -176,7 +158,7 @@ function TransitionsDoc(props) {
         <li>
           <strong>Forward the ref</strong>: The transition components require the first child
           element to forward its ref to the DOM node. For more details about ref, check out{' '}
-          <a href="/guides/composition/#caveat-with-refs">Caveat with refs</a>
+          <a href="/material-ui/guides/composition/#caveat-with-refs">Caveat with refs</a>
         </li>
         <li>
           <strong>Single element</strong>: The transition components require only one child element
@@ -222,11 +204,8 @@ export default Main() {
           name="TransitionGroupExample.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/transitions/TransitionGroupExample.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/transitions/TransitionGroupExample.js')}
+          component={require('../components/transitions/TransitionGroupExample.js').default}
+          raw={require('!raw-loader!../components/transitions/TransitionGroupExample.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -259,19 +238,19 @@ export default Main() {
       </Typography>
       <ul>
         <li>
-          <a href="/components/modal/#transitions">Modal</a>
+          <a href="/material-ui/react-modal/#transitions">Modal</a>
         </li>
         <li>
-          <a href="/components/dialogs/#transitions">Dialog</a>
+          <a href="/material-ui/react-dialog/#transitions">Dialog</a>
         </li>
         <li>
-          <a href="/components/popper/#transitions">Popper</a>
+          <a href="/material-ui/react-popper/#transitions">Popper</a>
         </li>
         <li>
-          <a href="/components/snackbars/#transitions">Snackbar</a>
+          <a href="/material-ui/react-snackbar/#transitions">Snackbar</a>
         </li>
         <li>
-          <a href="/components/tooltips/#transitions">Tooltip</a>
+          <a href="/material-ui/react-tooltip/#transitions">Tooltip</a>
         </li>
       </ul>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">

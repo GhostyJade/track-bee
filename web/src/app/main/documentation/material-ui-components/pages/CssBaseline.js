@@ -1,6 +1,6 @@
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -19,9 +19,9 @@ function CssBaselineDoc(props) {
           href="https://mui.com/components/css-baseline"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -99,7 +99,7 @@ export default function MyApp() {
         <li>The margin in all browsers is removed.</li>
         <li>
           The default Material Design background color is applied. It&#39;s using{' '}
-          <a href="/customization/default-theme/?expand-path=$.palette.background">
+          <a href="/material-ui/customization/default-theme/?expand-path=$.palette.background">
             <code>theme.palette.background.default</code>
           </a>{' '}
           for standard devices and a white background for print devices.
@@ -128,11 +128,10 @@ export default function MyApp() {
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
         Scrollbars
       </Typography>
-      <blockquote>
-        <Typography className="mb-40" component="div">
-          This API is deprecated, consider using <a href="#color-scheme">color-scheme</a> instead.
-        </Typography>
-      </blockquote>
+      <Typography className="mb-40" component="div">
+        :::error This API is deprecated, consider using <a href="#color-scheme">color-scheme</a>{' '}
+        instead. :::
+      </Typography>
       <Typography className="mb-40" component="div">
         The colors of the scrollbars can be customized to improve the contrast (especially on
         Windows). Add this code to your theme (for dark mode).
@@ -160,9 +159,9 @@ const theme = createTheme({
         Color scheme
       </Typography>
       <Typography className="mb-40" component="div">
-        This API is introduced in @mui/material (v5.1.0) for switching between <code>"light"</code>{' '}
-        and <code>"dark"</code> modes of native components such as scrollbar, using the{' '}
-        <code>color-scheme</code> CSS property. To enable it, you can set{' '}
+        This API is introduced in @mui/material (v5.1.0) for switching between{' '}
+        <code>{`"light"`}</code> and <code>{`"dark"`}</code> modes of native components such as
+        scrollbar, using the <code>color-scheme</code> CSS property. To enable it, you can set{' '}
         <code>enableColorScheme=true</code> as follows:
       </Typography>
 
@@ -185,7 +184,9 @@ const theme = createTheme({
           No base font-size is declared on the <code>{`<html>`}</code>, but 16px is assumed (the
           browser default). You can learn more about the implications of changing the{' '}
           <code>{`<html>`}</code> default font size in{' '}
-          <a href="/customization/typography/#typography-html-font-size">the theme documentation</a>{' '}
+          <a href="/material-ui/customization/typography/#typography-html-font-size">
+            the theme documentation
+          </a>{' '}
           page.
         </li>
         <li>
@@ -202,7 +203,9 @@ const theme = createTheme({
       </Typography>
       <Typography className="mb-40" component="div">
         Head to the{' '}
-        <a href="/customization/how-to-customize/#5-global-css-override">global customization</a>{' '}
+        <a href="/material-ui/customization/how-to-customize/#5-global-css-override">
+          global customization
+        </a>{' '}
         section of the documentation to change the output of these components.
       </Typography>
     </>

@@ -1,7 +1,6 @@
 import FuseExample from '@fuse/core/FuseExample';
-import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +19,9 @@ function BackdropDoc(props) {
           href="https://mui.com/components/backdrop"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -45,26 +44,10 @@ function BackdropDoc(props) {
           name="SimpleBackdrop.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/backdrop/SimpleBackdrop.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/backdrop/SimpleBackdrop.js')}
+          component={require('../components/backdrop/SimpleBackdrop.js').default}
+          raw={require('!raw-loader!../components/backdrop/SimpleBackdrop.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
-        Unstyled
-      </Typography>
-      <Typography className="mb-40" component="div">
-        The backdrop also comes with the Base package. It&#39;s ideal for doing heavy customizations
-        and minimizing bundle size.
-      </Typography>
-
-      <FuseHighlight component="pre" className="language-js">
-        {` 
-import BackdropUnstyled from '@mui/base/BackdropUnstyled';
-`}
-      </FuseHighlight>
     </>
   );
 }

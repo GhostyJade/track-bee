@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function CheckboxesDoc(props) {
           href="https://mui.com/components/checkboxes"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -48,11 +48,8 @@ function CheckboxesDoc(props) {
           name="Checkboxes.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/checkboxes/Checkboxes.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/checkboxes/Checkboxes.js')}
+          component={require('../components/checkboxes/Checkboxes.js').default}
+          raw={require('!raw-loader!../components/checkboxes/Checkboxes.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -67,11 +64,8 @@ function CheckboxesDoc(props) {
           name="CheckboxLabels.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/checkboxes/CheckboxLabels.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/checkboxes/CheckboxLabels.js')}
+          component={require('../components/checkboxes/CheckboxLabels.js').default}
+          raw={require('!raw-loader!../components/checkboxes/CheckboxLabels.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -86,11 +80,8 @@ function CheckboxesDoc(props) {
           name="SizeCheckboxes.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/checkboxes/SizeCheckboxes.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/checkboxes/SizeCheckboxes.js')}
+          component={require('../components/checkboxes/SizeCheckboxes.js').default}
+          raw={require('!raw-loader!../components/checkboxes/SizeCheckboxes.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -101,11 +92,8 @@ function CheckboxesDoc(props) {
           name="ColorCheckboxes.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/checkboxes/ColorCheckboxes.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/checkboxes/ColorCheckboxes.js')}
+          component={require('../components/checkboxes/ColorCheckboxes.js').default}
+          raw={require('!raw-loader!../components/checkboxes/ColorCheckboxes.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -116,11 +104,8 @@ function CheckboxesDoc(props) {
           name="IconCheckboxes.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/checkboxes/IconCheckboxes.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/checkboxes/IconCheckboxes.js')}
+          component={require('../components/checkboxes/IconCheckboxes.js').default}
+          raw={require('!raw-loader!../components/checkboxes/IconCheckboxes.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -134,11 +119,8 @@ function CheckboxesDoc(props) {
           name="ControlledCheckbox.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/checkboxes/ControlledCheckbox.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/checkboxes/ControlledCheckbox.js')}
+          component={require('../components/checkboxes/ControlledCheckbox.js').default}
+          raw={require('!raw-loader!../components/checkboxes/ControlledCheckbox.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -154,19 +136,14 @@ function CheckboxesDoc(props) {
           name="IndeterminateCheckbox.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/checkboxes/IndeterminateCheckbox.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/checkboxes/IndeterminateCheckbox.js')}
+          component={require('../components/checkboxes/IndeterminateCheckbox.js').default}
+          raw={require('!raw-loader!../components/checkboxes/IndeterminateCheckbox.js')}
         />
       </Typography>
-      <blockquote>
-        <Typography className="mb-40" component="div">
-          ⚠️ When indeterminate is set, the value of the <code>checked</code> prop only impacts the
-          form submitted values. It has no accessibility or UX implications.
-        </Typography>
-      </blockquote>
+      <Typography className="mb-40" component="div">
+        :::warning ⚠️ When indeterminate is set, the value of the <code>checked</code> prop only
+        impacts the form submitted values. It has no accessibility or UX implications. :::
+      </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         FormGroup
       </Typography>
@@ -178,11 +155,8 @@ function CheckboxesDoc(props) {
           name="CheckboxesGroup.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/checkboxes/CheckboxesGroup.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/checkboxes/CheckboxesGroup.js')}
+          component={require('../components/checkboxes/CheckboxesGroup.js').default}
+          raw={require('!raw-loader!../components/checkboxes/CheckboxesGroup.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -196,11 +170,8 @@ function CheckboxesDoc(props) {
           name="FormControlLabelPosition.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/checkboxes/FormControlLabelPosition.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/checkboxes/FormControlLabelPosition.js')}
+          component={require('../components/checkboxes/FormControlLabelPosition.js').default}
+          raw={require('!raw-loader!../components/checkboxes/FormControlLabelPosition.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -208,18 +179,15 @@ function CheckboxesDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         Here is an example of customizing the component. You can learn more about this in the{' '}
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href="/material-ui/customization/how-to-customize/">overrides documentation page</a>.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="CustomizedCheckbox.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/checkboxes/CustomizedCheckbox.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/checkboxes/CustomizedCheckbox.js')}
+          component={require('../components/checkboxes/CustomizedCheckbox.js').default}
+          raw={require('!raw-loader!../components/checkboxes/CustomizedCheckbox.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -258,7 +226,7 @@ function CheckboxesDoc(props) {
         <li>
           All form controls should have labels, and this includes radio buttons, checkboxes, and
           switches. In most cases, this is done by using the <code>{`<label>`}</code> element (
-          <a href="/api/form-control-label/">FormControlLabel</a>).
+          <a href="/material-ui/api/form-control-label/">FormControlLabel</a>).
         </li>
         <li>
           When a label can&#39;t be used, it&#39;s necessary to add an attribute directly to the
@@ -274,7 +242,7 @@ function CheckboxesDoc(props) {
   value="checkedA"
   inputProps={{
     'aria-label': 'Checkbox A',
-
+  
 />
 `}
       </FuseHighlight>

@@ -14,13 +14,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import withRouter from '@fuse/core/withRouter';
 import FuseLoading from '@fuse/core/FuseLoading';
 import OrdersStatus from '../order/OrdersStatus';
-import { selectOrders, getOrders } from '../store/ordersSlice';
+import { getOrders, selectOrders, selectOrdersSearchText } from '../store/ordersSlice';
 import OrdersTableHead from './OrdersTableHead';
 
 function OrdersTable(props) {
   const dispatch = useDispatch();
   const orders = useSelector(selectOrders);
-  const searchText = useSelector(({ eCommerceApp }) => eCommerceApp.orders.searchText);
+  const searchText = useSelector(selectOrdersSearchText);
 
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState([]);
@@ -104,7 +104,11 @@ function OrdersTable(props) {
   }
 
   if (loading) {
-    return <FuseLoading />;
+    return (
+      <div className="flex items-center justify-center h-full">
+        <FuseLoading />
+      </div>
+    );
   }
 
   if (data.length === 0) {
@@ -114,7 +118,7 @@ function OrdersTable(props) {
         animate={{ opacity: 1, transition: { delay: 0.1 } }}
         className="flex flex-1 items-center justify-center h-full"
       >
-        <Typography color="textSecondary" variant="h5">
+        <Typography color="text.secondary" variant="h5">
           There are no orders!
         </Typography>
       </motion.div>
@@ -122,7 +126,7 @@ function OrdersTable(props) {
   }
 
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col min-h-full">
       <FuseScrollbars className="grow overflow-x-auto">
         <Table stickyHeader className="min-w-xl" aria-labelledby="tableTitle">
           <OrdersTableHead

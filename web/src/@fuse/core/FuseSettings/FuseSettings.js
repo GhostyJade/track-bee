@@ -1,7 +1,7 @@
 import { useDebounce, usePrevious } from '@fuse/hooks';
 import { styled } from '@mui/material/styles';
 import { Controller, useForm } from 'react-hook-form';
-import FuseLayoutConfigs from '@fuse/layouts/FuseLayoutConfigs';
+import themeLayoutConfigs from 'app/theme-layouts/themeLayoutConfigs';
 import _ from '@lodash';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
@@ -13,10 +13,16 @@ import RadioGroup from '@mui/material/RadioGroup';
 import Select from '@mui/material/Select';
 import Switch from '@mui/material/Switch';
 import Typography from '@mui/material/Typography';
-import { useCallback, useMemo, memo, useEffect } from 'react';
+import { memo, useCallback, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateUserSettings } from 'app/auth/store/userSlice';
-import { setDefaultSettings } from 'app/store/fuse/settingsSlice';
+import {
+  selectFuseCurrentSettings,
+  selectFuseThemesSettings,
+  setDefaultSettings,
+} from 'app/store/fuse/settingsSlice';
+import { selectUser } from 'app/store/userSlice';
+import PaletteSelector from './palette-generator/PaletteSelector';
+import SectionPreview from './palette-generator/SectionPreview';
 
 const Root = styled('div')(({ theme }) => ({
   '& .FuseSettings-formControl': {
@@ -52,26 +58,22 @@ const Root = styled('div')(({ theme }) => ({
 
 function FuseSettings(props) {
   const dispatch = useDispatch();
-  const user = useSelector(({ auth }) => auth.user);
-  const themes = useSelector(({ fuse }) => fuse.settings.themes);
-  const settings = useSelector(({ fuse }) => fuse.settings.current);
+  const user = useSelector(selectUser);
+  const themes = useSelector(selectFuseThemesSettings);
+  const settings = useSelector(selectFuseCurrentSettings);
   const { reset, watch, control } = useForm({
     mode: 'onChange',
     defaultValues: settings,
   });
   const form = watch();
-  const { form: formConfigs } = FuseLayoutConfigs[form.layout.style];
+  const { form: formConfigs } = themeLayoutConfigs[form.layout.style];
   const prevForm = usePrevious(form ? _.merge({}, form) : null);
   const prevSettings = usePrevious(settings ? _.merge({}, settings) : null);
   const formChanged = !_.isEqual(form, prevForm);
   const settingsChanged = !_.isEqual(settings, prevSettings);
 
   const handleUpdate = useDebounce((newSettings) => {
-    if (user.role === 'guest') {
-      dispatch(setDefaultSettings(newSettings));
-    } else {
-      dispatch(updateUserSettings(newSettings));
-    }
+    dispatch(setDefaultSettings(newSettings));
   }, 300);
 
   useEffect(() => {
@@ -99,7 +101,7 @@ function FuseSettings(props) {
         _.set(
           newSettings,
           'layout.config',
-          FuseLayoutConfigs[newSettings?.layout?.style]?.defaults
+          themeLayoutConfigs[newSettings?.layout?.style]?.defaults
         );
       }
       handleUpdate(newSettings);
@@ -275,7 +277,7 @@ function FuseSettings(props) {
           case 'group': {
             return (
               <div key={target} className="FuseSettings-formGroup">
-                <Typography className="FuseSettings-formGroupTitle" color="textSecondary">
+                <Typography className="FuseSettings-formGroupTitle" color="text.secondary">
                   {formControl.title}
                 </Typography>
 
@@ -294,7 +296,7 @@ function FuseSettings(props) {
   return (
     <Root>
       <div className="FuseSettings-formGroup">
-        <Typography className="FuseSettings-formGroupTitle" color="textSecondary">
+        <Typography className="FuseSettings-formGroupTitle" color="text.secondary">
           Layout
         </Typography>
 
@@ -307,7 +309,7 @@ function FuseSettings(props) {
                 Style
               </FormLabel>
               <RadioGroup {...field} aria-label="Layout Style" className="FuseSettings-group">
-                {Object.entries(FuseLayoutConfigs).map(([key, layout]) => (
+                {Object.entries(themeLayoutConfigs).map(([key, layout]) => (
                   <FormControlLabel
                     key={key}
                     value={key}
@@ -322,69 +324,105 @@ function FuseSettings(props) {
 
         {useMemo(() => getForm(formConfigs, 'layout.config'), [formConfigs, getForm])}
 
-        <Typography className="my-16 text-12 italic" color="textSecondary">
+        <Typography className="my-16 text-12 italic" color="text.secondary">
           *Not all option combinations are available
         </Typography>
       </div>
 
       <div className="FuseSettings-formGroup pb-16">
-        <Typography className="FuseSettings-formGroupTitle" color="textSecondary">
+        <Typography className="FuseSettings-formGroupTitle" color="text.secondary">
           Theme
         </Typography>
 
-        <Controller
-          name="theme.main"
-          control={control}
-          render={({ field: { onChange, value } }) => (
-            <FormControl component="fieldset" className="FuseSettings-formControl">
-              <FormLabel component="legend" className="text-14">
-                Main
-              </FormLabel>
-              <ThemeSelect value={value} handleThemeChange={onChange} name="theme.main" />
-            </FormControl>
-          )}
-        />
+        <div className="flex flex-wrap -mx-8">
+          <Controller
+            name="theme.main"
+            control={control}
+            render={({ field: { value, onChange } }) => (
+              <PaletteSelector
+                value={value}
+                onChange={onChange}
+                trigger={
+                  <div className="flex flex-col items-center space-y-8 w-128 m-8 cursor-pointer group">
+                    <SectionPreview
+                      className="group-hover:shadow-lg transition-shadow"
+                      section="main"
+                    />
+                    <Typography className="flex-1 text-14 font-semibold mb-24 opacity-80 group-hover:opacity-100">
+                      Main Palette
+                    </Typography>
+                  </div>
+                }
+              />
+            )}
+          />
 
-        <Controller
-          name="theme.navbar"
-          control={control}
-          render={({ field: { onChange, value } }) => (
-            <FormControl component="fieldset" className="FuseSettings-formControl">
-              <FormLabel component="legend" className="text-14">
-                Navbar
-              </FormLabel>
+          <Controller
+            name="theme.navbar"
+            control={control}
+            render={({ field: { value, onChange } }) => (
+              <PaletteSelector
+                value={value}
+                onChange={onChange}
+                trigger={
+                  <div className="flex flex-col items-center space-y-8 w-128 m-8 cursor-pointer group">
+                    <SectionPreview
+                      className="group-hover:shadow-lg transition-shadow"
+                      section="navbar"
+                    />
+                    <Typography className="flex-1 text-14 font-semibold mb-24 opacity-80 group-hover:opacity-100">
+                      Navbar Palette
+                    </Typography>
+                  </div>
+                }
+              />
+            )}
+          />
 
-              <ThemeSelect value={value} handleThemeChange={onChange} name="theme.navbar" />
-            </FormControl>
-          )}
-        />
+          <Controller
+            name="theme.toolbar"
+            control={control}
+            render={({ field: { value, onChange } }) => (
+              <PaletteSelector
+                value={value}
+                onChange={onChange}
+                trigger={
+                  <div className="flex flex-col items-center space-y-8 w-128 m-8 cursor-pointer group">
+                    <SectionPreview
+                      className="group-hover:shadow-lg transition-shadow"
+                      section="toolbar"
+                    />
+                    <Typography className="flex-1 text-14 font-semibold mb-24 opacity-80 group-hover:opacity-100">
+                      Toolbar Palette
+                    </Typography>
+                  </div>
+                }
+              />
+            )}
+          />
 
-        <Controller
-          name="theme.toolbar"
-          control={control}
-          render={({ field: { onChange, value } }) => (
-            <FormControl component="fieldset" className="FuseSettings-formControl">
-              <FormLabel component="legend" className="text-14">
-                Toolbar
-              </FormLabel>
-
-              <ThemeSelect value={value} handleThemeChange={onChange} name="theme.toolbar" />
-            </FormControl>
-          )}
-        />
-
-        <Controller
-          name="theme.footer"
-          control={control}
-          render={({ field: { onChange, value } }) => (
-            <FormControl component="fieldset" className="FuseSettings-formControl">
-              <FormLabel component="legend" className="text-14">
-                Footer
-              </FormLabel>
-              <ThemeSelect value={value} handleThemeChange={onChange} name="theme.footer" />
-            </FormControl>
-          )}
-        />
+          <Controller
+            name="theme.footer"
+            control={control}
+            render={({ field: { value, onChange } }) => (
+              <PaletteSelector
+                value={value}
+                onChange={onChange}
+                trigger={
+                  <div className="flex flex-col items-center space-y-8 w-128 m-8 cursor-pointer group">
+                    <SectionPreview
+                      className="group-hover:shadow-lg transition-shadow"
+                      section="footer"
+                    />
+                    <Typography className="flex-1 text-14 font-semibold mb-24 opacity-80 group-hover:opacity-100">
+                      Footer Palette
+                    </Typography>
+                  </div>
+                }
+              />
+            )}
+          />
+        </div>
       </div>
 
       <Controller

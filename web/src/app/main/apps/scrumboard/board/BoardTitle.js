@@ -2,17 +2,16 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Controller, useForm } from 'react-hook-form';
 
 import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Icon from '@mui/material/Icon';
 import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
-import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as yup from 'yup';
 import _ from '@lodash';
-import { renameBoard } from '../store/boardSlice';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
+import { selectBoard, updateBoard } from '../store/boardSlice';
 
 /**
  * Form Validation Schema
@@ -23,14 +22,14 @@ const schema = yup.object().shape({
 
 function BoardTitle(props) {
   const dispatch = useDispatch();
-  const board = useSelector(({ scrumboardApp }) => scrumboardApp.board);
+  const board = useSelector(selectBoard);
 
   const [formOpen, setFormOpen] = useState(false);
 
   const { control, formState, handleSubmit, reset } = useForm({
     mode: 'onChange',
     defaultValues: {
-      title: board.name,
+      title: board.title,
     },
     resolver: yupResolver(schema),
   });
@@ -40,10 +39,10 @@ function BoardTitle(props) {
   useEffect(() => {
     if (!formOpen) {
       reset({
-        title: board.name,
+        title: board.title,
       });
     }
-  }, [formOpen, reset, board.name]);
+  }, [formOpen, reset, board.title]);
 
   function handleOpenForm(ev) {
     ev.stopPropagation();
@@ -55,7 +54,7 @@ function BoardTitle(props) {
   }
 
   function onSubmit(data) {
-    dispatch(renameBoard({ boardId: board.id, boardTitle: data.title }));
+    dispatch(updateBoard(data));
     handleCloseForm();
   }
 
@@ -63,47 +62,45 @@ function BoardTitle(props) {
     <div className="flex items-center min-w-0">
       {formOpen ? (
         <ClickAwayListener onClickAway={handleCloseForm}>
-          <Paper>
-            <form className="flex w-full" onSubmit={handleSubmit(onSubmit)}>
-              <Controller
-                name="title"
-                control={control}
-                render={({ field }) => (
-                  <TextField
-                    {...field}
-                    variant="filled"
-                    margin="none"
-                    autoFocus
-                    hiddenLabel
-                    InputProps={{
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <IconButton
-                            type="submit"
-                            disabled={_.isEmpty(dirtyFields) || !isValid}
-                            size="large"
-                          >
-                            <Icon>check</Icon>
-                          </IconButton>
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
-                )}
-              />
-            </form>
-          </Paper>
+          <form className="flex w-full" onSubmit={handleSubmit(onSubmit)}>
+            <Controller
+              name="title"
+              control={control}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  variant="filled"
+                  margin="none"
+                  autoFocus
+                  hiddenLabel
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          type="submit"
+                          disabled={_.isEmpty(dirtyFields) || !isValid}
+                          size="large"
+                        >
+                          <FuseSvgIcon>heroicons-outline:check</FuseSvgIcon>
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              )}
+            />
+          </form>
         </ClickAwayListener>
       ) : (
-        <div className="flex items-center justify-center">
-          {board.settings.subscribed && <Icon className="text-16">remove_red_eye</Icon>}
+        <div className="flex items-center justify-center space-x-12">
           <Typography
-            className="text-14 sm:text-18 font-medium cursor-pointer mx-8"
+            className="text-14  sm:text-24 md:text-32 font-extrabold tracking-tight leading-none cursor-pointer"
             onClick={handleOpenForm}
             color="inherit"
           >
-            {board.name}
+            {board.title}
           </Typography>
+          {board?.settings.subscribed && <FuseSvgIcon>heroicons-outline:eye</FuseSvgIcon>}
         </div>
       )}
     </div>

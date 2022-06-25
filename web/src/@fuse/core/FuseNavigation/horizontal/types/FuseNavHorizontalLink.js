@@ -1,4 +1,3 @@
-import Icon from '@mui/material/Icon';
 import { styled } from '@mui/material/styles';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -7,6 +6,7 @@ import PropTypes from 'prop-types';
 import { memo, useMemo } from 'react';
 import withRouter from '@fuse/core/withRouter';
 import FuseNavBadge from '../../FuseNavBadge';
+import FuseSvgIcon from '../../../FuseSvgIcon';
 
 const StyledListItem = styled(ListItem)(({ theme }) => ({
   color: theme.palette.text.primary,
@@ -41,20 +41,22 @@ function FuseNavHorizontalLink(props) {
         target={item.target ? item.target : '_blank'}
         className={clsx('fuse-list-item')}
         role="button"
+        sx={item.sx}
+        disabled={item.disabled}
       >
         {item.icon && (
-          <Icon
-            className={clsx('fuse-list-item-icon text-16 shrink-0', item.iconClass)}
+          <FuseSvgIcon
+            className={clsx('fuse-list-item-icon shrink-0', item.iconClass)}
             color="action"
           >
             {item.icon}
-          </Icon>
+          </FuseSvgIcon>
         )}
 
         <ListItemText
           className="fuse-list-item-text"
           primary={item.title}
-          classes={{ primary: 'text-13 fuse-list-item-text-primary' }}
+          classes={{ primary: 'text-13 fuse-list-item-text-primary truncate' }}
         />
 
         {item.badge && <FuseNavBadge className="ltr:ml-8 rtl:mr-8" badge={item.badge} />}

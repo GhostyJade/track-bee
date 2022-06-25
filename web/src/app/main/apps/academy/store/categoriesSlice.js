@@ -1,8 +1,8 @@
-import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/toolkit';
+import { createAsyncThunk, createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const getCategories = createAsyncThunk('academyApp/categories/getCategories', async () => {
-  const response = await axios.get('/api/academy-app/categories');
+  const response = await axios.get('/api/academy/categories');
   const data = await response.data;
 
   return data;

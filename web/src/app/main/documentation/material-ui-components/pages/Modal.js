@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function ModalDoc(props) {
           href="https://mui.com/components/modal"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -47,34 +47,35 @@ function ModalDoc(props) {
         </li>
         <li>♿️ Adds the appropriate ARIA roles automatically.</li>
       </ul>
-      <blockquote>
-        <Typography className="mb-40" component="div">
-          <strong>Terminology note</strong>. The term &quot;modal&quot; is sometimes used to mean
-          &quot;dialog&quot;, but this is a misnomer. A modal window describes parts of a UI. An
-          element is considered modal if{' '}
-          <a href="https://en.wikipedia.org/wiki/Modal_window">
-            it blocks interaction with the rest of the application
-          </a>
-          .
-        </Typography>
-      </blockquote>
+      <Typography className="mb-40" component="div">
+        :::info
+        <strong>Terminology note</strong>.
+      </Typography>
+      <Typography className="mb-40" component="div">
+        The term &quot;modal&quot; is sometimes used to mean &quot;dialog&quot;, but this is a
+        misnomer. A modal window describes parts of a UI. An element is considered modal if{' '}
+        <a href="https://en.wikipedia.org/wiki/Modal_window">
+          it blocks interaction with the rest of the application
+        </a>
+        . :::
+      </Typography>
       <Typography className="mb-40" component="div">
         If you are creating a modal dialog, you probably want to use the{' '}
-        <a href="/components/dialogs/">Dialog</a> component rather than directly using Modal. Modal
-        is a lower-level construct that is leveraged by the following components:
+        <a href="/material-ui/react-dialog/">Dialog</a> component rather than directly using Modal.
+        Modal is a lower-level construct that is leveraged by the following components:
       </Typography>
       <ul>
         <li>
-          <a href="/components/dialogs/">Dialog</a>
+          <a href="/material-ui/react-dialog/">Dialog</a>
         </li>
         <li>
-          <a href="/components/drawers/">Drawer</a>
+          <a href="/material-ui/react-drawer/">Drawer</a>
         </li>
         <li>
-          <a href="/components/menus/">Menu</a>
+          <a href="/material-ui/react-menu/">Menu</a>
         </li>
         <li>
-          <a href="/components/popover/">Popover</a>
+          <a href="/material-ui/react-popover/">Popover</a>
         </li>
       </ul>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -85,46 +86,13 @@ function ModalDoc(props) {
           name="BasicModal.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/modal/BasicModal.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/modal/BasicModal.js')}
+          component={require('../components/modal/BasicModal.js').default}
+          raw={require('!raw-loader!../components/modal/BasicModal.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
         Notice that you can disable the outline (often blue or gold) with the{' '}
         <code>outline: 0</code> CSS property.
-      </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
-        Unstyled
-      </Typography>
-      <ul>
-        <li>
-          📦 <a href="https://bundlephobia.com/package/@mui/base@latest">4.7 kB gzipped</a>
-        </li>
-      </ul>
-      <Typography className="mb-40" component="div">
-        The modal also comes with an unstyled version. It&#39;s ideal for doing heavy customizations
-        and minimizing bundle size.
-      </Typography>
-
-      <FuseHighlight component="pre" className="language-js">
-        {` 
-import ModalUnstyled from '@mui/base/ModalUnstyled';
-`}
-      </FuseHighlight>
-      <Typography className="mb-40" component="div">
-        <FuseExample
-          name="ModalUnstyled.js"
-          className="my-24"
-          iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/modal/ModalUnstyled.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/modal/ModalUnstyled.js')}
-        />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         Nested modal
@@ -138,11 +106,8 @@ import ModalUnstyled from '@mui/base/ModalUnstyled';
           name="NestedModal.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/modal/NestedModal.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/modal/NestedModal.js')}
+          component={require('../components/modal/NestedModal.js').default}
+          raw={require('!raw-loader!../components/modal/NestedModal.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -175,11 +140,8 @@ import ModalUnstyled from '@mui/base/ModalUnstyled';
           name="TransitionsModal.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/modal/TransitionsModal.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/modal/TransitionsModal.js')}
+          component={require('../components/modal/TransitionsModal.js').default}
+          raw={require('!raw-loader!../components/modal/TransitionsModal.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -191,11 +153,8 @@ import ModalUnstyled from '@mui/base/ModalUnstyled';
           name="SpringModal.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/modal/SpringModal.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/modal/SpringModal.js')}
+          component={require('../components/modal/SpringModal.js').default}
+          raw={require('!raw-loader!../components/modal/SpringModal.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -218,11 +177,8 @@ import ModalUnstyled from '@mui/base/ModalUnstyled';
           name="KeepMountedModal.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/modal/KeepMountedModal.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/modal/KeepMountedModal.js')}
+          component={require('../components/modal/KeepMountedModal.js').default}
+          raw={require('!raw-loader!../components/modal/KeepMountedModal.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -245,11 +201,8 @@ import ModalUnstyled from '@mui/base/ModalUnstyled';
           name="ServerModal.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/modal/ServerModal.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/modal/ServerModal.js')}
+          component={require('../components/modal/ServerModal.js').default}
+          raw={require('!raw-loader!../components/modal/ServerModal.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -285,9 +238,9 @@ import ModalUnstyled from '@mui/base/ModalUnstyled';
       <ul>
         <li>
           <Typography className="mb-40" component="div">
-            Be sure to add <code>aria-labelledby="id..."</code>, referencing the modal title, to the{' '}
-            <code>Modal</code>. Additionally, you may give a description of your modal with the{' '}
-            <code>aria-describedby="id..."</code> prop on the <code>Modal</code>.
+            Be sure to add <code>{`aria-labelledby="id..."`}</code>, referencing the modal title, to
+            the <code>Modal</code>. Additionally, you may give a description of your modal with the{' '}
+            <code>{`aria-describedby="id..."`}</code> prop on the <code>Modal</code>.
           </Typography>
 
           <FuseHighlight component="pre" className="language-jsx">

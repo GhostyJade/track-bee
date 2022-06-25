@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function RadioButtonsDoc(props) {
           href="https://mui.com/components/radio-buttons"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -34,8 +34,8 @@ function RadioButtonsDoc(props) {
 
       <Typography className="mb-40" component="div">
         Use radio buttons when the user needs to see all available options. If available options can
-        be collapsed, consider using a <a href="/components/selects/">Select component</a> because
-        it uses less space.
+        be collapsed, consider using a <a href="/material-ui/react-select/">Select component</a>{' '}
+        because it uses less space.
       </Typography>
       <Typography className="mb-40" component="div">
         Radio buttons should have the most commonly used option selected by default.
@@ -52,11 +52,8 @@ function RadioButtonsDoc(props) {
           name="RadioButtonsGroup.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/radio-buttons/RadioButtonsGroup.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/RadioButtonsGroup.js')}
+          component={require('../components/radio-buttons/RadioButtonsGroup.js').default}
+          raw={require('!raw-loader!../components/radio-buttons/RadioButtonsGroup.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -70,11 +67,8 @@ function RadioButtonsDoc(props) {
           name="RowRadioButtonsGroup.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/radio-buttons/RowRadioButtonsGroup.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/RowRadioButtonsGroup.js')}
+          component={require('../components/radio-buttons/RowRadioButtonsGroup.js').default}
+          raw={require('!raw-loader!../components/radio-buttons/RowRadioButtonsGroup.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -88,11 +82,8 @@ function RadioButtonsDoc(props) {
           name="ControlledRadioButtonsGroup.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/radio-buttons/ControlledRadioButtonsGroup.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/ControlledRadioButtonsGroup.js')}
+          component={require('../components/radio-buttons/ControlledRadioButtonsGroup.js').default}
+          raw={require('!raw-loader!../components/radio-buttons/ControlledRadioButtonsGroup.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -106,11 +97,8 @@ function RadioButtonsDoc(props) {
           name="RadioButtons.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/radio-buttons/RadioButtons.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/RadioButtons.js')}
+          component={require('../components/radio-buttons/RadioButtons.js').default}
+          raw={require('!raw-loader!../components/radio-buttons/RadioButtons.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -125,11 +113,8 @@ function RadioButtonsDoc(props) {
           name="SizeRadioButtons.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/radio-buttons/SizeRadioButtons.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/SizeRadioButtons.js')}
+          component={require('../components/radio-buttons/SizeRadioButtons.js').default}
+          raw={require('!raw-loader!../components/radio-buttons/SizeRadioButtons.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -140,11 +125,8 @@ function RadioButtonsDoc(props) {
           name="ColorRadioButtons.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/radio-buttons/ColorRadioButtons.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/ColorRadioButtons.js')}
+          component={require('../components/radio-buttons/ColorRadioButtons.js').default}
+          raw={require('!raw-loader!../components/radio-buttons/ColorRadioButtons.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -159,11 +141,8 @@ function RadioButtonsDoc(props) {
           name="FormControlLabelPlacement.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/radio-buttons/FormControlLabelPlacement.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/FormControlLabelPlacement.js')}
+          component={require('../components/radio-buttons/FormControlLabelPlacement.js').default}
+          raw={require('!raw-loader!../components/radio-buttons/FormControlLabelPlacement.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -178,11 +157,8 @@ function RadioButtonsDoc(props) {
           name="ErrorRadios.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/radio-buttons/ErrorRadios.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/ErrorRadios.js')}
+          component={require('../components/radio-buttons/ErrorRadios.js').default}
+          raw={require('!raw-loader!../components/radio-buttons/ErrorRadios.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -190,18 +166,15 @@ function RadioButtonsDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         Here is an example of customizing the component. You can learn more about this in the{' '}
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href="/material-ui/customization/how-to-customize/">overrides documentation page</a>.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="CustomizedRadios.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/radio-buttons/CustomizedRadios.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/CustomizedRadios.js')}
+          component={require('../components/radio-buttons/CustomizedRadios.js').default}
+          raw={require('!raw-loader!../components/radio-buttons/CustomizedRadios.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -248,11 +221,8 @@ import { useRadioGroup } from '@mui/material/RadioGroup';
           name="UseRadioGroup.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/radio-buttons/UseRadioGroup.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/radio-buttons/UseRadioGroup.js')}
+          component={require('../components/radio-buttons/UseRadioGroup.js').default}
+          raw={require('!raw-loader!../components/radio-buttons/UseRadioGroup.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -279,7 +249,7 @@ import { useRadioGroup } from '@mui/material/RadioGroup';
         <li>
           All form controls should have labels, and this includes radio buttons, checkboxes, and
           switches. In most cases, this is done by using the <code>{`<label>`}</code> element (
-          <a href="/api/form-control-label/">FormControlLabel</a>).
+          <a href="/material-ui/api/form-control-label/">FormControlLabel</a>).
         </li>
         <li>
           When a label can&#39;t be used, it&#39;s necessary to add an attribute directly to the
@@ -295,7 +265,7 @@ import { useRadioGroup } from '@mui/material/RadioGroup';
   value="radioA"
   inputProps={{
     'aria-label': 'Radio A',
-
+  
 />
 `}
       </FuseHighlight>

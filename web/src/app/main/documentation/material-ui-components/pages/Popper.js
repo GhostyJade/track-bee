@@ -1,7 +1,6 @@
 import FuseExample from '@fuse/core/FuseExample';
-import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +19,9 @@ function PopperDoc(props) {
           href="https://mui.com/components/popper"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -47,7 +46,7 @@ function PopperDoc(props) {
         </li>
         <li>
           The children is{' '}
-          <a href="/components/portal/">
+          <a href="/material-ui/react-portal/">
             <code>Portal</code>
           </a>{' '}
           to the body of the document to avoid rendering problems. You can disable this behavior
@@ -55,7 +54,7 @@ function PopperDoc(props) {
         </li>
         <li>
           The scroll isn&#39;t blocked like with the{' '}
-          <a href="/components/popover/">
+          <a href="/material-ui/react-popover/">
             <code>Popover</code>
           </a>{' '}
           component. The placement of the popper updates with the available area in the viewport.
@@ -63,11 +62,11 @@ function PopperDoc(props) {
         <li>
           Clicking away does not hide the <code>Popper</code> component. If you need this behavior,
           you can use{' '}
-          <a href="/components/click-away-listener/">
+          <a href="/material-ui/react-click-away-listener/">
             <code>ClickAwayListener</code>
           </a>{' '}
           - see the example in the{' '}
-          <a href="/components/menus/#menulist-composition">menu documentation section</a>.
+          <a href="/material-ui/react-menu/#menulist-composition">menu documentation section</a>.
         </li>
         <li>
           The <code>anchorEl</code> is passed as the reference object to create a new{' '}
@@ -82,11 +81,8 @@ function PopperDoc(props) {
           name="SimplePopper.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/popper/SimplePopper.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/popper/SimplePopper.js')}
+          component={require('../components/popper/SimplePopper.js').default}
+          raw={require('!raw-loader!../components/popper/SimplePopper.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -116,11 +112,8 @@ function PopperDoc(props) {
           name="TransitionsPopper.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/popper/TransitionsPopper.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/popper/TransitionsPopper.js')}
+          component={require('../components/popper/TransitionsPopper.js').default}
+          raw={require('!raw-loader!../components/popper/TransitionsPopper.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
@@ -132,11 +125,8 @@ function PopperDoc(props) {
           name="SpringPopper.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/popper/SpringPopper.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/popper/SpringPopper.js')}
+          component={require('../components/popper/SpringPopper.js').default}
+          raw={require('!raw-loader!../components/popper/SpringPopper.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -147,11 +137,8 @@ function PopperDoc(props) {
           name="PositionedPopper.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/popper/PositionedPopper.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/popper/PositionedPopper.js')}
+          component={require('../components/popper/PositionedPopper.js').default}
+          raw={require('!raw-loader!../components/popper/PositionedPopper.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -162,11 +149,8 @@ function PopperDoc(props) {
           name="ScrollPlayground.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/popper/ScrollPlayground.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/popper/ScrollPlayground.js')}
+          component={require('../components/popper/ScrollPlayground.js').default}
+          raw={require('!raw-loader!../components/popper/ScrollPlayground.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -188,11 +172,8 @@ function PopperDoc(props) {
           name="VirtualElementPopper.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/popper/VirtualElementPopper.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/popper/VirtualElementPopper.js')}
+          component={require('../components/popper/VirtualElementPopper.js').default}
+          raw={require('!raw-loader!../components/popper/VirtualElementPopper.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -216,28 +197,10 @@ function PopperDoc(props) {
           name="PopperPopupState.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/popper/PopperPopupState.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/popper/PopperPopupState.js')}
+          component={require('../components/popper/PopperPopupState.js').default}
+          raw={require('!raw-loader!../components/popper/PopperPopupState.js')}
         />
       </Typography>
-      <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
-        Unstyled
-      </Typography>
-      <Typography className="mb-40" component="div">
-        The @mui/base package contain an unstyled version of Popper - PopperUnstyled. It does not
-        have a dependency on @mui/material. The only difference between Popper and PopperUnstyled is
-        the support for theming. Popper can read the <code>direction</code> field from the current
-        theme, while PopperUnstyled accepts the <code>direction</code> prop instead.
-      </Typography>
-
-      <FuseHighlight component="pre" className="language-js">
-        {` 
-import Popper from '@mui/base/PopperUnstyled';
-`}
-      </FuseHighlight>
     </>
   );
 }

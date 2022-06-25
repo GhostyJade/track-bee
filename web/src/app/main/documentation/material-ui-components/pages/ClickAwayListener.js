@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,13 +20,13 @@ function ClickAwayListenerDoc(props) {
           href="https://mui.com/components/click-away-listener"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
-        Click away listener
+        Click-away listener
       </Typography>
       <Typography className="description">
         Detect if a click event happened outside of an element. It listens for clicks that occur
@@ -35,9 +35,9 @@ function ClickAwayListenerDoc(props) {
 
       <ul>
         <li>
-          📦 <a href="/size-snapshot">1.5 kB gzipped</a>.
+          📦 <a href="/size-snapshot">992 B gzipped</a>.
         </li>
-        <li>⚛️ Support portals</li>
+        <li>⚛️ Supports portals</li>
       </ul>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         Example
@@ -51,23 +51,21 @@ function ClickAwayListenerDoc(props) {
           name="ClickAway.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/click-away-listener/ClickAway.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/click-away-listener/ClickAway.js')}
+          component={require('../components/click-away-listener/ClickAway.js').default}
+          raw={require('!raw-loader!../components/click-away-listener/ClickAway.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">
         Notice that the component only accepts one child element. You can find a more advanced demo
-        on the <a href="/components/menus/#menulist-composition">Menu documentation section</a>.
+        on the{' '}
+        <a href="/material-ui/react-menu/#menulist-composition">Menu documentation section</a>.
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         Portal
       </Typography>
       <Typography className="mb-40" component="div">
         The following demo uses{' '}
-        <a href="/components/portal/">
+        <a href="/material-ui/react-portal/">
           <code>Portal</code>
         </a>{' '}
         to render the dropdown into a new &quot;subtree&quot; outside of current DOM hierarchy.
@@ -77,11 +75,8 @@ function ClickAwayListenerDoc(props) {
           name="PortalClickAway.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/click-away-listener/PortalClickAway.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/click-away-listener/PortalClickAway.js')}
+          component={require('../components/click-away-listener/PortalClickAway.js').default}
+          raw={require('!raw-loader!../components/click-away-listener/PortalClickAway.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -96,18 +91,14 @@ function ClickAwayListenerDoc(props) {
           name="LeadingClickAway.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/click-away-listener/LeadingClickAway.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/click-away-listener/LeadingClickAway.js')}
+          component={require('../components/click-away-listener/LeadingClickAway.js').default}
+          raw={require('!raw-loader!../components/click-away-listener/LeadingClickAway.js')}
         />
       </Typography>
-      <blockquote>
-        <Typography className="mb-40" component="div">
-          ⚠️ In this mode, only interactions on the scrollbar of the document is ignored.
-        </Typography>
-      </blockquote>
+      <Typography className="mb-40" component="div">
+        :::warning ⚠️ In this mode, only interactions on the scrollbar of the document is ignored.
+        :::
+      </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         Accessibility
       </Typography>
@@ -119,7 +110,7 @@ function ClickAwayListenerDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         In order to prevent screen readers from marking non-interactive children as
-        &quot;clickable&quot; add <code>role="presentation"</code> to the immediate children:
+        &quot;clickable&quot; add <code>{`role="presentation"`}</code> to the immediate children:
       </Typography>
 
       <FuseHighlight component="pre" className="language-tsx">
@@ -141,7 +132,7 @@ function ClickAwayListenerDoc(props) {
       </Typography>
       <ul>
         <li>
-          📦 <a href="https://bundlephobia.com/package/@mui/base@latest">784 B gzipped</a>
+          📦 <a href="https://bundlephobia.com/package/@mui/base@latest">981 B gzipped</a>
         </li>
       </ul>
       <Typography className="mb-40" component="div">

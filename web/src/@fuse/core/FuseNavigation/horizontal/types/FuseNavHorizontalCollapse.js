@@ -2,19 +2,19 @@ import NavLinkAdapter from '@fuse/core/NavLinkAdapter';
 import { styled, useTheme } from '@mui/material/styles';
 import { useDebounce } from '@fuse/hooks';
 import Grow from '@mui/material/Grow';
-import Icon from '@mui/material/Icon';
 import IconButton from '@mui/material/IconButton';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Paper from '@mui/material/Paper';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { memo, useState, useMemo } from 'react';
+import { memo, useMemo, useState } from 'react';
 import * as ReactDOM from 'react-dom';
 import { Manager, Popper, Reference } from 'react-popper';
 import withRouter from '@fuse/core/withRouter';
 import FuseNavBadge from '../../FuseNavBadge';
 import FuseNavItem from '../../FuseNavItem';
+import FuseSvgIcon from '../../../FuseSvgIcon';
 
 const StyledListItem = styled(ListItem)(({ theme }) => ({
   color: theme.palette.text.primary,
@@ -88,20 +88,22 @@ function FuseNavHorizontalCollapse(props) {
                   to={item.url}
                   end={item.end}
                   role="button"
+                  sx={item.sx}
+                  disabled={item.disabled}
                 >
                   {item.icon && (
-                    <Icon
+                    <FuseSvgIcon
                       color="action"
-                      className={clsx('fuse-list-item-icon text-16 shrink-0', item.iconClass)}
+                      className={clsx('fuse-list-item-icon shrink-0', item.iconClass)}
                     >
                       {item.icon}
-                    </Icon>
+                    </FuseSvgIcon>
                   )}
 
                   <ListItemText
                     className="fuse-list-item-text"
                     primary={item.title}
-                    classes={{ primary: 'text-13' }}
+                    classes={{ primary: 'text-13 truncate' }}
                   />
 
                   {item.badge && <FuseNavBadge className="mx-4" badge={item.badge} />}
@@ -111,9 +113,11 @@ function FuseNavHorizontalCollapse(props) {
                     color="inherit"
                     size="large"
                   >
-                    <Icon className="text-16 arrow-icon">
-                      {theme.direction === 'ltr' ? 'keyboard_arrow_right' : 'keyboard_arrow_left'}
-                    </Icon>
+                    <FuseSvgIcon size={16} className="arrow-icon">
+                      {theme.direction === 'ltr'
+                        ? 'heroicons-outline:arrow-sm-right'
+                        : 'heroicons-outline:arrow-sm-left'}
+                    </FuseSvgIcon>
                   </IconButton>
                 </StyledListItem>
               </div>

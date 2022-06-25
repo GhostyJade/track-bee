@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function TooltipsDoc(props) {
           href="https://mui.com/components/tooltips"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -44,11 +44,8 @@ function TooltipsDoc(props) {
           name="BasicTooltip.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tooltips/BasicTooltip.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tooltips/BasicTooltip.js')}
+          component={require('../components/tooltips/BasicTooltip.js').default}
+          raw={require('!raw-loader!../components/tooltips/BasicTooltip.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -64,11 +61,8 @@ function TooltipsDoc(props) {
           name="PositionedTooltips.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tooltips/PositionedTooltips.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tooltips/PositionedTooltips.js')}
+          component={require('../components/tooltips/PositionedTooltips.js').default}
+          raw={require('!raw-loader!../components/tooltips/PositionedTooltips.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -76,18 +70,15 @@ function TooltipsDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         Here are some examples of customizing the component. You can learn more about this in the{' '}
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href="/material-ui/customization/how-to-customize/">overrides documentation page</a>.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="CustomizedTooltips.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tooltips/CustomizedTooltips.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tooltips/CustomizedTooltips.js')}
+          component={require('../components/tooltips/CustomizedTooltips.js').default}
+          raw={require('!raw-loader!../components/tooltips/CustomizedTooltips.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -102,11 +93,8 @@ function TooltipsDoc(props) {
           name="ArrowTooltips.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tooltips/ArrowTooltips.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tooltips/ArrowTooltips.js')}
+          component={require('../components/tooltips/ArrowTooltips.js').default}
+          raw={require('!raw-loader!../components/tooltips/ArrowTooltips.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -134,7 +122,8 @@ const MyComponent = React.forwardRef(function MyComponent(props, ref) {
       </FuseHighlight>
       <Typography className="mb-40" component="div">
         You can find a similar concept in the{' '}
-        <a href="/guides/composition/#wrapping-components">wrapping components</a> guide.
+        <a href="/material-ui/guides/composition/#wrapping-components">wrapping components</a>{' '}
+        guide.
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         Triggers
@@ -151,11 +140,8 @@ const MyComponent = React.forwardRef(function MyComponent(props, ref) {
           name="TriggersTooltips.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tooltips/TriggersTooltips.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tooltips/TriggersTooltips.js')}
+          component={require('../components/tooltips/TriggersTooltips.js').default}
+          raw={require('!raw-loader!../components/tooltips/TriggersTooltips.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -170,11 +156,8 @@ const MyComponent = React.forwardRef(function MyComponent(props, ref) {
           name="ControlledTooltips.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tooltips/ControlledTooltips.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tooltips/ControlledTooltips.js')}
+          component={require('../components/tooltips/ControlledTooltips.js').default}
+          raw={require('!raw-loader!../components/tooltips/ControlledTooltips.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -188,11 +171,8 @@ const MyComponent = React.forwardRef(function MyComponent(props, ref) {
           name="VariableWidth.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tooltips/VariableWidth.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tooltips/VariableWidth.js')}
+          component={require('../components/tooltips/VariableWidth.js').default}
+          raw={require('!raw-loader!../components/tooltips/VariableWidth.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -212,11 +192,8 @@ const MyComponent = React.forwardRef(function MyComponent(props, ref) {
           name="NonInteractiveTooltips.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tooltips/NonInteractiveTooltips.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tooltips/NonInteractiveTooltips.js')}
+          component={require('../components/tooltips/NonInteractiveTooltips.js').default}
+          raw={require('!raw-loader!../components/tooltips/NonInteractiveTooltips.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -227,31 +204,25 @@ const MyComponent = React.forwardRef(function MyComponent(props, ref) {
         so a <code>Tooltip</code> will not activate on normal events like hover. To accommodate
         disabled elements, add a simple wrapper element, such as a <code>span</code>.
       </Typography>
-      <blockquote>
-        <Typography className="mb-40" component="div">
-          ⚠️ In order to work with Safari, you need at least one display block or flex item below
-          the tooltip wrapper.
-        </Typography>
-      </blockquote>
+      <Typography className="mb-40" component="div">
+        :::warning ⚠️ In order to work with Safari, you need at least one display block or flex item
+        below the tooltip wrapper. :::
+      </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="DisabledTooltips.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tooltips/DisabledTooltips.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tooltips/DisabledTooltips.js')}
+          component={require('../components/tooltips/DisabledTooltips.js').default}
+          raw={require('!raw-loader!../components/tooltips/DisabledTooltips.js')}
         />
       </Typography>
-      <blockquote>
-        <Typography className="mb-40" component="div">
-          If you&#39;re not wrapping a MUI component that inherits from <code>ButtonBase</code>, for
-          instance, a native <code>{`<button>`}</code> element, you should also add the CSS property{' '}
-          <em>pointer-events: none;</em> to your element when disabled:
-        </Typography>
-      </blockquote>
+      <Typography className="mb-40" component="div">
+        :::warning If you&#39;re not wrapping a MUI component that inherits from{' '}
+        <code>ButtonBase</code>, for instance, a native <code>{`<button>`}</code> element, you
+        should also add the CSS property <em>pointer-events: none;</em> to your element when
+        disabled: :::
+      </Typography>
 
       <FuseHighlight component="pre" className="language-jsx">
         {` 
@@ -275,11 +246,8 @@ const MyComponent = React.forwardRef(function MyComponent(props, ref) {
           name="TransitionsTooltips.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tooltips/TransitionsTooltips.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tooltips/TransitionsTooltips.js')}
+          component={require('../components/tooltips/TransitionsTooltips.js').default}
+          raw={require('!raw-loader!../components/tooltips/TransitionsTooltips.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -294,11 +262,8 @@ const MyComponent = React.forwardRef(function MyComponent(props, ref) {
           name="FollowCursorTooltips.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tooltips/FollowCursorTooltips.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tooltips/FollowCursorTooltips.js')}
+          component={require('../components/tooltips/FollowCursorTooltips.js').default}
+          raw={require('!raw-loader!../components/tooltips/FollowCursorTooltips.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -318,11 +283,8 @@ const MyComponent = React.forwardRef(function MyComponent(props, ref) {
           name="AnchorElTooltips.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tooltips/AnchorElTooltips.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tooltips/AnchorElTooltips.js')}
+          component={require('../components/tooltips/AnchorElTooltips.js').default}
+          raw={require('!raw-loader!../components/tooltips/AnchorElTooltips.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -344,11 +306,8 @@ const MyComponent = React.forwardRef(function MyComponent(props, ref) {
           name="DelayTooltips.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tooltips/DelayTooltips.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tooltips/DelayTooltips.js')}
+          component={require('../components/tooltips/DelayTooltips.js').default}
+          raw={require('!raw-loader!../components/tooltips/DelayTooltips.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -387,11 +346,8 @@ const MyComponent = React.forwardRef(function MyComponent(props, ref) {
           name="AccessibilityTooltips.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/tooltips/AccessibilityTooltips.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/tooltips/AccessibilityTooltips.js')}
+          component={require('../components/tooltips/AccessibilityTooltips.js').default}
+          raw={require('!raw-loader!../components/tooltips/AccessibilityTooltips.js')}
         />
       </Typography>
     </>

@@ -1,6 +1,5 @@
-import '@fake-db';
+import '@mock-api';
 import BrowserRouter from '@fuse/core/BrowserRouter';
-import FuseAuthorization from '@fuse/core/FuseAuthorization';
 import FuseLayout from '@fuse/core/FuseLayout';
 import FuseTheme from '@fuse/core/FuseTheme';
 import { SnackbarProvider } from 'notistack';
@@ -8,9 +7,14 @@ import { useSelector } from 'react-redux';
 import rtlPlugin from 'stylis-plugin-rtl';
 import createCache from '@emotion/cache';
 import { CacheProvider } from '@emotion/react';
-import { selectCurrLangDir } from 'app/store/i18nSlice';
+import { selectCurrentLanguageDirection } from 'app/store/i18nSlice';
+import { selectUser } from 'app/store/userSlice';
+import themeLayouts from 'app/theme-layouts/themeLayouts';
+import { selectMainTheme } from 'app/store/fuse/settingsSlice';
+import FuseAuthorization from '@fuse/core/FuseAuthorization';
+import settingsConfig from 'app/configs/settingsConfig';
 import withAppProviders from './withAppProviders';
-import { Auth } from './auth';
+import { AuthProvider } from './auth/AuthContext';
 
 // import axios from 'axios';
 /**
@@ -34,14 +38,19 @@ const emotionCacheOptions = {
 };
 
 const App = () => {
-  const langDirection = useSelector(selectCurrLangDir);
+  const user = useSelector(selectUser);
+  const langDirection = useSelector(selectCurrentLanguageDirection);
+  const mainTheme = useSelector(selectMainTheme);
 
   return (
     <CacheProvider value={createCache(emotionCacheOptions[langDirection])}>
-      <Auth>
-        <BrowserRouter>
-          <FuseAuthorization>
-            <FuseTheme>
+      <FuseTheme theme={mainTheme} direction={langDirection}>
+        <AuthProvider>
+          <BrowserRouter>
+            <FuseAuthorization
+              userRole={user.role}
+              loginRedirectUrl={settingsConfig.loginRedirectUrl}
+            >
               <SnackbarProvider
                 maxSnack={5}
                 anchorOrigin={{
@@ -52,12 +61,12 @@ const App = () => {
                   containerRoot: 'bottom-0 right-0 mb-52 md:mb-68 mr-8 lg:mr-80 z-99',
                 }}
               >
-                <FuseLayout />
+                <FuseLayout layouts={themeLayouts} />
               </SnackbarProvider>
-            </FuseTheme>
-          </FuseAuthorization>
-        </BrowserRouter>
-      </Auth>
+            </FuseAuthorization>
+          </BrowserRouter>
+        </AuthProvider>
+      </FuseTheme>
     </CacheProvider>
   );
 };

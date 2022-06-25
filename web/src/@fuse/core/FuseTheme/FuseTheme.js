@@ -1,20 +1,23 @@
 import { ThemeProvider } from '@mui/material/styles';
 import { memo, useEffect, useLayoutEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { selectMainTheme } from 'app/store/fuse/settingsSlice';
 
 const useEnhancedEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect;
 
 function FuseTheme(props) {
-  const direction = useSelector(({ fuse }) => fuse.settings.defaults.direction);
-  const mainTheme = useSelector(selectMainTheme);
+  const { direction, theme } = props;
+  const { mode } = theme.palette;
 
   useEnhancedEffect(() => {
     document.body.dir = direction;
   }, [direction]);
 
+  useEffect(() => {
+    document.body.classList.add(mode === 'light' ? 'light' : 'dark');
+    document.body.classList.remove(mode === 'light' ? 'dark' : 'light');
+  }, [mode]);
+
   // console.warn('FuseTheme:: rendered',mainTheme);
-  return <ThemeProvider theme={mainTheme}>{props.children}</ThemeProvider>;
+  return <ThemeProvider theme={theme}>{props.children}</ThemeProvider>;
 }
 
 export default memo(FuseTheme);

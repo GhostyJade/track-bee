@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function NoSsrDoc(props) {
           href="https://mui.com/components/no-ssr"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -53,11 +53,8 @@ function NoSsrDoc(props) {
           name="SimpleNoSsr.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/no-ssr/SimpleNoSsr.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/no-ssr/SimpleNoSsr.js')}
+          component={require('../components/no-ssr/SimpleNoSsr.js').default}
+          raw={require('!raw-loader!../components/no-ssr/SimpleNoSsr.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -82,11 +79,8 @@ function NoSsrDoc(props) {
           name="FrameDeferring.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/no-ssr/FrameDeferring.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/no-ssr/FrameDeferring.js')}
+          component={require('../components/no-ssr/FrameDeferring.js').default}
+          raw={require('!raw-loader!../components/no-ssr/FrameDeferring.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -94,7 +88,7 @@ function NoSsrDoc(props) {
       </Typography>
       <ul>
         <li>
-          📦 <a href="https://bundlephobia.com/package/@mui/base@latest">784 B gzipped</a>
+          📦 <a href="https://bundlephobia.com/package/@mui/base@latest">362 B gzipped</a>
         </li>
       </ul>
       <Typography className="mb-40" component="div">

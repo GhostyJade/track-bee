@@ -6,14 +6,15 @@ import ThirdPartyComponentsNavigation from './third-party-components/ThirdPartyC
 const DocumentationNavigation = {
   id: 'documentation',
   title: 'Documentation',
+  subtitle: 'Everything you need to know about Fuse',
+  icon: 'heroicons-outline:support',
   type: 'group',
-  icon: 'star',
   children: [
     {
       id: 'changelog',
       title: 'Changelog',
       type: 'item',
-      icon: 'history',
+      icon: 'heroicons-outline:speakerphone',
       url: '/documentation/changelog',
       badge: {
         title: fuseReactLatestVersion,
@@ -72,10 +73,10 @@ const DocumentationNavigation = {
           url: '/documentation/development/deployment',
         },
         {
-          id: 'project-structure-doc',
-          title: 'Project Structure',
+          id: 'directory-structure-doc',
+          title: 'Directory Structure',
           type: 'item',
-          url: '/documentation/development/project-structure',
+          url: '/documentation/development/directory-structure',
         },
         {
           id: 'api-calls-doc',
@@ -102,6 +103,13 @@ const DocumentationNavigation = {
           url: '/documentation/development/heroku-notes',
         },
       ],
+    },
+    {
+      id: 'mock-api',
+      title: 'Mock API',
+      type: 'item',
+      icon: 'heroicons-outline:cloud',
+      url: '/documentation/mock-api',
     },
     {
       id: 'theming',
@@ -190,19 +198,6 @@ const DocumentationNavigation = {
           title: 'JWT Authentication Service',
           type: 'item',
           url: '/documentation/authentication/jwt',
-        },
-        {
-          id: 'firebase-auth-doc',
-          title: 'Firebase Authentication Service',
-          type: 'item',
-
-          url: '/documentation/authentication/firebase',
-        },
-        {
-          id: 'auth0-auth-doc',
-          title: 'Auth0 Authentication Service',
-          type: 'item',
-          url: '/documentation/authentication/auth0',
         },
       ],
     },

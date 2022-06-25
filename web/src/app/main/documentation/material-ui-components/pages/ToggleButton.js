@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,13 +20,13 @@ function ToggleButtonDoc(props) {
           href="https://mui.com/components/toggle-button"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
-        Toggle Buttons
+        Toggle button
       </Typography>
       <Typography className="description">
         Toggle buttons can be used to group related options.
@@ -56,11 +56,8 @@ function ToggleButtonDoc(props) {
           name="ToggleButtons.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/toggle-button/ToggleButtons.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/ToggleButtons.js')}
+          component={require('../components/toggle-button/ToggleButtons.js').default}
+          raw={require('!raw-loader!../components/toggle-button/ToggleButtons.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -75,11 +72,8 @@ function ToggleButtonDoc(props) {
           name="ToggleButtonsMultiple.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/toggle-button/ToggleButtonsMultiple.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/ToggleButtonsMultiple.js')}
+          component={require('../components/toggle-button/ToggleButtonsMultiple.js').default}
+          raw={require('!raw-loader!../components/toggle-button/ToggleButtonsMultiple.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -93,11 +87,8 @@ function ToggleButtonDoc(props) {
           name="ToggleButtonSizes.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/toggle-button/ToggleButtonSizes.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/ToggleButtonSizes.js')}
+          component={require('../components/toggle-button/ToggleButtonSizes.js').default}
+          raw={require('!raw-loader!../components/toggle-button/ToggleButtonSizes.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -108,11 +99,8 @@ function ToggleButtonDoc(props) {
           name="ColorToggleButton.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/toggle-button/ColorToggleButton.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/ColorToggleButton.js')}
+          component={require('../components/toggle-button/ColorToggleButton.js').default}
+          raw={require('!raw-loader!../components/toggle-button/ColorToggleButton.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -127,11 +115,8 @@ function ToggleButtonDoc(props) {
           name="VerticalToggleButtons.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/toggle-button/VerticalToggleButtons.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/VerticalToggleButtons.js')}
+          component={require('../components/toggle-button/VerticalToggleButtons.js').default}
+          raw={require('!raw-loader!../components/toggle-button/VerticalToggleButtons.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -162,11 +147,8 @@ const handleDevices = (event, newDevices) => {
           name="ToggleButtonNotEmpty.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/toggle-button/ToggleButtonNotEmpty.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/ToggleButtonNotEmpty.js')}
+          component={require('../components/toggle-button/ToggleButtonNotEmpty.js').default}
+          raw={require('!raw-loader!../components/toggle-button/ToggleButtonNotEmpty.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -177,11 +159,8 @@ const handleDevices = (event, newDevices) => {
           name="StandaloneToggleButton.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/toggle-button/StandaloneToggleButton.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/StandaloneToggleButton.js')}
+          component={require('../components/toggle-button/StandaloneToggleButton.js').default}
+          raw={require('!raw-loader!../components/toggle-button/StandaloneToggleButton.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -189,18 +168,15 @@ const handleDevices = (event, newDevices) => {
       </Typography>
       <Typography className="mb-40" component="div">
         Here is an example of customizing the component. You can learn more about this in the{' '}
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href="/material-ui/customization/how-to-customize/">overrides documentation page</a>.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="CustomizedDividers.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/toggle-button/CustomizedDividers.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/toggle-button/CustomizedDividers.js')}
+          component={require('../components/toggle-button/CustomizedDividers.js').default}
+          raw={require('!raw-loader!../components/toggle-button/CustomizedDividers.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -211,8 +187,8 @@ const handleDevices = (event, newDevices) => {
       </Typography>
       <ul>
         <li>
-          ToggleButtonGroup has <code>role="group"</code>. You should provide an accessible label
-          with <code>aria-label="label"</code>, <code>aria-labelledby="id"</code> or{' '}
+          ToggleButtonGroup has <code>{`role="group"`}</code>. You should provide an accessible
+          label with <code>{`aria-label="label"`}</code>, <code>{`aria-labelledby="id"`}</code> or{' '}
           <code>{`<label>`}</code>.
         </li>
         <li>

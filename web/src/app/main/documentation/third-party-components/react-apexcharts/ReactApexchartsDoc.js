@@ -1,8 +1,8 @@
 import FuseExample from '@fuse/core/FuseExample';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -21,9 +21,9 @@ function ReactApexchartsDoc() {
           href="https://github.com/apexcharts/react-apexcharts"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
 
@@ -79,10 +79,10 @@ function ReactApexchartsDoc() {
 
       <ul>
         <li className="mb-8">
-          <Link to="/apps/dashboards/analytics">Analytics Dashboard</Link>
+          <Link to="/dashboards/analytics">Analytics Dashboard</Link>
         </li>
         <li className="mb-8">
-          <Link to="/apps/dashboards/project">Project Dashboard</Link>
+          <Link to="/dashboards/project">Project Dashboard</Link>
         </li>
       </ul>
     </>

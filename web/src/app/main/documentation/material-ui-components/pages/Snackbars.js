@@ -1,7 +1,7 @@
 import FuseExample from '@fuse/core/FuseExample';
 import FuseHighlight from '@fuse/core/FuseHighlight';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -20,9 +20,9 @@ function SnackbarsDoc(props) {
           href="https://mui.com/components/snackbars"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -55,11 +55,8 @@ function SnackbarsDoc(props) {
           name="SimpleSnackbar.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/snackbars/SimpleSnackbar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/snackbars/SimpleSnackbar.js')}
+          component={require('../components/snackbars/SimpleSnackbar.js').default}
+          raw={require('!raw-loader!../components/snackbars/SimpleSnackbar.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -67,18 +64,15 @@ function SnackbarsDoc(props) {
       </Typography>
       <Typography className="mb-40" component="div">
         Here are some examples of customizing the component. You can learn more about this in the{' '}
-        <a href="/customization/how-to-customize/">overrides documentation page</a>.
+        <a href="/material-ui/customization/how-to-customize/">overrides documentation page</a>.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="CustomizedSnackbars.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/snackbars/CustomizedSnackbars.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/snackbars/CustomizedSnackbars.js')}
+          component={require('../components/snackbars/CustomizedSnackbars.js').default}
+          raw={require('!raw-loader!../components/snackbars/CustomizedSnackbars.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -95,11 +89,8 @@ function SnackbarsDoc(props) {
           name="PositionedSnackbar.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/snackbars/PositionedSnackbar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/snackbars/PositionedSnackbar.js')}
+          component={require('../components/snackbars/PositionedSnackbar.js').default}
+          raw={require('!raw-loader!../components/snackbars/PositionedSnackbar.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -113,11 +104,8 @@ function SnackbarsDoc(props) {
           name="LongTextSnackbar.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/snackbars/LongTextSnackbar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/snackbars/LongTextSnackbar.js')}
+          component={require('../components/snackbars/LongTextSnackbar.js').default}
+          raw={require('!raw-loader!../components/snackbars/LongTextSnackbar.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -134,11 +122,8 @@ function SnackbarsDoc(props) {
           name="ConsecutiveSnackbars.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/snackbars/ConsecutiveSnackbars.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/snackbars/ConsecutiveSnackbars.js')}
+          component={require('../components/snackbars/ConsecutiveSnackbars.js').default}
+          raw={require('!raw-loader!../components/snackbars/ConsecutiveSnackbars.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
@@ -152,37 +137,31 @@ function SnackbarsDoc(props) {
           name="FabIntegrationSnackbar.js"
           className="my-24"
           iframe
-          component={
-            require('app/main/documentation/material-ui-components/components/snackbars/FabIntegrationSnackbar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/snackbars/FabIntegrationSnackbar.js')}
+          component={require('../components/snackbars/FabIntegrationSnackbar.js').default}
+          raw={require('!raw-loader!../components/snackbars/FabIntegrationSnackbar.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
         Change transition
       </Typography>
       <Typography className="mb-40" component="div">
-        <a href="/components/transitions/#grow">Grow</a> is the default transition but you can use a
-        different one.
+        <a href="/material-ui/transitions/#grow">Grow</a> is the default transition but you can use
+        a different one.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="TransitionsSnackbar.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/snackbars/TransitionsSnackbar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/snackbars/TransitionsSnackbar.js')}
+          component={require('../components/snackbars/TransitionsSnackbar.js').default}
+          raw={require('!raw-loader!../components/snackbars/TransitionsSnackbar.js')}
         />
       </Typography>
       <Typography className="text-20 mt-20 mb-10 font-700" component="h3">
         Control Slide direction
       </Typography>
       <Typography className="mb-40" component="div">
-        You can change the direction of the <a href="/components/transitions/#slide">Slide</a>{' '}
+        You can change the direction of the <a href="/material-ui/transitions/#slide">Slide</a>{' '}
         transition.
       </Typography>
       <Typography className="mb-40" component="div">
@@ -191,7 +170,7 @@ function SnackbarsDoc(props) {
 
       <FuseHighlight component="pre" className="language-jsx">
         {` 
-import Slide from '@material-ui/core/Slide';
+import Slide from '@mui/material/Slide';
 
 function TransitionLeft(props) {
   return <Slide {...props} direction="left" />;
@@ -210,11 +189,8 @@ export default function MyComponent() {
           name="DirectionSnackbar.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/snackbars/DirectionSnackbar.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/snackbars/DirectionSnackbar.js')}
+          component={require('../components/snackbars/DirectionSnackbar.js').default}
+          raw={require('!raw-loader!../components/snackbars/DirectionSnackbar.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -243,11 +219,8 @@ export default function MyComponent() {
           name="IntegrationNotistack.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/snackbars/IntegrationNotistack.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/snackbars/IntegrationNotistack.js')}
+          component={require('../components/snackbars/IntegrationNotistack.js').default}
+          raw={require('!raw-loader!../components/snackbars/IntegrationNotistack.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -269,8 +242,8 @@ export default function MyComponent() {
       <Typography className="mb-40" component="div">
         When open, <strong>every</strong> <code>Snackbar</code> will be dismissed if{' '}
         <kbd className="key">Escape</kbd> is pressed. Unless you don&#39;t handle{' '}
-        <code>onClose</code> with the <code>"escapeKeyDown"</code> reason. If you want to limit this
-        behavior to only dismiss the oldest currently open Snackbar call{' '}
+        <code>onClose</code> with the <code>{`"escapeKeyDown"`}</code> reason. If you want to limit
+        this behavior to only dismiss the oldest currently open Snackbar call{' '}
         <code>event.preventDefault</code> in <code>onClose</code>.
       </Typography>
 
@@ -287,7 +260,7 @@ export default function MyComponent() {
           // \`reason === 'escapeKeyDown'\` if \`Escape\` was pressed
           setOpen(false);
           // call \`event.preventDefault\` to only close one Snackbar at a time.
-
+        
       />
       <Snackbar open={open} onClose={() => setOpen(false)} />
     </React.Fragment>

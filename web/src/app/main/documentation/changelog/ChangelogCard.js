@@ -1,5 +1,5 @@
 import Card from '@mui/material/Card';
-import { styled, alpha } from '@mui/material/styles';
+import { alpha, styled } from '@mui/material/styles';
 import { blue, green, red } from '@mui/material/colors';
 import Typography from '@mui/material/Typography';
 import clsx from 'clsx';
@@ -36,7 +36,7 @@ function ChangelogCard(props) {
           <Typography className="text-24 font-700" component="h2">{`v${props.version}`}</Typography>
         )}
         {props.date && (
-          <Typography className="text-17 mx-8 font-600" color="textSecondary" component="h3">
+          <Typography className="text-17 mx-8 font-600" color="text.secondary" component="h3">
             ({props.date})
           </Typography>
         )}

@@ -1,5 +1,4 @@
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Paper from '@mui/material/Paper';
@@ -7,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import format from 'date-fns/format';
 import fromUnixTime from 'date-fns/fromUnixTime';
 import { useState } from 'react';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 
 function CardAttachment(props) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -33,11 +33,13 @@ function CardAttachment(props) {
               <Typography className="text-16 font-semibold truncate shrink">
                 {props.item.name}
               </Typography>
-              {props.card.idAttachmentCover === props.item.id && (
-                <Icon className="text-orange-300 text-20 mx-4">star</Icon>
+              {props.card.attachmentCoverId === props.item.id && (
+                <FuseSvgIcon className="text-orange-300 mx-4" size={20}>
+                  heroicons-outline:start
+                </FuseSvgIcon>
               )}
             </div>
-            <Typography className="truncate w-full mb-12" color="textSecondary">
+            <Typography className="truncate w-full mb-12" color="text.secondary">
               {format(fromUnixTime(props.item.time), 'Pp')}
             </Typography>
             <Button
@@ -46,9 +48,9 @@ function CardAttachment(props) {
               onClick={handleMenuOpen}
               variant="outlined"
               size="small"
+              endIcon={<FuseSvgIcon size={16}>heroicons-outline:chevron-down</FuseSvgIcon>}
             >
               Actions
-              <Icon className="text-20">arrow_drop_down</Icon>
             </Button>
             <Menu
               id="actions-menu"
@@ -56,7 +58,7 @@ function CardAttachment(props) {
               open={Boolean(anchorEl)}
               onClose={handleMenuClose}
             >
-              {props.card.idAttachmentCover !== props.item.id ? (
+              {props.card.attachmentCoverId !== props.item.id ? (
                 <MenuItem
                   onClick={() => {
                     handleMenuClose();
@@ -98,7 +100,7 @@ function CardAttachment(props) {
             <Typography className="text-16 font-semibold truncate w-full">
               {props.item.url}
             </Typography>
-            <Typography className="truncate w-full mb-12" color="textSecondary">
+            <Typography className="truncate w-full mb-12" color="text.secondary">
               {props.item.time}
             </Typography>
             <Button
@@ -107,9 +109,9 @@ function CardAttachment(props) {
               onClick={handleMenuOpen}
               variant="outlined"
               size="small"
+              endIcon={<FuseSvgIcon size={16}>heroicons-outline:chevron-down</FuseSvgIcon>}
             >
               Actions
-              <Icon className="text-20">arrow_drop_down</Icon>
             </Button>
             <Menu
               id="simple-menu"

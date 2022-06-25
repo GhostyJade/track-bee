@@ -1,6 +1,6 @@
 import FuseExample from '@fuse/core/FuseExample';
+import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
 import Button from '@mui/material/Button';
-import Icon from '@mui/material/Icon';
 import Typography from '@mui/material/Typography';
 /* eslint import/no-webpack-loader-syntax: off */
 /* eslint import/extensions: off */
@@ -19,9 +19,9 @@ function PaperDoc(props) {
           href="https://mui.com/components/paper"
           target="_blank"
           role="button"
+          startIcon={<FuseSvgIcon>heroicons-outline:external-link</FuseSvgIcon>}
         >
-          <Icon>link</Icon>
-          <span className="mx-4">Reference</span>
+          Reference
         </Button>
       </div>
       <Typography className="text-40 my-16 font-700" component="h1">
@@ -44,11 +44,8 @@ function PaperDoc(props) {
           name="SimplePaper.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/paper/SimplePaper.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/paper/SimplePaper.js')}
+          component={require('../components/paper/SimplePaper.js').default}
+          raw={require('!raw-loader!../components/paper/SimplePaper.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
@@ -62,31 +59,25 @@ function PaperDoc(props) {
           name="Variants.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/paper/Variants.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/paper/Variants.js')}
+          component={require('../components/paper/Variants.js').default}
+          raw={require('!raw-loader!../components/paper/Variants.js')}
         />
       </Typography>
       <Typography className="text-32 mt-40 mb-10 font-700" component="h2">
         Elevation
       </Typography>
       <Typography className="mb-40" component="div">
-        The elevation can be used to establish a hierachy between other content. In practical terms,
-        the elevation controls the size of the shadow applied to the surface. In dark mode, raising
-        the elevation also makes the surface lighter.
+        The elevation can be used to establish a hierarchy between other content. In practical
+        terms, the elevation controls the size of the shadow applied to the surface. In dark mode,
+        raising the elevation also makes the surface lighter.
       </Typography>
       <Typography className="mb-40" component="div">
         <FuseExample
           name="Elevation.js"
           className="my-24"
           iframe={false}
-          component={
-            require('app/main/documentation/material-ui-components/components/paper/Elevation.js')
-              .default
-          }
-          raw={require('!raw-loader!app/main/documentation/material-ui-components/components/paper/Elevation.js')}
+          component={require('../components/paper/Elevation.js').default}
+          raw={require('!raw-loader!../components/paper/Elevation.js')}
         />
       </Typography>
       <Typography className="mb-40" component="div">

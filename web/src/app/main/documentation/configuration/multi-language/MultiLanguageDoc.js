@@ -41,16 +41,16 @@ function MultiLanguageDoc() {
       </Typography>
 
       <FuseHighlight component="pre" className="language-jsx mb-24">
-        {require('!raw-loader!app/main/apps/mail/i18n/en.js')}
+        {require('!raw-loader!src/app/main/apps/mailbox/i18n/en.js')}
       </FuseHighlight>
 
       <Typography className="mb-16" component="p">
         And register the language file with <code>i18next.addResourceBundle()</code> at
-        <code>src/app/main/apps/mail/MailAppConfig.js</code>
+        <code>src/app/main/apps/mailbox/MailboxAppConfig.js</code>
       </Typography>
 
       <FuseHighlight component="pre" className="language-jsx mb-24">
-        {require('!raw-loader!app/main/apps/mail/MailAppConfig.js')}
+        {require('!raw-loader!src/app/main/apps/mailbox/MailboxAppConfig.js')}
       </FuseHighlight>
 
       <Typography className="mb-16" component="p">
@@ -77,11 +77,28 @@ function MultiLanguageDoc() {
       </FuseHighlight>
 
       <Typography className="text-20 mt-20 mb-10 font-700" variant="h5">
+        Default Language
+      </Typography>
+
+      <Typography className="mb-16" component="p">
+        To change the default language of the Fuse React, you need to change <code>lng</code>{' '}
+        setting in the file <code>src/i18n.js</code>
+      </Typography>
+
+      <Typography className="mb-16" component="p">
+        You can change "eng" value to "ar" to test it out.
+      </Typography>
+
+      <FuseHighlight component="pre" className="language-jsx mb-24">
+        {require('!raw-loader!src/i18n.js')}
+      </FuseHighlight>
+
+      <Typography className="text-20 mt-20 mb-10 font-700" variant="h5">
         Changing Language
       </Typography>
 
       <Typography className="mb-16" component="p">
-        You should use <code>changeLanguage</code> redux action to change language:
+        You should use <code>changeLanguage</code> redux action to change language dynamically:
       </Typography>
 
       <FuseHighlight component="pre" className="language-jsx mb-24">
@@ -97,7 +114,7 @@ function MultiLanguageDoc() {
 
       <Typography className="mb-16" component="p">
         Checkout example usage at
-        <code>src/app/fuse-layouts/shared-components/LanguageSwitcher.js</code>
+        <code>app/theme-layouts/shared-components/LanguageSwitcher.js</code>
       </Typography>
     </>
   );
