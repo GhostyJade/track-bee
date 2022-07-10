@@ -20,7 +20,7 @@ namespace TrackBEE.API.Controllers
         {
             try
             {
-                var result = await DatabaseInterface.ExecuteStored(data.Function, null, data.Data);
+                var result = await NpgSQLDatabaseInterface.ExecuteStored(data.Function, null, data.Data);
                 return StatusCode(200, result);
             }
             catch (Exception ex)
