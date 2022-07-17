@@ -1,2 +1,7 @@
 build/
 node_modules/
+
+# Ignore project config files
+.eslintrc.js
+tailwind.config.js
+postcss.config.js

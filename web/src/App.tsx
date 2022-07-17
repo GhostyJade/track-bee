@@ -1,16 +1,20 @@
-import React from "react";
-import { Route } from "react-router-dom";
+import { createTheme, ThemeProvider } from '@mui/material';
 
-import Router from "@track-bee/Router/Router";
-import routes from "./main/Routes";
+import Router from '@track-bee/navigation/Router/Router';
+import AuthProvider from '@track-bee/auth/AuthProvider';
+import theme from 'main/config/themeConfig';
+
+import routes from './main/config/routesConfig';
+
+const defaultTheme = createTheme({}, theme.defaultTheme);
 
 function App() {
     return (
-        <Router>
-            {routes.map((route, key) => (
-                <Route path={route.path} element={route.element} key={key} />
-            ))}
-        </Router>
+        <ThemeProvider theme={defaultTheme}>
+            <AuthProvider>
+                <Router routes={routes} />
+            </AuthProvider>
+        </ThemeProvider>
     );
 }
 

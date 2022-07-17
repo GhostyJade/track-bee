@@ -1,10 +1,11 @@
-import LoginPage from "./LoginPage";
+import LoginPage from './LoginPage';
 
 export default {
-  routes: [
-    {
-      path: "/login",
-      element: <LoginPage />,
-    },
-  ],
+    authLevel: null,
+    routes: [
+        {
+            path: '/login',
+            element: <LoginPage />,
+        },
+    ],
 };
