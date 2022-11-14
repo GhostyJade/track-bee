@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Track BEE',
   tagline: 'Track bugs before they catch you',
-  url: 'https://trackbee.ghostyjade.com',
+  url: 'https://track-bee.ghostyjade.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -110,7 +110,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Track BEE by GhostyJade. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Track BEE by GhostyJade. Built with Docusaurus. - Illustrations from Undraw.`,
       },
       prism: {
         theme: lightCodeTheme,
