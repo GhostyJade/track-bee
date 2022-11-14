@@ -4,9 +4,9 @@ using Npgsql;
 
 namespace TrackBEE.API.Data
 {
-    public static class NpgSQLDatabaseInterface
+    public class NpgSQLDatabaseInterface : IDatabaseInterface
     {
-        public static async Task<string> ExecuteStored(string storedName, object parameters, object data, string connectionString = "Default")
+        public static async Task<string> ExecuteStored(string storedName, object? parameters, object? data, string connectionString = "Default")
         {
             string connString = Startup.Configuration.GetConnectionString(connectionString);
             await using var conn = new NpgsqlConnection(connString);

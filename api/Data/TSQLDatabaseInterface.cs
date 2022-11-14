@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace TrackBEE.API.Data
 {
-    public static class TSQLDatabaseInterface
+    public class TSQLDatabaseInterface : IDatabaseInterface
     {
         public static async Task<string> ExecuteStored(string storedName, object parameters, object data, string connectionString = "Default")
         {

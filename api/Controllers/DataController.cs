@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using TrackBEE.API.Data;
 using TrackBEE.API.Models;
 
@@ -15,13 +16,14 @@ namespace TrackBEE.API.Controllers
         /// Execute a function on the PostgreSQL database and return a json containing the response
         /// </summary>
         /// <returns>A JObject containing the respose from database</returns>
-        [HttpGet("data")]
-        public async Task<IActionResult> Get([FromBody] DBBody data)
+        [HttpPost("data")]
+        public async Task<IActionResult> Execute([FromBody] DBBody data)
         {
             try
             {
                 var result = await NpgSQLDatabaseInterface.ExecuteStored(data.Function, null, data.Data);
-                return StatusCode(200, result);
+                var obj = JsonConvert.DeserializeObject(result);
+                return StatusCode(200, obj);
             }
             catch (Exception ex)
             {
