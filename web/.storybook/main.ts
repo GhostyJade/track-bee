@@ -1,6 +1,6 @@
-const path = require('path');
-module.exports = {
-    stories: ['../stories/**/*.mdx', '../stories/**/*.stories.@(js|jsx|ts|tsx)'],
+import type { StorybookConfig } from '@storybook/react-webpack5';
+const config: StorybookConfig = {
+    stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
     addons: [
         '@storybook/addon-links',
         '@storybook/addon-essentials',
@@ -16,3 +16,4 @@ module.exports = {
     },
     staticDirs: ['../public'],
 };
+export default config;
