@@ -2,6 +2,7 @@ import React from 'react';
 
 interface AuthContextType {
     isAuthenticated: boolean;
+    setAuthenticated(state: boolean): void;
 }
 
 const AuthContext = React.createContext<AuthContextType>(null!);

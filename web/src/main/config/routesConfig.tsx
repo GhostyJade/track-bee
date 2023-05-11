@@ -1,10 +1,22 @@
 import type { RouteBase, RouteConfigBase } from '@track-bee/navigation/Router/Router';
 import { Navigate } from 'react-router-dom';
-import LoginConfig from '../pages/Login/LoginConfig';
-import DashboardPageConfig from '../pages/dashboard/DashboardPageConfig';
-import ErrorsConfig from '../pages/errors/ErrorsConfig';
+import LoginConfig from '../app/pages/login/LoginConfig';
+import HomeDashboardConfig from '../app/dashboards/home/HomeDashboardConfig';
+import ErrorsConfig from '../app/pages/errors/ErrorsConfig';
+import RegisterConfig from 'main/app/pages/register/RegisterConfig';
+import ForgotPasswordConfig from 'main/app/pages/forgot-password/ForgotPasswordConfig';
+import IssuesExplorerConfig from 'main/app/issues/IssuesExplorerConfig';
 
-const routesConfig = [DashboardPageConfig, ...ErrorsConfig, LoginConfig];
+const routesConfig = [
+    ...ErrorsConfig,
+    HomeDashboardConfig,
+    LoginConfig,
+    RegisterConfig,
+    ForgotPasswordConfig,
+    IssuesExplorerConfig,
+];
+
+export const defaultUserHome = '/home';
 
 function generateNavigationGroup(config: RouteConfigBase): RouteBase[] {
     const routes = config.routes.map((route) => {
@@ -24,6 +36,7 @@ function generateNavigation() {
     routesConfig.forEach((config) => {
         routes.push(...generateNavigationGroup(config));
     });
+
     return routes;
 }
 
@@ -31,7 +44,7 @@ export default [
     ...generateNavigation(),
     {
         path: '/',
-        element: <Navigate to='/' />,
+        element: <Navigate to={defaultUserHome} />,
         auth: 'user',
     },
     // {

@@ -4,7 +4,11 @@ import { AuthContext } from './AuthContext';
 export default function AuthProvider({ children }: { children: React.ReactNode }): JSX.Element {
     const [isAuthenticated, setIsAuthenticated] = React.useState(false);
 
-    //TODO: add auth checks
+    // TODO: this should be moved to redux and must be checked using data from db.
+    const setAuthenticated = (state: boolean) => {
+        setIsAuthenticated(state);
+    };
 
-    return <AuthContext.Provider value={{ isAuthenticated }}>{children}</AuthContext.Provider>;
+    //TODO: add auth checks
+    return <AuthContext.Provider value={{ isAuthenticated, setAuthenticated }}>{children}</AuthContext.Provider>;
 }

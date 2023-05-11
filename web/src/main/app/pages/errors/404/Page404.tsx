@@ -1,3 +1,3 @@
 export default function Page404(): JSX.Element {
-    return <></>;
+    return <div>404 Not found</div>;
 }

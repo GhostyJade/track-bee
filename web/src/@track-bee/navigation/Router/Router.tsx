@@ -1,9 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Router, Routes, Route } from 'react-router-dom';
 
 import PrivateRoute from '@track-bee/navigation/Auth/PrivateRoute';
-
-// import { useAuth } from "@track-bee/auth/AuthContext";
+import history from '@history';
 
 export interface RouteBase {
     path: string;
@@ -16,9 +15,16 @@ export interface RouteConfigBase {
     authLevel?: string | undefined | null;
 }
 
-export default function Router({ routes }: { routes: RouteBase[] }): JSX.Element {
+export default function BrowserRouter({ routes }: { routes: RouteBase[] }): JSX.Element {
+    const [state, setState] = React.useState({
+        action: history.action,
+        location: history.location,
+    });
+
+    React.useLayoutEffect(() => history.listen(setState), []);
+
     return (
-        <BrowserRouter>
+        <Router navigator={history} location={state.location} navigationType={state.action}>
             <Routes>
                 {routes.map((route, key) => {
                     return (
@@ -30,6 +36,6 @@ export default function Router({ routes }: { routes: RouteBase[] }): JSX.Element
                     );
                 })}
             </Routes>
-        </BrowserRouter>
+        </Router>
     );
 }

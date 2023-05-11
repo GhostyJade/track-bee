@@ -1,4 +1,6 @@
-@import "app-base.css";
-@tailwind base;
+@import 'app-base.css';
+
+/* Removed due to https://mui.com/material-ui/guides/interoperability/#setup  */
+/* @tailwind base; */
 @tailwind components;
 @tailwind utilities;
